@@ -1,1 +1,1 @@
-// burası login sayfası olacak
+//burası login sayfasıydı
