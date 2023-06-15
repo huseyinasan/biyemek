@@ -10,9 +10,7 @@ class IntroScreen extends StatelessWidget {
     PageViewModel(
         title:"First Page",
         body:"description",
-        image:Center(
-  child: Image.asset("assets/"),
-  ),
+
   decoration: const PageDecoration(
   titleTextStyle: TextStyle(
   fontSize: 25.0,
@@ -25,9 +23,7 @@ class IntroScreen extends StatelessWidget {
     PageViewModel(
         title:"Second Page",
         body:"description",
-        image:Center(
-          child: Image.asset("assets/"),
-        ),
+
         decoration: const PageDecoration(
             titleTextStyle: TextStyle(
               fontSize: 25.0,
@@ -39,9 +35,7 @@ class IntroScreen extends StatelessWidget {
     PageViewModel(
         title:"Final Page",
         body:"description",
-        image:Center(
-          child: Image.asset("assets/"),
-        ),
+
         decoration: const PageDecoration(
             titleTextStyle: TextStyle(
               fontSize: 25.0,
@@ -55,10 +49,7 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(""),
-        centerTitle: true,
-      ),
+
       body: IntroductionScreen(
         pages:pages,
         dotsDecorator: const DotsDecorator(
@@ -68,10 +59,10 @@ class IntroScreen extends StatelessWidget {
           activeColor: Colors.green,
         ),
         showDoneButton: true,
-        done: const Text("Get Started", style: TextStyle(fontSize: 15,),),
+        done: const Text("Get Started", style: TextStyle(fontSize: 15,color: Colors.green),),
 
         next:const Icon(
-          Icons.arrow_forward, size: 20),
+          Icons.arrow_forward, size: 20,color: Colors.green,),
           onDone:() => onDone(context),
 
 
