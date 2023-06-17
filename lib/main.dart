@@ -1,4 +1,4 @@
-import 'package:biyemek/screens/Home_Screen.dart';
+
 import 'package:biyemek/screens/introduction_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext){
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "BiYemek",
       theme: ThemeData(
         primarySwatch:Colors.blue
