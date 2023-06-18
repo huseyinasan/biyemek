@@ -26,7 +26,7 @@ class HomeScreen extends StatefulWidget {
         border: Border.all(
 
           color: Colors.green,
-          width: 3.0,
+          width: 2.0,
         ),
         borderRadius: BorderRadius.circular(60.0),
       ),

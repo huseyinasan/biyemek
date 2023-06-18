@@ -13,6 +13,9 @@ class IntroScreen extends StatelessWidget {
     PageViewModel(
         title: "First Page",
         body: "description",
+        image: Center(
+          child: Image.asset("resimler/ıntro1.png"),
+        ),
 
         decoration: const PageDecoration(
             titleTextStyle: TextStyle(
@@ -26,7 +29,7 @@ class IntroScreen extends StatelessWidget {
         title: "Second Page",
         body: "description",
         image: Center(
-          child: Image.asset("assets/ıntro2.png"),
+          child: Image.asset("resimler/ıntro2.png"),
         ),
 
 
@@ -43,7 +46,7 @@ class IntroScreen extends StatelessWidget {
         title: "Final Page",
         body: "description",
         image: Center(
-          child: Image.asset(""),
+          child: Image.asset("resimler/ıntro3.png"),
         ),
 
         decoration: const PageDecoration(
