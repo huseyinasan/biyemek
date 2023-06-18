@@ -10,7 +10,7 @@ Flutter 25 - **Butterfly Effect**
 - Hüseyin ASAN : Product Owner
 - Beyza ÖZDEMİR: Developer / Designer
 - Merve YILMAZ : Developer / Designer
-- Mehmet Akif Dadaşoğlu : Developer 
+- Mehmet Akif DADAŞOĞLU : Developer 
 
 # ÜRÜN İSMİ
 --Bi'Yemek--
@@ -54,14 +54,14 @@ Bi'Yemek'in sunduğu avantajlar:
 
 - **Ürün Durumu**: Ekran görüntüleri:
 
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss1.png?raw=true" width="200">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss2.png?raw=true" width="200">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss3.png?raw=true" width="200">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss4.png?raw=true" width="200">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss5.png?raw=true" width="200">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss6.png?raw=true" width="200">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss7.png?raw=true" width="200">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss8.png?raw=true" width="200">
+  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss1.png?raw=true" width="100">
+  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss2.png?raw=true" width="100">
+  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss3.png?raw=true" width="100">
+  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss4.png?raw=true" width="100">
+  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss5.png?raw=true" width="100">
+  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss6.png?raw=true" width="100">
+  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss7.png?raw=true" width="100">
+  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss8.png?raw=true" width="100">
   <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss9.png?raw=true" width="200">
 
 
