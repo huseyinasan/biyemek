@@ -8,7 +8,7 @@
 Ürün İle İlgili Bilgiler
 
    -Cihat mehmet ordul : Scrum Master
-  - Hüseyin Asan : Product Owner
+   -Hüseyin Asan : Product Owner
    -Beyza özdemir: Developer
    -Merve yılmaz: Developer
    -Mehmet Akif Dadaşoğlu : Developer
