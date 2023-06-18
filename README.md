@@ -65,16 +65,15 @@ Sprint board update: Sprint board screenshotları:
 
 - **Ürün Durumu**: Ekran görüntüleri:
 
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss1.png?raw=true" width="100">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss2.png?raw=true" width="100">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss3.png?raw=true" width="100">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss4.png?raw=true" width="100">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss5.png?raw=true" width="100">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss6.png?raw=true" width="100">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss7.png?raw=true" width="100">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss8.png?raw=true" width="100">
-  <img src="https://github.com/huseyinasan/appjam/blob/master/assets/demo/ss9.png?raw=true" width="200">
 
+
+![tasarım 3](https://github.com/huseyinasan/biyemek/assets/124069940/d5b25f48-71dc-4d21-a19c-e8f6bf3509b2)
+
+
+https://github.com/huseyinasan/biyemek/assets/124069940/1c0d8ff6-fa23-478c-b46d-fff7139700f8
+
+![tasarım 1](https://github.com/huseyinasan/biyemek/assets/124069940/854f51a2-5c7a-4de3-8b6c-5fcd96707aa7)
+![tasarım 2](https://github.com/huseyinasan/biyemek/assets/124069940/dceb8e2f-80af-498b-a590-83efe92f0ee7)
 
 
 
