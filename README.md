@@ -76,5 +76,17 @@ https://github.com/huseyinasan/biyemek/assets/124069940/1c0d8ff6-fa23-478c-b46d-
 ![tasarım 2](https://github.com/huseyinasan/biyemek/assets/124069940/dceb8e2f-80af-498b-a590-83efe92f0ee7)
 
 
+## Sprint Review: Alınan kararlar: gidişat değerlendirilmiş ve ilk scripteki hedefler tamamlanmıştır ilerlememize yönelik revizasyonlar yapılmıştır.
+- Sprint Review katılımcıları:  Cihat Mehmet ORDUL
+ Hüseyin ASAN Beyza ÖZDEMİR
+ Merve YILMAZ  Mehmet Akif DADAŞOĞLU
 
+# Sprint Retrospective:
+
+Roller ile ilgili düzenleme yapılmıştır.
+ileriye dönük hedefler belirlenmiştir.
+Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
+
+# Product Backlog URL
+[Flutter Team 25 Miro Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
 
