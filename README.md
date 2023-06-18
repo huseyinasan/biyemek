@@ -1,31 +1,4 @@
-# takım ismi
- 
- takım F-25  
-
-## Ürün İle İlgili Bilgiler
-
-# Takım Elemanları
-Ürün İle İlgili Bilgiler
-
-   -Cihat mehmet ordul : Scrum Master
-   -Hüseyin Asan : Product Owner
-   -Beyza özdemir: Developer
-   -Merve yılmaz: Developer
-   -Mehmet Akif Dadaşoğlu : Developer
-
-# ÜRÜN İSMİ
-
---Bi Yemek--
-
-## Product Backlog URL
-
-[Flutter Team 25 trello Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
-
-
-
-## Ürün Açıklaması
-
-# **Butterfly Effect**
+#Takım İsmi **Butterfly Effect**
 
 Flutter 25
 
@@ -33,40 +6,48 @@ Flutter 25
 
 ## Takım Üyeleri
 
-- Hüseyin Asan
-- Çağla Erkalkan
-- Kemal Erdem Yenin
-- Pelin Hancı
+- Cihat Mehmet ORDUL : Scrum Master
+- Hüseyin ASAN : Product Owner
+- Beyza ÖZDEMİR: Developer / Designer
+- Merve YILMAZ : Developer / Designer
+- Mehmet Akif Dadaşoğlu : Developer 
 
-## Ürün İsmi
+# ÜRÜN İSMİ
+--Bi'Yemek--
 
---Akademi Görev Takip--
+## Product Backlog URL
+
+[Flutter Team 25 Trello Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
+[Miro  Board]([https://miro.com/app/board/uXjVMVPsx2o=/?share_link_id=556679816524](https://miro.com/app/board/uXjVOnzORQw=/))
 
 ## Ürün Açıklaması
+Taze ve lezzetli ürünleri daha fazla israf etmeden değerlendirmek isteyen restoranlar, şarküteriler, pastaneler, manavlar ve diğer gıda satıcıları için bir inovatif uygulamadır. Bu uygulama, günlük raf ömrü olan ürünleri, ömürlerinin sonuna doğru çok uygun fiyatlara satan işletmelerle kullanıcıları bir araya getirerek kazan-kazan bir çözüm sunar. Kişiler uygun fiyatlarla gıdaları satın alırken, işletmelerde bu gıdaları elden çıkarır. Ortak fayda ise bu uygulama sayesinde gıda israfının önlenmesine katkıda bulunur ve karbon ayak izini azaltarak doğaya katkıda bulunurlar.
 
-- Uygulamamız, akademide ki bursiyerlerin yaşadığı görev takibi problemi için çeşitli takip arayüzleri ile anlık erişim sağlarken ve bildirimlerle uyarırken, oyunlaştırmalarla motivasyon eksikliğini azaltmayı amaçlıyor.
+Bi'Yemek'in sunduğu avantajlar:
+
+İndirimli Fiyatlar: Restoranlar, şarküteriler, pastaneler, manavlar ve diğer gıda satıcıları gün sonunda ellerinde kalan ürünleri israftan kurtarırken, kullanıcılara cazip fiyatlar sunar. Bu sayede herkes, kaliteli ve taze ürünlere daha ekonomik bir şekilde erişebilir.
+
+Ürün Çeşitliliği: Uygulama, farklı restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcılarıyla çalışarak geniş bir ürün yelpazesi sunar. Kullanıcılar, günlük olarak değişen ürünleri satın alabilecek.
 
 ## Ürün Özellikleri
-
-- Aylık ve tüm zamanlar olarak eksik görevlerin durumunu gösterme
-- Aylık ve tüm zamanlar olarak liderlik tablosunu gösterme
-- Akademi ile daha hızlı iletişim sağlanabilmesi için geri bildirim yollama
-- Günlük olarak bildirim yollama
-- Günlük bildirimin saatini özelleştirme
-- Aylık olarak tüm görevlerin tamamlanma oranını profil sayfasında gösterme
+-Uygulama işletme ve müşteri olmak üzere iki arayüze sahip olacaktır,
+-İşletmeler israf olabileceğini düşündüğü yiyeceklerini uygulamaya tanımlayabilmesi,
+-Kullanıcılar bunları liste veya harita üzerinden görebilecek,
+-Kurye aracılığıyla kullanıcılar ürünleri alır,
+-Profile x miktar tasarruf ve x miktar CO2 salınımını azaltmaya katkıda bulunduğunu belirtir,
+-Kullanıcılar, işletmeleri değerlendirebilecek.
 
 ## Hedef Kitle
 
-- Tüm akademi bursiyerleri
-
-## Demo Kullanıcı Bilgileri
-
-- mail: fatma.s@gmail.com
-- şifre: fatma.s123
+- Müşteri olarak çoğunlukla 18 - 45 yaş arası;
+- Uygun fiyata gıda ürünleri satın almak istyenler,
+- Gıda israfını önlenmesine katkıda bulunmak isteyenler,
+- İşletme olarak;
+- Fazla gıda stoğu veren restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcıları,
 
 ## Minimum Uygulanabilir Ürün(MVP)
 
-[Miro  Board](https://miro.com/app/board/uXjVMVPsx2o=/?share_link_id=556679816524)
+
 
 ---
 
