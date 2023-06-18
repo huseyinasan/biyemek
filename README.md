@@ -1,10 +1,24 @@
-# biyemek
+# takım ismi
+ 
+ takım F-25  
 
-Takım Flutter 52
+## Ürün İle İlgili Bilgiler
 
-## Getting Started
+#Takım Elemanları
+Ürün İle İlgili Bilgiler
 
-This project is a starting point for a Flutter application.
+Cihat mehmet ordul : Scrum Master / 
+Hüseyin Asan : Product Owner
+Beyza özdemir: Developer
+Merve yılmaz: Developer
+Mehmet Akif Dadaşoğlu : Developer
+
+# ÜRÜN İSMİ
+
+--Bi Yemek--
+
+##Product Backlog URL
+##[Flutter Team 52 Miro Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
 
 A few resources to get you started if this is your first Flutter project:
 
@@ -14,3 +28,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+
