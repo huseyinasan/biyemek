@@ -45,8 +45,13 @@ Bi'Yemek'in sunduğu avantajlar:
 - İşletme olarak;
 - Fazla gıda stoğu veren restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcıları,
 
-## Minimum Uygulanabilir Ürün(MVP)
+##Sprint 1
 
+- Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
+
+Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
+
+Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: 
 
 
 ---
