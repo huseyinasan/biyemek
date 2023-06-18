@@ -4,7 +4,7 @@
 
 ## Ürün İle İlgili Bilgiler
 
-#Takım Elemanları
+# Takım Elemanları
 Ürün İle İlgili Bilgiler
 
 Cihat mehmet ordul : Scrum Master / 
@@ -17,8 +17,9 @@ Mehmet Akif Dadaşoğlu : Developer
 
 --Bi Yemek--
 
-##Product Backlog URL
-##[Flutter Team 52 Miro Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
+## Product Backlog URL
+
+[Flutter Team 52 Miro Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
 
 A few resources to get you started if this is your first Flutter project:
 
