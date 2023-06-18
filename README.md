@@ -17,8 +17,8 @@ Flutter 25 - **Butterfly Effect**
 
 ## Product Backlog URL
 
-[Flutter Team 25 Trello Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
-[Miro  Board]([https://miro.com/app/board/uXjVMVPsx2o=/?share_link_id=556679816524](https://miro.com/app/board/uXjVOnzORQw=/))
+- [Flutter Team 25 Trello Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
+- [Miro  Board](https://miro.com/app/board/uXjVOnzORQw=/)
 
 ## Ürün Açıklaması
 Taze ve lezzetli ürünleri daha fazla israf etmeden değerlendirmek isteyen restoranlar, şarküteriler, pastaneler, manavlar ve diğer gıda satıcıları için bir inovatif uygulamadır. Bu uygulama, günlük raf ömrü olan ürünleri, ömürlerinin sonuna doğru çok uygun fiyatlara satan işletmelerle kullanıcıları bir araya getirerek kazan-kazan bir çözüm sunar. Kişiler uygun fiyatlarla gıdaları satın alırken, işletmelerde bu gıdaları elden çıkarır. Ortak fayda ise bu uygulama sayesinde gıda israfının önlenmesine katkıda bulunur ve karbon ayak izini azaltarak doğaya katkıda bulunurlar.
