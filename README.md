@@ -45,7 +45,7 @@ Bi'Yemek'in sunduğu avantajlar:
 - İşletme olarak;
 - Fazla gıda stoğu veren restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcıları,
 
-##Sprint 1
+## Sprint 1
 
 - Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
 
