@@ -14,6 +14,7 @@ class HomeScreen extends StatefulWidget {
     SafeArea(
       child: Scaffold(
 
+
        bottomNavigationBar:Padding(
          padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 20.0),
 
@@ -30,7 +31,7 @@ class HomeScreen extends StatefulWidget {
         ),
         borderRadius: BorderRadius.circular(60.0),
       ),
-      child: Padding(
+         child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.0,vertical: 8.0),
 
         child: GNav(
