@@ -1,6 +1,6 @@
 # biyemek
 
-A new Flutter project.
+Takım Flutter 52
 
 ## Getting Started
 
