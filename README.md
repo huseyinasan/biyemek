@@ -1,6 +1,6 @@
 # Takım İsmi 
 
-Flutter 25 **Butterfly Effect**
+Flutter 25 - **Butterfly Effect**
 
 # Ürün İle İlgili Bilgiler
 
