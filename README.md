@@ -21,19 +21,21 @@ Flutter 25 - **Butterfly Effect**
 - [Miro  Board](https://miro.com/app/board/uXjVOnzORQw=/)
 
 ## Ürün Açıklaması
-Taze ve lezzetli ürünleri daha fazla israf etmeden değerlendirmek isteyen restoranlar, şarküteriler, pastaneler, manavlar ve diğer gıda satıcıları için bir inovatif uygulamadır. Bu uygulama, günlük raf ömrü olan ürünleri, ömürlerinin sonuna doğru çok uygun fiyatlara satan işletmelerle kullanıcıları bir araya getirerek kazan-kazan bir çözüm sunar. Kişiler uygun fiyatlarla gıdaları satın alırken, işletmelerde bu gıdaları elden çıkarır. Ortak fayda ise bu uygulama sayesinde gıda israfının önlenmesine katkıda bulunur ve karbon ayak izini azaltarak doğaya katkıda bulunurlar.
+Taze ve lezzetli ürünleri daha fazla israf etmeden değerlendirmek isteyen restoranlar, şarküteriler, pastaneler, manavlar ve diğer gıda satıcıları için bir inovatif uygulamadır. Bu uygulama, günlük raf ömrü olan ürünleri, ömürlerinin sonuna doğru çok uygun fiyatlara satan işletmelerle, bu işletmelerin çevrelerinde bulunan ve bunları satın almak isteyen kullanıcıları bir araya getirerek kazan-kazan bir çözüm sunar. Kişiler uygun fiyatlarla gıdaları satın alırken, işletmelerde bu gıdaları elden çıkarır. Ortak fayda ise bu uygulama sayesinde gıda israfının önlenmesine ve karbon ayak izini azaltarak doğaya katkıda bulunurlar.
 
 Bi'Yemek'in sunduğu avantajlar:
 
-İndirimli Fiyatlar: Restoranlar, şarküteriler, pastaneler, manavlar ve diğer gıda satıcıları gün sonunda ellerinde kalan ürünleri israftan kurtarırken, kullanıcılara cazip fiyatlar sunar. Bu sayede herkes, kaliteli ve taze ürünlere daha ekonomik bir şekilde erişebilir.
+İndirimli Fiyatlar: Restoranlar, şarküteriler, pastaneler, manavlar ve diğer gıda satıcıları gün sonunda ellerinde kalan ürünleri israftan kurtarırken, bu işletmelerin yakınlarında yer alan kullanıcılara cazip fiyatlar sunar. Bu sayede herkes, kaliteli ve taze ürünlere daha ekonomik bir şekilde erişebilir.
 
 Ürün Çeşitliliği: Uygulama, farklı restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcılarıyla çalışarak geniş bir ürün yelpazesi sunar. Kullanıcılar, günlük olarak değişen ürünleri satın alabilecek.
 
+Çevre Dostu: Uygulama çevre dostu çözümü sayesinde gıda israfının önlenmesine katkıda bulunur.
+
 ## Ürün Özellikleri
 -Uygulama işletme ve müşteri olmak üzere iki arayüze sahip olacaktır,
--İşletmeler israf olabileceğini düşündüğü yiyeceklerini uygulamaya tanımlayabilmesi,
+-İşletmeler israf olabileceğini düşündüğü yiyeceklerini uygulamaya tanımlayabilecek,
 -Kullanıcılar bunları liste veya harita üzerinden görebilecek,
--Kurye aracılığıyla kullanıcılar ürünleri alır,
+-Anlsaşmalı kurye firmaları aracılığıyla kullanıcılar ürünleri satın alıp sipariş verebilecek,
 -Profile x miktar tasarruf ve x miktar CO2 salınımını azaltmaya katkıda bulunduğunu belirtir,
 -Kullanıcılar, işletmeleri değerlendirebilecek.
 
@@ -57,7 +59,7 @@ Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsa
 ---
 
 Sprint board update: Sprint board screenshotları:
-![crum](https://github.com/huseyinasan/biyemek/assets/124069940/386299ec-369e-4195-8b15-675d859975cb)
+![Scrum](https://github.com/huseyinasan/biyemek/assets/124069940/386299ec-369e-4195-8b15-675d859975cb)
 
 
 
