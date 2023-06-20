@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "634559403892",
+    "project_id": "biyemek-5e6ed",
+    "storage_bucket": "biyemek-5e6ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634559403892:android:71e76b3d275174dcb27e21",
+        "android_client_info": {
+          "package_name": "com.example.biyemek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634559403892-t2snjhq352pppfc5a313mfqigh8n24ha.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.biyemek",
+            "certificate_hash": "7181c43d0e37b78ac4d1cacc74aa8380de5d87eb"
+          }
+        },
+        {
+          "client_id": "634559403892-kk3dprjgceig64n3g79tt5jbtj7blc51.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWxXBoudmXPTqNlmv48dCo9Iv_OmbFI2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634559403892-kk3dprjgceig64n3g79tt5jbtj7blc51.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
