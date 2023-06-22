@@ -71,10 +71,13 @@ Widget build(BuildContext) {
                        controller: _controller,
                        count: 3,
                      effect: WormEffect(
+                       dotWidth: 20,
+                       dotHeight: 20,
 
                        dotColor: Colors.greenAccent,
-
                        activeDotColor: Colors.green,
+
+
 
                      ),
                    ),
@@ -92,13 +95,24 @@ Widget build(BuildContext) {
                      ),
                    );
                  },
-                 child: Text(
-                   "Başla",
-                   style: TextStyle(
-                     fontSize: 20,
+                 child: Container(
+                   width: 80,
+                   height: 50,
+                   decoration: BoxDecoration(
                      color: Colors.green,
-                     fontWeight: FontWeight.bold,
-                     decoration: TextDecoration.underline,
+                     borderRadius: BorderRadius.circular(20.0),
+                     shape: BoxShape.rectangle,
+                   ),
+                   child: Center(
+                     child: Text(
+                       "Başla",
+                       style: TextStyle(
+                         fontSize: 20,
+                         color: Colors.greenAccent,
+                         fontWeight: FontWeight.bold,
+
+                       ),
+                     ),
                    ),
                  ),
                )

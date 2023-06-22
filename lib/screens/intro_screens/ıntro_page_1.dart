@@ -7,15 +7,22 @@ class IntroPage1 extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
+      width:180 ,
 
-       
 
       child: Center(
-        child: Image.asset(
+
+
+        child:
+        Image.asset(
           'resimler/ıntro1.png',
           fit: BoxFit.cover,
         ),
+
+
+
       ),
+
 
       color: Colors.lightGreen,
     );
