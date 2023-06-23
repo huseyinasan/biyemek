@@ -53,6 +53,7 @@ Bi'Yemek'in sunduğu avantajlar:
 
 Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
 
+
 Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [daily scrum](https://drive.google.com/file/d/1weUME5x6OvJ8cJVvPc7w52LMkDeJhknb/view?usp=sharing)
 
 
@@ -79,7 +80,7 @@ https://github.com/huseyinasan/biyemek/assets/124069940/1c0d8ff6-fa23-478c-b46d-
 
 
 ## Sprint Review:
-
+yapılanlar : ilk sprintte tasarıma yoğunlaşma kararlaştırılmıştır uygulama giriş ekranı menü sayfaların tasarımları yapılmıştır bu sprinte puanlamamız tasarım üzerinden verilmiştir.
 Alınan kararlar: gidişat değerlendirilmiş ve ilk scripteki hedefler tamamlanmıştır ilerlememize yönelik revizasyonlar yapılmıştır.
 - Sprint Review katılımcıları:  Cihat Mehmet ORDUL
  Hüseyin ASAN Beyza ÖZDEMİR
