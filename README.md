@@ -80,11 +80,17 @@ https://github.com/huseyinasan/biyemek/assets/124069940/1c0d8ff6-fa23-478c-b46d-
 
 
 ## Sprint Review:
-yapılanlar : ilk sprintte tasarıma yoğunlaşma kararlaştırılmıştır uygulama giriş ekranı menü sayfaların tasarımları yapılmıştır bu sprinte puanlamamız tasarım üzerinden verilmiştir.
+
 Alınan kararlar: gidişat değerlendirilmiş ve ilk scripteki hedefler tamamlanmıştır ilerlememize yönelik revizasyonlar yapılmıştır.
 - Sprint Review katılımcıları:  Cihat Mehmet ORDUL
  Hüseyin ASAN Beyza ÖZDEMİR
  Merve YILMAZ  Mehmet Akif DADAŞOĞLU
+
+## sprint Notu:
+
+ilk sprintte tasarıma yoğunlaşma kararlaştırılmıştır uygulama giriş ekranı menü sayfaların tasarımları yapılmıştır bu sprinte puanlamamız tasarım üzerinden verilmiştir.
+herkesin takvimi incelenmiş ve ona bu şartlara göre çalışma planı yapılmıştır.discord üzerinden haberleşilmiş ve buluşmalar düzenlenmiştir .ilk günler fikir belirlenmiş ve ilk sprintin puanlamasının
+tasarım üstüne olacağı karar kılınmıştır.
 
 # Sprint Retrospective:
 
