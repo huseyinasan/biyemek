@@ -40,7 +40,7 @@ class _entranceState extends State<entrance> {
                fontSize: 18,
                color: Colors.black,
              ),),
-             const SizedBox(height: 40),
+             const SizedBox(height: 30),
             GestureDetector(
               onTap: (){
                 Navigator.push(
@@ -124,7 +124,7 @@ class _entranceState extends State<entrance> {
                height: 60,
 
                decoration: BoxDecoration(
-                 color: Colors.white,
+                 color: Color(0xFFE2F3EE),
                  borderRadius: BorderRadius.circular(30),
                  border: Border.all(color: Colors.green),
                  boxShadow: [
