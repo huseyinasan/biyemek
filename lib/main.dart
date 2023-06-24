@@ -1,5 +1,5 @@
 
-import 'package:biyemek/screens/introduction_screen.dart';
+import 'package:biyemek/screens/intro_screens/introduction_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() async{

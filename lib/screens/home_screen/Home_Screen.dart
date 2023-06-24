@@ -1,9 +1,9 @@
-import 'package:biyemek/screens/comments.dart';
-import 'package:biyemek/screens/location.dart';
-import 'package:biyemek/screens/products.dart';
+import 'package:biyemek/screens/home_screen/comments.dart';
+import 'package:biyemek/screens/home_screen/location.dart';
+import 'package:biyemek/screens/home_screen/products.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'Bildirimler.dart';
+import 'notifications.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -70,7 +70,7 @@ class HomeScreen extends StatefulWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return Bildirimler();
+                              return notifications();
                             },
                           ),
                         );

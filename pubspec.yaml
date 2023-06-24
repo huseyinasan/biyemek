@@ -36,6 +36,8 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   google_nav_bar: ^5.0.6
   flutter_svg: ^0.22.0
+  flutter_animated_icons: ^1.0.1
+
 
 
 
@@ -50,6 +52,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -72,9 +75,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - resimler/ıntro1.png
-    - resimler/ıntro2.png
-    - resimler/ıntro3.png
+    - assets/ıntro1.png
+    - assets/ıntro2.png
+    - assets/ıntro3.png
+    - assets/login.png
+    - assets/google_icon.png
+
 
   #   - images/a_dot_ham.jpeg
 

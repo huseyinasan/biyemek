@@ -10,7 +10,7 @@ class IntroPage3 extends StatelessWidget {
       width: 180,
       child: Center(
         child: Image.asset(
-          'resimler/ıntro3.png',
+          'assets/ıntro3.png',
           fit: BoxFit.cover,
         ),
       ),

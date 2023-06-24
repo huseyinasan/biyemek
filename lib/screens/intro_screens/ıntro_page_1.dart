@@ -15,7 +15,7 @@ class IntroPage1 extends StatelessWidget {
 
         child:
         Image.asset(
-          'resimler/ıntro1.png',
+          'assets/ıntro1.png',
           fit: BoxFit.cover,
         ),
 
