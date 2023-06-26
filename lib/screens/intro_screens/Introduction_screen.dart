@@ -1,11 +1,12 @@
 
 
-import 'package:biyemek/screens/intro_screens/%C4%B1ntro_page_1.dart';
-import 'package:biyemek/screens/intro_screens/%C4%B1ntro_page_2.dart';
-import 'package:biyemek/screens/intro_screens/%C4%B1ntro_page_3.dart';
 import 'package:biyemek/screens/entrance.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import 'Intro_page_1.dart';
+import 'Intro_page_2.dart';
+import 'Intro_page_3.dart';
 
 
 class IntroductionScreen extends StatefulWidget{
