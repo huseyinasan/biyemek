@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+
+class IntroPage1 extends StatelessWidget {
+  const IntroPage1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Container(
+      width:180 ,
+
+
+      child: Center(
+
+
+        child:
+        Image.asset(
+          'assets/ıntro1.png',
+          fit: BoxFit.cover,
+        ),
+
+
+
+      ),
+
+
+      color: Colors.lightGreen,
+    );
+  }
+}
