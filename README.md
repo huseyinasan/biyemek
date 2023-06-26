@@ -82,9 +82,12 @@ https://github.com/huseyinasan/biyemek/assets/124069940/1c0d8ff6-fa23-478c-b46d-
 ## Sprint Review:
 
 Alınan kararlar: gidişat değerlendirilmiş ve ilk scripteki hedefler tamamlanmıştır ilerlememize yönelik revizasyonlar yapılmıştır.
-- Sprint Review katılımcıları:  Cihat Mehmet ORDUL
- Hüseyin ASAN Beyza ÖZDEMİR
- Merve YILMAZ  Mehmet Akif DADAŞOĞLU
+- Sprint Review katılımcıları:
+- Cihat Mehmet ORDUL
+- Hüseyin ASAN
+- Beyza ÖZDEMİR
+- Merve YILMAZ
+- Mehmet Akif DADAŞOĞLU
 
 ## sprint Notu:
 
