@@ -32,20 +32,20 @@ Bi'Yemek'in sunduğu avantajlar:
 Çevre Dostu: Uygulama çevre dostu çözümü sayesinde gıda israfının önlenmesine katkıda bulunur.
 
 ## Ürün Özellikleri
--Uygulama işletme ve müşteri olmak üzere iki arayüze sahip olacaktır,
--İşletmeler israf olabileceğini düşündüğü yiyeceklerini uygulamaya tanımlayabilecek,
--Kullanıcılar bunları liste veya harita üzerinden görebilecek,
--Anlsaşmalı kurye firmaları aracılığıyla kullanıcılar ürünleri satın alıp sipariş verebilecek,
--Profile x miktar tasarruf ve x miktar CO2 salınımını azaltmaya katkıda bulunduğunu belirtir,
--Kullanıcılar, işletmeleri değerlendirebilecek.
+- Uygulama işletme ve müşteri olmak üzere iki arayüze sahip olacaktır,
+- İşletmeler israf olabileceğini düşündüğü yiyeceklerini uygulamaya tanımlayabilecek,
+- Kullanıcılar bunları liste veya harita üzerinden görebilecek,
+- Anlsaşmalı kurye firmaları aracılığıyla kullanıcılar ürünleri satın alıp sipariş verebilecek,
+- Profile x miktar tasarruf ve x miktar CO2 salınımını azaltmaya katkıda bulunduğunu belirtir,
+- Kullanıcılar, işletmeleri değerlendirebilecek.
 
 ## Hedef Kitle
 
-- Müşteri olarak çoğunlukla 18 - 45 yaş arası;
+### Müşteri olarak çoğunlukla 18 - 45 yaş arası:
 - Uygun fiyata gıda ürünleri satın almak istyenler,
-- Gıda israfını önlenmesine katkıda bulunmak isteyenler,
-- İşletme olarak;
-- Fazla gıda stoğu veren restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcıları,
+- Gıda israfını önlenmesine katkıda bulunmak isteyenler.
+### İşletme olarak:
+- Fazla gıda stoğu veren restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcıları.
 
 ## Sprint 1
 
