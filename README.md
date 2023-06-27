@@ -41,11 +41,11 @@ Bi'Yemek'in sunduğu avantajlar:
 
 ## Hedef Kitle
 
-- Müşteri olarak çoğunlukla 18 - 45 yaş arası;
+### Müşteri olarak çoğunlukla 18 - 45 yaş arası:
 - Uygun fiyata gıda ürünleri satın almak istyenler,
-- Gıda israfını önlenmesine katkıda bulunmak isteyenler,
-- İşletme olarak;
-- Fazla gıda stoğu veren restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcıları,
+- Gıda israfını önlenmesine katkıda bulunmak isteyenler.
+### İşletme olarak:
+- Fazla gıda stoğu veren restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcıları.
 
 ## Sprint 1
 
