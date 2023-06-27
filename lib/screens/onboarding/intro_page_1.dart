@@ -13,7 +13,7 @@ class IntroPage1 extends StatelessWidget {
             children: [
               const SizedBox(height: 100),
               Image.asset(
-                'assets/ıntro1.png',
+                'assets/images/onboarding/intro1.png',
                 width: 350,
                 height: 350,
               ),
@@ -22,19 +22,19 @@ class IntroPage1 extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "İsrafı önlemenin en uygun hali",
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.green,
-                      ),
-                      overflow: TextOverflow.clip,
-                    ),
-                    Text(
                       "Bi'Yemek",
                       style: TextStyle(
                         fontSize: 24,
                         color: Colors.green,
                         fontWeight: FontWeight.bold,
+                      ),
+                      overflow: TextOverflow.clip,
+                    ),
+                    Text(
+                      "İsrafı önlemenin en ucuz ve taze hali",
+                      style: TextStyle(
+                        fontSize: 22,
+                        color: Colors.green,
                       ),
                       overflow: TextOverflow.clip,
                     ),

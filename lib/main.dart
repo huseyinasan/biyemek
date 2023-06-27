@@ -1,4 +1,4 @@
-import 'package:biyemek/screens/intro_screens/introduction_screen.dart';
+import 'package:biyemek/screens/onboarding/introduction_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 

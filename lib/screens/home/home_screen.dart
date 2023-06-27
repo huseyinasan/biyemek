@@ -1,6 +1,6 @@
-import 'package:biyemek/screens/home_screen/comments.dart';
-import 'package:biyemek/screens/home_screen/location.dart';
-import 'package:biyemek/screens/home_screen/products.dart';
+import 'package:biyemek/screens/home/comments.dart';
+import 'package:biyemek/screens/home/location.dart';
+import 'package:biyemek/screens/home/products.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'notifications.dart';

@@ -1,8 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import '../onboarding/customer_entrance.dart';
 
-import 'entrance.dart';
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
 
@@ -17,32 +16,27 @@ class _loginState extends State<login> {
       backgroundColor: const Color(0xFFE2F3EE),
       body: ListView(
         children: [
-
           Column(
             children: [
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder:(context){
+                      builder: (context) {
                         return const entrance();
                       },
                     ),
                   );
                 },
-
                 child: const Padding(
                   padding: EdgeInsets.only(right: 300),
                   child: Icon(Icons.arrow_back),
                 ),
               ),
               const SizedBox(height: 20),
-
-
-              const Image(image: AssetImage('assets/login.png'),
-
-
+              const Image(
+                image: AssetImage('assets/images/onboarding/login.png'),
               ),
               BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
@@ -50,9 +44,6 @@ class _loginState extends State<login> {
                   color: Colors.transparent,
                 ),
               ),
-
-
-
               SingleChildScrollView(
                 child: Container(
                   width: double.infinity,
@@ -62,13 +53,9 @@ class _loginState extends State<login> {
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(50),
                         topRight: Radius.circular(50),
-                      )
-                  ),
-
-
-
+                      )),
                   child: const Padding(
-                    padding:EdgeInsets.only(top: 16),
+                    padding: EdgeInsets.only(top: 16),
                     child: Text(
                       "Log in",
                       textAlign: TextAlign.center,
@@ -79,19 +66,10 @@ class _loginState extends State<login> {
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
-
                     ),
                   ),
-
                 ),
-
               ),
-
-
-
-
-
-
             ],
           )
         ],

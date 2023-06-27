@@ -13,14 +13,14 @@ class IntroPage2 extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: Image.asset(
-                'assets/ıntro2.png',
+                'assets/images/onboarding/intro2.png',
                 fit: BoxFit.cover,
               ),
             ),
             const Padding(
               padding: EdgeInsets.all(12.0),
               child: Text(
-                "İşletme sahipleri günlük olarak arta kalacağını düşündükleri gıdaları listeleyelerek israfı önlerken kazançlarını arttırabilir!",
+                "İşletmeler günlük olarak arta kalacağını düşündükleri gıdaları listeleyelerek israfı önlerken kazançlarını arttırabilir!",
                 style: TextStyle(
                   fontSize: 24,
                   overflow: TextOverflow.clip,

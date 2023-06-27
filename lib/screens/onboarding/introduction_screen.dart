@@ -1,9 +1,9 @@
-import 'package:biyemek/screens/entrance.dart';
+import 'package:biyemek/screens/onboarding/customer_entrance.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'intro_page_1.dart';
-import 'Intro_page_2.dart';
-import 'Intro_page_3.dart';
+import 'intro_page_2.dart';
+import 'intro_page_3.dart';
 
 class IntroductionScreen extends StatefulWidget {
   const IntroductionScreen({Key? key}) : super(key: key);
@@ -116,7 +116,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                                 ),
                               ],
                             ),
-                          )
+                          ),
                   ],
                 ),
               ),

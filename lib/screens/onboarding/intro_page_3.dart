@@ -17,14 +17,14 @@ class IntroPage3 extends StatelessWidget {
                   bottom: 20,
                 ),
                 child: Image.asset(
-                  'assets/ıntro3.png',
+                  'assets/images/onboarding/intro3.png',
                   fit: BoxFit.cover,
                 ),
               ),
               const Padding(
                 padding: EdgeInsets.all(12.0),
                 child: Text(
-                  "Müşteriler günlük olarak listelenen taze ürünleri çok uygun fiyatlara satın alabilir!",
+                  "Günlük olarak listelenen fazlalık taze ürünleri çok uygun fiyatlara satın al ve israfın önüne geç!",
                   style: TextStyle(
                     fontSize: 24,
                     overflow: TextOverflow.clip,

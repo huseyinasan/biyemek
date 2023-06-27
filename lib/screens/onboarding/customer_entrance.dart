@@ -1,6 +1,6 @@
-import 'package:biyemek/screens/intro_screens/introduction_screen.dart';
-import 'package:biyemek/screens/login.dart';
-import 'package:biyemek/screens/signup.dart';
+import 'package:biyemek/screens/onboarding/introduction_screen.dart';
+import 'package:biyemek/screens/login/login.dart';
+import 'package:biyemek/screens/register/register.dart';
 import 'package:flutter/material.dart';
 
 class entrance extends StatefulWidget {
@@ -50,7 +50,7 @@ class _entranceState extends State<entrance> {
                     ),
                   ),
                   const Image(
-                    image: AssetImage('assets/login.png'),
+                    image: AssetImage('assets/images/onboarding/login.png'),
                     width: 500, // İstenilen genişlik
                     height: 300, // İstenilen yükseklik
                     fit: BoxFit.cover, // Resmi sığdırma şekli
@@ -64,7 +64,7 @@ class _entranceState extends State<entrance> {
                     child: Column(
                       children: [
                         Text(
-                          "İSRAFI ÖNLEMEK",
+                          "İSRAFI ÖNLEMENİN",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w900,
@@ -73,7 +73,7 @@ class _entranceState extends State<entrance> {
                           ),
                         ),
                         Text(
-                          "HİÇ BU KADAR UCUZ OLMAMIŞTI",
+                          "UCUZ VE LEZZETLİ YOLU",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w900,
@@ -86,8 +86,8 @@ class _entranceState extends State<entrance> {
                   ),
                   const SizedBox(height: 10),
                   const Text(
-                    '''             Uygun fiyatlı ürünlerle, 
-gıda israfını önlemeye hemen başla!''',
+                    '''Günlük Listelenen Uygun fiyatlı ürünlerle, 
+     gıda israfını önlemeye hemen başla!''',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -160,7 +160,8 @@ gıda israfını önlemeye hemen başla!''',
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image.asset("assets/google_icon.png"),
+                                Image.asset(
+                                    "assets/images/onboarding/google_icon.png"),
                                 const Flexible(
                                   child: Text(
                                     "Google ile Üye Ol",
