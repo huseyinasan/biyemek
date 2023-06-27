@@ -32,12 +32,12 @@ Bi'Yemek'in sunduğu avantajlar:
 Çevre Dostu: Uygulama çevre dostu çözümü sayesinde gıda israfının önlenmesine katkıda bulunur.
 
 ## Ürün Özellikleri
--Uygulama işletme ve müşteri olmak üzere iki arayüze sahip olacaktır,
--İşletmeler israf olabileceğini düşündüğü yiyeceklerini uygulamaya tanımlayabilecek,
--Kullanıcılar bunları liste veya harita üzerinden görebilecek,
--Anlsaşmalı kurye firmaları aracılığıyla kullanıcılar ürünleri satın alıp sipariş verebilecek,
--Profile x miktar tasarruf ve x miktar CO2 salınımını azaltmaya katkıda bulunduğunu belirtir,
--Kullanıcılar, işletmeleri değerlendirebilecek.
+- Uygulama işletme ve müşteri olmak üzere iki arayüze sahip olacaktır,
+- İşletmeler israf olabileceğini düşündüğü yiyeceklerini uygulamaya tanımlayabilecek,
+- Kullanıcılar bunları liste veya harita üzerinden görebilecek,
+- Anlsaşmalı kurye firmaları aracılığıyla kullanıcılar ürünleri satın alıp sipariş verebilecek,
+- Profile x miktar tasarruf ve x miktar CO2 salınımını azaltmaya katkıda bulunduğunu belirtir,
+- Kullanıcılar, işletmeleri değerlendirebilecek.
 
 ## Hedef Kitle
 
