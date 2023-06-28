@@ -1,20 +1,30 @@
 import 'package:biyemek/screens/home/comments.dart';
 import 'package:biyemek/screens/home/location.dart';
 import 'package:biyemek/screens/home/products.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'notifications.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Future<void> signUserOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+    } catch (e) {
+      print('Error signing out: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -77,6 +87,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
+                    IconButton(
+                      onPressed: signUserOut,
+                      icon: const Icon(Icons.logout),
+                    )
                   ],
                 ),
               ),
@@ -274,6 +288,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+              Text("Merhaba ${user.email}")
             ],
           ),
         ),

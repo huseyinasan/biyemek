@@ -1,4 +1,4 @@
-import 'package:biyemek/screens/onboarding/customer_entrance.dart';
+import 'package:biyemek/screens/onboarding/entrance.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'intro_page_1.dart';
@@ -75,7 +75,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const entrance();
+                                    return const Entrance();
                                   },
                                 ),
                               );

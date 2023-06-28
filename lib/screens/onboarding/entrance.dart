@@ -3,14 +3,14 @@ import 'package:biyemek/screens/login/login_page.dart';
 import 'package:biyemek/screens/register/register.dart';
 import 'package:flutter/material.dart';
 
-class entrance extends StatefulWidget {
-  const entrance({Key? key}) : super(key: key);
+class Entrance extends StatefulWidget {
+  const Entrance({Key? key}) : super(key: key);
 
   @override
-  State<entrance> createState() => _entranceState();
+  State<Entrance> createState() => _EntranceState();
 }
 
-class _entranceState extends State<entrance> {
+class _EntranceState extends State<Entrance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

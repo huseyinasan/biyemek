@@ -20,11 +20,8 @@ dependencies:
   flutter_svg: ^0.22.0
   flutter_animated_icons: ^1.0.1
   firebase_core: ^2.14.0
-
-
-
-
   cupertino_icons: ^1.0.2
+  firebase_auth: ^4.6.3
 
 
 
