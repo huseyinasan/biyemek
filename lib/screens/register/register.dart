@@ -1,14 +1,14 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class signup extends StatefulWidget {
-  const signup({Key? key}) : super(key: key);
+class register extends StatefulWidget {
+  const register({Key? key}) : super(key: key);
 
   @override
-  State<signup> createState() => _signupState();
+  State<register> createState() => _registerState();
 }
 
-class _signupState extends State<signup> {
+class _registerState extends State<register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
