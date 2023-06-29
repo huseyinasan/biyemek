@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class BackButton extends StatelessWidget {
+class BackToButton extends StatelessWidget {
   final Function()? onTap;
 
-  const BackButton({super.key, required this.onTap});
+  BackToButton({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
