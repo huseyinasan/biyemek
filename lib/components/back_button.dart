@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class BackButton extends StatelessWidget {
-  const BackButton({super.key});
+  final Function()? onTap;
+
+  BackButton({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pop(context);
-      },
+      onTap: onTap,
       child: Container(
         width: 50,
         height: 50,

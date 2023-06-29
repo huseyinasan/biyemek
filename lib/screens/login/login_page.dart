@@ -1,3 +1,5 @@
+import 'package:biyemek/components/back_button.dart';
+import 'package:biyemek/screens/onboarding/entrance.dart';
 import 'package:biyemek/screens/register/register_page.dart';
 import 'package:biyemek/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -62,12 +64,14 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(left: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      BackButton(),
+                      BackToButton(
+                        onTap: () => Entrance(),
+                      ),
                     ],
                   ),
                 ),
@@ -213,7 +217,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
