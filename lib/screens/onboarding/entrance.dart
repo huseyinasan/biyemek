@@ -107,7 +107,7 @@ class _EntranceState extends State<Entrance> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return RegisterPage();
+                                    return const RegisterPage();
                                   },
                                 ),
                               );
@@ -215,7 +215,7 @@ class _EntranceState extends State<Entrance> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return LoginPage();
+                            return const LoginPage();
                           },
                         ),
                       );

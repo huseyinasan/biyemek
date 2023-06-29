@@ -11,7 +11,7 @@ class AuthService {
         accessToken: gAuth.accessToken,
         idToken: gAuth.idToken,
       );
-      final UserCredential? userCredential =
+      final UserCredential userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
 
       // Check if the sign-in was successful

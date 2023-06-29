@@ -17,7 +17,7 @@ class _commentsState extends State<comments> {
               padding: const EdgeInsets.all(18.0),
 
               child: AppBar(
-                title: Text(
+                title: const Text(
                   "Yorumlar",
                   style: TextStyle(
                     color: Colors.green,
@@ -26,12 +26,12 @@ class _commentsState extends State<comments> {
                 shape: ContinuousRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),),
 
-                iconTheme: IconThemeData(
+                iconTheme: const IconThemeData(
                   color: Colors.green,
                 ),
 
 
-                backgroundColor: Color(0xFFEDECF5),
+                backgroundColor: const Color(0xFFEDECF5),
 
               ),
             ),

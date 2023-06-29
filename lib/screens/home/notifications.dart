@@ -21,13 +21,13 @@ class _notificationsState extends State<notifications> {
                 PopupMenuButton(
                   itemBuilder: (BuildContext context) {
                     return [
-                      PopupMenuItem(
-                        child: Text('Okunmuş'),
+                      const PopupMenuItem(
                         value: 1,
+                        child: Text('Okunmuş'),
                       ),
-                      PopupMenuItem(
-                        child: Text('Okunmamış'),
+                      const PopupMenuItem(
                         value: 2,
+                        child: Text('Okunmamış'),
                       ),
 
                     ];
@@ -43,7 +43,7 @@ class _notificationsState extends State<notifications> {
                   },
                 ),
               ],
-              title: Text(
+              title: const Text(
                 "Bildirimler",
                 style: TextStyle(
                   color: Colors.green,
@@ -52,12 +52,12 @@ class _notificationsState extends State<notifications> {
               shape: ContinuousRectangleBorder(
                 borderRadius: BorderRadius.circular(40.0),),
 
-              iconTheme: IconThemeData(
+              iconTheme: const IconThemeData(
                 color: Colors.green,
               ),
 
 
-              backgroundColor: Color(0xFFEDECF5),
+              backgroundColor: const Color(0xFFEDECF5),
 
             ),
           ),

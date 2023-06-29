@@ -23,7 +23,7 @@ class _productsState extends State<products> {
                   child: DropdownButton<String>(
                     iconDisabledColor: Colors.grey, // Devre dışıyken ikon rengi
                     iconEnabledColor: Colors.green, // Etkinken ikon rengi
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
 
                     dropdownColor: Colors.green,
 
@@ -46,7 +46,7 @@ class _productsState extends State<products> {
                 ),
               ],
 
-              title: Text(
+              title: const Text(
                 "Ürünlerim",
                 style: TextStyle(
                   color: Colors.green,
@@ -55,12 +55,12 @@ class _productsState extends State<products> {
               shape: ContinuousRectangleBorder(
                 borderRadius: BorderRadius.circular(40.0),),
 
-              iconTheme: IconThemeData(
+              iconTheme: const IconThemeData(
                 color: Colors.green,
               ),
 
 
-              backgroundColor: Color(0xFFEDECF5),
+              backgroundColor: const Color(0xFFEDECF5),
 
             ),
           ),

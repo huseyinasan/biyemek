@@ -9,6 +9,8 @@ import '../../components/my_textfield.dart';
 import '../../components/square_tile.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -65,12 +67,12 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       BackToButton(
-                        onTap: () => Entrance(),
+                        onTap: () => const Entrance(),
                       ),
                     ],
                   ),
@@ -202,7 +204,7 @@ class _LoginPageState extends State<LoginPage> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return RegisterPage();
+                                return const RegisterPage();
                               },
                             ),
                           );

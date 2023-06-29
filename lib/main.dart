@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext) {
     return MaterialApp(
       routes: {
-        '/homepage': (context) => HomeScreen(),
+        '/homepage': (context) => const HomeScreen(),
       },
       debugShowCheckedModeBanner: false,
       title: "Bi'Yemek",

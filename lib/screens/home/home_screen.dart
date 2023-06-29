@@ -8,7 +8,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'notifications.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

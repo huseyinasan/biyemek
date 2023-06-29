@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:biyemek/screens/login/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
+
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
@@ -54,7 +56,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return LoginPage();
+                        return const LoginPage();
                       },
                     ),
                   );
@@ -265,7 +267,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-              Divider(
+              const Divider(
                 color: Color(0xFFE2F3EE),
               ),
               Padding(
@@ -284,7 +286,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return RegisterPage();
+                              return const RegisterPage();
                             },
                           ),
                         );
