@@ -1,3 +1,4 @@
+import 'package:biyemek/screens/register/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../components/my_button.dart';
@@ -5,8 +6,6 @@ import '../../components/my_textfield.dart';
 import '../../components/square_tile.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -181,21 +180,33 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 // not a member? register now
-                const Padding(
-                  padding: EdgeInsets.only(top: 20),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Üye Değilim',
                         style: TextStyle(color: Colors.white),
                       ),
-                      SizedBox(width: 4),
-                      Text(
-                        'Şimdi Üye Ol',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
+                      const SizedBox(width: 10),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return RegisterPage();
+                              },
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Şimdi Üye Ol',
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],

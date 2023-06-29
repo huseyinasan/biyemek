@@ -1,6 +1,6 @@
 import 'package:biyemek/screens/onboarding/introduction_screen.dart';
 import 'package:biyemek/screens/login/login_page.dart';
-import 'package:biyemek/screens/register/register.dart';
+import 'package:biyemek/screens/register/register_page.dart';
 import 'package:flutter/material.dart';
 
 class Entrance extends StatefulWidget {
@@ -106,7 +106,7 @@ class _EntranceState extends State<Entrance> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const register();
+                                    return RegisterPage();
                                   },
                                 ),
                               );
