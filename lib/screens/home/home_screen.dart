@@ -1,6 +1,7 @@
 import 'package:biyemek/screens/home/comments.dart';
 import 'package:biyemek/screens/home/location.dart';
 import 'package:biyemek/screens/home/products.dart';
+import 'package:biyemek/screens/onboarding/entrance.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -24,7 +25,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser!;
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      // User is not signed in, handle this case accordingly
+      return const Entrance(); // Return an empty container or another widget
+    }
     return SafeArea(
       child: Scaffold(
         body: Padding(

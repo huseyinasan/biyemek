@@ -1,6 +1,7 @@
 import 'package:biyemek/screens/onboarding/introduction_screen.dart';
 import 'package:biyemek/screens/login/login_page.dart';
 import 'package:biyemek/screens/register/register_page.dart';
+import 'package:biyemek/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class Entrance extends StatefulWidget {
@@ -140,37 +141,41 @@ class _EntranceState extends State<Entrance> {
                         const SizedBox(
                             width: 20), // Add spacing between the containers
                         Expanded(
-                          child: Container(
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFE2F3EE),
-                              borderRadius: BorderRadius.circular(30),
-                              border:
-                                  Border.all(color: const Color(0xFFA1E7D2)),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
-                                  blurRadius: 5,
-                                  offset: const Offset(0, 3),
-                                ),
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                    "assets/images/onboarding/google_icon.png"),
-                                const Flexible(
-                                  child: Text(
-                                    "Google ile Üye Ol",
-                                    style: TextStyle(fontSize: 16),
-                                    overflow: TextOverflow
-                                        .clip, // Truncate text if it overflows
+                          child: GestureDetector(
+                            onTap: () =>
+                                AuthService().signInWithGoogle(context),
+                            child: Container(
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFE2F3EE),
+                                borderRadius: BorderRadius.circular(30),
+                                border:
+                                    Border.all(color: const Color(0xFFA1E7D2)),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 2,
+                                    blurRadius: 5,
+                                    offset: const Offset(0, 3),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
+                              alignment: Alignment.center,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                      "assets/images/onboarding/google_icon.png"),
+                                  const Flexible(
+                                    child: Text(
+                                      "Google ile Üye Ol",
+                                      style: TextStyle(fontSize: 16),
+                                      overflow: TextOverflow
+                                          .clip, // Truncate text if it overflows
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),

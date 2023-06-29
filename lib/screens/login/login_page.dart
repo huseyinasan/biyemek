@@ -1,4 +1,5 @@
 import 'package:biyemek/screens/register/register_page.dart';
+import 'package:biyemek/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../components/my_button.dart';
@@ -76,7 +77,6 @@ class _LoginPageState extends State<LoginPage> {
                   width: 150,
                   height: 150,
                 ),
-                // welcome back, you've been missed!
                 Text(
                   'Hoş Geldin',
                   style: TextStyle(
@@ -161,21 +161,23 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 // google + apple sign in buttons
-                const Padding(
-                  padding: EdgeInsets.only(top: 10),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // google button
                       SquareTile(
+                        onTap: () => AuthService().signInWithGoogle(context),
                         imagePath: 'assets/images/onboarding/google_icon.png',
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 25,
                       ),
                       SquareTile(
+                        onTap: () {},
                         imagePath: "assets/images/onboarding/intro2.png",
-                      )
+                      ),
                     ],
                   ),
                 ),
