@@ -72,7 +72,16 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       BackToButton(
-                        onTap: () => const Entrance(),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Entrance();
+                              },
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),

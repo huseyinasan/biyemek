@@ -293,7 +293,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Text("Merhaba ${user.email}")
+              Text("Merhaba ${user.displayName}")
             ],
           ),
         ),
