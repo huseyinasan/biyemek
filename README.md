@@ -32,26 +32,27 @@ Bi'Yemek'in sunduğu avantajlar:
 Çevre Dostu: Uygulama çevre dostu çözümü sayesinde gıda israfının önlenmesine katkıda bulunur.
 
 ## Ürün Özellikleri
--Uygulama işletme ve müşteri olmak üzere iki arayüze sahip olacaktır,
--İşletmeler israf olabileceğini düşündüğü yiyeceklerini uygulamaya tanımlayabilecek,
--Kullanıcılar bunları liste veya harita üzerinden görebilecek,
--Anlsaşmalı kurye firmaları aracılığıyla kullanıcılar ürünleri satın alıp sipariş verebilecek,
--Profile x miktar tasarruf ve x miktar CO2 salınımını azaltmaya katkıda bulunduğunu belirtir,
--Kullanıcılar, işletmeleri değerlendirebilecek.
+- Uygulama işletme ve müşteri olmak üzere iki arayüze sahip olacaktır,
+- İşletmeler israf olabileceğini düşündüğü yiyeceklerini uygulamaya tanımlayabilecek,
+- Kullanıcılar bunları liste veya harita üzerinden görebilecek,
+- Anlsaşmalı kurye firmaları aracılığıyla kullanıcılar ürünleri satın alıp sipariş verebilecek,
+- Profile x miktar tasarruf ve x miktar CO2 salınımını azaltmaya katkıda bulunduğunu belirtir,
+- Kullanıcılar, işletmeleri değerlendirebilecek.
 
 ## Hedef Kitle
 
-- Müşteri olarak çoğunlukla 18 - 45 yaş arası;
+### Müşteri olarak çoğunlukla 18 - 45 yaş arası:
 - Uygun fiyata gıda ürünleri satın almak istyenler,
-- Gıda israfını önlenmesine katkıda bulunmak isteyenler,
-- İşletme olarak;
-- Fazla gıda stoğu veren restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcıları,
+- Gıda israfını önlenmesine katkıda bulunmak isteyenler.
+### İşletme olarak:
+- Fazla gıda stoğu veren restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcıları.
 
 ## Sprint 1
 
 - Sprint içinde tamamlanması tahmin edilen puan: 100 Puan
 
 Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
+
 
 Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [daily scrum](https://drive.google.com/file/d/1weUME5x6OvJ8cJVvPc7w52LMkDeJhknb/view?usp=sharing)
 
@@ -81,9 +82,19 @@ https://github.com/huseyinasan/biyemek/assets/124069940/1c0d8ff6-fa23-478c-b46d-
 ## Sprint Review:
 
 Alınan kararlar: gidişat değerlendirilmiş ve ilk scripteki hedefler tamamlanmıştır ilerlememize yönelik revizasyonlar yapılmıştır.
-- Sprint Review katılımcıları:  Cihat Mehmet ORDUL
- Hüseyin ASAN Beyza ÖZDEMİR
- Merve YILMAZ  Mehmet Akif DADAŞOĞLU
+
+Sprint Review katılımcıları:
+- Cihat Mehmet ORDUL
+- Hüseyin ASAN
+- Beyza ÖZDEMİR
+- Merve YILMAZ
+- Mehmet Akif DADAŞOĞLU
+
+## Sprint Notu:
+
+ilk sprintte tasarıma yoğunlaşma kararlaştırılmıştır uygulama giriş ekranı menü sayfaların tasarımları yapılmıştır bu sprinte puanlamamız tasarım üzerinden verilmiştir.
+herkesin takvimi incelenmiş ve ona bu şartlara göre çalışma planı yapılmıştır.discord üzerinden haberleşilmiş ve buluşmalar düzenlenmiştir .ilk günler fikir belirlenmiş ve ilk sprintin puanlamasının
+tasarım üstüne olacağı karar kılınmıştır.
 
 # Sprint Retrospective:
 
@@ -92,5 +103,5 @@ ileriye dönük hedefler belirlenmiştir.
 Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
 
 # Product Backlog URL
-[Flutter Team 25 Miro Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
+[Flutter Team 25 Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
 
