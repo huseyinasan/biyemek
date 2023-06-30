@@ -40,14 +40,14 @@ class _loginState extends State<login> {
               const SizedBox(height: 20),
 
 
-              const Image(image: AssetImage('assets/login.png'),
-
-
-              ),
+              const Image(image: AssetImage('assets/login.png'),),
               BackdropFilter(
+
+
                 filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
                 child: Container(
                   color: Colors.transparent,
+
                 ),
               ),
 
