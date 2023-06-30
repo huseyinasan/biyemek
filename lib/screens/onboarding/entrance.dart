@@ -141,34 +141,44 @@ class _EntranceState extends State<Entrance> {
                         const SizedBox(
                             width: 20), // Add spacing between the containers
                         Expanded(
-                          child: Container(
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFA1E7D2),
-                              borderRadius: BorderRadius.circular(30),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
-                                  blurRadius: 5,
-                                  offset: const Offset(0, 3),
-                                ),
-                              ],
-                            ),
-                            child: const Center(
-                              child: Text(
-                                "Giriş Yap",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
+                          child: GestureDetector(
+                            onTap: () =>
+                                AuthService().signInWithGoogle(context),
+                            child: Container(
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFE2F3EE),
+                                borderRadius: BorderRadius.circular(30),
+                                border:
+                                    Border.all(color: const Color(0xFFA1E7D2)),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 2,
+                                    blurRadius: 5,
+                                    offset: const Offset(0, 3),
+                                  ),
+                                ],
+                              ),
+                              alignment: Alignment.center,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                      "assets/images/onboarding/google_icon.png"),
+                                  const Flexible(
+                                    child: Text(
+                                      "Google ile Üye Ol",
+                                      style: TextStyle(fontSize: 16),
+                                      overflow: TextOverflow
+                                          .clip, // Truncate text if it overflows
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                  ),
                       ],
                     ),
                   ),
@@ -199,42 +209,40 @@ class _EntranceState extends State<Entrance> {
                       ),
                     ],
                   ),
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const LoginPage();
-                            },
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const LoginPage();
+                          },
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Expanded(
+                        child: Container(
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFA1E7D2),
+                            borderRadius: BorderRadius.circular(30),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 2,
+                                blurRadius: 5,
+                                offset: const Offset(0, 3),
+                              ),
+                            ],
                           ),
-                        );
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Expanded(
-                          child: Container(
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFA1E7D2),
-                              borderRadius: BorderRadius.circular(30),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
-                                  blurRadius: 5,
-                                  offset: const Offset(0, 3),
-                                ),
-                              ],
-                            ),
-                            child: const Center(
-                              child: Text(
-                                "Giriş Yap",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
+                          child: const Center(
+                            child: Text(
+                              "Giriş Yap",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
                               ),
                             ),
                           ),
