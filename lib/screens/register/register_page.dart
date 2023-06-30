@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +29,8 @@ class _RegisterPageState extends State<RegisterPage> {
       String email = emailController.text;
       String password = passwordController.text;
       String name = nameController.text;
+      String surname = surnameController.text;
+      String phone = phoneController.text;
 
       UserCredential userCredential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -34,15 +38,17 @@ class _RegisterPageState extends State<RegisterPage> {
         password: password,
       );
 
+      // Additional user registration logic goes here
+
       // Get the newly created user's UID
       String uid = userCredential.user!.uid;
 
       // Store the user's name in Firestore
       await FirebaseFirestore.instance.collection('users').doc(uid).set({
         'name': name,
+        'surname': surname,
+        'phone': phone,
       });
-
-      // Additional user registration logic goes here
 
       // Clear form fields after successful registration
       nameController.clear();
