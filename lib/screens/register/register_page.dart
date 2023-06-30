@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +28,7 @@ class _RegisterPageState extends State<RegisterPage> {
       String password = passwordController.text;
       String name = nameController.text;
       String surname = surnameController.text;
-      String phone = phoneController.text;
+      int phone = int.parse(phoneController.text);
 
       UserCredential userCredential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -50,6 +48,8 @@ class _RegisterPageState extends State<RegisterPage> {
         'phone': phone,
       });
 
+      String succesName = nameController.text;
+
       // Clear form fields after successful registration
       nameController.clear();
       surnameController.clear();
@@ -64,7 +64,7 @@ class _RegisterPageState extends State<RegisterPage> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: const Text('Üyelik Başarılı'),
-            content: const Text('Başarıyla üye oldun!'),
+            content: Text("Tebrikler Başarıyla üye oldun ${succesName} !"),
             actions: <Widget>[
               ElevatedButton(
                 onPressed: () {
@@ -86,13 +86,13 @@ class _RegisterPageState extends State<RegisterPage> {
     } catch (e) {
       print('Error registering user: $e');
 
-      String errorMessage = 'An error occurred. Please try again.';
+      String errorMessage = 'Bir hata oluştu lütfen tekrar deneyin.';
 
       if (e is FirebaseAuthException) {
         if (e.code == 'email-already-in-use') {
-          errorMessage = 'The email address is already in use.';
+          errorMessage = 'E-mail zaten kullanımda.';
         } else if (e.code == 'weak-password') {
-          errorMessage = 'The password provided is too weak.';
+          errorMessage = 'Şifre çok zayıf.';
         }
       }
 
@@ -111,13 +111,13 @@ class _RegisterPageState extends State<RegisterPage> {
 
     if (password.isEmpty || confirmPassword.isEmpty) {
       setState(() {
-        passwordErrorText = 'Password fields cannot be empty.';
-        confirmPasswordErrorText = 'Password fields cannot be empty.';
+        passwordErrorText = 'Şifre alanı boş olamaz.';
+        confirmPasswordErrorText = 'Şifre alanı boş olamaz.';
       });
     } else if (password != confirmPassword) {
       setState(() {
-        passwordErrorText = 'Passwords do not match.';
-        confirmPasswordErrorText = 'Passwords do not match.';
+        passwordErrorText = 'Şifreler uyuşmuyor.';
+        confirmPasswordErrorText = 'Şifreler uyuşmuyor.';
       });
     } else {
       setState(() {
