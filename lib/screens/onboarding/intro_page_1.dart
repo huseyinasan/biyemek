@@ -17,7 +17,7 @@ class IntroPage1 extends StatelessWidget {
                 width: 350,
                 height: 350,
               ),
-              const Padding(
+               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Column(
                   children: [

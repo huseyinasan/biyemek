@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Row(
+                    Row(
                       children: [
                         Icon(
                           Icons.location_on_rounded,
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           shape: BoxShape.rectangle,
                           color: Colors.green,
                         ),
-                        child: const Row(
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
@@ -142,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             borderRadius: BorderRadius.circular(20.0),
                             color: Colors.black12,
                           ),
-                          child: const Column(
+                          child: Column(
                             children: [
                               Text(
                                 "Money Saved ",
@@ -168,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: BorderRadius.circular(20.0),
                           color: Colors.black12,
                         ),
-                        child: const Column(
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
@@ -219,7 +219,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           );
                         },
-                        child: const Row(
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Icon(
@@ -268,7 +268,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           shape: BoxShape.rectangle,
                           color: Colors.green,
                         ),
-                        child: const Row(
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Icon(

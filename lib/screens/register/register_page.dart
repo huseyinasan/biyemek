@@ -1,5 +1,7 @@
-import 'dart:ffi';
 
+
+import 'package:biyemek/components/back_button.dart';
+import 'package:biyemek/screens/onboarding/entrance.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -137,14 +139,28 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5),
-                    child: BackButton(),
-                  ),
-                ],
+            
+               SafeArea(
+                 child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5),
+                      child: BackToButton(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Entrance();
+                              },
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
               ),
+               ),
               const Padding(
                 padding: EdgeInsets.only(bottom: 10),
                 child: Center(
