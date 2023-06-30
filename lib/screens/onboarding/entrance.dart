@@ -57,7 +57,7 @@ class _EntranceState extends State<Entrance> {
                     fit: BoxFit.cover, // Resmi sığdırma şekli
                   ),
                   const SizedBox(height: 20),
-                  const Padding(
+                   Padding(
                     padding: EdgeInsets.only(
                       left: 10,
                       right: 10,

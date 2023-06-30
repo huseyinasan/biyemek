@@ -106,7 +106,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                                   duration: (const Duration(milliseconds: 500)),
                                   curve: Curves.easeIn);
                             },
-                            child: const Row(
+                            child:  Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Icon(
