@@ -106,5 +106,14 @@ Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı al
 [Flutter Team 25 Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
 
 ## SPRİNT 2
-jj
+Sprint içinde tamamlanması tahmin edilen puan: 50 Puan
 
+Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: 
+[Sprint 2 Daily Scrum Chats](https://github.com/huseyinasan/biyemek/files/11931297/sprint.2.docx)
+
+Sprint board update: Sprint board screenshotları:
+
+![sprint 2 görsel 3](https://github.com/huseyinasan/biyemek/assets/124069940/9c0f6b38-986b-467f-aa2f-54aecaa1fad2)
+![sprint 2 görsel 4](https://github.com/huseyinasan/biyemek/assets/124069940/50a9d981-c3bd-40f9-bf6c-52b1c8f2a9c0)
+![sprint 2 görsel](https://github.com/huseyinasan/biyemek/assets/124069940/81048988-0029-4599-b1dd-0b2f2918ac83)
+![sprint 2 görsel 2](https://github.com/huseyinasan/biyemek/assets/124069940/2a8e6d2a-2479-4323-9dac-400488962d1c)
