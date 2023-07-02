@@ -6,63 +6,63 @@ class notifications extends StatefulWidget {
   State<notifications> createState() => _notificationsState();
 }
 
-class _notificationsState extends State<notifications> {
+class _notificationsState extends State<notifications> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      appBar: AppBar(
+        actions: [
 
+        ],
+        title: const Text(
+          "Bildirimler",
+          style: TextStyle(
+            color: Colors.green,
+          ),
+        ),
+        shape: ContinuousRectangleBorder(
+          borderRadius: BorderRadius.circular(40.0),),
+
+        iconTheme: const IconThemeData(
+          color: Colors.green,
+        ),
+
+
+        backgroundColor: const Color(0xFFEDECF5),
+
+      ),
+      body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(18.0),
-
-            child: AppBar(
-              actions: [
-                PopupMenuButton(
-                  itemBuilder: (BuildContext context) {
-                    return [
-                      const PopupMenuItem(
-                        value: 1,
-                        child: Text('Okunmuş'),
-                      ),
-                      const PopupMenuItem(
-                        value: 2,
-                        child: Text('Okunmamış'),
-                      ),
-
-                    ];
-                  },
-                  onSelected: (value) {
-                    if (value == 1) {
-
-                    } else if (value == 2) {
-
-                    }
-
-
-                  },
-                ),
+          TabBar(
+            controller: _tabController,
+            tabs: [
+              Tab(text: 'Cevap Bekleyenler',
+              ),
+              Tab(text: 'Cevaplananlar'),
+            ],
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                Center(child: Text('İçerik 1')),
+                Center(child: Text('İçerik 2')),
               ],
-              title: const Text(
-                "Bildirimler",
-                style: TextStyle(
-                  color: Colors.green,
-                ),
-              ),
-              shape: ContinuousRectangleBorder(
-                borderRadius: BorderRadius.circular(40.0),),
-
-              iconTheme: const IconThemeData(
-                color: Colors.green,
-              ),
-
-
-              backgroundColor: const Color(0xFFEDECF5),
-
             ),
           ),
-
-
         ],
       ),
     );
