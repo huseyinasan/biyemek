@@ -123,3 +123,29 @@ Sprint board update: Sprint board screenshotları:
 ![sprint 2 görsel 4](https://github.com/huseyinasan/biyemek/assets/124069940/50a9d981-c3bd-40f9-bf6c-52b1c8f2a9c0)
 ![sprint 2 görsel](https://github.com/huseyinasan/biyemek/assets/124069940/81048988-0029-4599-b1dd-0b2f2918ac83)
 ![sprint 2 görsel 2](https://github.com/huseyinasan/biyemek/assets/124069940/2a8e6d2a-2479-4323-9dac-400488962d1c)
+
+## Sprint Review:
+
+Alınan kararlar: gidişat değerlendirilmiş ve ilk scripteki hedefler tamamlanmıştır ilerlememize yönelik revizasyonlar yapılmıştır.
+
+Sprint Review katılımcıları:
+- Cihat Mehmet ORDUL
+- Hüseyin ASAN
+- Beyza ÖZDEMİR
+- Merve YILMAZ
+- Mehmet Akif DADAŞOĞLU
+
+## Sprint Notu:
+
+ilk sprintte tasarıma yoğunlaşma kararı alınmıştı 2.sprint 50 puan verdik bu puanı vermemizin sebebi takım içirisindeki üyelerin sınavları olması ve kurban bayramı yüzünden meşguliyetimiz dolayısıyla çok değişiklik yapmadık. 
+- bu sprinte yapılanlar : tasarımlar geliştirildi , giriş ekranı hazırlandı, kod yazılımına başandı firebase kurulumu tamamlanda firebase de data oluşturulması yapıldı.
+- 
+
+# Sprint Retrospective:
+
+Roller ile ilgili düzenleme yapılmıştır.
+ileriye dönük hedefler belirlenmiştir.
+Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
+
+# Product Backlog URL
+[Flutter Team 25 Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
