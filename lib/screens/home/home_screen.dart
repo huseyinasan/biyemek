@@ -17,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentStep=0;
   int _currentIndex = 0;
   late PageController _pageController;
   @override
@@ -74,8 +75,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           );
                         },
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                           children: [
+                            SizedBox(width:10 ),
                             Row(
                               children: [
                                 Icon(
@@ -93,6 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ],
                             ),
+                            SizedBox(width:70 ),
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -129,9 +132,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Container(
                                 height: 50,
                                 decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Color(0xFFBE7CB4),
+                                    width: 1.0,
+                                  ),
                                   borderRadius: BorderRadius.circular(20.0),
                                   shape: BoxShape.rectangle,
-                                  color: Colors.green,
+                                  color: Color(0xFFDBB7D6),
                                 ),
                                 child: Row(
                                   mainAxisAlignment:
@@ -154,15 +161,114 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
+
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
                         children: [
-                          SizedBox(width: 20),
-                          Column(),
-                          SizedBox(width: 10),
-                          Column()
+
+                          SizedBox(width:15 ),
+
+
+                          Expanded(
+                            child: Container(
+                              width: 110,
+                              height: 110,
+
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Color(0xFFBE7CB4),
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color(0xFFDBB7D6),
+
+                              ),
+                              child: Column(
+                                children: [
+                                    SizedBox(height:10 ),
+                                  Text("Money Saved",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.white
+                                  ),),
+                                  Image.asset("assets/images/img_1.png",
+                                  width: 48,
+                                  height: 48,
+                                  color: Color(0xFFBE7CB4),),
+
+                                  Expanded(
+                                    child: Row(
+                                      children: [
+                                        SizedBox(width:40 ),
+                                        Icon(Icons.currency_lira_outlined,
+
+                                        color: Color(0xFFBE7CB4),
+                                        ),
+                                        Text("200",
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          color: Color(0xFFBE7CB4)
+                                        ),),
+                                      ],
+                                    ),
+                                  ),
+
+
+
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          SizedBox(width:20 ),
+                          Expanded(child: Container(
+                            width: 110,
+                            height: 110,
+
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Color(0xFFBE7CB4),
+                                width: 1.0,
+                              ),
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color(0xFFDBB7D6)
+                            ),
+                            child: Column(
+                              children: [
+                                SizedBox(height:10 ),
+                                Text("CO2 Saved",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.white
+                                  ),),
+
+                                Icon(Icons.co2_outlined,
+                                color:Color(0xFFBE7CB4) ,
+                                size: 50,),
+
+                                SizedBox(width:40 ),
+
+                                Text("33 Kg",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Color(0xFFBE7CB4)
+                                  ),),
+
+
+
+                              ],
+                            ),
+
+                          ),
+
+                          ),
+                          SizedBox(width: 15),
+
+
+
                         ],
                       ),
+
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Row(
@@ -171,9 +277,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Container(
                                 height: 50,
                                 decoration: BoxDecoration(
+
                                   borderRadius: BorderRadius.circular(20.0),
                                   shape: BoxShape.rectangle,
-                                  color: Colors.green,
+                                  color: Color(0xFFDBB7D6)
                                 ),
                                 child: GestureDetector(
                                   onTap: () {
@@ -214,6 +321,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
+
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: GestureDetector(
@@ -233,9 +341,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Container(
                                   height: 50,
                                   decoration: BoxDecoration(
+
                                     borderRadius: BorderRadius.circular(20.0),
                                     shape: BoxShape.rectangle,
-                                    color: Colors.green,
+                                    color: Color(0xFFDBB7D6)
                                   ),
                                   child: Row(
                                     mainAxisAlignment:
@@ -265,32 +374,249 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      Text("Merhaba ${user.displayName}")
+
+                      Expanded(
+
+                        child: Container(
+
+                          decoration: BoxDecoration(
+
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.black12.withOpacity(0.1),
+                          ),
+
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Sütunları yatayda hizalamak için
+                            children: <Widget>[
+
+                              Column(
+                                children: [
+                                  SizedBox(height: 10),
+
+                                  Expanded(
+                                    child: Container(
+                                      width: 150,
+                                      height: 200,
+
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          width: 1.0,
+                                          color: Color(0xFFBE7CB4),
+                                        ),
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: Color(0xFFDBB7D6)
+
+                                      ),
+                                      
+                                      child: Column(
+                                        children: [
+                                          SizedBox(height: 15),
+                                          Text(
+                                        "Bekleyen",
+                                            style: TextStyle(
+                                              color: Color(0xFFBE7CB4),
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                          Text(
+                                              "Siparişler",
+                                            style: TextStyle(
+                                              color: Color(0xFFBE7CB4),
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                          SizedBox(height: 5),
+                                          Text(
+                                              "0 Adet",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 22,
+                                            ),
+                                          ),
+
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height:5 ),
+                                  Expanded(child:Container(
+                                    width: 150,
+                                    height: 200,
+
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        width: 1.0,
+                                        color: Color(0xFFBE7CB4),
+                                      ),
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: Color(0xFFDBB7D6)
+
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 15),
+                                        Text(
+                                          "Aktif",
+                                          style: TextStyle(
+                                            color: Color(0xFFBE7CB4),
+                                            fontSize: 15,
+                                          ),
+                                        ),
+                                        Text(
+                                          "Ürünler",
+                                          style: TextStyle(
+                                            color: Color(0xFFBE7CB4),
+                                            fontSize: 15,
+                                          ),
+                                        ),
+                                        SizedBox(height: 5),
+                                        Text(
+                                          "0 Adet",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 22,
+                                          ),
+                                        ),
+
+                                      ],
+                                    ),
+
+                                  ),
+                                  ),
+                                  SizedBox(height: 10),
+                                ],
+                              ),
+
+
+
+                              Column(
+                                children: [
+                                  SizedBox(height: 10),
+                                  Expanded(
+                                    child: Container(
+                                      width: 150,
+                                      height: 150,
+
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Color(0xFFBE7CB4),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: Color(0xFFDBB7D6)
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          SizedBox(height: 15),
+                                          Text(
+                                            "Gönderilen",
+                                            style: TextStyle(
+                                              color: Color(0xFFBE7CB4),
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                          Text(
+                                            "Siparişler",
+                                            style: TextStyle(
+                                              color: Color(0xFFBE7CB4),
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                          SizedBox(height: 5),
+                                          Text(
+                                            "0 Adet",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 22,
+                                            ),
+                                          ),
+
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height:5 ),
+
+                                  Expanded(child:Container(
+                                    width: 150,
+                                    height: 150,
+
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Color(0xFFBE7CB4),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Color(0xFFDBB7D6)
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(height: 15),
+                                        Text(
+                                          "Gönderilen",
+                                          style: TextStyle(
+                                            color: Color(0xFFBE7CB4),
+                                            fontSize: 15,
+                                          ),
+                                        ),
+                                        Text(
+                                          "Ürünler",
+                                          style: TextStyle(
+                                            color: Color(0xFFBE7CB4),
+                                            fontSize: 15,
+                                          ),
+                                        ),
+                                        SizedBox(height: 5),
+                                        Text(
+                                          "0 Adet",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 22,
+                                          ),
+                                        ),
+
+                                      ],
+                                    ),
+                                  ), ),
+                                  SizedBox(height: 10),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
               Column(children: [
-                SizedBox(height: 15),
-                Row(children: [
-                  SizedBox(width: 70),
-                  Image.asset(
-                    'assets/images/img.png',
-                    width: 50,
-                    height: 50,
-                  ),
-                  SizedBox(width: 40),
-                  Text("Ürün Bilgileri",
-                      style: TextStyle(
-                        fontSize: 22,
-                      )),
-                ]),
-                Padding(
-                  padding: EdgeInsets.only(left: 55),
-                  child: CustomPaint(
-                    painter: LinePainter(),
-                    size: Size(150, 1),
-                  ),
+                Stepper(steps: [
+                  Step(title: Text("Ürün Bilgileri"), content: Text(""),),
+
+
+                  Step(title: Text("Ürün Özellikleri"),content: Text("")),
+                ],
+                onStepTapped: (int newIndex){
+                  setState(() {
+                    _currentStep=newIndex;
+                  });
+                },
+                currentStep: _currentStep,
+                  onStepContinue: (){
+                  if(_currentStep !=2){
+                    setState(() {
+                      _currentStep +=1;
+                    });
+                  }
+                  },
+                  onStepCancel: (){
+                  if(_currentStep !=0){
+                    setState(() {
+                      _currentStep -=1;
+                    });
+
+                     }
+                  },
                 )
               ]),
               SingleChildScrollView(
@@ -475,7 +801,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ]),
         bottomNavigationBar: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
           child: Container(
             width: 130,
             height: 87,
@@ -520,6 +846,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
+
       ),
     );
   }
