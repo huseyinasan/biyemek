@@ -113,6 +113,12 @@ Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsa
 
 Sprint board update: Sprint board screenshotları:
 
+
+![sprint 2 görsel 5](https://github.com/huseyinasan/biyemek/assets/124069940/4385cf25-c0b5-41b3-91ea-fcb1a6a61dad)
+
+
+Ürün Durumu: Ekran görüntüleri:
+
 ![sprint 2 görsel 3](https://github.com/huseyinasan/biyemek/assets/124069940/9c0f6b38-986b-467f-aa2f-54aecaa1fad2)
 ![sprint 2 görsel 4](https://github.com/huseyinasan/biyemek/assets/124069940/50a9d981-c3bd-40f9-bf6c-52b1c8f2a9c0)
 ![sprint 2 görsel](https://github.com/huseyinasan/biyemek/assets/124069940/81048988-0029-4599-b1dd-0b2f2918ac83)
