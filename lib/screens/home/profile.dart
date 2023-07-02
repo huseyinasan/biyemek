@@ -33,61 +33,198 @@ class _profileState extends State<profile> {
           SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.only(left: 30,right: 30),
-            child: Expanded(
+            child: Column(
+              children: [
+                Container(
+                  height: 50,
 
-                child:
-                  Column(
-                    children: [
-                      Container(
-                        height: 50,
-
-                        child:     Padding(
-                          padding: const EdgeInsets.only(left: 20,top: 10),
-                          child: Text("Ad Soyad",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white
-                          ),),
-                        ),
-
-
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Color.fromRGBO(119, 204, 179, 1.0),
-                          shape: BoxShape.rectangle,
-
-                        ),
-
-                      ),
-
-                      Container(
-                        height: 50,
-
-                        child:     Padding(
-                          padding: const EdgeInsets.only(left: 20,top: 10),
-                          child: Text("Ad Soyad",
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white
-                            ),),
-                        ),
-
-
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Color.fromRGBO(119, 204, 179, 1.0),
-                          shape: BoxShape.rectangle,
-
-                        ),
-
-                      ),
-                    ],
+                  child:     Center(
+                    child: Text("Ad Soyad",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white
+                    ),),
                   ),
 
 
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(119, 204, 179, 1.0),
+                    shape: BoxShape.rectangle,
+
+                  ),
+
+                ),
+                SizedBox(height:15),
+
+                Container(
+                  height: 50,
+
+                  child:     Center(
+                    child: Text("90+ Telefon Numarası",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white
+                      ),),
+                  ),
 
 
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(119, 204, 179, 1.0),
+                    shape: BoxShape.rectangle,
 
+                  ),
+
+                ),
+                SizedBox(height:15),
+                Container(
+                  height: 50,
+
+                  child:     Center(
+                    child: Text("TC Kimlik No",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white
+                      ),),
+                  ),
+
+
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(119, 204, 179, 1.0),
+                    shape: BoxShape.rectangle,
+
+                  ),
+
+                ),
+                SizedBox(height:15),
+                Container(
+                  height: 50,
+
+                  child:     Center(
+                    child: Text("İşletme Adı",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white
+                      ),),
+                  ),
+
+
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(119, 204, 179, 1.0),
+                    shape: BoxShape.rectangle,
+
+                  ),
+
+                ),
+                SizedBox(height:15),
+                Container(
+                  height: 50,
+
+                  child:     Center(
+                    child: Text("İşletme Adresi",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white
+                      ),),
+                  ),
+
+
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(119, 204, 179, 1.0),
+                    shape: BoxShape.rectangle,
+
+                  ),
+
+                ),
+                SizedBox(height:15),
+                Container(
+                  height: 50,
+
+                  child:     Center(
+                    child: Text("Vergi Numarası",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white
+                      ),),
+                  ),
+
+
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(119, 204, 179, 1.0),
+                    shape: BoxShape.rectangle,
+
+                  ),
+
+                ),
+                SizedBox(height:15),
+                Container(
+                  height: 50,
+
+                  child:     Center(
+                    child: Text("İşletme Türü",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white
+                      ),),
+                  ),
+
+
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(119, 204, 179, 1.0),
+                    shape: BoxShape.rectangle,
+
+                  ),
+
+                ),
+                SizedBox(height:15),
+                Container(
+                  height: 50,
+
+                  child:     Center(
+                    child: Text("E-mail",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white
+                      ),),
+                  ),
+
+
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(119, 204, 179, 1.0),
+                    shape: BoxShape.rectangle,
+
+                  ),
+
+                ),
+                SizedBox(height:15),
+                Container(
+                  height: 50,
+
+                  child:     Center(
+                    child: Text("Şifre",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white
+                      ),),
+                  ),
+
+
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromRGBO(119, 204, 179, 1.0),
+                    shape: BoxShape.rectangle,
+
+                  ),
+
+                ),
+              ],
             ),
           )
         ],

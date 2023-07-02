@@ -132,6 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Expanded(
                             child: Container(
+                              height: 50,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20.0),
                                 shape: BoxShape.rectangle,
@@ -160,75 +161,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        SizedBox(width:20 ),
                         Column(
-                          children: [
-                            Container(
-                                width: 170,
-                                height: 150,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  color: Colors.black12,
-                                ),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      "Money Saved ",
-                                      style: TextStyle(
-                                        color: Colors.green,
-                                      ),
-                                    ),
-                                    Icon(
-                                      Icons.savings_outlined,
-                                      color: Colors.green,
-                                      size: 80,
-                                    )
-                                  ],
-                                ))
-                          ],
+
                         ),
+                        SizedBox(width:10 ),
                         Column(
-                          children: [
-                            Container(
-                              width: 170,
-                              height: 150,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20.0),
-                                color: Colors.black12,
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "CO2 SAVED",
-                                    style: TextStyle(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                  Icon(
-                                    Icons.co2_sharp,
-                                    size: 80,
-                                    color: Colors.green,
-                                  ),
-                                  Text(
-                                    "33 Kg",
-                                    style: TextStyle(
-                                      color: Colors.green,
-                                      fontSize: 20,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
+
                         )
                       ],
                     ),
+
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
                         children: [
                           Expanded(
                             child: Container(
+                              height: 50,
 
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20.0),
@@ -289,6 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Row(
                           children: [Expanded(
                             child: Container(
+                              height:50,
 
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20.0),
@@ -328,8 +279,37 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
 
             ),
-            Container(
-              color: Color(0xFFFAFAFA),
+            Column(
+              children:[
+                SizedBox(height: 15),
+                Row(
+                  children:[
+                    SizedBox(width:70 ),
+                    Image.asset('assets/images/img.png',
+                  width: 50,
+                  height: 50,),
+                    SizedBox(width:40 ),
+                    Text("Ürün Bilgileri",
+                    style: TextStyle(
+                      fontSize: 22,
+
+                    )),
+
+    
+                  
+                ]),
+
+
+                Padding(
+                  padding: EdgeInsets.only(left: 55),
+                  child: CustomPaint(
+                    painter: LinePainter(),
+                    size: Size(150, 1),
+                  ),
+                )
+               
+              ]
+              
             ),
             Column(
               children: [
@@ -583,6 +563,22 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+}
+class LinePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = Colors.black
+      ..strokeWidth = 1;
+
+    final startPoint = Offset(0, size.height / 2);
+    final endPoint = Offset(size.width, size.height / 2);
+
+    canvas.drawLine(startPoint, endPoint, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
 
 

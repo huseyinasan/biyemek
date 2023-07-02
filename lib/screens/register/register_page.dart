@@ -1,10 +1,10 @@
-<<<<<<< HEAD
-=======
+
+
 
 
 import 'package:biyemek/components/back_button.dart';
 import 'package:biyemek/screens/onboarding/entrance.dart';
->>>>>>> 99b21a6c318027ffe1c1518ba0fe3fefff01c4ac
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
