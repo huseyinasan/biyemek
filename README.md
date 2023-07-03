@@ -106,7 +106,9 @@ Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı al
 [Flutter Team 25 Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
 
 ## SPRİNT 2
-Sprint içinde tamamlanması tahmin edilen puan: 50 Puan
+#Sprint içinde tamamlanması tahmin edilen puan: 50 Puan
+
+- #Puan tamamlama mantığı:ilk sprintte tasarıma yoğunlaşma kararı alınmıştı 2.sprint 50 puan verdik bu puanı vermemizin sebebi takım içirisindeki üyelerin sınavları olması ve kurban bayramı yüzünden meşguliyetimiz dolayısıyla çok değişiklik yapılmayacak olması.
 
 Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: 
 [Sprint 2 Daily Scrum Chats](https://github.com/huseyinasan/biyemek/files/11931297/sprint.2.docx)
