@@ -6,35 +6,39 @@ class IntroPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE2F3EE),
+      backgroundColor: const Color(0xFFADDE85),
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
-              const SizedBox(height: 100),
+              SizedBox(height: 60),
+
               Image.asset(
                 'assets/images/onboarding/intro1.png',
-                width: 350,
-                height: 350,
+                width: 400,
+                height: 400,
               ),
+               SizedBox(height: 10),
                Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Column(
                   children: [
+
                     Text(
                       "Bi'Yemek",
                       style: TextStyle(
                         fontSize: 24,
-                        color: Colors.green,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                       overflow: TextOverflow.clip,
                     ),
+                    SizedBox(height:20 ),
                     Text(
-                      "İsrafı önlemenin en ucuz ve taze hali",
+                      """İsrafı önlemenin en ucuz ve taze hali""",
                       style: TextStyle(
-                        fontSize: 22,
-                        color: Colors.green,
+                        fontSize: 20,
+                        color: Colors.white,
                       ),
                       overflow: TextOverflow.clip,
                     ),

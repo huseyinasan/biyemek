@@ -1,5 +1,6 @@
 import 'package:biyemek/screens/onboarding/introduction_screen.dart';
 import 'package:biyemek/screens/login/login_page.dart';
+import 'package:biyemek/screens/register/Choose_register.dart';
 import 'package:biyemek/screens/register/register_page.dart';
 import 'package:biyemek/services/auth_service.dart';
 import 'package:flutter/material.dart';
@@ -85,7 +86,7 @@ class _EntranceState extends State<Entrance> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   const Text(
                     '''Günlük listelenen uygun fiyatlı ürünlerle, 
      gıda israfını önlemeye hemen başla!''',
@@ -107,7 +108,7 @@ class _EntranceState extends State<Entrance> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const RegisterPage();
+                                    return const Choose_register();
                                   },
                                 ),
                               );

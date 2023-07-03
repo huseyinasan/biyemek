@@ -6,14 +6,14 @@ class IntroPage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE2F3EE),
+      backgroundColor: const Color(0xFFFFD55E),
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 20,
+                  top: 30,
                   bottom: 20,
                 ),
                 child: Image.asset(
@@ -21,14 +21,17 @@ class IntroPage3 extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              const Padding(
+              SizedBox(height:20 ),
+               Padding(
                 padding: EdgeInsets.all(12.0),
                 child: Text(
-                  "Günlük olarak listelenen fazlalık taze ürünleri çok uygun fiyatlara satın al ve israfın önüne geç!",
+                  """    Günlük olarak listelenen fazlalık
+    taze ürünleri çok uygun fiyatlara 
+        satın al ve israfın önüne geç!""",
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 22,
                     overflow: TextOverflow.clip,
-                    color: Colors.green,
+                    color: Colors.white,
                   ),
                 ),
               ),

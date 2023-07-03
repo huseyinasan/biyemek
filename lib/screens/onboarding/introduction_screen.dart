@@ -1,4 +1,5 @@
 import 'package:biyemek/screens/onboarding/entrance.dart';
+import 'package:biyemek/screens/register/Choose_register.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'intro_page_1.dart';
@@ -41,7 +42,9 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    GestureDetector(
+
+
+                      GestureDetector(
                       onTap: () {
                         _controller.previousPage(
                             duration: const Duration(milliseconds: 500),
@@ -50,7 +53,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       child: const Icon(
                         Icons.arrow_back_ios_new_rounded,
                         size: 40,
-                        color: Colors.green,
+                        color: Colors.white,
                       ),
                     ),
                     Row(
@@ -62,8 +65,8 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                           effect: const WormEffect(
                             dotWidth: 20,
                             dotHeight: 20,
-                            dotColor: Colors.greenAccent,
-                            activeDotColor: Colors.green,
+                            dotColor: Colors.white24,
+                            activeDotColor: Colors.white,
                           ),
                         ),
                       ],
@@ -75,16 +78,18 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const Entrance();
+                                    return const Choose_register();
                                   },
                                 ),
                               );
                             },
                             child: Container(
                               width: 80,
-                              height: 40,
+                              height: 50,
                               decoration: BoxDecoration(
-                                color: Colors.green,
+                               border: Border.all(
+                                 color: Colors.white
+                               ),
                                 borderRadius: BorderRadius.circular(20.0),
                                 shape: BoxShape.rectangle,
                               ),
@@ -112,7 +117,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                                 Icon(
                                   Icons.arrow_forward_ios_rounded,
                                   size: 40,
-                                  color: Colors.green,
+                                  color: Colors.white,
                                 ),
                               ],
                             ),

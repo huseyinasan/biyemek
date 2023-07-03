@@ -24,6 +24,10 @@ dependencies:
   firebase_auth: ^4.6.3
   google_sign_in: ^6.1.4
   cloud_firestore: ^4.8.2
+  font_awesome_flutter: ^9.1.0
+flutter_svg: ^1.0.1
+flutter_lottie: ^1.0.1
+flutter_gifimage: ^2.0.1
 
 
 
