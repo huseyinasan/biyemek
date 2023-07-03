@@ -28,6 +28,7 @@ dependencies:
 flutter_svg: ^1.0.1
 flutter_lottie: ^1.0.1
 flutter_gifimage: ^2.0.1
+dotted_dashed_line: ^0.0.3
 
 
 

@@ -591,7 +591,70 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Column(children: [
                 Stepper(steps: [
-                  Step(title: Text("Ürün Bilgileri"), content: Text(""),),
+                  Step(title: Text("Ürün Bilgileri"), content: Column(children: [
+
+                    Text("Add Product İmages"),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            height: 100,
+                            decoration: BoxDecoration(
+                                color: Color(0xFFDBB7D6),
+                              border: Border.all(
+                                color: Color(0xFFBE7CB4),
+                                width: 2.0,
+
+                              ),
+                            ),
+                            child: Icon(Icons.add_circle_outline_outlined,
+                            size: 60,
+                            color: Colors.white30),
+                          ),
+
+                        ),
+                        SizedBox(width:30 ),
+
+
+                        Expanded(
+                          child: Container(
+                            height: 100,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFDBB7D6),
+                              border: Border.all(
+                                color: Color(0xFFBE7CB4),
+                                width: 2.0,
+
+                              ),
+                            ),
+                            child: Icon(Icons.add_circle_outline_outlined,
+                                size: 60,
+                                color: Colors.white30),
+                          ),
+
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Text("Product Name"),
+                    SizedBox(height: 10),
+                    ExcludeFocus(
+                      child: Container(
+                        height: 45,
+                        
+                        decoration: BoxDecoration(
+                          color: Color(0xFFDBB7D6),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(
+                            color: Color(0xFFBE7CB4),
+                            width: 2.0,
+
+                          ),
+                        ),
+                      ),
+                    )
+                  ],)),
 
 
                   Step(title: Text("Ürün Özellikleri"),content: Text("")),
