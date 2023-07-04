@@ -5,6 +5,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:biyemek/screens/login/login_page.dart';
 
+import '../../services/auth_service.dart';
+
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
@@ -301,42 +303,37 @@ class _RegisterPageState extends State<RegisterPage> {
               const Divider(
                 color: Color(0xFFE2F3EE),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'İşletme misiniz?',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    const SizedBox(width: 10),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const RegisterPage();
-                            },
-                          ),
-                        );
-                      },
-                      child: const Text(
-                        'Buradan devam edin!',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+              GestureDetector(
+              onTap: () => AuthService().signInWithGoogle(context),
+              child: Container( height: 50,
+               decoration: BoxDecoration(
+                color: const Color(0xFFE2F3EE),
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(color: const Color(0xFFA1E7D2)),
+               boxShadow: [ BoxShadow( color: Colors.grey.withOpacity(0.5),
+               spreadRadius: 2,
+                blurRadius: 5,
+                offset: const Offset(0, 3), ), ], ),
+                alignment: Alignment.center,
+               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [ Image.asset( "assets/images/onboarding/google_icon.png"),
+                const Flexible(
+                child: Text( "Google ile Üye Ol",
+                style: TextStyle(fontSize: 16),
+                 overflow: TextOverflow .clip, //
+                 // Truncate text if it overflows ), ), ], ), ), ), ),
+                 ),
           ),
+         ]
         ),
       ),
+      )
+         ]
+         )
+         )
+      )
     );
+
   }
 }

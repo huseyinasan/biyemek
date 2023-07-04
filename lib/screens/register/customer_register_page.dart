@@ -1,5 +1,6 @@
 import 'package:biyemek/screens/onboarding/introduction_screen.dart';
 import 'package:biyemek/screens/login/login_page.dart';
+import 'package:biyemek/screens/register/Choose_register.dart';
 
 import 'package:biyemek/screens/register/register_page.dart';
 import 'package:biyemek/services/auth_service.dart';
@@ -32,7 +33,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return  IntroductionScreen();
+                                  return  Choose_register();
                                 },
                               ),
                             );

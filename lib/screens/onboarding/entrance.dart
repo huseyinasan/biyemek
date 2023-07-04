@@ -32,7 +32,7 @@ class _EntranceState extends State<Entrance> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return IntroductionScreen();
+                                  return Choose_register();
                                 },
                               ),
                             );
@@ -101,6 +101,45 @@ class _EntranceState extends State<Entrance> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        Expanded(child:
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const RegisterPage();
+                                },
+                              ),
+                            );
+                          },
+                          child: Container(
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFA1E7D2),
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 5,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: const Center(
+                              child: Text(
+                                "Üye Ol",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        ),
+
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
@@ -108,78 +147,43 @@ class _EntranceState extends State<Entrance> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const RegisterPage();
+                                    return const LoginPage();
                                   },
                                 ),
                               );
                             },
-                            child: Container(
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFA1E7D2),
-                                borderRadius: BorderRadius.circular(30),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 5,
-                                    offset: const Offset(0, 3),
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Expanded(
+                                child: Container(
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFA1E7D2),
+                                    borderRadius: BorderRadius.circular(30),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        spreadRadius: 2,
+                                        blurRadius: 5,
+                                        offset: const Offset(0, 3),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  "Üye Ol",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
+                                  child: const Center(
+                                    child: Text(
+                                      "Giriş Yap",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                        const SizedBox(
-                            width: 20), // Add spacing between the containers
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () =>
-                                AuthService().signInWithGoogle(context),
-                            child: Container(
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFE2F3EE),
-                                borderRadius: BorderRadius.circular(30),
-                                border:
-                                    Border.all(color: const Color(0xFFA1E7D2)),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 5,
-                                    offset: const Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              alignment: Alignment.center,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                      "assets/images/onboarding/google_icon.png"),
-                                  const Flexible(
-                                    child: Text(
-                                      "Google ile Üye Ol",
-                                      style: TextStyle(fontSize: 16),
-                                      overflow: TextOverflow
-                                          .clip, // Truncate text if it overflows
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
+                        ),// Add spacing between the containers
+
                       ],
                     ),
                   ),
@@ -210,47 +214,15 @@ class _EntranceState extends State<Entrance> {
                       ),
                     ],
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return const LoginPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Expanded(
-                        child: Container(
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFA1E7D2),
-                            borderRadius: BorderRadius.circular(30),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 5,
-                                offset: const Offset(0, 3),
-                              ),
-                            ],
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Giriş Yap",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  SizedBox(height: 30),
+                  Text("Üye Olmadan Devam Et",
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.black,
+                      decorationThickness: 2.0,
+                      decorationStyle: TextDecorationStyle.solid,
+                    ),)
+
                 ],
               ),
             ),
