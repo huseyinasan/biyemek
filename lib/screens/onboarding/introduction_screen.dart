@@ -1,134 +1,95 @@
-import 'package:biyemek/screens/onboarding/entrance.dart';
 import 'package:biyemek/screens/register/Choose_register.dart';
 import 'package:flutter/material.dart';
+import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'intro_page_1.dart';
-import 'intro_page_2.dart';
-import 'intro_page_3.dart';
-
 class IntroductionScreen extends StatefulWidget {
   const IntroductionScreen({Key? key}) : super(key: key);
+
   @override
-  _IntroductionScreenState createState() => _IntroductionScreenState();
+  State<IntroductionScreen> createState() => _IntroductionScreenState();
 }
 
 class _IntroductionScreenState extends State<IntroductionScreen> {
-  final PageController _controller = PageController();
-  bool onLastPage = false;
-
+  final _controller= LiquidController();
+  int currentIndex=0;
   @override
-  Widget build(BuildContext) {
+  Widget build(BuildContext context) {
+
     return Scaffold(
       body: Stack(
         children: [
-          PageView(
-            controller: _controller,
-            onPageChanged: (index) {
-              setState(() {
-                onLastPage = (index == 2);
-              });
-            },
-            children: const [
-              IntroPage1(),
-              IntroPage2(),
-              IntroPage3(),
-            ],
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
+          LiquidSwipe(
+          liquidController: _controller,
+          onPageChangeCallback: (value) {
+            setState(() {
+              currentIndex=value;
+            });
+         },
 
+          enableLoop: false,
+          enableSideReveal: true,
+          slideIconWidget: Icon(Icons.arrow_back_ios_new_rounded),
+          pages: [
+            Container(
+              color:  Colors.greenAccent,
 
-                      GestureDetector(
-                      onTap: () {
-                        _controller.previousPage(
-                            duration: const Duration(milliseconds: 500),
-                            curve: Curves.easeIn);
-                      },
-                      child: const Icon(
-                        Icons.arrow_back_ios_new_rounded,
-                        size: 40,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        SmoothPageIndicator(
-                          controller: _controller,
-                          count: 3,
-                          effect: const WormEffect(
-                            dotWidth: 20,
-                            dotHeight: 20,
-                            dotColor: Colors.white24,
-                            activeDotColor: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                    onLastPage
-                        ? GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return const Choose_register();
-                                  },
-                                ),
-                              );
-                            },
-                            child: Container(
-                              width: 80,
-                              height: 50,
-                              decoration: BoxDecoration(
-                               border: Border.all(
-                                 color: Colors.white
-                               ),
-                                borderRadius: BorderRadius.circular(20.0),
-                                shape: BoxShape.rectangle,
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  "Başla",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                        : GestureDetector(
-                            onTap: () {
-                              _controller.nextPage(
-                                  duration: (const Duration(milliseconds: 500)),
-                                  curve: Curves.easeIn);
-                            },
-                            child:  Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Icon(
-                                  Icons.arrow_forward_ios_rounded,
-                                  size: 40,
-                                  color: Colors.white,
-                                ),
-                              ],
-                            ),
-                          ),
-                  ],
+            ),
+            Container(
+              color:  Colors.pinkAccent,
+
+            ),
+            Container(
+              color: Colors.yellow,
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)
+                  {
+                    return Choose_register();
+                  }));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.white,
+                    )
+                  ),
+                  child: Text("Başla"),
+
                 ),
               ),
-            ],
-          ),
-        ],
+
+
+
+
+            ),
+
+          ],
+
+        ),
+          Positioned(
+            bottom: 0,
+            left: 100,
+            right: 32,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+               AnimatedSmoothIndicator(activeIndex: _controller.currentPage, count: 3,
+               effect: const WormEffect(
+                 spacing: 16,
+                 dotColor: Colors.white54,
+                 activeDotColor: Colors.white,
+               ),
+               onDotClicked: (index){
+                 _controller.animateToPage(page: index);
+               },)
+              ],
+            ),
+          )
+      ]
       ),
+
+
     );
   }
 }
+

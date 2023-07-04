@@ -1,18 +1,18 @@
 import 'package:biyemek/screens/onboarding/introduction_screen.dart';
 import 'package:biyemek/screens/login/login_page.dart';
-import 'package:biyemek/screens/register/Choose_register.dart';
+
 import 'package:biyemek/screens/register/register_page.dart';
 import 'package:biyemek/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
-class Entrance extends StatefulWidget {
-  const Entrance({Key? key}) : super(key: key);
+class CustomerLoginScreen extends StatefulWidget {
+  const CustomerLoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<Entrance> createState() => _EntranceState();
+  State<CustomerLoginScreen> createState() => _CustomerLoginScreenState();
 }
 
-class _EntranceState extends State<Entrance> {
+class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +32,7 @@ class _EntranceState extends State<Entrance> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return IntroductionScreen();
+                                  return  IntroductionScreen();
                                 },
                               ),
                             );
@@ -58,7 +58,7 @@ class _EntranceState extends State<Entrance> {
                     fit: BoxFit.cover, // Resmi sığdırma şekli
                   ),
                   const SizedBox(height: 20),
-                   Padding(
+                  Padding(
                     padding: EdgeInsets.only(
                       left: 10,
                       right: 10,
@@ -151,7 +151,7 @@ class _EntranceState extends State<Entrance> {
                                 color: const Color(0xFFE2F3EE),
                                 borderRadius: BorderRadius.circular(30),
                                 border:
-                                    Border.all(color: const Color(0xFFA1E7D2)),
+                                Border.all(color: const Color(0xFFA1E7D2)),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.grey.withOpacity(0.5),
@@ -277,3 +277,5 @@ class LinePainter extends CustomPainter {
     return false;
   }
 }
+
+

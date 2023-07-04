@@ -1,6 +1,8 @@
 import 'package:biyemek/screens/onboarding/entrance.dart';
-import 'package:biyemek/screens/register/register_page.dart';
+
 import 'package:flutter/material.dart';
+
+import 'customer_register_page.dart';
 
 
 class Choose_register extends StatefulWidget {
@@ -126,24 +128,3 @@ class BusinessLoginScreen extends StatelessWidget {
   }
 }
 
-class CustomerLoginScreen extends StatelessWidget {
-  const CustomerLoginScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Müşteri Girişi'),
-      ),
-      body: Center(
-        child: Text(
-          'Müşteri Girişi Sayfası',
-          style: TextStyle(
-            fontSize: 24.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-  }
-}

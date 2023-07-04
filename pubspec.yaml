@@ -25,10 +25,9 @@ dependencies:
   google_sign_in: ^6.1.4
   cloud_firestore: ^4.8.2
   font_awesome_flutter: ^9.1.0
-flutter_svg: ^1.0.1
-flutter_lottie: ^1.0.1
-flutter_gifimage: ^2.0.1
-dotted_dashed_line: ^0.0.3
+  dotted_dashed_line: ^0.0.3
+  status_stepper: ^1.0.0
+  liquid_swipe: ^3.1.0
 
 
 
@@ -51,7 +50,7 @@ flutter:
   assets:
     - assets/images/logo/
     - assets/images/onboarding/
-    - assets/fonts/
+
     - assets/images/img.png
     - assets/images/img_1.png
 

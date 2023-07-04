@@ -6,7 +6,7 @@ import 'package:biyemek/screens/onboarding/entrance.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-
+import 'package:status_stepper/status_stepper.dart';
 import 'notifications.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,7 +17,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentStep=0;
+  final statuses = List.generate(
+    2,
+        (index) => SizedBox.square(
+      dimension: 32,
+
+      child: Center(child: Text('$index')),
+    ),
+  );
+
+  int curIndex = -1;
+  int lastIndex = -1;
   int _currentIndex = 0;
   late PageController _pageController;
   @override
@@ -589,99 +599,59 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Column(children: [
-                Stepper(steps: [
-                  Step(title: Text("Ürün Bilgileri"), content: Column(children: [
+              Column(
 
-                    Text("Add Product İmages"),
-                    SizedBox(height: 20),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            height: 100,
-                            decoration: BoxDecoration(
-                                color: Color(0xFFDBB7D6),
-                              border: Border.all(
-                                color: Color(0xFFBE7CB4),
-                                width: 2.0,
-
-                              ),
-                            ),
-                            child: Icon(Icons.add_circle_outline_outlined,
-                            size: 60,
-                            color: Colors.white30),
-                          ),
-
-                        ),
-                        SizedBox(width:30 ),
-
-
-                        Expanded(
-                          child: Container(
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFDBB7D6),
-                              border: Border.all(
-                                color: Color(0xFFBE7CB4),
-                                width: 2.0,
-
-                              ),
-                            ),
-                            child: Icon(Icons.add_circle_outline_outlined,
-                                size: 60,
-                                color: Colors.white30),
-                          ),
-
-                        )
-                      ],
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20,left: 50,right: 50),
+                    child: StatusStepper(
+                      connectorCurve: Curves.easeIn,
+                      itemCurve: Curves.easeOut,
+                      activeColor: Colors.green,
+                      disabledColor: Colors.black12,
+                      animationDuration: const Duration(milliseconds: 500),
+                      children: statuses,
+                      lastActiveIndex: lastIndex,
+                      currentIndex: curIndex,
+                      connectorThickness: 6,
                     ),
-                    SizedBox(height: 20),
-                    Text("Product Name"),
-                    SizedBox(height: 10),
-                    ExcludeFocus(
-                      child: Container(
-                        height: 45,
-                        
-                        decoration: BoxDecoration(
-                          color: Color(0xFFDBB7D6),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                            color: Color(0xFFBE7CB4),
-                            width: 2.0,
+                  ),
 
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: statuses.length,
+                      itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.only(right: 40,left: 40),
+                        child: ElevatedButton(
+                          onPressed: index > curIndex
+                              ? () {
+                            setState(() {
+                              lastIndex = curIndex;
+                              curIndex = index;
+                            });
+                          }
+                              : null,
+                          child: Text(
+                            '$index',
                           ),
                         ),
                       ),
-                    )
-                  ],)),
-
-
-                  Step(title: Text("Ürün Özellikleri"),content: Text("")),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        curIndex = -1;
+                        lastIndex = -1;
+                      });
+                    },
+                    child: const Text(
+                      'Reset',
+                    ),
+                  ),
                 ],
-                onStepTapped: (int newIndex){
-                  setState(() {
-                    _currentStep=newIndex;
-                  });
-                },
-                currentStep: _currentStep,
-                  onStepContinue: (){
-                  if(_currentStep !=2){
-                    setState(() {
-                      _currentStep +=1;
-                    });
-                  }
-                  },
-                  onStepCancel: (){
-                  if(_currentStep !=0){
-                    setState(() {
-                      _currentStep -=1;
-                    });
-
-                     }
-                  },
-                )
-              ]),
+              ),
               SingleChildScrollView(
                 child: Column(
                   children: [

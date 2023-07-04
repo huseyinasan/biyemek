@@ -113,6 +113,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
+  dotted_dashed_line:
+    dependency: "direct main"
+    description:
+      name: dotted_dashed_line
+      sha256: da3678819f4522c982eb256d2bc80d032fd2a3e7b437841ea83987c67c00cda5
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   fake_async:
     dependency: transitive
     description:
@@ -384,6 +392,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  liquid_swipe:
+    dependency: "direct main"
+    description:
+      name: liquid_swipe
+      sha256: "04277568a4a5a5e8e1dfa8b222b4e497e294cf64e72113d936fcc54ef0e29149"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.0"
   lottie:
     dependency: transitive
     description:
@@ -416,6 +432,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.0"
+  nested:
+    dependency: transitive
+    description:
+      name: nested
+      sha256: "03bac4c528c64c95c722ec99280375a6f2fc708eec17c7b3f07253b626cd2a20"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   path:
     dependency: transitive
     description:
@@ -504,6 +528,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
+  provider:
+    dependency: transitive
+    description:
+      name: provider
+      sha256: cdbe7530b12ecd9eb455bdaa2fcb8d4dad22e80b8afb4798b41479d5ce26847f
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.5"
   quiver:
     dependency: transitive
     description:
@@ -597,6 +629,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.11.0"
+  status_stepper:
+    dependency: "direct main"
+    description:
+      name: status_stepper
+      sha256: "6a7668ed167813a9934deb2a1c16718012aa2e1b4ffaea10013ac405db2c6016"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   stream_channel:
     dependency: transitive
     description:
