@@ -1,0 +1,134 @@
+import 'package:biyemek/screens/onboarding/entrance.dart';
+import 'package:biyemek/screens/register/Choose_register.dart';
+import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'intro_page_1.dart';
+import 'intro_page_2.dart';
+import 'intro_page_3.dart';
+
+class IntroductionScreen extends StatefulWidget {
+  const IntroductionScreen({Key? key}) : super(key: key);
+  @override
+  _IntroductionScreenState createState() => _IntroductionScreenState();
+}
+
+class _IntroductionScreenState extends State<IntroductionScreen> {
+  final PageController _controller = PageController();
+  bool onLastPage = false;
+
+  @override
+  Widget build(BuildContext) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          PageView(
+            controller: _controller,
+            onPageChanged: (index) {
+              setState(() {
+                onLastPage = (index == 2);
+              });
+            },
+            children: const [
+              IntroPage1(),
+              IntroPage2(),
+              IntroPage3(),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+
+
+                      GestureDetector(
+                      onTap: () {
+                        _controller.previousPage(
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeIn);
+                      },
+                      child: const Icon(
+                        Icons.arrow_back_ios_new_rounded,
+                        size: 40,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SmoothPageIndicator(
+                          controller: _controller,
+                          count: 3,
+                          effect: const WormEffect(
+                            dotWidth: 20,
+                            dotHeight: 20,
+                            dotColor: Colors.white24,
+                            activeDotColor: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    onLastPage
+                        ? GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const Choose_register();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: 80,
+                              height: 50,
+                              decoration: BoxDecoration(
+                               border: Border.all(
+                                 color: Colors.white
+                               ),
+                                borderRadius: BorderRadius.circular(20.0),
+                                shape: BoxShape.rectangle,
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  "Başla",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                        : GestureDetector(
+                            onTap: () {
+                              _controller.nextPage(
+                                  duration: (const Duration(milliseconds: 500)),
+                                  curve: Curves.easeIn);
+                            },
+                            child:  Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.arrow_forward_ios_rounded,
+                                  size: 40,
+                                  color: Colors.white,
+                                ),
+                              ],
+                            ),
+                          ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
