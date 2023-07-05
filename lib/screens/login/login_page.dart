@@ -1,5 +1,6 @@
 import 'package:biyemek/components/back_button.dart';
 import 'package:biyemek/screens/onboarding/entrance.dart';
+import 'package:biyemek/screens/register/customer_register_page.dart';
 import 'package:biyemek/screens/register/register_page.dart';
 import 'package:biyemek/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -77,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return Entrance();
+                                return CustomerLoginScreen();
                               },
                             ),
                           );

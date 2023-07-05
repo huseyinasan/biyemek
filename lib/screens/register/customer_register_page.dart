@@ -141,18 +141,24 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                           ),
                         ),
                         const SizedBox(
-                            width: 20), // Add spacing between the containers
+                            width: 20),
                         Expanded(
                           child: GestureDetector(
-                            onTap: () =>
-                                AuthService().signInWithGoogle(context),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const LoginPage();
+                                  },
+                                ),
+                              );
+                            },
                             child: Container(
-                              height: 50,
+                              height: 40,
                               decoration: BoxDecoration(
-                                color: const Color(0xFFE2F3EE),
+                                color: const Color(0xFFA1E7D2),
                                 borderRadius: BorderRadius.circular(30),
-                                border:
-                                Border.all(color: const Color(0xFFA1E7D2)),
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.grey.withOpacity(0.5),
@@ -162,25 +168,19 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                                   ),
                                 ],
                               ),
-                              alignment: Alignment.center,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                      "assets/images/onboarding/google_icon.png"),
-                                  const Flexible(
-                                    child: Text(
-                                      "Google ile Üye Ol",
-                                      style: TextStyle(fontSize: 16),
-                                      overflow: TextOverflow
-                                          .clip, // Truncate text if it overflows
-                                    ),
+                              child: const Center(
+                                child: Text(
+                                  "Giriş Yap",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
                                   ),
-                                ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
+                        ),// Add spacing between the containers
+
                       ],
                     ),
                   ),
@@ -209,49 +209,19 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                           painter: LinePainter(),
                         ),
                       ),
+                      
+
                     ],
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return const LoginPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Expanded(
-                        child: Container(
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFA1E7D2),
-                            borderRadius: BorderRadius.circular(30),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 5,
-                                offset: const Offset(0, 3),
-                              ),
-                            ],
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Giriş Yap",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  SizedBox(height: 30),
+                  Text("Üye Olmadan Devam Et",
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.black,
+                      decorationThickness: 2.0,
+                      decorationStyle: TextDecorationStyle.solid,
+                    ),)
+
                 ],
               ),
             ),
