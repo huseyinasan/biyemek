@@ -26,7 +26,7 @@ class _Choose_registerState extends State<Choose_register> {
               // İşletme girişi için seçenek
               margin: const EdgeInsets.only(bottom: 20.0),
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.pinkAccent,
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: InkWell(
@@ -41,11 +41,7 @@ class _Choose_registerState extends State<Choose_register> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/business_icon.png',
-                      width: 80,
-                      height: 80,
-                    ),
+
                     const SizedBox(height: 10.0),
                     const Text(
                       'İşletme Girişi',
@@ -65,7 +61,7 @@ class _Choose_registerState extends State<Choose_register> {
               // Müşteri girişi için seçenek
               margin: const EdgeInsets.only(top: 20.0),
               decoration: BoxDecoration(
-                color: Colors.green,
+                color: Colors.yellow,
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: InkWell(
@@ -80,11 +76,7 @@ class _Choose_registerState extends State<Choose_register> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/customer_icon.png',
-                      width: 80,
-                      height: 80,
-                    ),
+
                     const SizedBox(height: 10.0),
                     const Text(
                       'Müşteri Girişi',
