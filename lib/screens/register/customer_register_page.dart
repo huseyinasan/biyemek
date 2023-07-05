@@ -1,18 +1,19 @@
 import 'package:biyemek/screens/onboarding/introduction_screen.dart';
 import 'package:biyemek/screens/login/login_page.dart';
 import 'package:biyemek/screens/register/Choose_register.dart';
+
 import 'package:biyemek/screens/register/register_page.dart';
 import 'package:biyemek/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
-class Entrance extends StatefulWidget {
-  const Entrance({Key? key}) : super(key: key);
+class CustomerLoginScreen extends StatefulWidget {
+  const CustomerLoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<Entrance> createState() => _EntranceState();
+  State<CustomerLoginScreen> createState() => _CustomerLoginScreenState();
 }
 
-class _EntranceState extends State<Entrance> {
+class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +33,7 @@ class _EntranceState extends State<Entrance> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return Choose_register();
+                                  return  Choose_register();
                                 },
                               ),
                             );
@@ -58,7 +59,7 @@ class _EntranceState extends State<Entrance> {
                     fit: BoxFit.cover, // Resmi sığdırma şekli
                   ),
                   const SizedBox(height: 20),
-                   Padding(
+                  Padding(
                     padding: EdgeInsets.only(
                       left: 10,
                       right: 10,
@@ -101,45 +102,46 @@ class _EntranceState extends State<Entrance> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(child:
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return const RegisterPage();
-                                },
-                              ),
-                            );
-                          },
-                          child: Container(
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFA1E7D2),
-                              borderRadius: BorderRadius.circular(30),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
-                                  blurRadius: 5,
-                                  offset: const Offset(0, 3),
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const RegisterPage();
+                                  },
                                 ),
-                              ],
-                            ),
-                            child: const Center(
-                              child: Text(
-                                "Üye Ol",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
+                              );
+                            },
+                            child: Container(
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFA1E7D2),
+                                borderRadius: BorderRadius.circular(30),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 2,
+                                    blurRadius: 5,
+                                    offset: const Offset(0, 3),
+                                  ),
+                                ],
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  "Üye Ol",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                         ),
-                        ),
-
+                        const SizedBox(
+                            width: 20),
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
@@ -152,31 +154,26 @@ class _EntranceState extends State<Entrance> {
                                 ),
                               );
                             },
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Expanded(
-                                child: Container(
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFFA1E7D2),
-                                    borderRadius: BorderRadius.circular(30),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        spreadRadius: 2,
-                                        blurRadius: 5,
-                                        offset: const Offset(0, 3),
-                                      ),
-                                    ],
+                            child: Container(
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFA1E7D2),
+                                borderRadius: BorderRadius.circular(30),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 2,
+                                    blurRadius: 5,
+                                    offset: const Offset(0, 3),
                                   ),
-                                  child: const Center(
-                                    child: Text(
-                                      "Giriş Yap",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                      ),
-                                    ),
+                                ],
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  "Giriş Yap",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
                                   ),
                                 ),
                               ),
@@ -212,6 +209,8 @@ class _EntranceState extends State<Entrance> {
                           painter: LinePainter(),
                         ),
                       ),
+                      
+
                     ],
                   ),
                   SizedBox(height: 30),
@@ -249,3 +248,5 @@ class LinePainter extends CustomPainter {
     return false;
   }
 }
+
+
