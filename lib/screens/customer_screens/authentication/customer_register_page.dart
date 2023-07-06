@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:biyemek/screens/customer_screens/authentication/customer_login_page.dart';
 import '../../../services/google_auth_service.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class CustomerRegisterPage extends StatefulWidget {
+  const CustomerRegisterPage({super.key});
 
   @override
-  _RegisterPageState createState() => _RegisterPageState();
+  _CustomerRegisterPageState createState() => _CustomerRegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _CustomerRegisterPageState extends State<CustomerRegisterPage> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController surnameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -75,7 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const LoginPage();
+                        return const CustomerLoginPage();
                       },
                     ),
                   );
@@ -151,7 +151,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const CustomerLoginScreen();
+                                    return const CustomerEntrance();
                                   },
                                 ),
                               );

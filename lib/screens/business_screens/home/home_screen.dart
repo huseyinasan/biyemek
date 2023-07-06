@@ -9,14 +9,14 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:status_stepper/status_stepper.dart';
 import 'notifications.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class BusinessHomePage extends StatefulWidget {
+  const BusinessHomePage({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<BusinessHomePage> createState() => _BusinessHomePageState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _BusinessHomePageState extends State<BusinessHomePage> {
   final statuses = List.generate(
     2,
     (index) => SizedBox.square(
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) {
       // User is not signed in, handle this case accordingly
-      return const Entrance(); // Return an empty container or another widget
+      return const BusinessEntrance(); // Return an empty container or another widget
     }
     return SafeArea(
       child: Scaffold(
@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return const location();
+                                return const Location();
                               },
                             ),
                           );
@@ -274,7 +274,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) {
-                                          return const comments();
+                                          return const Comments();
                                         },
                                       ),
                                     );
@@ -315,7 +315,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const products();
+                                  return const Products();
                                 },
                               ),
                             );
@@ -650,7 +650,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return const profile();
+                              return const Profile();
                             },
                           ),
                         );

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import '../screens/customer_screens/home/customer_homepage.dart';
 
 class AuthService {
   Future<void> signInWithGoogle(BuildContext context) async {
@@ -15,9 +16,17 @@ class AuthService {
           await FirebaseAuth.instance.signInWithCredential(credential);
 
       // Check if the sign-in was successful
+      // ignore: unnecessary_null_comparison
       if (userCredential != null) {
         // Navigate to the user's homepage
-        Navigator.pushReplacementNamed(context, '/homepage');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const CustomerHomePage();
+            },
+          ),
+        );
       } else {
         // Handle sign-in error
         // ...

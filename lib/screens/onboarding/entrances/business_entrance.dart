@@ -1,16 +1,16 @@
-import 'package:biyemek/screens/customer_screens/authentication/customer_login_page.dart';
+import 'package:biyemek/screens/business_screens/authentication/business_login_page.dart';
+import 'package:biyemek/screens/business_screens/authentication/business_register_page.dart';
 import 'package:biyemek/screens/onboarding/entrances/choose_entrance.dart';
-import 'package:biyemek/screens/customer_screens/authentication/customer_register_page.dart';
 import 'package:flutter/material.dart';
 
-class Entrance extends StatefulWidget {
-  const Entrance({Key? key}) : super(key: key);
+class BusinessEntrance extends StatefulWidget {
+  const BusinessEntrance({Key? key}) : super(key: key);
 
   @override
-  State<Entrance> createState() => _EntranceState();
+  State<BusinessEntrance> createState() => _BusinessEntranceState();
 }
 
-class _EntranceState extends State<Entrance> {
+class _BusinessEntranceState extends State<BusinessEntrance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _EntranceState extends State<Entrance> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const Choose_register();
+                                  return const ChooseEntrance();
                                 },
                               ),
                             );
@@ -64,7 +64,7 @@ class _EntranceState extends State<Entrance> {
                     child: Column(
                       children: [
                         Text(
-                          "İSRAFI ÖNLEMENİN",
+                          "ÜRÜNLERİNİ LİSTELE,",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w900,
@@ -73,7 +73,7 @@ class _EntranceState extends State<Entrance> {
                           ),
                         ),
                         Text(
-                          "UCUZ VE LEZZETLİ YOLU",
+                          "İSRAFI ÖNLE!",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w900,
@@ -86,8 +86,8 @@ class _EntranceState extends State<Entrance> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    '''Günlük listelenen uygun fiyatlı ürünlerle, 
-     gıda israfını önlemeye hemen başla!''',
+                    '''Ürünlerini listeleyerek, civarında ki müşterilere 
+                     hemen satmaya başla!''',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -106,7 +106,7 @@ class _EntranceState extends State<Entrance> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const RegisterPage();
+                                    return const BusinessRegisterPage();
                                   },
                                 ),
                               );
@@ -145,7 +145,7 @@ class _EntranceState extends State<Entrance> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const LoginPage();
+                                    return const BusinessLoginPage();
                                   },
                                 ),
                               );

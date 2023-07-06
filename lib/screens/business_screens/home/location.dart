@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class location extends StatefulWidget {
-  const location({Key? key}) : super(key: key);
+class Location extends StatefulWidget {
+  const Location({Key? key}) : super(key: key);
 
   @override
-  State<location> createState() => _locationState();
+  State<Location> createState() => _LocationState();
 }
 
-class _locationState extends State<location> {
+class _LocationState extends State<Location> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

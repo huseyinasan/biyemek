@@ -63,7 +63,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return const Choose_register();
+                              return const ChooseEntrance();
                             },
                           ),
                         );

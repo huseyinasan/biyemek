@@ -1,17 +1,15 @@
 import 'package:biyemek/screens/onboarding/entrances/business_entrance.dart';
-
 import 'package:flutter/material.dart';
-
 import 'customer_entrance.dart';
 
-class Choose_register extends StatefulWidget {
-  const Choose_register({Key? key}) : super(key: key);
+class ChooseEntrance extends StatefulWidget {
+  const ChooseEntrance({Key? key}) : super(key: key);
 
   @override
-  State<Choose_register> createState() => _Choose_registerState();
+  State<ChooseEntrance> createState() => _ChooseEntranceState();
 }
 
-class _Choose_registerState extends State<Choose_register> {
+class _ChooseEntranceState extends State<ChooseEntrance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +32,7 @@ class _Choose_registerState extends State<Choose_register> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Entrance(),
+                        builder: (context) => const BusinessEntrance(),
                       ),
                     );
                   },
@@ -68,7 +66,7 @@ class _Choose_registerState extends State<Choose_register> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const CustomerLoginScreen(),
+                        builder: (context) => const CustomerEntrance(),
                       ),
                     );
                   },
@@ -90,28 +88,6 @@ class _Choose_registerState extends State<Choose_register> {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class BusinessLoginScreen extends StatelessWidget {
-  const BusinessLoginScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('İşletme Girişi'),
-      ),
-      body: const Center(
-        child: Text(
-          'İşletme Girişi Sayfası',
-          style: TextStyle(
-            fontSize: 24.0,
-            fontWeight: FontWeight.bold,
-          ),
         ),
       ),
     );

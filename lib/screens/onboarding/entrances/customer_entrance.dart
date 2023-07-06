@@ -3,14 +3,14 @@ import 'package:biyemek/screens/onboarding/entrances/choose_entrance.dart';
 import 'package:biyemek/screens/customer_screens/authentication/customer_register_page.dart';
 import 'package:flutter/material.dart';
 
-class CustomerLoginScreen extends StatefulWidget {
-  const CustomerLoginScreen({Key? key}) : super(key: key);
+class CustomerEntrance extends StatefulWidget {
+  const CustomerEntrance({Key? key}) : super(key: key);
 
   @override
-  State<CustomerLoginScreen> createState() => _CustomerLoginScreenState();
+  State<CustomerEntrance> createState() => _CustomerEntranceState();
 }
 
-class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
+class _CustomerEntranceState extends State<CustomerEntrance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const Choose_register();
+                                  return const ChooseEntrance();
                                 },
                               ),
                             );
@@ -87,7 +87,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                   const SizedBox(height: 20),
                   const Text(
                     '''Günlük listelenen uygun fiyatlı ürünlerle, 
-     gıda israfını önlemeye hemen başla!''',
+    gıda israfını önlemeye hemen başla!''',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -106,7 +106,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const RegisterPage();
+                                    return const CustomerRegisterPage();
                                   },
                                 ),
                               );
@@ -145,7 +145,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const LoginPage();
+                                    return const CustomerLoginPage();
                                   },
                                 ),
                               );
@@ -218,7 +218,6 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                           decorationThickness: 2.0,
                           decorationStyle: TextDecorationStyle.solid,
                           color: Colors.blue,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],

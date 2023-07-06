@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-class comments extends StatefulWidget {
-  const comments({Key? key}) : super(key: key);
+
+class Comments extends StatefulWidget {
+  const Comments({Key? key}) : super(key: key);
 
   @override
-  State<comments> createState() => _commentsState();
+  State<Comments> createState() => _CommentsState();
 }
-class _commentsState extends State<comments> with SingleTickerProviderStateMixin {
+
+class _CommentsState extends State<Comments>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -43,7 +46,8 @@ class _commentsState extends State<comments> with SingleTickerProviderStateMixin
           TabBar(
             controller: _tabController,
             tabs: const [
-              Tab(text: 'Cevap Bekleyenler',
+              Tab(
+                text: 'Cevap Bekleyenler',
               ),
               Tab(text: 'Cevaplananlar'),
             ],
@@ -62,7 +66,3 @@ class _commentsState extends State<comments> with SingleTickerProviderStateMixin
     );
   }
 }
-
-
-
-

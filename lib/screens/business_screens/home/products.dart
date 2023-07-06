@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-class products extends StatefulWidget {
-  const products({Key? key}) : super(key: key);
+
+class Products extends StatefulWidget {
+  const Products({Key? key}) : super(key: key);
 
   @override
-  State<products> createState() => _productsState();
+  State<Products> createState() => _ProductsState();
 }
 
-class _productsState extends State<products> with SingleTickerProviderStateMixin {
+class _ProductsState extends State<Products>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -20,6 +22,7 @@ class _productsState extends State<products> with SingleTickerProviderStateMixin
     _tabController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,10 +30,8 @@ class _productsState extends State<products> with SingleTickerProviderStateMixin
         actions: const [
           Padding(
             padding: EdgeInsets.all(8.0),
-
           ),
         ],
-
         title: const Text(
           "Ürünlerim",
           style: TextStyle(
@@ -38,22 +39,20 @@ class _productsState extends State<products> with SingleTickerProviderStateMixin
           ),
         ),
         shape: ContinuousRectangleBorder(
-          borderRadius: BorderRadius.circular(40.0),),
-
+          borderRadius: BorderRadius.circular(40.0),
+        ),
         iconTheme: const IconThemeData(
           color: Colors.green,
         ),
-
-
         backgroundColor: const Color(0xFFEDECF5),
-
       ),
       body: Column(
         children: [
           TabBar(
             controller: _tabController,
             tabs: const [
-              Tab(text: 'İlandakiler',
+              Tab(
+                text: 'İlandakiler',
               ),
               Tab(text: 'Satılanlar'),
             ],

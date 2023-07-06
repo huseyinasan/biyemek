@@ -1,4 +1,5 @@
 import 'package:biyemek/components/back_button.dart';
+import 'package:biyemek/screens/customer_screens/home/customer_homepage.dart';
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
 import 'package:biyemek/screens/customer_screens/authentication/customer_register_page.dart';
 import 'package:biyemek/services/google_auth_service.dart';
@@ -7,14 +8,14 @@ import 'package:flutter/material.dart';
 import '../../../components/my_button.dart';
 import '../../../components/my_textfield.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class CustomerLoginPage extends StatefulWidget {
+  const CustomerLoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<CustomerLoginPage> createState() => _CustomerLoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _CustomerLoginPageState extends State<CustomerLoginPage> {
   // text editing controllers
   final emailController = TextEditingController();
 
@@ -32,8 +33,15 @@ class _LoginPageState extends State<LoginPage> {
       User? user = userCredential.user;
 
       if (user != null) {
-        // Navigate to the homepage or any desired screen after successful sign-in
-        Navigator.pushReplacementNamed(context, '/homepage');
+        //Navigating to customer home page
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return CustomerHomePage();
+            },
+          ),
+        );
       }
     } catch (e) {
       print('Error signing in: $e');
@@ -76,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return const CustomerLoginScreen();
+                                return const CustomerEntrance();
                               },
                             ),
                           );
@@ -158,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
                           child: Text(
-                            'Ya da',
+                            'veya',
                             style: TextStyle(
                               color: Colors.green[700],
                               fontWeight: FontWeight.bold,
@@ -242,7 +250,7 @@ class _LoginPageState extends State<LoginPage> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return const RegisterPage();
+                                return const CustomerRegisterPage();
                               },
                             ),
                           );
