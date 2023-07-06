@@ -768,7 +768,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           ),
                           const SizedBox(width: 20),
                           const Text(
-                            "Exit",
+                            "Çıkış Yap",
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -811,15 +811,15 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                 tabs: const [
                   GButton(
                     icon: Icons.home,
-                    text: "Home",
+                    text: "Ana Sayfa",
                   ),
                   GButton(
                     icon: Icons.add_shopping_cart,
-                    text: "Add Product",
+                    text: "Ürün Ekle",
                   ),
                   GButton(
                     icon: Icons.supervisor_account_rounded,
-                    text: "Account",
+                    text: "Hesap",
                   ),
                 ],
                 selectedIndex: _currentIndex,

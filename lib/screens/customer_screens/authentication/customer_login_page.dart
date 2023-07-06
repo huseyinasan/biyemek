@@ -38,7 +38,7 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return CustomerHomePage();
+              return const CustomerHomePage();
             },
           ),
         );
