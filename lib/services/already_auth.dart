@@ -1,8 +1,6 @@
-
 import 'package:biyemek/screens/onboarding/onboarding_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import '../screens/business_screens/home/business_home_page.dart';
 
 class AuthPage extends StatelessWidget {
@@ -16,7 +14,7 @@ class AuthPage extends StatelessWidget {
         builder: (context, snapshot) {
           //user is logged in
           if (snapshot.hasData) {
-            return const BusinessHomePage();
+            return BusinessHomePage();
           }
           //user is not logged in
           else {
