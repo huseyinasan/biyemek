@@ -17,6 +17,7 @@ class BusinessHomePage extends StatefulWidget {
 }
 
 class _BusinessHomePageState extends State<BusinessHomePage> {
+  int currentStep = 0;
   final statuses = List.generate(
     2,
     (index) => SizedBox.square(
@@ -86,7 +87,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                         child: Row(
                           children: [
                             const SizedBox(width: 10),
-                            const Row(
+                             Row(
                               children: [
                                 Icon(
                                   Icons.location_on_rounded,
@@ -148,7 +149,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   shape: BoxShape.rectangle,
                                   color: const Color(0xFFDBB7D6),
                                 ),
-                                child: const Row(
+                                child:  Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
                                   children: [
@@ -198,7 +199,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                     height: 48,
                                     color: const Color(0xFFBE7CB4),
                                   ),
-                                  const Expanded(
+                                   Expanded(
                                     child: Row(
                                       children: [
                                         SizedBox(width: 40),
@@ -231,7 +232,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   ),
                                   borderRadius: BorderRadius.circular(20),
                                   color: const Color(0xFFDBB7D6)),
-                              child: const Column(
+                              child:  Column(
                                 children: [
                                   SizedBox(height: 10),
                                   Text(
@@ -279,7 +280,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                       ),
                                     );
                                   },
-                                  child: const Row(
+                                  child:  Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
                                     children: [
@@ -329,7 +330,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                       borderRadius: BorderRadius.circular(20.0),
                                       shape: BoxShape.rectangle,
                                       color: const Color(0xFFDBB7D6)),
-                                  child: const Row(
+                                  child:  Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
                                     children: [
@@ -382,7 +383,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                           borderRadius:
                                               BorderRadius.circular(20),
                                           color: const Color(0xFFDBB7D6)),
-                                      child: const Column(
+                                      child:  Column(
                                         children: [
                                           SizedBox(height: 15),
                                           Text(
@@ -424,7 +425,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                           borderRadius:
                                               BorderRadius.circular(20),
                                           color: const Color(0xFFDBB7D6)),
-                                      child: const Column(
+                                      child:  Column(
                                         children: [
                                           SizedBox(height: 15),
                                           Text(
@@ -471,7 +472,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                           borderRadius:
                                               BorderRadius.circular(20),
                                           color: const Color(0xFFDBB7D6)),
-                                      child: const Column(
+                                      child:  Column(
                                         children: [
                                           SizedBox(height: 15),
                                           Text(
@@ -513,7 +514,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                           borderRadius:
                                               BorderRadius.circular(20),
                                           color: const Color(0xFFDBB7D6)),
-                                      child: const Column(
+                                      child:  Column(
                                         children: [
                                           SizedBox(height: 15),
                                           Text(
@@ -553,58 +554,38 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                   ),
                 ),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 20, left: 50, right: 50),
-                    child: StatusStepper(
-                      connectorCurve: Curves.easeIn,
-                      itemCurve: Curves.easeOut,
-                      activeColor: Colors.green,
-                      disabledColor: Colors.black12,
-                      animationDuration: const Duration(milliseconds: 500),
-                      lastActiveIndex: lastIndex,
-                      currentIndex: curIndex,
-                      connectorThickness: 6,
-                      children: statuses,
-                    ),
-                  ),
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: statuses.length,
-                      itemBuilder: (context, index) => Padding(
-                        padding: const EdgeInsets.only(right: 40, left: 40),
-                        child: ElevatedButton(
-                          onPressed: index > curIndex
-                              ? () {
-                                  setState(() {
-                                    lastIndex = curIndex;
-                                    curIndex = index;
-                                  });
-                                }
-                              : null,
-                          child: Text(
-                            '$index',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        curIndex = -1;
-                        lastIndex = -1;
-                      });
-                    },
-                    child: const Text(
-                      'Reset',
-                    ),
-                  ),
-                ],
-              ),
+          Stepper(
+             steps: getSteps(),
+             type: StepperType.horizontal,
+
+             currentStep: currentStep,
+             onStepTapped: (step) {
+              setState(() {
+             currentStep = step;
+
+             });
+              },
+           onStepContinue: () {
+           final isLastStep = currentStep == getSteps().length - 1;
+
+          if (!isLastStep) {
+           setState(() {
+           currentStep += 1;
+           });
+            }
+            },
+          onStepCancel: () {
+            if (currentStep == 0) {
+              null;
+            } else {
+              setState(() {
+                currentStep -= 1;
+              }
+              );
+
+
+
+
               SingleChildScrollView(
                 child: Column(
                   children: [
@@ -614,7 +595,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                         showModalBottomSheet(
                             context: context,
                             builder: (BuildContext) {
-                              return const SizedBox(
+                              return SizedBox(
                                 height: 200,
                                 child: Row(
                                   children: [
@@ -696,7 +677,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                               return Container(
                                 height: 200,
                                 color: Colors.white24,
-                                child: const Row(
+                                child: Row(
                                   children: [
                                     SizedBox(width: 50),
                                     Text(
@@ -750,42 +731,49 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     const SizedBox(height: 30),
                     GestureDetector(
                       onTap: signUserOut,
-                      child: Row(
-                        children: [
-                          const SizedBox(width: 30),
-                          Container(
-                            width: 60,
-                            height: 60,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(18),
+                      child: Expanded(
+                        child: Row(
+                          children: [
+                            const SizedBox(width: 30),
+                            Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(18),
+                                color: Colors.green,
+                              ),
+                              child: const Icon(
+                                Icons.exit_to_app_outlined,
+                                size: 40,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(width: 20),
+                            const Text(
+                              "Çıkış Yap",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green),
+                            ),
+                            const SizedBox(width: 130),
+                            const Icon(
+                              Icons.arrow_forward_ios_rounded,
                               color: Colors.green,
-                            ),
-                            child: const Icon(
-                              Icons.exit_to_app_outlined,
-                              size: 40,
-                              color: Colors.white,
-                            ),
-                          ),
-                          const SizedBox(width: 20),
-                          const Text(
-                            "Çıkış Yap",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green),
-                          ),
-                          const SizedBox(width: 180),
-                          const Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: Colors.green,
-                          )
-                        ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 ),
-              ),
-            ]),
+              );
+            }
+          })
+            ]
+
+
+         ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
           child: Container(
@@ -835,7 +823,51 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
       ),
     );
   }
-}
+    List<Step> getSteps() => [
+         Step(
+             title: const Text('Ürün Bilgileri'),
+
+             state: currentStep > 0 ? StepState.complete : StepState.indexed,
+             isActive: currentStep >= 0,
+        content: Column(
+          children: [
+            
+           TextFormField(
+          decoration: const InputDecoration(labelText: 'Ürün Adı'),
+            ),
+            TextFormField(
+              decoration:
+              const InputDecoration(labelText: 'Normal Fiyat'),
+            ),
+            TextFormField(
+              decoration:
+              const InputDecoration(labelText: 'İndirimli Fiyat'),
+            ),
+
+            TextFormField(
+            decoration:
+            const InputDecoration(labelText: 'Ürün Açıklaması'),
+           ),
+           ],
+           )),
+            Step(
+           title: const Text('Ürün Özellikleri'),
+            state: currentStep > 1 ? StepState.complete : StepState.indexed,
+           isActive: currentStep >= 1,
+           content: Column(
+              children: [
+              TextFormField(
+               decoration: const InputDecoration(labelText: 'Receiver Name'),
+               ),
+             TextFormField(
+               decoration:
+              const InputDecoration(labelText: 'Receiver Address'),
+               ),
+             ],
+              )),
+
+              ];
+       }
 
 class LinePainter extends CustomPainter {
   @override

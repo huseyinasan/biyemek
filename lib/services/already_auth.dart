@@ -1,7 +1,9 @@
-import 'package:biyemek/screens/business_screens/home/home_screen.dart';
+
 import 'package:biyemek/screens/onboarding/onboarding_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/business_screens/home/business_home_page.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
