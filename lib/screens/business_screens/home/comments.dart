@@ -42,7 +42,7 @@ class _commentsState extends State<comments> with SingleTickerProviderStateMixin
         children: [
           TabBar(
             controller: _tabController,
-            tabs: [
+            tabs: const [
               Tab(text: 'Cevap Bekleyenler',
               ),
               Tab(text: 'Cevaplananlar'),
@@ -51,7 +51,7 @@ class _commentsState extends State<comments> with SingleTickerProviderStateMixin
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: [
+              children: const [
                 Center(child: Text('İçerik 1')),
                 Center(child: Text('İçerik 2')),
               ],

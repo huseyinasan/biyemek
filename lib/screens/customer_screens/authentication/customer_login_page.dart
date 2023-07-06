@@ -1,13 +1,11 @@
 import 'package:biyemek/components/back_button.dart';
-import 'package:biyemek/screens/onboarding/entrance.dart';
-import 'package:biyemek/screens/register/customer_register_page.dart';
-import 'package:biyemek/screens/register/register_page.dart';
-import 'package:biyemek/services/auth_service.dart';
+import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
+import 'package:biyemek/screens/customer_screens/authentication/customer_register_page.dart';
+import 'package:biyemek/services/google_auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../components/my_button.dart';
-import '../../components/my_textfield.dart';
-import '../../components/square_tile.dart';
+import '../../../components/my_button.dart';
+import '../../../components/my_textfield.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -78,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return CustomerLoginScreen();
+                                return const CustomerLoginScreen();
                               },
                             ),
                           );
@@ -177,46 +175,53 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                SizedBox(height:20),
+                const SizedBox(height: 20),
                 GestureDetector(
                   onTap: () => AuthService().signInWithGoogle(context),
-                  child: Container( height: 50,
+                  child: Container(
+                    height: 50,
                     width: 300,
                     decoration: BoxDecoration(
                       color: const Color(0xFFE2F3EE),
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(color: const Color(0xFFA1E7D2)),
-                      boxShadow: [ BoxShadow( color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: const Offset(0, 3), ), ], ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
                     alignment: Alignment.center,
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [ Image.asset( "assets/images/onboarding/google_icon.png"),
+                        children: [
+                          Image.asset(
+                              "assets/images/onboarding/google_icon.png"),
                           const Flexible(
-                            child: Text( "Google ile Giriş Yap",
+                            child: Text(
+                              "Google ile Giriş Yap",
                               style: TextStyle(fontSize: 16),
-                              overflow: TextOverflow .clip, //
+                              overflow: TextOverflow.clip, //
                               // Truncate text if it overflows ), ), ], ), ), ), ),
                             ),
                           ),
-                        ]
-                    ),
+                        ]),
                   ),
                 ),
                 // google + apple sign in buttons
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
+                const Padding(
+                  padding: EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // google button
 
-                      const SizedBox(
+                      SizedBox(
                         width: 25,
                       ),
-
                     ],
                   ),
                 ),

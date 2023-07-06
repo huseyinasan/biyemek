@@ -19,9 +19,9 @@ class IntroPage2 extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height:10),
-            Text(""),
-            Padding(
+            const SizedBox(height:10),
+            const Text(""),
+            const Padding(
               padding: EdgeInsets.all(12.0),
               child:
               Text(

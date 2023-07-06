@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-class products extends StatefulWidget {
-  const products({Key? key}) : super(key: key);
+
+class Notifications extends StatefulWidget {
+  const Notifications({Key? key}) : super(key: key);
 
   @override
-  State<products> createState() => _productsState();
+  State<Notifications> createState() => _NotificationsState();
 }
 
-class _productsState extends State<products> with SingleTickerProviderStateMixin {
+class _NotificationsState extends State<Notifications>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -20,48 +22,41 @@ class _productsState extends State<products> with SingleTickerProviderStateMixin
     _tabController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-
-          ),
-        ],
-
+        actions: const [],
         title: const Text(
-          "Ürünlerim",
+          "Bildirimler",
           style: TextStyle(
             color: Colors.green,
           ),
         ),
         shape: ContinuousRectangleBorder(
-          borderRadius: BorderRadius.circular(40.0),),
-
+          borderRadius: BorderRadius.circular(40.0),
+        ),
         iconTheme: const IconThemeData(
           color: Colors.green,
         ),
-
-
         backgroundColor: const Color(0xFFEDECF5),
-
       ),
       body: Column(
         children: [
           TabBar(
             controller: _tabController,
-            tabs: [
-              Tab(text: 'İlandakiler',
+            tabs: const [
+              Tab(
+                text: 'Cevap Bekleyenler',
               ),
-              Tab(text: 'Satılanlar'),
+              Tab(text: 'Cevaplananlar'),
             ],
           ),
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: [
+              children: const [
                 Center(child: Text('İçerik 1')),
                 Center(child: Text('İçerik 2')),
               ],

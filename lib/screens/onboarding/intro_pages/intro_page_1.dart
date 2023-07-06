@@ -11,15 +11,15 @@ class IntroPage1 extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
 
               Image.asset(
                 'assets/images/onboarding/intro1.png',
                 width: 400,
                 height: 400,
               ),
-               SizedBox(height: 10),
-               Padding(
+               const SizedBox(height: 10),
+               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Column(
                   children: [

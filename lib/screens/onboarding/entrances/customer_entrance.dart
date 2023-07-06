@@ -1,9 +1,6 @@
-import 'package:biyemek/screens/onboarding/introduction_screen.dart';
-import 'package:biyemek/screens/login/login_page.dart';
-import 'package:biyemek/screens/register/Choose_register.dart';
-
-import 'package:biyemek/screens/register/register_page.dart';
-import 'package:biyemek/services/auth_service.dart';
+import 'package:biyemek/screens/customer_screens/authentication/customer_login_page.dart';
+import 'package:biyemek/screens/onboarding/entrances/choose_entrance.dart';
+import 'package:biyemek/screens/customer_screens/authentication/customer_register_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomerLoginScreen extends StatefulWidget {
@@ -33,7 +30,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return  Choose_register();
+                                  return const Choose_register();
                                 },
                               ),
                             );
@@ -59,7 +56,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                     fit: BoxFit.cover, // Resmi sığdırma şekli
                   ),
                   const SizedBox(height: 20),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(
                       left: 10,
                       right: 10,
@@ -140,8 +137,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                             ),
                           ),
                         ),
-                        const SizedBox(
-                            width: 20),
+                        const SizedBox(width: 20),
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
@@ -179,8 +175,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                               ),
                             ),
                           ),
-                        ),// Add spacing between the containers
-
+                        ), // Add spacing between the containers
                       ],
                     ),
                   ),
@@ -197,7 +192,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                           right: 10,
                         ),
                         child: Text(
-                          "Ya da",
+                          "veya",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 13,
@@ -209,19 +204,25 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
                           painter: LinePainter(),
                         ),
                       ),
-                      
-
                     ],
                   ),
-                  SizedBox(height: 30),
-                  Text("Üye Olmadan Devam Et",
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: Colors.black,
-                      decorationThickness: 2.0,
-                      decorationStyle: TextDecorationStyle.solid,
-                    ),)
-
+                  const SizedBox(height: 30),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Üye Olmadan Devam Et",
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          decorationColor: Colors.blue,
+                          decorationThickness: 2.0,
+                          decorationStyle: TextDecorationStyle.solid,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
@@ -248,5 +249,3 @@ class LinePainter extends CustomPainter {
     return false;
   }
 }
-
-

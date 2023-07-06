@@ -1,6 +1,6 @@
 import 'package:biyemek/firebase_options.dart';
-import 'package:biyemek/screens/home/home_screen.dart';
-import 'package:biyemek/screens/login/auth.dart';
+import 'package:biyemek/screens/business_screens/home/home_screen.dart';
+import 'package:biyemek/services/already_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
       },
       debugShowCheckedModeBanner: false,
       title: "Bi'Yemek",
-      theme: ThemeData(primarySwatch: Colors.blue),
       home: const AuthPage(),
     );
   }

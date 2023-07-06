@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-class notifications extends StatefulWidget {
-  const notifications({Key? key}) : super(key: key);
+class products extends StatefulWidget {
+  const products({Key? key}) : super(key: key);
 
   @override
-  State<notifications> createState() => _notificationsState();
+  State<products> createState() => _productsState();
 }
 
-class _notificationsState extends State<notifications> with SingleTickerProviderStateMixin {
+class _productsState extends State<products> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -24,11 +24,15 @@ class _notificationsState extends State<notifications> with SingleTickerProvider
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
+        actions: const [
+          Padding(
+            padding: EdgeInsets.all(8.0),
 
+          ),
         ],
+
         title: const Text(
-          "Bildirimler",
+          "Ürünlerim",
           style: TextStyle(
             color: Colors.green,
           ),
@@ -48,16 +52,16 @@ class _notificationsState extends State<notifications> with SingleTickerProvider
         children: [
           TabBar(
             controller: _tabController,
-            tabs: [
-              Tab(text: 'Cevap Bekleyenler',
+            tabs: const [
+              Tab(text: 'İlandakiler',
               ),
-              Tab(text: 'Cevaplananlar'),
+              Tab(text: 'Satılanlar'),
             ],
           ),
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: [
+              children: const [
                 Center(child: Text('İçerik 1')),
                 Center(child: Text('İçerik 2')),
               ],
