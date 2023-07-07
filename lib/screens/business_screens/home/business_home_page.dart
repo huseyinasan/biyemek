@@ -3,10 +3,10 @@ import 'package:biyemek/screens/business_screens/home/location.dart';
 import 'package:biyemek/screens/business_screens/home/products.dart';
 import 'package:biyemek/screens/business_screens/home/profile.dart';
 import 'package:biyemek/screens/onboarding/entrances/business_entrance.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:status_stepper/status_stepper.dart';
 import 'notifications.dart';
 
 class BusinessHomePage extends StatefulWidget {
@@ -17,6 +17,9 @@ class BusinessHomePage extends StatefulWidget {
 }
 
 class _BusinessHomePageState extends State<BusinessHomePage> {
+  String businessName = "";
+  String businessCity = "";
+  String businessDistrict = "";
   int currentStep = 0;
   final statuses = List.generate(
     2,
@@ -34,6 +37,36 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
   void initState() {
     super.initState();
     _pageController = PageController();
+    fetchBusinessData();
+  }
+
+  Future<void> fetchBusinessData() async {
+    try {
+      User? user = FirebaseAuth.instance.currentUser;
+
+      if (user != null) {
+        String uid = user.uid;
+
+        // Fetch the business name from Firestore using the UID
+        DocumentSnapshot snapshot = await FirebaseFirestore.instance
+            .collection('business')
+            .doc(uid)
+            .get();
+
+        // Extract the business name from the document
+        String name = snapshot.get('businessName');
+        String city = snapshot.get('businessCity');
+        String district = snapshot.get('businessDistrict');
+
+        setState(() {
+          businessName = name;
+          businessCity = city;
+          businessDistrict = district;
+        });
+      }
+    } catch (e) {
+      print('Error fetching UID or business name: $e');
+    }
   }
 
   @override
@@ -87,7 +120,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                         child: Row(
                           children: [
                             const SizedBox(width: 10),
-                             Row(
+                            Row(
                               children: [
                                 Icon(
                                   Icons.location_on_rounded,
@@ -95,7 +128,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   size: 42,
                                 ),
                                 Text(
-                                  "İstanbul/Üsküdar",
+                                  "${businessCity}/${businessDistrict}",
                                   style: TextStyle(
                                     color: Colors.green,
                                     fontSize: 19,
@@ -149,12 +182,12 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   shape: BoxShape.rectangle,
                                   color: const Color(0xFFDBB7D6),
                                 ),
-                                child:  Row(
+                                child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Text(
-                                      "MadGlobal",
+                                      "${businessName}",
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 19),
                                     ),
@@ -189,7 +222,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 children: [
                                   const SizedBox(height: 10),
                                   const Text(
-                                    "Money Saved",
+                                    "Tasarruf Edilen Para",
                                     style: TextStyle(
                                         fontSize: 15, color: Colors.white),
                                   ),
@@ -199,7 +232,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                     height: 48,
                                     color: const Color(0xFFBE7CB4),
                                   ),
-                                   Expanded(
+                                  Expanded(
                                     child: Row(
                                       children: [
                                         SizedBox(width: 40),
@@ -232,11 +265,11 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   ),
                                   borderRadius: BorderRadius.circular(20),
                                   color: const Color(0xFFDBB7D6)),
-                              child:  Column(
+                              child: Column(
                                 children: [
                                   SizedBox(height: 10),
                                   Text(
-                                    "CO2 Saved",
+                                    "Önlenen",
                                     style: TextStyle(
                                         fontSize: 15, color: Colors.white),
                                   ),
@@ -280,7 +313,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                       ),
                                     );
                                   },
-                                  child:  Row(
+                                  child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
                                     children: [
@@ -290,7 +323,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         size: 35,
                                       ),
                                       Text(
-                                        "Comments",
+                                        "Yorumlar",
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 19,
@@ -330,7 +363,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                       borderRadius: BorderRadius.circular(20.0),
                                       shape: BoxShape.rectangle,
                                       color: const Color(0xFFDBB7D6)),
-                                  child:  Row(
+                                  child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
                                     children: [
@@ -340,7 +373,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         color: Colors.white,
                                       ),
                                       Text(
-                                        "My Products",
+                                        "Ürünlerim",
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 19,
@@ -383,7 +416,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                           borderRadius:
                                               BorderRadius.circular(20),
                                           color: const Color(0xFFDBB7D6)),
-                                      child:  Column(
+                                      child: Column(
                                         children: [
                                           SizedBox(height: 15),
                                           Text(
@@ -425,7 +458,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                           borderRadius:
                                               BorderRadius.circular(20),
                                           color: const Color(0xFFDBB7D6)),
-                                      child:  Column(
+                                      child: Column(
                                         children: [
                                           SizedBox(height: 15),
                                           Text(
@@ -472,7 +505,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                           borderRadius:
                                               BorderRadius.circular(20),
                                           color: const Color(0xFFDBB7D6)),
-                                      child:  Column(
+                                      child: Column(
                                         children: [
                                           SizedBox(height: 15),
                                           Text(
@@ -514,7 +547,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                           borderRadius:
                                               BorderRadius.circular(20),
                                           color: const Color(0xFFDBB7D6)),
-                                      child:  Column(
+                                      child: Column(
                                         children: [
                                           SizedBox(height: 15),
                                           Text(
@@ -554,40 +587,34 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                   ),
                 ),
               ),
-      Stepper(
-        steps: getSteps(),
-        type: StepperType.horizontal,
-        currentStep: currentStep,
-        onStepTapped: (step) {
-          setState(() {
-            currentStep = step;
-          });
-        },
-        onStepContinue: () {
-          final isLastStep = currentStep == getSteps().length - 1;
+              Stepper(
+                steps: getSteps(),
+                type: StepperType.horizontal,
+                currentStep: currentStep,
+                onStepTapped: (step) {
+                  setState(() {
+                    currentStep = step;
+                  });
+                },
+                onStepContinue: () {
+                  final isLastStep = currentStep == getSteps().length - 1;
 
-          if (!isLastStep) {
-            setState(() {
-              currentStep += 1;
-            });
-          }
-        },
-        onStepCancel: () {
-          if (currentStep == 0) {
-            null;
-          } else {
-            setState(() {
-              currentStep -= 1;
-            });
-          }
-        },
-      ),
-
-
-
-
-
-
+                  if (!isLastStep) {
+                    setState(() {
+                      currentStep += 1;
+                    });
+                  }
+                },
+                onStepCancel: () {
+                  if (currentStep == 0) {
+                    null;
+                  } else {
+                    setState(() {
+                      currentStep -= 1;
+                    });
+                  }
+                },
+              ),
               SingleChildScrollView(
                 child: Column(
                   children: [
@@ -612,7 +639,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                       Icons.add_photo_alternate_outlined,
                                       color: Colors.green,
                                       size: 75,
-                                    )
+                                    ),
                                   ],
                                 ),
                               );
@@ -622,9 +649,13 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           size: 150, color: Colors.green),
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      "İşletme Adı",
-                      style: TextStyle(fontSize: 20, color: Colors.green),
+                    Text(
+                      "$businessName",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.green,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 50),
                     GestureDetector(
@@ -674,29 +705,30 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     GestureDetector(
                       onTap: () {
                         showModalBottomSheet(
-                            context: context,
-                            builder: (BuildContext) {
-                              return Container(
-                                height: 200,
-                                color: Colors.white24,
-                                child: Row(
-                                  children: [
-                                    SizedBox(width: 50),
-                                    Text(
-                                      "Türkçe",
-                                      style: TextStyle(
-                                          fontSize: 30, color: Colors.green),
-                                    ),
-                                    SizedBox(width: 90),
-                                    Text(
-                                      "English",
-                                      style: TextStyle(
-                                          fontSize: 30, color: Colors.green),
-                                    )
-                                  ],
-                                ),
-                              );
-                            });
+                          context: context,
+                          builder: (BuildContext) {
+                            return Container(
+                              height: 200,
+                              color: Colors.white24,
+                              child: Row(
+                                children: [
+                                  SizedBox(width: 50),
+                                  Text(
+                                    "Türkçe",
+                                    style: TextStyle(
+                                        fontSize: 30, color: Colors.green),
+                                  ),
+                                  SizedBox(width: 90),
+                                  Text(
+                                    "English",
+                                    style: TextStyle(
+                                        fontSize: 30, color: Colors.green),
+                                  )
+                                ],
+                              ),
+                            );
+                          },
+                        );
                       },
                       child: Row(
                         children: [
@@ -769,13 +801,8 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     ),
                   ],
                 ),
-
               )
-
-            ]
-
-
-         ),
+            ]),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
           child: Container(
@@ -825,51 +852,47 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
       ),
     );
   }
-    List<Step> getSteps() => [
-         Step(
-             title: const Text('Ürün Bilgileri'),
 
-             state: currentStep > 0 ? StepState.complete : StepState.indexed,
-             isActive: currentStep >= 0,
-        content: Column(
-          children: [
-            
-           TextFormField(
-          decoration: const InputDecoration(labelText: 'Ürün Adı'),
-            ),
-            TextFormField(
-              decoration:
-              const InputDecoration(labelText: 'Normal Fiyat'),
-            ),
-            TextFormField(
-              decoration:
-              const InputDecoration(labelText: 'İndirimli Fiyat'),
-            ),
-
-            TextFormField(
-            decoration:
-            const InputDecoration(labelText: 'Ürün Açıklaması'),
-           ),
-           ],
-           )),
-            Step(
-           title: const Text('Ürün Özellikleri'),
-            state: currentStep > 1 ? StepState.complete : StepState.indexed,
-           isActive: currentStep >= 1,
-           content: Column(
+  List<Step> getSteps() => [
+        Step(
+            title: const Text('Ürün Bilgileri'),
+            state: currentStep > 0 ? StepState.complete : StepState.indexed,
+            isActive: currentStep >= 0,
+            content: Column(
               children: [
-              TextFormField(
-               decoration: const InputDecoration(labelText: 'Receiver Name'),
-               ),
-             TextFormField(
-               decoration:
-              const InputDecoration(labelText: 'Receiver Address'),
-               ),
-             ],
-              )),
-
-              ];
-       }
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Ürün Adı'),
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Normal Fiyat'),
+                ),
+                TextFormField(
+                  decoration:
+                      const InputDecoration(labelText: 'İndirimli Fiyat'),
+                ),
+                TextFormField(
+                  decoration:
+                      const InputDecoration(labelText: 'Ürün Açıklaması'),
+                ),
+              ],
+            )),
+        Step(
+            title: const Text('Ürün Özellikleri'),
+            state: currentStep > 1 ? StepState.complete : StepState.indexed,
+            isActive: currentStep >= 1,
+            content: Column(
+              children: [
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Receiver Name'),
+                ),
+                TextFormField(
+                  decoration:
+                      const InputDecoration(labelText: 'Receiver Address'),
+                ),
+              ],
+            )),
+      ];
+}
 
 class LinePainter extends CustomPainter {
   @override

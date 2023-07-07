@@ -36,6 +36,11 @@ class _BusinessRegisterPageState extends State<BusinessRegisterPage> {
       String name = nameController.text;
       String surname = surnameController.text;
       int phone = int.parse(phoneController.text);
+      String businessName = businessNameController.text;
+      String businessType = businessTypeController.text;
+      String businessCity = businessCityController.text;
+      String businessDistrict = businessDistrictController.text;
+      int idNumber = int.parse(idNumberController.text);
 
       UserCredential userCredential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -49,10 +54,15 @@ class _BusinessRegisterPageState extends State<BusinessRegisterPage> {
       String uid = userCredential.user!.uid;
 
       // Store the user's name in Firestore
-      await FirebaseFirestore.instance.collection('users').doc(uid).set({
+      await FirebaseFirestore.instance.collection('business').doc(uid).set({
         'name': name,
         'surname': surname,
         'phone': phone,
+        'businessName': businessName,
+        'businessType': businessType,
+        'businessCity': businessCity,
+        'businessDistrict': businessDistrict,
+        'idNumber': idNumber,
       });
 
       // Clear form fields after successful registration
