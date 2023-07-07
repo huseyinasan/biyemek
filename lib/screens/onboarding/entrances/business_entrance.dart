@@ -50,7 +50,7 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                     ),
                   ),
                   const Image(
-                    image: AssetImage('assets/images/onboarding/login.png'),
+                    image: AssetImage('assets/images/onboarding/intro2.png'),
                     width: 500, // İstenilen genişlik
                     height: 300, // İstenilen yükseklik
                     fit: BoxFit.cover, // Resmi sığdırma şekli
@@ -86,8 +86,8 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    '''Ürünlerini listeleyerek, civarında ki müşterilere 
-                     hemen satmaya başla!''',
+                    '''                    Fazlalık ürünlerini listele!
+  Civarında ki müşterilere hemen satmaya başla!''',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,

@@ -80,7 +80,7 @@ class _BusinessRegisterPageState extends State<BusinessRegisterPage> {
           return AlertDialog(
             title: const Text('Üyelik Başarılı'),
             content: const Text(
-              "Tebrikler işletmenizi başarıyla kayıt oldu. Biz başvurunuzu incelerken siz uygulamayı kullanabilirsiniz 😊. ",
+              "Tebrikler işletmeniz başarıyla kayıt oldu. Biz başvurunuzu incelerken siz uygulamayı kullanabilirsiniz 😊. ",
             ),
             actions: <Widget>[
               ElevatedButton(

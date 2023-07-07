@@ -67,7 +67,7 @@ class _CustomerRegisterPageState extends State<CustomerRegisterPage> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: const Text('Üyelik Başarılı'),
-            content: Text("Tebrikler Başarıyla üye oldun $succesName !"),
+            content: Text("Tebrikler Başarıyla üye oldun $succesName ! 😊"),
             actions: <Widget>[
               ElevatedButton(
                 onPressed: () {
