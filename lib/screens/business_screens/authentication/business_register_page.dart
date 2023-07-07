@@ -65,14 +65,6 @@ class _BusinessRegisterPageState extends State<BusinessRegisterPage> {
         'idNumber': idNumber,
       });
 
-      // Clear form fields after successful registration
-      nameController.clear();
-      surnameController.clear();
-      emailController.clear();
-      phoneController.clear();
-      passwordController.clear();
-      confirmPasswordController.clear();
-
       // Show a success dialog or navigate to the desired screen
       showDialog(
         context: context,
@@ -80,7 +72,7 @@ class _BusinessRegisterPageState extends State<BusinessRegisterPage> {
           return AlertDialog(
             title: const Text('Üyelik Başarılı'),
             content: const Text(
-              "Tebrikler işletmeniz başarıyla kayıt oldu. Biz başvurunuzu incelerken siz uygulamayı kullanabilirsiniz 😊. ",
+              "Tebrikler işletmeniz başarıyla sisteme kayıt oldu. Biz başvurunuzu incelerken siz uygulamayı giriş yaparak kullanabilirsiniz 😊. ",
             ),
             actions: <Widget>[
               ElevatedButton(

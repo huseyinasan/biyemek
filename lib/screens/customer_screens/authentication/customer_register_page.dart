@@ -51,23 +51,14 @@ class _CustomerRegisterPageState extends State<CustomerRegisterPage> {
         'phone': phone,
       });
 
-      String succesName = nameController.text;
-
-      // Clear form fields after successful registration
-      nameController.clear();
-      surnameController.clear();
-      emailController.clear();
-      phoneController.clear();
-      passwordController.clear();
-      confirmPasswordController.clear();
-
       // Show a success dialog or navigate to the desired screen
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
             title: const Text('Üyelik Başarılı'),
-            content: Text("Tebrikler Başarıyla üye oldun $succesName ! 😊"),
+            content: Text(
+                "Tebrikler Başarıyla üye oldun ${nameController.text} ! 😊"),
             actions: <Widget>[
               ElevatedButton(
                 onPressed: () {
