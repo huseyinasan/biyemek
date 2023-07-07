@@ -554,34 +554,36 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                   ),
                 ),
               ),
-          Stepper(
-             steps: getSteps(),
-             type: StepperType.horizontal,
-
-             currentStep: currentStep,
-             onStepTapped: (step) {
-              setState(() {
-             currentStep = step;
-
-             });
-              },
-           onStepContinue: () {
-           final isLastStep = currentStep == getSteps().length - 1;
+      Stepper(
+        steps: getSteps(),
+        type: StepperType.horizontal,
+        currentStep: currentStep,
+        onStepTapped: (step) {
+          setState(() {
+            currentStep = step;
+          });
+        },
+        onStepContinue: () {
+          final isLastStep = currentStep == getSteps().length - 1;
 
           if (!isLastStep) {
-           setState(() {
-           currentStep += 1;
-           });
-            }
-            },
-          onStepCancel: () {
-            if (currentStep == 0) {
-              null;
-            } else {
-              setState(() {
-                currentStep -= 1;
-              }
-              );
+            setState(() {
+              currentStep += 1;
+            });
+          }
+        },
+        onStepCancel: () {
+          if (currentStep == 0) {
+            null;
+          } else {
+            setState(() {
+              currentStep -= 1;
+            });
+          }
+        },
+      ),
+
+
 
 
 
@@ -767,9 +769,9 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     ),
                   ],
                 ),
-              );
-            }
-          })
+
+              )
+
             ]
 
 
