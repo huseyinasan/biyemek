@@ -1,4 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:biyemek/firebase_options.dart';
 import 'package:biyemek/screens/business_screens/home/business_home_page.dart';
 import 'package:biyemek/screens/onboarding/onboarding_screen.dart';
@@ -50,7 +51,10 @@ class _SplashScreenState extends State<SplashScreen> {
          children: [
            Image.asset("assets/images/onboarding/intro1.png"),
 
-          SizedBox(height: 30),
+
+
+
+          SizedBox(height: 20),
           SpinKitThreeInOut(
            color: Colors.red,
            size: 50.0,

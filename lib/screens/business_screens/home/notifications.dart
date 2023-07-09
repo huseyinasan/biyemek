@@ -44,17 +44,32 @@ class _NotificationsState extends State<Notifications>
       ),
       body: Column(
         children: [
+          SizedBox(height: 10),
           TabBar(
+            indicator: UnderlineTabIndicator(
+              borderSide: BorderSide(color: Colors.green, width: 2.0), // Çizginin rengi ve kalınlığı
+              insets: EdgeInsets.symmetric(horizontal: 16.0), // Çizginin tablerle olan boşluğu
+            ),
+
             controller: _tabController,
             tabs: const [
               Tab(
-                text: 'Cevap Bekleyenler',
+                child: Text("Okunmayanlar",
+                style: TextStyle(
+                  color: Colors.green
+                ),),
               ),
-              Tab(text: 'Cevaplananlar'),
+              Tab(
+                child: Text("Okunmuşlar",
+                  style: TextStyle(
+                      color: Colors.green
+                  ),),
+              ),
             ],
           ),
           Expanded(
             child: TabBarView(
+
               controller: _tabController,
               children: const [
                 Center(child: Text('İçerik 1')),

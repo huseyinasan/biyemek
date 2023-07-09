@@ -48,13 +48,24 @@ class _ProductsState extends State<Products>
       ),
       body: Column(
         children: [
+          SizedBox(height: 10),
           TabBar(
+            indicator: UnderlineTabIndicator(
+              borderSide: BorderSide(color: Colors.green, width: 2.0), // Çizginin rengi ve kalınlığı
+              insets: EdgeInsets.symmetric(horizontal: 16.0), // Çizginin tablerle olan boşluğu
+            ),
             controller: _tabController,
             tabs: const [
               Tab(
-                text: 'İlandakiler',
+                child: Text("İlandakiler",
+                style: TextStyle(
+                  color: Colors.green
+                ),),
               ),
-              Tab(text: 'Satılanlar'),
+              Tab(child: Text("Satılanlar",
+                style: TextStyle(
+                    color: Colors.green
+                ),),),
             ],
           ),
           Expanded(

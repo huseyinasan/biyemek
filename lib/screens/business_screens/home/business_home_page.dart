@@ -1,3 +1,4 @@
+import 'package:biyemek/screens/business_screens/home/Add_product_compeleted.dart';
 import 'package:biyemek/screens/business_screens/home/comments.dart';
 import 'package:biyemek/screens/business_screens/home/location.dart';
 import 'package:biyemek/screens/business_screens/home/products.dart';
@@ -597,14 +598,18 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                   });
                 },
                 onStepContinue: () {
-                  final isLastStep = currentStep == getSteps().length - 1;
-
-                  if (!isLastStep) {
+                  if (currentStep == getSteps().length - 1) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Add_product_completed()),
+                    );
+                  } else {
                     setState(() {
                       currentStep += 1;
                     });
                   }
                 },
+
                 onStepCancel: () {
                   if (currentStep == 0) {
                     null;
@@ -854,10 +859,12 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
   }
 
   List<Step> getSteps() => [
+
         Step(
             title: const Text('Ürün Bilgileri'),
             state: currentStep > 0 ? StepState.complete : StepState.indexed,
             isActive: currentStep >= 0,
+
             content: Column(
               children: [
                 TextFormField(
