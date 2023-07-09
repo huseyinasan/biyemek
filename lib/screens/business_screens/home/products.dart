@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-class comments extends StatefulWidget {
-  const comments({Key? key}) : super(key: key);
+
+class Products extends StatefulWidget {
+  const Products({Key? key}) : super(key: key);
 
   @override
-  State<comments> createState() => _commentsState();
+  State<Products> createState() => _ProductsState();
 }
-class _commentsState extends State<comments> with SingleTickerProviderStateMixin {
+
+class _ProductsState extends State<Products>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -24,8 +27,13 @@ class _commentsState extends State<comments> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: const [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+          ),
+        ],
         title: const Text(
-          "Yorumlar",
+          "Ürünlerim",
           style: TextStyle(
             color: Colors.green,
           ),
@@ -40,18 +48,30 @@ class _commentsState extends State<comments> with SingleTickerProviderStateMixin
       ),
       body: Column(
         children: [
+          SizedBox(height: 10),
           TabBar(
+            indicator: UnderlineTabIndicator(
+              borderSide: BorderSide(color: Colors.green, width: 2.0), // Çizginin rengi ve kalınlığı
+              insets: EdgeInsets.symmetric(horizontal: 16.0), // Çizginin tablerle olan boşluğu
+            ),
             controller: _tabController,
-            tabs: [
-              Tab(text: 'Cevap Bekleyenler',
+            tabs: const [
+              Tab(
+                child: Text("İlandakiler",
+                style: TextStyle(
+                  color: Colors.green
+                ),),
               ),
-              Tab(text: 'Cevaplananlar'),
+              Tab(child: Text("Satılanlar",
+                style: TextStyle(
+                    color: Colors.green
+                ),),),
             ],
           ),
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: [
+              children: const [
                 Center(child: Text('İçerik 1')),
                 Center(child: Text('İçerik 2')),
               ],
@@ -62,7 +82,3 @@ class _commentsState extends State<comments> with SingleTickerProviderStateMixin
     );
   }
 }
-
-
-
-

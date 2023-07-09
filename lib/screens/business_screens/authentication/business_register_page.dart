@@ -1,23 +1,25 @@
 import 'package:biyemek/components/back_button.dart';
-import 'package:biyemek/screens/onboarding/entrance.dart';
-import 'package:biyemek/screens/register/customer_register_page.dart';
+import 'package:biyemek/screens/business_screens/authentication/business_login_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:biyemek/screens/login/login_page.dart';
 
-import '../../services/auth_service.dart';
-
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class BusinessRegisterPage extends StatefulWidget {
+  const BusinessRegisterPage({super.key});
 
   @override
-  _RegisterPageState createState() => _RegisterPageState();
+  _BusinessRegisterPageState createState() => _BusinessRegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _BusinessRegisterPageState extends State<BusinessRegisterPage> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController surnameController = TextEditingController();
+  final TextEditingController businessNameController = TextEditingController();
+  final TextEditingController businessTypeController = TextEditingController();
+  final TextEditingController businessCityController = TextEditingController();
+  final TextEditingController businessDistrictController =
+      TextEditingController();
+  final TextEditingController idNumberController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -34,6 +36,11 @@ class _RegisterPageState extends State<RegisterPage> {
       String name = nameController.text;
       String surname = surnameController.text;
       int phone = int.parse(phoneController.text);
+      String businessName = businessNameController.text;
+      String businessType = businessTypeController.text;
+      String businessCity = businessCityController.text;
+      String businessDistrict = businessDistrictController.text;
+      int idNumber = int.parse(idNumberController.text);
 
       UserCredential userCredential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -47,21 +54,16 @@ class _RegisterPageState extends State<RegisterPage> {
       String uid = userCredential.user!.uid;
 
       // Store the user's name in Firestore
-      await FirebaseFirestore.instance.collection('users').doc(uid).set({
+      await FirebaseFirestore.instance.collection('business').doc(uid).set({
         'name': name,
         'surname': surname,
         'phone': phone,
+        'businessName': businessName,
+        'businessType': businessType,
+        'businessCity': businessCity,
+        'businessDistrict': businessDistrict,
+        'idNumber': idNumber,
       });
-
-      String succesName = nameController.text;
-
-      // Clear form fields after successful registration
-      nameController.clear();
-      surnameController.clear();
-      emailController.clear();
-      phoneController.clear();
-      passwordController.clear();
-      confirmPasswordController.clear();
 
       // Show a success dialog or navigate to the desired screen
       showDialog(
@@ -69,7 +71,9 @@ class _RegisterPageState extends State<RegisterPage> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: const Text('Üyelik Başarılı'),
-            content: Text("Tebrikler Başarıyla üye oldun ${succesName} !"),
+            content: const Text(
+              "Tebrikler işletmeniz başarıyla sisteme kayıt oldu. Biz başvurunuzu incelerken siz uygulamayı giriş yaparak kullanabilirsiniz 😊. ",
+            ),
             actions: <Widget>[
               ElevatedButton(
                 onPressed: () {
@@ -77,7 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const LoginPage();
+                        return const BusinessLoginPage();
                       },
                     ),
                   );
@@ -146,17 +150,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5),
+                      padding: const EdgeInsets.symmetric(vertical: 5),
                       child: BackToButton(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return CustomerLoginScreen();
-                              },
-                            ),
-                          );
+                          Navigator.pop(context);
                         },
                       ),
                     ),
@@ -164,13 +161,16 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(bottom: 10),
+                padding: EdgeInsets.only(
+                  bottom: 10,
+                  top: 10,
+                ),
                 child: Center(
                   child: Text(
-                    'Aramıza katılmadan önce seni tanıyalım.',
+                    'Aramıza katılmadan önce işletmenizi tanıyalım 😊',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 17,
                     ),
                   ),
                 ),
@@ -186,7 +186,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   fillColor: Colors.grey.shade200,
                   filled: true,
-                  labelText: "Ad",
+                  labelText: "Temsilci Adı",
                   hintStyle: TextStyle(color: Colors.grey[500]),
                 ),
               ),
@@ -202,7 +202,87 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   fillColor: Colors.grey.shade200,
                   filled: true,
-                  labelText: "Soyad",
+                  labelText: "Temsilci Soyadı",
+                  hintStyle: TextStyle(color: Colors.grey[500]),
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              TextField(
+                controller: idNumberController,
+                decoration: InputDecoration(
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  fillColor: Colors.grey.shade200,
+                  filled: true,
+                  labelText: "T.C. Kimlik Nu.",
+                  hintStyle: TextStyle(color: Colors.grey[500]),
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              TextField(
+                controller: businessNameController,
+                decoration: InputDecoration(
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  fillColor: Colors.grey.shade200,
+                  filled: true,
+                  labelText: "İşletme İsmi",
+                  hintStyle: TextStyle(color: Colors.grey[500]),
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              TextField(
+                controller: businessTypeController,
+                decoration: InputDecoration(
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  fillColor: Colors.grey.shade200,
+                  filled: true,
+                  labelText: "İşletme Tipi",
+                  hintStyle: TextStyle(color: Colors.grey[500]),
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              TextField(
+                controller: businessCityController,
+                decoration: InputDecoration(
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  fillColor: Colors.grey.shade200,
+                  filled: true,
+                  labelText: "Şehir",
+                  hintStyle: TextStyle(color: Colors.grey[500]),
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              TextField(
+                controller: businessDistrictController,
+                decoration: InputDecoration(
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  fillColor: Colors.grey.shade200,
+                  filled: true,
+                  labelText: "İlçe",
                   hintStyle: TextStyle(color: Colors.grey[500]),
                 ),
               ),
@@ -293,7 +373,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   }
                 },
                 child: const Text(
-                  'ÜYE OL',
+                  'ÜYE OL ve BAŞVUR',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -301,40 +381,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-              const Divider(
-                color: Color(0xFFE2F3EE),
-              ),
-              GestureDetector(
-              onTap: () => AuthService().signInWithGoogle(context),
-              child: Container( height: 50,
-               decoration: BoxDecoration(
-                color: const Color(0xFFE2F3EE),
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(color: const Color(0xFFA1E7D2)),
-               boxShadow: [ BoxShadow( color: Colors.grey.withOpacity(0.5),
-               spreadRadius: 2,
-                blurRadius: 5,
-                offset: const Offset(0, 3), ), ], ),
-                alignment: Alignment.center,
-               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [ Image.asset( "assets/images/onboarding/google_icon.png"),
-                const Flexible(
-                child: Text( "Google ile Üye Ol",
-                style: TextStyle(fontSize: 16),
-                 overflow: TextOverflow .clip, //
-                 // Truncate text if it overflows ), ), ], ), ), ), ),
-                 ),
+            ],
           ),
-         ]
         ),
       ),
-      )
-         ]
-         )
-         )
-      )
     );
-
   }
 }

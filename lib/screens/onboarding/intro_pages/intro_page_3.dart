@@ -21,8 +21,8 @@ class IntroPage3 extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(height:20 ),
-               Padding(
+              const SizedBox(height:20 ),
+               const Padding(
                 padding: EdgeInsets.all(12.0),
                 child: Text(
                   """    Günlük olarak listelenen fazlalık

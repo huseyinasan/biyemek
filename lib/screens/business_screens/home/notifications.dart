@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-class notifications extends StatefulWidget {
-  const notifications({Key? key}) : super(key: key);
+
+class Notifications extends StatefulWidget {
+  const Notifications({Key? key}) : super(key: key);
 
   @override
-  State<notifications> createState() => _notificationsState();
+  State<Notifications> createState() => _NotificationsState();
 }
 
-class _notificationsState extends State<notifications> with SingleTickerProviderStateMixin {
+class _NotificationsState extends State<Notifications>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -20,13 +22,12 @@ class _notificationsState extends State<notifications> with SingleTickerProvider
     _tabController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-
-        ],
+        actions: const [],
         title: const Text(
           "Bildirimler",
           style: TextStyle(
@@ -34,30 +35,43 @@ class _notificationsState extends State<notifications> with SingleTickerProvider
           ),
         ),
         shape: ContinuousRectangleBorder(
-          borderRadius: BorderRadius.circular(40.0),),
-
+          borderRadius: BorderRadius.circular(40.0),
+        ),
         iconTheme: const IconThemeData(
           color: Colors.green,
         ),
-
-
         backgroundColor: const Color(0xFFEDECF5),
-
       ),
       body: Column(
         children: [
+          SizedBox(height: 10),
           TabBar(
+            indicator: UnderlineTabIndicator(
+              borderSide: BorderSide(color: Colors.green, width: 2.0), // Çizginin rengi ve kalınlığı
+              insets: EdgeInsets.symmetric(horizontal: 16.0), // Çizginin tablerle olan boşluğu
+            ),
+
             controller: _tabController,
-            tabs: [
-              Tab(text: 'Cevap Bekleyenler',
+            tabs: const [
+              Tab(
+                child: Text("Okunmayanlar",
+                style: TextStyle(
+                  color: Colors.green
+                ),),
               ),
-              Tab(text: 'Cevaplananlar'),
+              Tab(
+                child: Text("Okunmuşlar",
+                  style: TextStyle(
+                      color: Colors.green
+                  ),),
+              ),
             ],
           ),
           Expanded(
             child: TabBarView(
+
               controller: _tabController,
-              children: [
+              children: const [
                 Center(child: Text('İçerik 1')),
                 Center(child: Text('İçerik 2')),
               ],

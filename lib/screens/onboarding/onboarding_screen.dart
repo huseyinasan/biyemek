@@ -1,7 +1,8 @@
-import 'package:biyemek/screens/register/Choose_register.dart';
+import 'package:biyemek/screens/onboarding/entrances/choose_entrance.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 class IntroductionScreen extends StatefulWidget {
   const IntroductionScreen({Key? key}) : super(key: key);
 
@@ -27,15 +28,15 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
             },
             enableLoop: false,
             enableSideReveal: true,
-
-
-            slideIconWidget: currentIndex == 2 ? Container() : Icon(Icons.arrow_back_ios_new_rounded),
+            slideIconWidget: currentIndex == 2
+                ? Container()
+                : const Icon(Icons.arrow_back_ios_new_rounded),
             pages: [
               Container(
                 color: Colors.greenAccent,
                 child: Column(
                   children: [
-                    SizedBox(height: 100),
+                    const SizedBox(height: 100),
                     Image.asset("assets/images/onboarding/intro1.png"),
                   ],
                 ),
@@ -44,7 +45,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                 color: Colors.pinkAccent,
                 child: Column(
                   children: [
-                    SizedBox(height: 50),
+                    const SizedBox(height: 50),
                     Image.asset("assets/images/onboarding/intro2.png"),
                   ],
                 ),
@@ -53,16 +54,16 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                 color: Colors.yellow,
                 child: Column(
                   children: [
-                    SizedBox(height: 50),
+                    const SizedBox(height: 50),
                     Image.asset("assets/images/onboarding/intro3.png"),
-                    SizedBox(height: 200),
+                    const SizedBox(height: 200),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return Choose_register();
+                              return const ChooseEntrance();
                             },
                           ),
                         );
@@ -77,7 +78,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                               color: Colors.white,
                             ),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Başla",
                               style: TextStyle(
