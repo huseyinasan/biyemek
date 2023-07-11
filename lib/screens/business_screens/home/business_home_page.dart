@@ -601,7 +601,8 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                   if (currentStep == getSteps().length - 1) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Add_product_completed()),
+                      MaterialPageRoute(
+                          builder: (context) => Add_product_completed()),
                     );
                   } else {
                     setState(() {
@@ -609,7 +610,6 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     });
                   }
                 },
-
                 onStepCancel: () {
                   if (currentStep == 0) {
                     null;
@@ -859,12 +859,10 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
   }
 
   List<Step> getSteps() => [
-
         Step(
             title: const Text('Ürün Bilgileri'),
             state: currentStep > 0 ? StepState.complete : StepState.indexed,
             isActive: currentStep >= 0,
-
             content: Column(
               children: [
                 TextFormField(
