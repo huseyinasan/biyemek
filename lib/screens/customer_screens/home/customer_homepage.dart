@@ -1,7 +1,17 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class CustomerHomePage extends StatelessWidget {
   const CustomerHomePage({super.key});
+
+  Future<void> signUserOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+    } catch (e) {
+      print('Error signing out: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,9 +31,7 @@ class CustomerHomePage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: () {
-                // Add your logic here
-              },
+              onPressed: signUserOut,
               child: const Text('Go to Profile'),
             ),
           ],
