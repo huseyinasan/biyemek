@@ -1,4 +1,3 @@
-import 'package:biyemek/screens/business_screens/home/Add_product_compeleted.dart';
 import 'package:biyemek/screens/business_screens/home/comments.dart';
 import 'package:biyemek/screens/business_screens/home/location.dart';
 import 'package:biyemek/screens/business_screens/home/products.dart';
@@ -8,7 +7,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'add_product_completed.dart';
 import 'notifications.dart';
+import 'package:biyemek/models/product_model.dart';
 
 class BusinessHomePage extends StatefulWidget {
   const BusinessHomePage({Key? key}) : super(key: key);
@@ -21,6 +22,10 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
   String businessName = "";
   String businessCity = "";
   String businessDistrict = "";
+  TextEditingController productNameController = TextEditingController();
+  TextEditingController priceController = TextEditingController();
+  TextEditingController discountedPriceController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
   int currentStep = 0;
   final statuses = List.generate(
     2,
@@ -599,10 +604,11 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                 },
                 onStepContinue: () {
                   if (currentStep == getSteps().length - 1) {
+                    submitProduct();
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Add_product_completed()),
+                          builder: (context) => AddProductCompletedPage()),
                     );
                   } else {
                     setState(() {
@@ -866,37 +872,65 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
             content: Column(
               children: [
                 TextFormField(
+                  controller: productNameController,
                   decoration: const InputDecoration(labelText: 'Ürün Adı'),
                 ),
                 TextFormField(
+                  controller: priceController,
                   decoration: const InputDecoration(labelText: 'Normal Fiyat'),
                 ),
                 TextFormField(
+                  controller: discountedPriceController,
                   decoration:
                       const InputDecoration(labelText: 'İndirimli Fiyat'),
                 ),
                 TextFormField(
+                  controller: descriptionController,
                   decoration:
                       const InputDecoration(labelText: 'Ürün Açıklaması'),
                 ),
               ],
             )),
         Step(
-            title: const Text('Ürün Özellikleri'),
-            state: currentStep > 1 ? StepState.complete : StepState.indexed,
-            isActive: currentStep >= 1,
-            content: Column(
-              children: [
-                TextFormField(
-                  decoration: const InputDecoration(labelText: 'Receiver Name'),
-                ),
-                TextFormField(
-                  decoration:
-                      const InputDecoration(labelText: 'Receiver Address'),
-                ),
-              ],
-            )),
+          title: const Text('Ürün Özellikleri'),
+          state: currentStep > 1 ? StepState.complete : StepState.indexed,
+          isActive: currentStep >= 1,
+          content: Column(
+            children: [
+              TextFormField(
+                decoration: const InputDecoration(labelText: 'Receiver Name'),
+              ),
+              TextFormField(
+                decoration:
+                    const InputDecoration(labelText: 'Receiver Address'),
+              ),
+            ],
+          ),
+        ),
       ];
+  void submitProduct() {
+    // Get the entered values from the text controllers
+    String productName = productNameController.text;
+    double normalPrice = double.tryParse(priceController.text) ?? 0.0;
+    double discountedPrice =
+        double.tryParse(discountedPriceController.text) ?? 0.0;
+    String description = descriptionController.text;
+
+    // Create a Product object with the entered data
+    Product product = Product(
+      name: productName,
+      price: normalPrice,
+      discountedPrice: discountedPrice,
+      description: description,
+    );
+
+    // Store the product in Firestore
+    addProductToFirestore(product);
+  }
+
+  void addProductToFirestore(Product product) {
+    FirebaseFirestore.instance.collection('products').add(product.toMap());
+  }
 }
 
 class LinePainter extends CustomPainter {
