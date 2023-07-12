@@ -892,21 +892,20 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
               ],
             )),
         Step(
-          title: const Text('Ürün Özellikleri'),
-          state: currentStep > 1 ? StepState.complete : StepState.indexed,
-          isActive: currentStep >= 1,
-          content: Column(
-            children: [
-              TextFormField(
-                decoration: const InputDecoration(labelText: 'Receiver Name'),
-              ),
-              TextFormField(
-                decoration:
-                    const InputDecoration(labelText: 'Receiver Address'),
-              ),
-            ],
-          ),
-        ),
+            title: const Text('Ürün Özellikleri'),
+            state: currentStep > 1 ? StepState.complete : StepState.indexed,
+            isActive: currentStep >= 1,
+            content: Column(
+              children: [
+                TextFormField(
+                  decoration: const InputDecoration(labelText: 'Receiver Name'),
+                ),
+                TextFormField(
+                  decoration:
+                      const InputDecoration(labelText: 'Receiver Address'),
+                ),
+              ],
+            )),
       ];
   void submitProduct() {
     // Get the entered values from the text controllers
