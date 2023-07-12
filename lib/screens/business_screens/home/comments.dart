@@ -41,32 +41,30 @@ class _CommentsState extends State<Comments>
         ),
         backgroundColor: const Color(0xFFEDECF5),
       ),
-
       body: Column(
         children: [
           SizedBox(height: 10),
           TabBar(
             indicator: UnderlineTabIndicator(
-              borderSide: BorderSide(color: Colors.green, width: 2.0), // Çizginin rengi ve kalınlığı
-              insets: EdgeInsets.symmetric(horizontal: 16.0), // Çizginin tablerle olan boşluğu
+              borderSide: BorderSide(
+                  color: Colors.green,
+                  width: 2.0), // Çizginin rengi ve kalınlığı
+              insets: EdgeInsets.symmetric(
+                  horizontal: 16.0), // Çizginin tablerle olan boşluğu
             ),
             controller: _tabController,
-
             tabs: const [
               Tab(
-              child: Text("Cevap Bekleyenler",
-              style: TextStyle(
-                color: Colors.green
-              ),
-              ),
-
-
+                child: Text(
+                  "Cevap Bekleyenler",
+                  style: TextStyle(color: Colors.green),
+                ),
               ),
               Tab(
-                child: Text("Cevaplanlar",
-                style: TextStyle( color: Colors.green),),
-
-
+                child: Text(
+                  "Cevaplanlar",
+                  style: TextStyle(color: Colors.green),
+                ),
               ),
             ],
           ),
