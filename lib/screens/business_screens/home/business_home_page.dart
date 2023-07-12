@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'notifications.dart';
 
+
 class BusinessHomePage extends StatefulWidget {
   const BusinessHomePage({Key? key}) : super(key: key);
 
@@ -18,6 +19,8 @@ class BusinessHomePage extends StatefulWidget {
 }
 
 class _BusinessHomePageState extends State<BusinessHomePage> {
+
+
   String businessName = "";
   String businessCity = "";
   String businessDistrict = "";
@@ -84,6 +87,8 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
     }
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
@@ -92,8 +97,11 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
       return const BusinessEntrance(); // Return an empty container or another widget
     }
     return SafeArea(
+
       child: Scaffold(
+
         body: PageView(
+
             controller: _pageController,
             onPageChanged: (index) {
               setState(() {
@@ -588,37 +596,41 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                   ),
                 ),
               ),
-              Stepper(
-                steps: getSteps(),
-                type: StepperType.horizontal,
-                currentStep: currentStep,
-                onStepTapped: (step) {
-                  setState(() {
-                    currentStep = step;
-                  });
-                },
-                onStepContinue: () {
-                  if (currentStep == getSteps().length - 1) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Add_product_completed()),
-                    );
-                  } else {
-                    setState(() {
-                      currentStep += 1;
-                    });
-                  }
-                },
+              Container(
 
-                onStepCancel: () {
-                  if (currentStep == 0) {
-                    null;
-                  } else {
+                child: Stepper(
+
+                  steps: getSteps(),
+                  type: StepperType.horizontal,
+                  currentStep: currentStep,
+                  onStepTapped: (step) {
                     setState(() {
-                      currentStep -= 1;
+                      currentStep = step;
                     });
-                  }
-                },
+                  },
+                  onStepContinue: () {
+                    if (currentStep == getSteps().length - 1) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Add_product_completed()),
+                      );
+                    } else {
+                      setState(() {
+                        currentStep += 1;
+                      });
+                    }
+                  },
+
+                  onStepCancel: () {
+                    if (currentStep == 0) {
+                      null;
+                    } else {
+                      setState(() {
+                        currentStep -= 1;
+                      });
+                    }
+                  },
+                ),
               ),
               SingleChildScrollView(
                 child: Column(
@@ -860,6 +872,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
 
   List<Step> getSteps() => [
 
+
         Step(
             title: const Text('Ürün Bilgileri'),
             state: currentStep > 0 ? StepState.complete : StepState.indexed,
@@ -884,14 +897,17 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
               ],
             )),
         Step(
+
             title: const Text('Ürün Özellikleri'),
             state: currentStep > 1 ? StepState.complete : StepState.indexed,
             isActive: currentStep >= 1,
             content: Column(
+
               children: [
-                TextFormField(
-                  decoration: const InputDecoration(labelText: 'Receiver Name'),
-                ),
+
+
+
+
                 TextFormField(
                   decoration:
                       const InputDecoration(labelText: 'Receiver Address'),
