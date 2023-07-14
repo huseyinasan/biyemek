@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:biyemek/screens/business_screens/home/comments.dart';
 import 'package:biyemek/screens/business_screens/home/location.dart';
 import 'package:biyemek/screens/business_screens/home/products.dart';
@@ -5,12 +7,15 @@ import 'package:biyemek/screens/business_screens/home/profile.dart';
 import 'package:biyemek/screens/onboarding/entrances/business_entrance.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:uuid/uuid.dart';
 import 'add_product_completed.dart';
 import 'notifications.dart';
 import 'package:biyemek/models/product_model.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 
 class BusinessHomePage extends StatefulWidget {
@@ -21,19 +26,25 @@ class BusinessHomePage extends StatefulWidget {
 }
 
 class _BusinessHomePageState extends State<BusinessHomePage> {
-  String businessName = "";
+  String _businessName = "";
   String businessCity = "";
   String businessDistrict = "";
+  String _businessUid = "";
   int currentStep = 0;
 
-  //adding product variables
-  TextEditingController productNameController = TextEditingController();
-  TextEditingController priceController = TextEditingController();
-  TextEditingController discountedPriceController = TextEditingController();
-  TextEditingController descriptionController = TextEditingController();
+  //adding product page variables
+  final TextEditingController productNameController = TextEditingController();
+  final TextEditingController productAmountController = TextEditingController();
+  final TextEditingController productDescriptionController =
+      TextEditingController();
+  final TextEditingController normalPriceController = TextEditingController();
+  final TextEditingController discountPriceController = TextEditingController();
+
   String selectedOption = 'Meyve - Sebze';
   String selectedUnit = 'kilogram';
   DateTime? _selectedDate;
+  XFile? _image;
+  final ImagePicker _picker = ImagePicker();
 
   final statuses = List.generate(
     2,
@@ -73,14 +84,23 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
         String district = snapshot.get('businessDistrict');
 
         setState(() {
-          businessName = name;
+          _businessName = name;
           businessCity = city;
           businessDistrict = district;
+          _businessUid = uid;
         });
       }
     } catch (e) {
       print('Error fetching UID or business name: $e');
     }
+  }
+
+  Future<void> pickImage() async {
+    final XFile? selectedImage =
+        await _picker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      _image = selectedImage;
+    });
   }
 
   @override
@@ -99,11 +119,12 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //checking is user logged in
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) {
-      // User is not signed in, handle this case accordingly
-      return const BusinessEntrance(); // Return an empty container or another widget
+      return const BusinessEntrance();
     }
+
     return SafeArea(
       child: Scaffold(
         body: PageView(
@@ -202,7 +223,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                     MainAxisAlignment.spaceAround,
                                 children: [
                                   Text(
-                                    "${businessName}",
+                                    "${_businessName}",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 19),
                                   ),
@@ -670,14 +691,18 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           child: Row(
                             children: [
                               Expanded(
-                                child: Image.asset(
-                                  "assets/images/add_product_image.png",
-                                ),
-                              ),
-                              SizedBox(width: 30),
-                              Expanded(
-                                child: Image.asset(
-                                  "assets/images/add_product_image.png",
+                                child: GestureDetector(
+                                  onTap: () async {
+                                    await pickImage();
+                                  },
+                                  child: _image != null
+                                      ? Image.file(
+                                          File(_image!.path),
+                                          fit: BoxFit.cover,
+                                        )
+                                      : Image.asset(
+                                          "assets/images/add_product_image.png",
+                                        ),
                                 ),
                               ),
                             ],
@@ -692,21 +717,19 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                       left: 20,
                       right: 20,
                     ),
-                    child: const Column(
+                    child: Column(
                       children: [
                         Row(
                           children: [
                             Expanded(
                               child: TextField(
+                                controller: productNameController,
+                                //user can add name of the product from here
                                 decoration: InputDecoration(
                                   labelText: 'Ürün İsmi',
-                                  labelStyle: TextStyle(
-                                      color: Colors
-                                          .green), // Change the label color
+                                  labelStyle: TextStyle(color: Colors.green),
                                   border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors
-                                            .blue), // Change the outline border color
+                                    borderSide: BorderSide(color: Colors.blue),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -747,14 +770,14 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                         Row(
                           children: [
                             DropdownButton<String>(
+                              //user can choose the type of product from here
                               value: selectedOption,
                               onChanged: (String? newValue) {
                                 setState(() {
                                   selectedOption = newValue!;
                                 });
                               },
-                              dropdownColor: Color(
-                                  0xFFDBB7D6), // Set the color of the dropdown menu
+                              dropdownColor: Color(0xFFDBB7D6),
                               items: <String>[
                                 'Meyve - Sebze',
                                 'Şarküteri',
@@ -787,11 +810,11 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           children: [
                             Expanded(
                               child: TextField(
-                                keyboardType: TextInputType
-                                    .number, // Set the keyboard type to accept only digits
+                                controller: productAmountController,
+                                //user can add the amount of product from here
+                                keyboardType: TextInputType.number,
                                 inputFormatters: <TextInputFormatter>[
-                                  FilteringTextInputFormatter
-                                      .digitsOnly, // Filter input to accept only digits
+                                  FilteringTextInputFormatter.digitsOnly,
                                 ],
                                 decoration: InputDecoration(
                                   labelText: 'Ürün Miktarı',
@@ -817,6 +840,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                             Row(
                               children: [
                                 DropdownButton<String>(
+                                  //user can specifiy the unit of the product from here
                                   value: selectedUnit,
                                   onChanged: (String? newValue) {
                                     setState(() {
@@ -868,6 +892,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           children: [
                             Expanded(
                                 child: GestureDetector(
+                              //user can choose the last date of the product from here
                               onTap: () async {
                                 final DateTime? picked = await showDatePicker(
                                   context: context,
@@ -922,26 +947,24 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                       left: 20,
                       right: 20,
                     ),
-                    child: const Column(
+                    child: Column(
                       children: [
                         Row(
                           children: [
                             Expanded(
                               child: TextField(
+                                controller: productDescriptionController,
                                 decoration: InputDecoration(
+                                  //user can add the description of the product from here
                                   labelText: 'Ürün Açıklaması',
-                                  labelStyle: TextStyle(
-                                      color: Colors
-                                          .green), // Change the label color
+                                  labelStyle: TextStyle(color: Colors.green),
                                   border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Colors
-                                            .blue), // Change the outline border color
+                                    borderSide: BorderSide(color: Colors.blue),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Colors.pinkAccent,
-                                    ), // Change the outline border color when focused
+                                    ),
                                   ),
                                   filled: true,
                                   fillColor: Color(0xFFDBB7D6),
@@ -965,8 +988,9 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           children: [
                             Expanded(
                               child: TextField(
-                                keyboardType: TextInputType
-                                    .number, // Set the keyboard type to accept only digits
+                                controller: normalPriceController,
+                                //user can add the normal price of the product from here
+                                keyboardType: TextInputType.number,
                                 inputFormatters: <TextInputFormatter>[
                                   FilteringTextInputFormatter
                                       .digitsOnly, // Filter input to accept only digits
@@ -988,18 +1012,17 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   ),
                                   filled: true,
                                   fillColor: Color(0xFFDBB7D6),
-                                  prefixText: '₺',
                                 ),
                               ),
                             ),
                             SizedBox(width: 12),
                             Expanded(
                               child: TextField(
-                                keyboardType: TextInputType
-                                    .number, // Set the keyboard type to accept only digits
+                                controller: discountPriceController,
+                                //user can add the discounted price of the product from here
+                                keyboardType: TextInputType.number,
                                 inputFormatters: <TextInputFormatter>[
-                                  FilteringTextInputFormatter
-                                      .digitsOnly, // Filter input to accept only digits
+                                  FilteringTextInputFormatter.digitsOnly,
                                 ],
                                 decoration: InputDecoration(
                                   labelText: 'İndirimli Fiyatı',
@@ -1018,7 +1041,6 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   ),
                                   filled: true,
                                   fillColor: Color(0xFFDBB7D6),
-                                  prefixText: '₺',
                                 ),
                               ),
                             ),
@@ -1039,6 +1061,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {
+                              submitProduct();
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -1105,7 +1128,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    "$businessName",
+                    "$_businessName",
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.green,
@@ -1311,97 +1334,90 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
     );
   }
 
-  List<Step> getSteps() => [
-        Step(
-          title: const Text('Ürün Bilgileri'),
-          state: currentStep > 0 ? StepState.complete : StepState.indexed,
-          isActive: currentStep >= 0,
-          content: Column(
-            children: [
-              TextFormField(
-                controller: productNameController,
-                decoration: const InputDecoration(labelText: 'Ürün Adı'),
-              ),
-              TextFormField(
-                controller: priceController,
-                decoration: const InputDecoration(labelText: 'Normal Fiyat'),
-              ),
-              TextFormField(
-                controller: discountedPriceController,
-                decoration: const InputDecoration(labelText: 'İndirimli Fiyat'),
-              ),
-              TextFormField(
-                controller: descriptionController,
-                decoration: const InputDecoration(labelText: 'Ürün Açıklaması'),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      if (currentStep == getSteps().length - 1) {
-                        submitProduct();
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => AddProductCompletedPage()),
-                        );
-                      } else {
-                        setState(() {
-                          currentStep += 1;
-                        });
-                      }
-                    },
-                    child: Text('Devam Et'),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (currentStep == 0) {
-                        null;
-                      } else {
-                        setState(
-                          () {
-                            currentStep -= 1;
-                          },
-                        );
-                      }
-                    },
-                    child: Text('İptal'),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ];
-  void submitProduct() {
+  Future<void> submitProduct() async {
+    final uuid = const Uuid().v4();
     // Get the entered values from the text controllers
+    String? downloadUrl = await uploadImage(uuid);
     String productName = productNameController.text;
-    double normalPrice = double.tryParse(priceController.text) ?? 0.0;
-    double discountedPrice =
-        double.tryParse(discountedPriceController.text) ?? 0.0;
-    String description = descriptionController.text;
+    String productType = selectedOption;
+    double productAmount = double.tryParse(productAmountController.text) ?? 0.0;
+    String productUnit = selectedUnit;
+    String productLastDate = _selectedDate != null
+        ? DateFormat('dd.MM.yyyy').format(_selectedDate!)
+        : '';
+    String productDescription = productDescriptionController.text;
+    double productNormalPrice =
+        double.tryParse(normalPriceController.text) ?? 0.0;
+    double productDiscountPrice =
+        double.tryParse(discountPriceController.text) ?? 0.0;
 
+    if (downloadUrl == null) {
+      print("Upload image failed!");
+      return;
+    }
     // Create a Product object with the entered data
     Product product = Product(
+      businessUid: _businessUid,
+      id: uuid,
+      businessName: _businessName,
+      imageUrl: downloadUrl,
       name: productName,
-      price: normalPrice,
-      discountedPrice: discountedPrice,
-      description: description,
+      type: productType,
+      amount: productAmount,
+      unit: productUnit,
+      lastDate: productLastDate,
+      description: productDescription,
+      normalPrice: productNormalPrice,
+      discountPrice: productDiscountPrice,
     );
 
     // Store the product in Firestore
-    addProductToFirestore(product);
+    addProductToFirestore(product, uuid);
+    clearFields();
   }
 
-  void addProductToFirestore(Product product) {
-    FirebaseFirestore.instance.collection('products').add(product.toMap());
+  void addProductToFirestore(Product product, String uuid) {
+    try {
+      FirebaseFirestore.instance
+          .collection('products')
+          .doc(uuid)
+          .set(product.toMap());
+    } catch (e) {
+      print("Error adding product to Firestore: $e");
+    }
+  }
+
+  Future<String?> uploadImage(String uuid) async {
+    if (_image == null) {
+      return null;
+    }
+
+    FirebaseStorage storage = FirebaseStorage.instance;
+    Reference ref = storage.ref().child('productImages').child(uuid + '.jpg');
+    UploadTask uploadTask = ref.putFile(File(_image!.path));
+
+    // Await for the task to complete, then get the download URL
+    try {
+      TaskSnapshot snapshot = await uploadTask;
+      String downloadUrl = await snapshot.ref.getDownloadURL();
+      return downloadUrl;
+    } catch (e) {
+      print(e);
+      return null;
+    }
+  }
+
+  void clearFields() {
+    // Clear all text fields
+    productNameController.clear();
+    productAmountController.clear();
+    productDescriptionController.clear();
+    normalPriceController.clear();
+    discountPriceController.clear();
+
+    // Reset other variables
+    _selectedDate = null;
+    _image = null;
   }
 }
 
