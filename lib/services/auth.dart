@@ -33,7 +33,7 @@ class AuthPage extends StatelessWidget {
                 }
 
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator();
+                  return Center(child: CircularProgressIndicator());
                 }
 
                 // Check if the document exists in the "business" collection
