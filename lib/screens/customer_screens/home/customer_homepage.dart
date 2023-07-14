@@ -105,24 +105,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                      ),
                    ],
                  ),
-                 Container(
-            color: Colors.pink,
-          padding: EdgeInsets.all(50),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  // Butona tıklanınca yapılacak işlemler
-                },
-                child: Text(
-                  'taslak',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ],
-        ),
-        ),
+
       ],
              ),
               Column(
@@ -173,8 +156,9 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                     text: "Sepetim",
                   ),
                   GButton(
-                    icon: Icons.favorite,
-                    text: "Favorilerim",
+                    icon: Icons.food_bank_outlined
+                    ,
+                    text: "Siparişlerim",
                   ),
                 ],
                 selectedIndex: _currentIndex,
