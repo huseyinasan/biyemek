@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:biyemek/screens/business_screens/home/comments.dart';
-import 'package:biyemek/screens/business_screens/home/location.dart';
 import 'package:biyemek/screens/business_screens/home/products.dart';
 import 'package:biyemek/screens/business_screens/home/profile.dart';
 import 'package:biyemek/screens/onboarding/entrances/business_entrance.dart';
@@ -142,65 +140,53 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                 padding: const EdgeInsets.all(25.0),
                 child: Column(
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const Location();
-                            },
-                          ),
-                        );
-                      },
-                      child: Row(
-                        children: [
-                          const SizedBox(width: 10),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.location_on_rounded,
+                    Row(
+                      children: [
+                        const SizedBox(width: 10),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.location_on_rounded,
+                              color: Colors.green,
+                              size: 42,
+                            ),
+                            Text(
+                              "${businessCity}/${businessDistrict}",
+                              style: TextStyle(
                                 color: Colors.green,
-                                size: 42,
-                              ),
-                              Text(
-                                "${businessCity}/${businessDistrict}",
-                                style: TextStyle(
-                                  color: Colors.green,
-                                  fontSize: 19,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(width: 70),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return const Notifications();
-                                  },
-                                ),
-                              );
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                shape: BoxShape.rectangle,
-                                color: Colors.black12,
-                              ),
-                              padding: const EdgeInsets.all(5),
-                              child: const Icon(
-                                Icons.notifications,
-                                color: Colors.green,
-                                size: 42,
+                                fontSize: 19,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
+                          ],
+                        ),
+                        const SizedBox(width: 70),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const Notifications();
+                                },
+                              ),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              shape: BoxShape.rectangle,
+                              color: Colors.black12,
+                            ),
+                            padding: const EdgeInsets.all(5),
+                            child: const Icon(
+                              Icons.notifications,
+                              color: Colors.green,
+                              size: 42,
+                            ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
@@ -1062,14 +1048,6 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           child: ElevatedButton(
                             onPressed: () {
                               submitProduct();
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return const AddProductCompletedPage();
-                                  },
-                                ),
-                              );
                             },
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
@@ -1372,18 +1350,41 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
     );
 
     // Store the product in Firestore
-    addProductToFirestore(product, uuid);
-    clearFields();
+    bool isAdded = await addProductToFirestore(product, uuid);
+    if (isAdded) {
+      // If the product was added successfully, navigate to the SuccessPage
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return AddProductCompletedPage(
+              productUuid: uuid,
+            );
+          },
+        ),
+      );
+    } else {
+      // If there was an error, show an error message.
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Ürünü oluştururken hata oluştu, lütfen tekrar deneyiniz.',
+          ),
+        ),
+      );
+    }
   }
 
-  void addProductToFirestore(Product product, String uuid) {
+  Future<bool> addProductToFirestore(Product product, String uuid) async {
     try {
-      FirebaseFirestore.instance
+      await FirebaseFirestore.instance
           .collection('products')
           .doc(uuid)
           .set(product.toMap());
+      return true; // return true if the product was added successfully
     } catch (e) {
       print("Error adding product to Firestore: $e");
+      return false; // return false if there was an error
     }
   }
 

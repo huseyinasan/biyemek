@@ -86,7 +86,7 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    '''                    Fazlalık ürünlerini listele!
+                    '''               Fazlalık gıda ürünlerin mi var?
   Civarında ki müşterilere hemen satmaya başla!''',
                     style: TextStyle(
                       fontSize: 16,

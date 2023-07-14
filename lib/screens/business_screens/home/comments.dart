@@ -72,8 +72,16 @@ class _CommentsState extends State<Comments>
             child: TabBarView(
               controller: _tabController,
               children: const [
-                Center(child: Text('Yorumlar 1 (sağa kaydır)')),
-                Center(child: Text('Yorumlar 2')),
+                Center(
+                  child: Text(
+                    "Cevap bekleyen yorumları burada görebilirsiniz",
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    "Cevaplanmış yorumları burada görebilirsiniz",
+                  ),
+                ),
               ],
             ),
           ),

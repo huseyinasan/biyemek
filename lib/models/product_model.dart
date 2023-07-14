@@ -44,4 +44,21 @@ class Product {
       'discountPrice': discountPrice,
     };
   }
+
+  static Product fromMap(Map<String, dynamic> map) {
+    return Product(
+      businessUid: map['businessUid'],
+      id: map['id'],
+      businessName: map['businessName'],
+      imageUrl: map['imageUrl'],
+      name: map['name'],
+      type: map['type'],
+      amount: map['amount'],
+      unit: map['unit'],
+      lastDate: map['lastDate'],
+      description: map['description'],
+      normalPrice: map['normalPrice'],
+      discountPrice: map['discountPrice'],
+    );
+  }
 }
