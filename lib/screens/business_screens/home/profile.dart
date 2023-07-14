@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -8,6 +10,66 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  String name = "";
+  String surname = "";
+  int? phoneNumber;
+  int? idNumber;
+  String businessName = "";
+  String businessCity = "";
+  String businessDistrict = "";
+  int? taxNumber;
+  String businessType = "";
+  String email = "";
+
+  @override
+  void initState() {
+    super.initState();
+    fetchBusinessData();
+  }
+
+  Future<void> fetchBusinessData() async {
+    try {
+      User? user = FirebaseAuth.instance.currentUser;
+      String? _userEmail = FirebaseAuth.instance.currentUser?.email;
+
+      if (user != null) {
+        String uid = user.uid;
+
+        // Fetch the business name from Firestore using the UID
+        DocumentSnapshot snapshot = await FirebaseFirestore.instance
+            .collection('business')
+            .doc(uid)
+            .get();
+
+        // Extract the business name from the document
+        String _name = snapshot.get('name');
+        String _surname = snapshot.get('surname');
+        int _phoneNumber = snapshot.get('phone');
+        int _idNumber = snapshot.get('idNumber');
+        String _businessName = snapshot.get('businessName');
+        String _city = snapshot.get('businessCity');
+        String _district = snapshot.get('businessDistrict');
+        int _taxNumber = snapshot.get('taxNumber');
+        String _businessType = snapshot.get('businessType');
+
+        setState(() {
+          name = _name;
+          surname = _surname;
+          phoneNumber = _phoneNumber;
+          idNumber = _idNumber;
+          businessName = _businessName;
+          businessCity = _city;
+          businessDistrict = _district;
+          taxNumber = _taxNumber;
+          businessType = _businessType;
+          email = _userEmail!;
+        });
+      }
+    } catch (e) {
+      print('Error fetching UID or business name: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,9 +105,9 @@ class _ProfileState extends State<Profile> {
                     color: const Color.fromRGBO(119, 204, 179, 1.0),
                     shape: BoxShape.rectangle,
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "Ad Soyad",
+                      "$name" + " " + "$surname",
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
@@ -58,9 +120,9 @@ class _ProfileState extends State<Profile> {
                     color: const Color.fromRGBO(119, 204, 179, 1.0),
                     shape: BoxShape.rectangle,
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "90+ Telefon Numarası",
+                      "$phoneNumber",
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
@@ -73,9 +135,9 @@ class _ProfileState extends State<Profile> {
                     color: const Color.fromRGBO(119, 204, 179, 1.0),
                     shape: BoxShape.rectangle,
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "TC Kimlik No",
+                      "$idNumber",
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
@@ -88,9 +150,9 @@ class _ProfileState extends State<Profile> {
                     color: const Color.fromRGBO(119, 204, 179, 1.0),
                     shape: BoxShape.rectangle,
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "İşletme Adı",
+                      "$businessName",
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
@@ -103,9 +165,9 @@ class _ProfileState extends State<Profile> {
                     color: const Color.fromRGBO(119, 204, 179, 1.0),
                     shape: BoxShape.rectangle,
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "İşletme Adresi",
+                      "$businessCity" + "/" + "$businessDistrict",
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
@@ -118,9 +180,9 @@ class _ProfileState extends State<Profile> {
                     color: const Color.fromRGBO(119, 204, 179, 1.0),
                     shape: BoxShape.rectangle,
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "Vergi Numarası",
+                      "$taxNumber",
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
@@ -133,9 +195,9 @@ class _ProfileState extends State<Profile> {
                     color: const Color.fromRGBO(119, 204, 179, 1.0),
                     shape: BoxShape.rectangle,
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "İşletme Türü",
+                      "$businessType",
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
@@ -148,24 +210,9 @@ class _ProfileState extends State<Profile> {
                     color: const Color.fromRGBO(119, 204, 179, 1.0),
                     shape: BoxShape.rectangle,
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "E-mail",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 15),
-                Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: const Color.fromRGBO(119, 204, 179, 1.0),
-                    shape: BoxShape.rectangle,
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "Şifre",
+                      "$email",
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),

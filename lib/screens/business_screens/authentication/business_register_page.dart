@@ -16,6 +16,7 @@ class _BusinessRegisterPageState extends State<BusinessRegisterPage> {
   final TextEditingController surnameController = TextEditingController();
   final TextEditingController businessNameController = TextEditingController();
   final TextEditingController businessTypeController = TextEditingController();
+  final TextEditingController taxNumberController = TextEditingController();
   final TextEditingController businessCityController = TextEditingController();
   final TextEditingController businessDistrictController =
       TextEditingController();
@@ -39,6 +40,7 @@ class _BusinessRegisterPageState extends State<BusinessRegisterPage> {
       String businessName = businessNameController.text;
       String businessType = businessTypeController.text;
       String businessCity = businessCityController.text;
+      int taxNumber = int.parse(taxNumberController.text);
       String businessDistrict = businessDistrictController.text;
       int idNumber = int.parse(idNumberController.text);
 
@@ -60,6 +62,7 @@ class _BusinessRegisterPageState extends State<BusinessRegisterPage> {
         'phone': phone,
         'businessName': businessName,
         'businessType': businessType,
+        'taxNumber': taxNumber,
         'businessCity': businessCity,
         'businessDistrict': businessDistrict,
         'idNumber': idNumber,
@@ -251,6 +254,22 @@ class _BusinessRegisterPageState extends State<BusinessRegisterPage> {
                   fillColor: Colors.grey.shade200,
                   filled: true,
                   labelText: "İşletme Tipi",
+                  hintStyle: TextStyle(color: Colors.grey[500]),
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              TextField(
+                controller: taxNumberController,
+                decoration: InputDecoration(
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  fillColor: Colors.grey.shade200,
+                  filled: true,
+                  labelText: "Vergi Numarası",
                   hintStyle: TextStyle(color: Colors.grey[500]),
                 ),
               ),
