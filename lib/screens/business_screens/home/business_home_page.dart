@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:biyemek/screens/business_screens/home/comments.dart';
-import 'package:biyemek/screens/business_screens/home/my_products.dart';
-import 'package:biyemek/screens/business_screens/home/profile.dart';
+import 'package:biyemek/screens/business_screens/home/my_products_page.dart';
+import 'package:biyemek/screens/business_screens/home/my_profile_page.dart';
 import 'package:biyemek/screens/onboarding/entrances/business_entrance.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';

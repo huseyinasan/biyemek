@@ -59,11 +59,8 @@ class _MyProductsPageState extends State<MyProductsPage>
           SizedBox(height: 10),
           TabBar(
             indicator: UnderlineTabIndicator(
-              borderSide: BorderSide(
-                  color: Colors.green,
-                  width: 2.0), // Çizginin rengi ve kalınlığı
-              insets: EdgeInsets.symmetric(
-                  horizontal: 16.0), // Çizginin tablerle olan boşluğu
+              borderSide: BorderSide(color: Colors.green, width: 2.0),
+              insets: EdgeInsets.symmetric(horizontal: 16.0),
             ),
             controller: _tabController,
             tabs: const [
