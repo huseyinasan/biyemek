@@ -84,7 +84,8 @@ class _MyProductsPageState extends State<MyProductsPage>
                 //products will come here
                 Center(
                   child: StreamBuilder<List<Product>>(
-                    stream: ProductService().getMyProducts(widget.businessUid),
+                    stream:
+                        MyProductsService().getMyProducts(widget.businessUid),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return const Center(child: CircularProgressIndicator());
@@ -101,7 +102,7 @@ class _MyProductsPageState extends State<MyProductsPage>
                           itemCount: snapshot.data!.length,
                           itemBuilder: (ctx, i) => Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
-                            child: ProductItem(
+                            child: MyProductItem(
                               product: snapshot.data![i],
                             ),
                           ),

@@ -1,9 +1,12 @@
+import 'package:biyemek/components/category_name.dart';
 import 'package:biyemek/screens/customer_screens/home/customer_profile_page.dart';
+import 'package:biyemek/screens/customer_screens/home/my_profile_customer.dart';
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
 import 'package:biyemek/widgets/custom_appbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import '../../../widgets/product_grid_view.dart';
 
 class CustomerHomePage extends StatefulWidget {
   const CustomerHomePage({Key? key}) : super(key: key);
@@ -16,7 +19,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
   int currentStep = 0;
   final statuses = List.generate(
     2,
-    (index) => SizedBox.square(
+        (index) => SizedBox.square(
       dimension: 32,
       child: Center(child: Text('$index')),
     ),
@@ -38,14 +41,22 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
     super.dispose();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) {
       return const CustomerEntrance();
     }
+
+    List<String> categories = [
+      'Meyve - Sebze',
+      'Şarküteri',
+      'Temel Gıda',
+      'Meze - Hazır Yemek - Donuk',
+      'Fırın - Pastane',
+      'Atıştırmalık',
+      'Meşrubat',
+    ];
 
     return SafeArea(
       child: Scaffold(
@@ -62,49 +73,76 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
           }, //profile page navigation
         ),
         body: PageView(
-            controller: _pageController,
-            onPageChanged: (index) {
-              setState(() {
-                _currentIndex = index;
-              });
-            },
-            children: [
-              Column(
-                children: [
-                  Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Text(
-                          "Bi'Yemek",
+          controller: _pageController,
+          onPageChanged: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 20,
+                left: 20,
+                right: 20,
+                bottom: 20,
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Yakınımdaki Ürünler",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 24.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.orange,
+                            color: Color(0xFFFF5722),
+                            decoration: TextDecoration.underline,
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-               Column(
-                children: [
-                  Text(
-                    "sayfa2",
-                    style: TextStyle(
-                      color: Colors.amber,
-                      fontSize: 30, // yazı büyüklüğü
-                      fontWeight: FontWeight.normal, //kalınlık
+                      ],
                     ),
-                  )
-                ],
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    ...List.generate(categories.length, (index) {
+                      return Column(
+                        children: [
+                          CategoryName(
+                            text: categories[index],
+                          ),
+                          ProductGridView(
+                              category: categories[index]), //product
+                          const SizedBox(
+                            height: 20,
+                          ),
+                        ],
+                      );
+                    }),
+                  ],
+                ),
               ),
-               Column(
-                children: [Text("sayfa3")],
-              ),
-            ]),
+            ),
+             Column(
+              children: [
+                Text(
+                  "sayfa2",
+                  style: TextStyle(
+                    color: Colors.amber,
+                    fontSize: 30,
+                    fontWeight: FontWeight.normal,
+                  ),
+                )
+              ],
+            ),
+             Column(
+              children: [Text("sayfa3")],
+            ),
+          ],
+        ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
           child: Container(
@@ -112,14 +150,14 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
             height: 87,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Color(0xFFBE7CB4),
+                color: Colors.green,
                 width: 2.0,
               ),
               borderRadius: BorderRadius.circular(60.0),
             ),
             child: Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+              const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
               child: GNav(
                 color: Colors.green,
                 activeColor: Colors.white,
@@ -154,21 +192,4 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
       ),
     );
   }
-}
-
-class LinePainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.black
-      ..strokeWidth = 1;
-
-    final startPoint = Offset(0, size.height / 2);
-    final endPoint = Offset(size.width, size.height / 2);
-
-    canvas.drawLine(startPoint, endPoint, paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }

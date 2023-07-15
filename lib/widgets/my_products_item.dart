@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:biyemek/models/product_model.dart';
-
 import '../services/my_products_service.dart';
 
-class ProductItem extends StatelessWidget {
+class MyProductItem extends StatelessWidget {
   final Product product;
 
-  ProductItem({super.key, required this.product});
-  final _productService = ProductService();
+  MyProductItem({super.key, required this.product});
+  final _productService = MyProductsService();
 
   @override
   Widget build(BuildContext context) {
