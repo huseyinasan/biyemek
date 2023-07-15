@@ -503,7 +503,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         ),
                                         SizedBox(height: 5),
                                         StreamBuilder<List<Product>>(
-                                          stream: ProductService()
+                                          stream: MyProductsService()
                                               .getMyProducts(_businessUid),
                                           builder: (context, snapshot) {
                                             if (snapshot.hasData) {

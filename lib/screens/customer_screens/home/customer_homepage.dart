@@ -1,8 +1,10 @@
+import 'package:biyemek/components/category_name.dart';
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
 import 'package:biyemek/widgets/custom_appbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import '../../../widgets/product_grid_view.dart';
 
 class CustomerHomePage extends StatefulWidget {
   const CustomerHomePage({Key? key}) : super(key: key);
@@ -37,15 +39,6 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
     super.dispose();
   }
 
-  Future<void> signUserOut() async {
-    // çıkış yapma
-    try {
-      await FirebaseAuth.instance.signOut();
-    } catch (e) {
-      print('Error signing out: $e');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
@@ -53,55 +46,92 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
       return const CustomerEntrance();
     }
 
+    List<String> categories = [
+      'Meyve - Sebze',
+      'Şarküteri',
+      'Temel Gıda',
+      'Meze - Hazır Yemek - Donuk',
+      'Fırın - Pastane',
+      'Atıştırmalık',
+      'Meşrubat',
+    ];
+
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
           onTap: () {}, //profile page navigation
         ),
         body: PageView(
-            controller: _pageController,
-            onPageChanged: (index) {
-              setState(() {
-                _currentIndex = index;
-              });
-            },
-            children: [
-              Column(
-                children: [
-                  Column(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Text(
-                          "Bi'Yemek",
+          controller: _pageController,
+          onPageChanged: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 20,
+                left: 20,
+                right: 20,
+                bottom: 20,
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Yakınımdaki Ürünler",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 24.0,
                             fontWeight: FontWeight.bold,
                             color: Colors.orange,
+                            decoration: TextDecoration.underline,
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const Column(
-                children: [
-                  Text(
-                    "sayfa2",
-                    style: TextStyle(
-                      color: Colors.amber,
-                      fontSize: 30, // yazı büyüklüğü
-                      fontWeight: FontWeight.normal, //kalınlık
+                      ],
                     ),
-                  )
-                ],
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    ...List.generate(categories.length, (index) {
+                      return Column(
+                        children: [
+                          CategoryName(
+                            text: categories[index],
+                          ),
+                          ProductGridView(
+                              category: categories[index]), //product
+                          const SizedBox(
+                            height: 20,
+                          ),
+                        ],
+                      );
+                    }),
+                  ],
+                ),
               ),
-              const Column(
-                children: [Text("sayfa3")],
-              ),
-            ]),
+            ),
+            const Column(
+              children: [
+                Text(
+                  "sayfa2",
+                  style: TextStyle(
+                    color: Colors.amber,
+                    fontSize: 30,
+                    fontWeight: FontWeight.normal,
+                  ),
+                )
+              ],
+            ),
+            const Column(
+              children: [Text("sayfa3")],
+            ),
+          ],
+        ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
           child: Container(
@@ -109,7 +139,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
             height: 87,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Color(0xFFBE7CB4),
+                color: const Color(0xFFBE7CB4),
                 width: 2.0,
               ),
               borderRadius: BorderRadius.circular(60.0),

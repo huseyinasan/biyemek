@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:biyemek/models/product_model.dart';
 
-class ProductService {
+class MyProductsService {
   final _productsRef = FirebaseFirestore.instance.collection('products');
 
   Stream<List<Product>> getMyProducts(String businessUid) {
