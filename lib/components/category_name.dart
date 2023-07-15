@@ -21,7 +21,7 @@ class CategoryName extends StatelessWidget {
           text,
           style: TextStyle(
             fontSize: 18.0,
-            color: Colors.orange,
+            color: Color(0xFFFF5722),
             fontWeight: FontWeight.bold,
           ),
         ),

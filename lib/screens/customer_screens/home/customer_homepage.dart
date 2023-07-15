@@ -1,6 +1,5 @@
 import 'package:biyemek/components/category_name.dart';
 import 'package:biyemek/screens/customer_screens/home/customer_profile_page.dart';
-import 'package:biyemek/screens/customer_screens/home/my_profile_customer.dart';
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
 import 'package:biyemek/widgets/custom_appbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -19,7 +18,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
   int currentStep = 0;
   final statuses = List.generate(
     2,
-        (index) => SizedBox.square(
+    (index) => SizedBox.square(
       dimension: 32,
       child: Center(child: Text('$index')),
     ),
@@ -66,7 +65,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return  CustomerProfilePage();
+                  return CustomerProfilePage();
                 },
               ),
             );
@@ -90,7 +89,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                     Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -126,7 +125,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                 ),
               ),
             ),
-             Column(
+            Column(
               children: [
                 Text(
                   "sayfa2",
@@ -138,7 +137,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                 )
               ],
             ),
-             Column(
+            Column(
               children: [Text("sayfa3")],
             ),
           ],
@@ -157,7 +156,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
             ),
             child: Padding(
               padding:
-              const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
               child: GNav(
                 color: Colors.green,
                 activeColor: Colors.white,
