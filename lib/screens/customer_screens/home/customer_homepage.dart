@@ -1,11 +1,4 @@
-
-import 'package:biyemek/screens/business_screens/home/comments.dart';
-import 'package:biyemek/screens/business_screens/home/location.dart';
-import 'package:biyemek/screens/business_screens/home/products.dart';
-import 'package:biyemek/screens/business_screens/home/profile.dart';
-import 'package:biyemek/screens/onboarding/entrances/business_entrance.dart';
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -18,11 +11,10 @@ class CustomerHomePage extends StatefulWidget {
 }
 
 class _CustomerHomePageState extends State<CustomerHomePage> {
-
   int currentStep = 0;
   final statuses = List.generate(
     2,
-        (index) => SizedBox.square(
+    (index) => SizedBox.square(
       dimension: 32,
       child: Center(child: Text('$index')),
     ),
@@ -36,10 +28,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
   void initState() {
     super.initState();
     _pageController = PageController();
-
   }
-
-
 
   @override
   void dispose() {
@@ -47,14 +36,14 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
     super.dispose();
   }
 
-  Future<void> signUserOut() async { // çıkış yapma
+  Future<void> signUserOut() async {
+    // çıkış yapma
     try {
       await FirebaseAuth.instance.signOut();
     } catch (e) {
       print('Error signing out: $e');
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -73,56 +62,54 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                 _currentIndex = index;
               });
             },
-
             children: [
-             Column(
-               children: [
-                 Column(
-                   children: [
-                     Container(
-                       padding: EdgeInsets.all(20.0),
-                       child: Row(
-                         mainAxisAlignment: MainAxisAlignment.center,
-                         children: [
-                           Expanded(
-                             child: Text(
-                               "Bi'Yemek",
-                               textAlign: TextAlign.center,
-                               style: TextStyle(
-                                 fontSize: 24.0,
-                                 fontWeight: FontWeight.bold,
-                               ),
-                             ),
-                           ),
-                           GestureDetector(
-                                onTap: () {
-                            // yönlendirme yap
-                                },
-                               child: Icon(Icons.person_2_rounded),
-                           ),
-                         ],
-                       ),
-                     ),
-                   ],
-                 ),
-
-      ],
-             ),
               Column(
                 children: [
-                  Text("sayfa2",
-                  style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 30 ,// yazı büyüklüğü
-                    fontWeight: FontWeight.normal, //kalınlık
-                  ),)
-
+                  Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(20.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                "Bi'Yemek",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 24.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                // yönlendirme yap
+                              },
+                              child: Icon(Icons.person_2_rounded),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
               Column(
                 children: [
-                Text("sayfa3")
-              ],),
+                  Text(
+                    "sayfa2",
+                    style: TextStyle(
+                      color: Colors.amber,
+                      fontSize: 30, // yazı büyüklüğü
+                      fontWeight: FontWeight.normal, //kalınlık
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                children: [Text("sayfa3")],
+              ),
             ]),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
@@ -138,7 +125,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
             ),
             child: Padding(
               padding:
-              const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
               child: GNav(
                 color: Colors.green,
                 activeColor: Colors.white,
@@ -156,8 +143,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                     text: "Sepetim",
                   ),
                   GButton(
-                    icon: Icons.food_bank_outlined
-                    ,
+                    icon: Icons.food_bank_outlined,
                     text: "Siparişlerim",
                   ),
                 ],
@@ -174,8 +160,6 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
       ),
     );
   }
-
-
 }
 
 class LinePainter extends CustomPainter {
