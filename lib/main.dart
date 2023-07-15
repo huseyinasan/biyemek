@@ -45,8 +45,8 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           children: [
             Image.asset("assets/images/onboarding/intro1.png"),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
               child: SpinKitThreeInOut(
                 color: Colors.red,
                 size: 50.0,
@@ -56,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
       ),
       backgroundColor: Colors.greenAccent,
-      nextScreen: AuthPage(),
+      nextScreen: const AuthPage(),
       splashIconSize: 500,
       duration: 3000,
       splashTransition: SplashTransition.slideTransition,

@@ -56,9 +56,9 @@ class _MyProductsPageState extends State<MyProductsPage>
       ),
       body: Column(
         children: [
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           TabBar(
-            indicator: UnderlineTabIndicator(
+            indicator: const UnderlineTabIndicator(
               borderSide: BorderSide(color: Colors.green, width: 2.0),
               insets: EdgeInsets.symmetric(horizontal: 16.0),
             ),
@@ -88,12 +88,12 @@ class _MyProductsPageState extends State<MyProductsPage>
                     stream: ProductService().getMyProducts(widget.businessUid),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return Center(child: CircularProgressIndicator());
+                        return const Center(child: CircularProgressIndicator());
                       } else if (snapshot.hasError) {
-                        return Center(child: Text('Bir şeyler yanlış gitti'));
+                        return const Center(child: Text('Bir şeyler yanlış gitti'));
                       } else if (snapshot.data == null ||
                           snapshot.data!.isEmpty) {
-                        return Center(
+                        return const Center(
                             child: Text('Herhangi bir ürün bulunamadı.'));
                       } else {
                         return ListView.builder(
@@ -110,7 +110,7 @@ class _MyProductsPageState extends State<MyProductsPage>
                     },
                   ),
                 ),
-                Center(child: Text('İçerik 2')),
+                const Center(child: Text('Herhangi satılmış bir ürün bulunamadı')),
               ],
             ),
           ),

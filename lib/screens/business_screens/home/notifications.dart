@@ -44,9 +44,9 @@ class _NotificationsState extends State<Notifications>
       ),
       body: Column(
         children: [
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           TabBar(
-            indicator: UnderlineTabIndicator(
+            indicator: const UnderlineTabIndicator(
               borderSide: BorderSide(color: Colors.green, width: 2.0), // Çizginin rengi ve kalınlığı
               insets: EdgeInsets.symmetric(horizontal: 16.0), // Çizginin tablerle olan boşluğu
             ),

@@ -68,11 +68,11 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                   Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.all(20.0),
+                        padding: const EdgeInsets.all(20.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Expanded(
+                            const Expanded(
                               child: Text(
                                 "Bi'Yemek",
                                 textAlign: TextAlign.center,
@@ -86,7 +86,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                               onTap: () {
                                 // yönlendirme yap
                               },
-                              child: Icon(Icons.person_2_rounded),
+                              child: const Icon(Icons.person_2_rounded),
                             ),
                           ],
                         ),
@@ -95,7 +95,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                   ),
                 ],
               ),
-              Column(
+              const Column(
                 children: [
                   Text(
                     "sayfa2",
@@ -107,7 +107,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                   )
                 ],
               ),
-              Column(
+              const Column(
                 children: [Text("sayfa3")],
               ),
             ]),

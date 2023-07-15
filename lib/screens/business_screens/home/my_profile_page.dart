@@ -30,7 +30,7 @@ class _ProfileState extends State<Profile> {
   Future<void> fetchBusinessData() async {
     try {
       User? user = FirebaseAuth.instance.currentUser;
-      String? _userEmail = FirebaseAuth.instance.currentUser?.email;
+      String? userEmail = FirebaseAuth.instance.currentUser?.email;
 
       if (user != null) {
         String uid = user.uid;
@@ -42,27 +42,27 @@ class _ProfileState extends State<Profile> {
             .get();
 
         // Extract the business name from the document
-        String _name = snapshot.get('name');
-        String _surname = snapshot.get('surname');
-        int _phoneNumber = snapshot.get('phone');
-        int _idNumber = snapshot.get('idNumber');
-        String _businessName = snapshot.get('businessName');
-        String _city = snapshot.get('businessCity');
-        String _district = snapshot.get('businessDistrict');
-        int _taxNumber = snapshot.get('taxNumber');
-        String _businessType = snapshot.get('businessType');
+        String name = snapshot.get('name');
+        String surname = snapshot.get('surname');
+        int phoneNumber = snapshot.get('phone');
+        int idNumber = snapshot.get('idNumber');
+        String businessName = snapshot.get('businessName');
+        String city = snapshot.get('businessCity');
+        String district = snapshot.get('businessDistrict');
+        int taxNumber = snapshot.get('taxNumber');
+        String businessType = snapshot.get('businessType');
 
         setState(() {
-          name = _name;
-          surname = _surname;
-          phoneNumber = _phoneNumber;
-          idNumber = _idNumber;
-          businessName = _businessName;
-          businessCity = _city;
-          businessDistrict = _district;
-          taxNumber = _taxNumber;
-          businessType = _businessType;
-          email = _userEmail!;
+          name = name;
+          surname = surname;
+          phoneNumber = phoneNumber;
+          idNumber = idNumber;
+          businessName = businessName;
+          businessCity = city;
+          businessDistrict = district;
+          taxNumber = taxNumber;
+          businessType = businessType;
+          email = userEmail!;
         });
       }
     } catch (e) {
@@ -107,8 +107,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      "$name" + " " + "$surname",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      "$name $surname",
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ),
@@ -123,7 +123,7 @@ class _ProfileState extends State<Profile> {
                   child: Center(
                     child: Text(
                       "$phoneNumber",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ),
@@ -138,7 +138,7 @@ class _ProfileState extends State<Profile> {
                   child: Center(
                     child: Text(
                       "$idNumber",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ),
@@ -152,8 +152,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      "$businessName",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      businessName,
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ),
@@ -167,8 +167,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      "$businessCity" + "/" + "$businessDistrict",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      "$businessCity/$businessDistrict",
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ),
@@ -183,7 +183,7 @@ class _ProfileState extends State<Profile> {
                   child: Center(
                     child: Text(
                       "$taxNumber",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ),
@@ -197,8 +197,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      "$businessType",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      businessType,
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ),
@@ -212,8 +212,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      "$email",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      email,
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ),

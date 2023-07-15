@@ -142,8 +142,8 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const SizedBox(width: 10),
                         Row(
                           children: [
                             Icon(
@@ -161,29 +161,31 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                             ),
                           ],
                         ),
-                        const SizedBox(width: 70),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return const Notifications();
-                                },
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const Notifications();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                shape: BoxShape.rectangle,
+                                color: Colors.black12,
                               ),
-                            );
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              shape: BoxShape.rectangle,
-                              color: Colors.black12,
-                            ),
-                            padding: const EdgeInsets.all(5),
-                            child: const Icon(
-                              Icons.notifications,
-                              color: Colors.green,
-                              size: 42,
+                              padding: const EdgeInsets.all(5),
+                              child: const Icon(
+                                Icons.notifications,
+                                color: Colors.green,
+                                size: 42,
+                              ),
                             ),
                           ),
                         ),

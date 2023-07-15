@@ -45,8 +45,8 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                       ),
                       color: const Color(0xFFDBB7D6),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16),
+                    child: const Padding(
+                      padding: EdgeInsets.all(16),
                       child: Center(
                         child: Text(
                           "Ürün Oluşturuldu",
@@ -62,8 +62,8 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 80),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 80),
               child: Column(
                 children: [
                   Row(
@@ -95,7 +95,7 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
               future: widget.getProductData(widget.productUuid),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator(); // Show loading indicator while waiting
+                  return const CircularProgressIndicator(); // Show loading indicator while waiting
                 } else if (snapshot.hasError) {
                   return Text('Error: ${snapshot.error}'); // Error handling
                 } else {
@@ -109,9 +109,9 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                       elevation: 10.0,
                       borderRadius: BorderRadius.circular(10.0),
                       child: Container(
-                        color: Color(0xFFDBB7D6),
+                        color: const Color(0xFFDBB7D6),
                         width: double.infinity,
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -131,7 +131,7 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 15,
                             ),
                             Column(
@@ -140,19 +140,19 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                               children: [
                                 Text(
                                   product.name,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
                                     decoration: TextDecoration.underline,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Fiyat:  ",
                                       style: TextStyle(
                                         fontSize: 16,
@@ -162,7 +162,7 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                                     ),
                                     Text(
                                       "${product.normalPrice.toString()} ₺  ",
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 16,
                                         decoration: TextDecoration.lineThrough,
                                         color: Colors.black,
@@ -170,14 +170,14 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                                     ),
                                     Text(
                                       ">  ${product.discountPrice.toString()} ₺",
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 16,
                                         color: Colors.black,
                                       ),
                                     ),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Row(
@@ -185,7 +185,7 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                                     Text("SKT: ${product.lastDate}"),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Text(
@@ -218,7 +218,7 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                   foregroundColor: Colors.white,
                   backgroundColor: Colors.green, // Set the text color to white
                 ),
-                child: Text(
+                child: const Text(
                   "Tamam",
                   style: TextStyle(
                     color: Colors.white,

@@ -23,7 +23,7 @@ class AuthService {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return  CustomerHomePage();
+              return  const CustomerHomePage();
             },
           ),
         );

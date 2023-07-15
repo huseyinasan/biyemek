@@ -6,7 +6,7 @@ import '../services/my_products_service.dart';
 class ProductItem extends StatelessWidget {
   final Product product;
 
-  ProductItem({required this.product});
+  ProductItem({super.key, required this.product});
   final _productService = ProductService();
 
   @override
@@ -16,11 +16,11 @@ class ProductItem extends StatelessWidget {
       borderRadius: BorderRadius.circular(10.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Color(0xFFDBB7D6),
+          color: const Color(0xFFDBB7D6),
           borderRadius: BorderRadius.circular(10),
         ),
         width: double.infinity,
-        padding: EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10.0),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -40,7 +40,7 @@ class ProductItem extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 15,
             ),
             Expanded(
@@ -52,19 +52,19 @@ class ProductItem extends StatelessWidget {
                     children: [
                       Text(
                         product.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                           decoration: TextDecoration.underline,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Fiyat:  ",
                             style: TextStyle(
                               fontSize: 16,
@@ -74,7 +74,7 @@ class ProductItem extends StatelessWidget {
                           ),
                           Text(
                             "${product.normalPrice.toString()} ₺  ",
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
                               decoration: TextDecoration.lineThrough,
                               color: Colors.black,
@@ -82,14 +82,14 @@ class ProductItem extends StatelessWidget {
                           ),
                           Text(
                             ">  ${product.discountPrice.toString()} ₺",
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
                               color: Colors.black,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -97,7 +97,7 @@ class ProductItem extends StatelessWidget {
                           Text("SKT: ${product.lastDate}"),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -116,7 +116,7 @@ class ProductItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         IconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.delete,
                             color: Colors.red,
                           ),
@@ -125,12 +125,12 @@ class ProductItem extends StatelessWidget {
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text('Doğrulama'),
-                                  content: Text(
+                                  title: const Text('Doğrulama'),
+                                  content: const Text(
                                       'Ürün silmek istediğinize emin misiniz??'),
                                   actions: <Widget>[
                                     TextButton(
-                                      child: Text(
+                                      child: const Text(
                                         'İptal Et',
                                         style: TextStyle(
                                           color: Colors.red,
@@ -141,15 +141,14 @@ class ProductItem extends StatelessWidget {
                                       },
                                     ),
                                     TextButton(
-                                      child: Text('Onayla'),
+                                      child: const Text('Onayla'),
                                       onPressed: () {
                                         _productService
                                             .deleteProduct(product.id);
-                                        ;
                                         Navigator.of(context).pop();
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
-                                          SnackBar(
+                                          const SnackBar(
                                             content: Center(
                                                 child: Text(
                                                     'Ürün başarıyla silindi')),
