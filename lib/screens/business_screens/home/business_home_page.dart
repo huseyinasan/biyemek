@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:biyemek/screens/business_screens/home/comments.dart';
-import 'package:biyemek/screens/business_screens/home/products.dart';
+import 'package:biyemek/screens/business_screens/home/my_products.dart';
 import 'package:biyemek/screens/business_screens/home/profile.dart';
 import 'package:biyemek/screens/onboarding/entrances/business_entrance.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:uuid/uuid.dart';
+import '../../../services/my_products_service.dart';
 import 'add_product_completed.dart';
 import 'notifications.dart';
 import 'package:biyemek/models/product_model.dart';
@@ -371,7 +372,9 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return const Products();
+                                return MyProductsPage(
+                                  businessUid: _businessUid,
+                                );
                               },
                             ),
                           );
@@ -496,12 +499,26 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                           ),
                                         ),
                                         SizedBox(height: 5),
-                                        Text(
-                                          "0 Adet",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 22,
-                                          ),
+                                        StreamBuilder<List<Product>>(
+                                          stream: ProductService()
+                                              .getMyProducts(_businessUid),
+                                          builder: (context, snapshot) {
+                                            if (snapshot.hasData) {
+                                              int length = snapshot.data!
+                                                  .length; // Here is the length
+                                              return Text(
+                                                '$length Adet',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 22,
+                                                ),
+                                              );
+                                            } else if (snapshot.hasError) {
+                                              return Text(
+                                                  'Error: ${snapshot.error}');
+                                            }
+                                            return CircularProgressIndicator();
+                                          },
                                         ),
                                       ],
                                     ),
@@ -1047,12 +1064,40 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {
-                              submitProduct();
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text('Doğrulama'),
+                                    content: Text(
+                                        'Ürün listelemek istediğinize emin misiniz?'),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        child: Text(
+                                          'İptal Et',
+                                          style: TextStyle(
+                                            color: Colors.red,
+                                          ),
+                                        ),
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                      ),
+                                      TextButton(
+                                        child: Text('Onayla'),
+                                        onPressed: () {
+                                          submitProduct();
+                                          Navigator.of(context).pop();
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
-                              backgroundColor:
-                                  Colors.green, // Set the text color to white
+                              backgroundColor: Colors.green,
                             ),
                             child: Text(
                               "Onayla ve Listele",
