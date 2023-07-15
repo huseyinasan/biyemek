@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:biyemek/screens/business_screens/home/business_home_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -141,12 +143,14 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                                 Text(
                                   product.name,
                                   style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                  ),
                                 ),
                                 SizedBox(
-                                  height: 20,
+                                  height: 10,
                                 ),
                                 Row(
                                   children: [
@@ -175,6 +179,20 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                                     ),
                                   ],
                                 ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Text("SKT: ${product.lastDate}"),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  "Miktar: ${product.amount} ${product.unit}",
+                                )
                               ],
                             ),
                           ],

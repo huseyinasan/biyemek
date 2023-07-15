@@ -1331,6 +1331,13 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
 
     if (downloadUrl == null) {
       print("Upload image failed!");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Lütfen resim yükleyiniz',
+          ),
+        ),
+      );
       return;
     }
     // Create a Product object with the entered data
