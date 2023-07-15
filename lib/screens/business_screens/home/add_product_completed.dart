@@ -62,7 +62,7 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                 ),
               ],
             ),
-            const Padding(
+             Padding(
               padding: EdgeInsets.symmetric(vertical: 80),
               child: Column(
                 children: [

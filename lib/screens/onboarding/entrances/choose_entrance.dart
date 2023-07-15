@@ -36,7 +36,7 @@ class _ChooseEntranceState extends State<ChooseEntrance> {
                       ),
                     );
                   },
-                  child:  const Column(
+                  child:   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(height: 10.0),
@@ -70,7 +70,7 @@ class _ChooseEntranceState extends State<ChooseEntrance> {
                       ),
                     );
                   },
-                  child:  const Column(
+                  child:   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(height: 10.0),

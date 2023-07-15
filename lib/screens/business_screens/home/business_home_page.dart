@@ -427,7 +427,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment
-                              .spaceEvenly, // Sütunları yatayda hizalamak için
+                              .spaceEvenly, // Sütunları yatayda hizalamak için kullan
                           children: <Widget>[
                             Column(
                               children: [

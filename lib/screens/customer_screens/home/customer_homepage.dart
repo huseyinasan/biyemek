@@ -1,3 +1,4 @@
+import 'package:biyemek/screens/customer_screens/home/customer_profile_page.dart';
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
 import 'package:biyemek/widgets/custom_appbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -37,14 +38,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
     super.dispose();
   }
 
-  Future<void> signUserOut() async {
-    // çıkış yapma
-    try {
-      await FirebaseAuth.instance.signOut();
-    } catch (e) {
-      print('Error signing out: $e');
-    }
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +50,16 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-          onTap: () {}, //profile page navigation
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return  CustomerProfilePage();
+                },
+              ),
+            );
+          }, //profile page navigation
         ),
         body: PageView(
             controller: _pageController,
@@ -86,7 +89,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                   ),
                 ],
               ),
-              const Column(
+               Column(
                 children: [
                   Text(
                     "sayfa2",
@@ -98,7 +101,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                   )
                 ],
               ),
-              const Column(
+               Column(
                 children: [Text("sayfa3")],
               ),
             ]),
