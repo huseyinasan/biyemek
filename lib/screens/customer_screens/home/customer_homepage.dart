@@ -1,4 +1,5 @@
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
+import 'package:biyemek/widgets/custom_appbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -49,12 +50,14 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) {
-      // User is not signed in, handle this case accordingly
-      return const CustomerEntrance(); // Return an empty container or another widget
+      return const CustomerEntrance();
     }
 
     return SafeArea(
       child: Scaffold(
+        appBar: CustomAppBar(
+          onTap: () {}, //profile page navigation
+        ),
         body: PageView(
             controller: _pageController,
             onPageChanged: (index) {
@@ -69,26 +72,14 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                     children: [
                       Container(
                         padding: const EdgeInsets.all(20.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Expanded(
-                              child: Text(
-                                "Bi'Yemek",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 24.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                // yönlendirme yap
-                              },
-                              child: const Icon(Icons.person_2_rounded),
-                            ),
-                          ],
+                        child: Text(
+                          "Bi'Yemek",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.orange,
+                          ),
                         ),
                       ),
                     ],
@@ -118,7 +109,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
             height: 87,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Colors.pink,
+                color: Color(0xFFBE7CB4),
                 width: 2.0,
               ),
               borderRadius: BorderRadius.circular(60.0),
