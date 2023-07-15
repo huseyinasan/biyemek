@@ -111,6 +111,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
   Future<void> signUserOut() async {
     try {
       await FirebaseAuth.instance.signOut();
+      setState(() {});
     } catch (e) {
       print('Error signing out: $e');
     }
@@ -588,7 +589,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                       children: [
                                         SizedBox(height: 15),
                                         Text(
-                                          "Gönderilen",
+                                          "Teslim Edilmiş",
                                           style: TextStyle(
                                             color: Color(0xFFBE7CB4),
                                             fontSize: 15,

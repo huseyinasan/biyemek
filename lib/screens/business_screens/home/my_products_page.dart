@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../models/product_model.dart';
 import '../../../services/my_products_service.dart';
 import '../../../widgets/my_products_item.dart';
@@ -90,7 +89,8 @@ class _MyProductsPageState extends State<MyProductsPage>
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return const Center(child: CircularProgressIndicator());
                       } else if (snapshot.hasError) {
-                        return const Center(child: Text('Bir şeyler yanlış gitti'));
+                        return const Center(
+                            child: Text('Bir şeyler yanlış gitti'));
                       } else if (snapshot.data == null ||
                           snapshot.data!.isEmpty) {
                         return const Center(
@@ -110,7 +110,8 @@ class _MyProductsPageState extends State<MyProductsPage>
                     },
                   ),
                 ),
-                const Center(child: Text('Herhangi satılmış bir ürün bulunamadı')),
+                const Center(
+                    child: Text('Herhangi satılmış bir ürün bulunamadı')),
               ],
             ),
           ),

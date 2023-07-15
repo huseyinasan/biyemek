@@ -42,26 +42,26 @@ class _ProfileState extends State<Profile> {
             .get();
 
         // Extract the business name from the document
-        String name = snapshot.get('name');
-        String surname = snapshot.get('surname');
-        int phoneNumber = snapshot.get('phone');
-        int idNumber = snapshot.get('idNumber');
-        String businessName = snapshot.get('businessName');
-        String city = snapshot.get('businessCity');
-        String district = snapshot.get('businessDistrict');
-        int taxNumber = snapshot.get('taxNumber');
-        String businessType = snapshot.get('businessType');
+        String fsName = snapshot.get('name');
+        String fsSurname = snapshot.get('surname');
+        int fsPhoneNumber = snapshot.get('phone');
+        int fsIdNumber = snapshot.get('idNumber');
+        String fsBusinessName = snapshot.get('businessName');
+        String fsCity = snapshot.get('businessCity');
+        String fsDistrict = snapshot.get('businessDistrict');
+        int fsTaxNumber = snapshot.get('taxNumber');
+        String fsBusinessType = snapshot.get('businessType');
 
         setState(() {
-          name = name;
-          surname = surname;
-          phoneNumber = phoneNumber;
-          idNumber = idNumber;
-          businessName = businessName;
-          businessCity = city;
-          businessDistrict = district;
-          taxNumber = taxNumber;
-          businessType = businessType;
+          name = fsName;
+          surname = fsSurname;
+          phoneNumber = fsPhoneNumber;
+          idNumber = fsIdNumber;
+          businessName = fsBusinessName;
+          businessCity = fsCity;
+          businessDistrict = fsDistrict;
+          taxNumber = fsTaxNumber;
+          businessType = fsBusinessType;
           email = userEmail!;
         });
       }
