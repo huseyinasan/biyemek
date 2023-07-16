@@ -36,8 +36,8 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(
+          const Padding(
+            padding: EdgeInsets.symmetric(
               horizontal: 20,
               vertical: 10,
             ),
@@ -81,7 +81,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
               },
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Container(
@@ -98,15 +98,15 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                     future: CustomerInfoService().getCardName(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return CircularProgressIndicator();
+                        return const CircularProgressIndicator();
                       } else if (snapshot.hasError) {
-                        return Text('Bir şeyler yanlış gitti');
+                        return const Text('Bir şeyler yanlış gitti');
                       } else if (snapshot.data == null) {
-                        return Text('Seçili kart yok, lütfen kart giriniz.');
+                        return const Text('Seçili kart yok, lütfen kart giriniz.');
                       } else {
                         return Text(
                           'Seçili Kart : ${snapshot.data}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14,
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -124,17 +124,17 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => CardDetailsPage(),
+                          builder: (context) => const CardDetailsPage(),
                         ),
                       );
                     },
-                    child: Text('Kartı Güncelle'),
+                    child: const Text('Kartı Güncelle'),
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
@@ -151,15 +151,15 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                     future: CustomerInfoService().getAdressName(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return CircularProgressIndicator();
+                        return const CircularProgressIndicator();
                       } else if (snapshot.hasError) {
-                        return Text('Bir şeyler yanlış gitti');
+                        return const Text('Bir şeyler yanlış gitti');
                       } else if (snapshot.data == null) {
-                        return Text('Seçili adres yok, lütfen adres giriniz.');
+                        return const Text('Seçili adres yok, lütfen adres giriniz.');
                       } else {
                         return Text(
                           'Seçili Adres : ${snapshot.data}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14,
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -177,25 +177,25 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => AddressDetailsPage(),
+                          builder: (context) => const AddressDetailsPage(),
                         ),
                       );
                     },
-                    child: Text('Adresi Güncelle'),
+                    child: const Text('Adresi Güncelle'),
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(
-            height: 20,
+          const SizedBox(
+            height: 30,
           ),
           Material(
             elevation: 5,
             borderRadius: BorderRadius.circular(5),
             child: Container(
-              decoration: BoxDecoration(
-                color: const Color(0xFFDBB7D6),
+              decoration: const BoxDecoration(
+                color: Color(0xFFDBB7D6),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -210,13 +210,13 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                           builder: (context, snapshot) {
                             if (snapshot.connectionState ==
                                 ConnectionState.waiting) {
-                              return CircularProgressIndicator();
+                              return const CircularProgressIndicator();
                             } else if (snapshot.hasError) {
-                              return Text('Bir şeyler yanlış gitti');
+                              return const Text('Bir şeyler yanlış gitti');
                             } else {
                               return Text(
                                 '${snapshot.data} ₺',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 14,
                                   decoration: TextDecoration.lineThrough,
                                   color: AppColors.secondaryColor,
@@ -231,13 +231,13 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                           builder: (context, snapshot) {
                             if (snapshot.connectionState ==
                                 ConnectionState.waiting) {
-                              return CircularProgressIndicator();
+                              return const CircularProgressIndicator();
                             } else if (snapshot.hasError) {
-                              return Text('Bir şeyler yanlış gitti');
+                              return const Text('Bir şeyler yanlış gitti');
                             } else {
                               return Text(
                                 ' >  ${snapshot.data} ₺',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -256,7 +256,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                         backgroundColor: Colors.green,
                       ),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "Siparişi Tamamla",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,

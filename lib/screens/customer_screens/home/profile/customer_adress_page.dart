@@ -22,41 +22,41 @@ class _AddressDetailsPageState extends State<AddressDetailsPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text('Adres Bilgileri'),
+        title: const Text('Adres Bilgileri'),
       ),
       body: Form(
         key: _formKey,
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             children: <Widget>[
               TextFormField(
                 controller: _nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Adres İsmi',
                 ),
               ),
               TextFormField(
                 controller: _streetController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Sokak',
                 ),
               ),
               TextFormField(
                 controller: _cityController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Şehir',
                 ),
               ),
               TextFormField(
                 controller: _stateController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'İlçe',
                 ),
               ),
               TextFormField(
                 controller: _zipController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Posta Kodu',
                 ),
                 keyboardType: TextInputType.number,
@@ -85,7 +85,7 @@ class _AddressDetailsPageState extends State<AddressDetailsPage> {
 
                   Navigator.pop(context);
                 },
-                child: Text('Adresi Kaydet'),
+                child: const Text('Adresi Kaydet'),
               ),
             ],
           ),

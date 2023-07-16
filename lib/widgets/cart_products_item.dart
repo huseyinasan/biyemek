@@ -130,7 +130,7 @@ class CartProductItem extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return CustomerHomePage();
+                                  return const CustomerHomePage();
                                 },
                               ),
                             );

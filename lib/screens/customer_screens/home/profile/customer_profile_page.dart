@@ -102,11 +102,11 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                           color: Colors.white,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(
+                      const Padding(
+                        padding: EdgeInsets.only(
                           left: 10.0,
                         ),
-                        child: const Text(
+                        child: Text(
                           "Bilgilerim",
                           style: TextStyle(
                               color: Colors.black,
@@ -114,11 +114,11 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
                           horizontal: 80.0,
                         ),
-                        child: const Icon(
+                        child: Icon(
                           Icons.arrow_forward_ios_rounded,
                           color: Colors.green,
                         ),
@@ -163,11 +163,11 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                           color: Colors.white,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(
+                      const Padding(
+                        padding: EdgeInsets.only(
                           left: 10.0,
                         ),
-                        child: const Text(
+                        child: Text(
                           "Geçmiş siparişlerim",
                           style: TextStyle(
                               fontSize: 15,
@@ -175,11 +175,11 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
                           horizontal: 10.0,
                         ),
-                        child: const Icon(
+                        child: Icon(
                           Icons.arrow_forward_ios_rounded,
                           color: Colors.green,
                         ),
@@ -215,11 +215,11 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                             color: Colors.white,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
+                        const Padding(
+                          padding: EdgeInsets.only(
                             left: 10.0,
                           ),
-                          child: const Text(
+                          child: Text(
                             "Çıkış Yap",
                             style: TextStyle(
                                 fontSize: 15,
@@ -227,11 +227,11 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                                 color: Colors.black),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
+                        const Padding(
+                          padding: EdgeInsets.symmetric(
                             horizontal: 80.0,
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.arrow_forward_ios_rounded,
                             color: Colors.green,
                           ),

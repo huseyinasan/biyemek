@@ -13,7 +13,7 @@ class ProductDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.primaryColor,
-        title: Text(
+        title: const Text(
           "Ürün Detayı",
           style: TextStyle(
             fontSize: 24.0,

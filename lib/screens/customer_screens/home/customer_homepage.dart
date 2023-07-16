@@ -195,7 +195,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                           children: [
                             Row(
                               children: [
-                                Text(
+                                const Text(
                                   'Fiyat:  ',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -207,13 +207,13 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                                   builder: (context, snapshot) {
                                     if (snapshot.connectionState ==
                                         ConnectionState.waiting) {
-                                      return CircularProgressIndicator();
+                                      return const CircularProgressIndicator();
                                     } else if (snapshot.hasError) {
-                                      return Text('Bir şeyler yanlış gitti');
+                                      return const Text('Bir şeyler yanlış gitti');
                                     } else {
                                       return Text(
                                         '${snapshot.data} ₺',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           decoration:
                                               TextDecoration.lineThrough,
                                         ),
@@ -227,13 +227,13 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                                   builder: (context, snapshot) {
                                     if (snapshot.connectionState ==
                                         ConnectionState.waiting) {
-                                      return CircularProgressIndicator();
+                                      return const CircularProgressIndicator();
                                     } else if (snapshot.hasError) {
-                                      return Text('Bir şeyler yanlış gitti');
+                                      return const Text('Bir şeyler yanlış gitti');
                                     } else {
                                       return Text(
                                         ' >  ${snapshot.data} ₺',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
                                       );

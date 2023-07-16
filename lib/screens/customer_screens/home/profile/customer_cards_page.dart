@@ -22,23 +22,23 @@ class _CardDetailsPageState extends State<CardDetailsPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text('Kart Bilgileri'),
+        title: const Text('Kart Bilgileri'),
       ),
       body: Form(
         key: _formKey,
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             children: <Widget>[
               TextFormField(
                 controller: _cardNameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Kart İsmi',
                 ),
               ),
               TextFormField(
                 controller: _cardNumberController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Kart Nu.',
                 ),
                 keyboardType: TextInputType.number,
@@ -48,18 +48,18 @@ class _CardDetailsPageState extends State<CardDetailsPage> {
                   Expanded(
                     child: TextFormField(
                       controller: _expiryMonthController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Ay',
                       ),
                       keyboardType: TextInputType.number,
                       maxLength: 2,
                     ),
                   ),
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Expanded(
                     child: TextFormField(
                       controller: _expiryYearController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Yıl',
                       ),
                       keyboardType: TextInputType.number,
@@ -70,7 +70,7 @@ class _CardDetailsPageState extends State<CardDetailsPage> {
               ),
               TextFormField(
                 controller: _cvvController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'CVV',
                 ),
                 keyboardType: TextInputType.number,
@@ -98,7 +98,7 @@ class _CardDetailsPageState extends State<CardDetailsPage> {
                   }
                   Navigator.pop(context);
                 },
-                child: Text('Kartı Kaydet'),
+                child: const Text('Kartı Kaydet'),
               ),
             ],
           ),
