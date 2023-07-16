@@ -220,7 +220,7 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
                   ),
                 ),
                 // google + apple sign in buttons
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

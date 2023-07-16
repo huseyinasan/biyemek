@@ -4,6 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class CustomerProfilePage extends StatefulWidget {
+  const CustomerProfilePage({super.key});
+
   @override
   State<CustomerProfilePage> createState() => _CustomerProfilePageState();
 }
@@ -22,7 +24,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profil'),
+        title: const Text('Profil'),
         backgroundColor: Colors.pink,
       ),
       body: Column(
@@ -37,7 +39,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                       showModalBottomSheet(
                           context: context,
                           builder: (BuildContext) {
-                            return SizedBox(
+                            return const SizedBox(
                               height: 200,
                               child: Row(
                                 children: [
@@ -112,7 +114,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return OldOrdersPage();
+                            return const OldOrdersPage();
                           },
                         ),
                       );

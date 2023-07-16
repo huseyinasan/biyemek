@@ -3,23 +3,23 @@ import 'package:flutter/material.dart';
 class CategoryName extends StatelessWidget {
   final String text;
 
-  CategoryName({required this.text});
+  const CategoryName({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Icon(
+        const Icon(
           Icons.local_dining,
           color: Colors.green,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18.0,
             color: Color(0xFFFF5722),
             fontWeight: FontWeight.bold,

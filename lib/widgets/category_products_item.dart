@@ -35,7 +35,7 @@ class CategoryProductItem extends StatelessWidget {
               padding: const EdgeInsets.only(top: 8.0),
               child: Text(
                 product.name,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
@@ -43,7 +43,7 @@ class CategoryProductItem extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "Fiyat: ",
                     style: TextStyle(
                       fontSize: 14,
@@ -52,14 +52,14 @@ class CategoryProductItem extends StatelessWidget {
                   ),
                   Text(
                     "${product.normalPrice.toString()} ₺",
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 14,
                         color: Colors.black,
                         decoration: TextDecoration.lineThrough),
                   ),
                   Text(
                     "  >  ${product.discountPrice.toString()} ₺",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       color: Colors.black,
                     ),

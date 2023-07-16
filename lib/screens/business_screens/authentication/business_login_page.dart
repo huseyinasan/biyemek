@@ -166,7 +166,7 @@ class _BusinessLoginPageState extends State<BusinessLoginPage> {
                     ),
                   ),
                 ),
-                  Padding(
+                  const Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

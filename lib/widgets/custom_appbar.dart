@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends AppBar {
   final VoidCallback onTap;
 
-  CustomAppBar({required this.onTap})
+  CustomAppBar({super.key, required this.onTap})
       : super(
           backgroundColor: Colors.green,
           automaticallyImplyLeading: false,
           title: Stack(
             children: [
-              Align(
+              const Align(
                 alignment: Alignment.center,
                 child: Text(
                   "Bi'Yemek",

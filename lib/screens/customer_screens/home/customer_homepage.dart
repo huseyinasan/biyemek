@@ -65,7 +65,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return CustomerProfilePage();
+                  return const CustomerProfilePage();
                 },
               ),
             );
@@ -89,7 +89,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -125,7 +125,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                 ),
               ),
             ),
-            Column(
+            const Column(
               children: [
                 Text(
                   "sayfa2",
@@ -137,7 +137,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                 )
               ],
             ),
-            Column(
+            const Column(
               children: [Text("sayfa3")],
             ),
           ],

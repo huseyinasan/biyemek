@@ -147,14 +147,14 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                       children: [
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.location_on_rounded,
                               color: Colors.green,
                               size: 42,
                             ),
                             Text(
-                              "${businessCity}/${businessDistrict}",
-                              style: TextStyle(
+                              "$businessCity/$businessDistrict",
+                              style: const TextStyle(
                                 color: Colors.green,
                                 fontSize: 19,
                                 fontWeight: FontWeight.bold,
@@ -213,11 +213,11 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                     MainAxisAlignment.spaceAround,
                                 children: [
                                   Text(
-                                    "${_businessName}",
-                                    style: TextStyle(
+                                    _businessName,
+                                    style: const TextStyle(
                                         color: Colors.white, fontSize: 19),
                                   ),
-                                  Icon(
+                                  const Icon(
                                     Icons.account_circle_outlined,
                                     size: 40,
                                     color: Colors.white,
@@ -258,7 +258,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   height: 48,
                                   color: const Color(0xFFBE7CB4),
                                 ),
-                                Expanded(
+                                const Expanded(
                                   child: Row(
                                     children: [
                                       SizedBox(width: 40),
@@ -291,7 +291,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 ),
                                 borderRadius: BorderRadius.circular(20),
                                 color: const Color(0xFFDBB7D6)),
-                            child: Column(
+                            child: const Column(
                               children: [
                                 SizedBox(height: 10),
                                 Text(
@@ -339,7 +339,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                     ),
                                   );
                                 },
-                                child: Row(
+                                child: const Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
                                   children: [
@@ -391,7 +391,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                     borderRadius: BorderRadius.circular(20.0),
                                     shape: BoxShape.rectangle,
                                     color: const Color(0xFFDBB7D6)),
-                                child: Row(
+                                child: const Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
                                   children: [
@@ -443,7 +443,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         ),
                                         borderRadius: BorderRadius.circular(20),
                                         color: const Color(0xFFDBB7D6)),
-                                    child: Column(
+                                    child: const Column(
                                       children: [
                                         SizedBox(height: 15),
                                         Text(
@@ -486,22 +486,22 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         color: const Color(0xFFDBB7D6)),
                                     child: Column(
                                       children: [
-                                        SizedBox(height: 15),
-                                        Text(
+                                        const SizedBox(height: 15),
+                                        const Text(
                                           "Aktif",
                                           style: TextStyle(
                                             color: Color(0xFFBE7CB4),
                                             fontSize: 15,
                                           ),
                                         ),
-                                        Text(
+                                        const Text(
                                           "Ürünler",
                                           style: TextStyle(
                                             color: Color(0xFFBE7CB4),
                                             fontSize: 15,
                                           ),
                                         ),
-                                        SizedBox(height: 5),
+                                        const SizedBox(height: 5),
                                         StreamBuilder<List<Product>>(
                                           stream: MyProductsService()
                                               .getMyProducts(_businessUid),
@@ -511,7 +511,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                                   .length; // Here is the length
                                               return Text(
                                                 '$length Adet',
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 22,
                                                 ),
@@ -520,7 +520,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                               return Text(
                                                   'Error: ${snapshot.error}');
                                             }
-                                            return CircularProgressIndicator();
+                                            return const CircularProgressIndicator();
                                           },
                                         ),
                                       ],
@@ -544,7 +544,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         ),
                                         borderRadius: BorderRadius.circular(20),
                                         color: const Color(0xFFDBB7D6)),
-                                    child: Column(
+                                    child: const Column(
                                       children: [
                                         SizedBox(height: 15),
                                         Text(
@@ -585,7 +585,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         ),
                                         borderRadius: BorderRadius.circular(20),
                                         color: const Color(0xFFDBB7D6)),
-                                    child: Column(
+                                    child: const Column(
                                       children: [
                                         SizedBox(height: 15),
                                         Text(
@@ -642,8 +642,8 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           ),
                           color: const Color(0xFFDBB7D6),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16),
+                        child: const Padding(
+                          padding: EdgeInsets.all(16),
                           child: Center(
                             child: Text(
                               "Ürün Oluştur",
@@ -658,8 +658,8 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                       )),
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -679,7 +679,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
@@ -731,7 +731,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                               child: TextField(
                                 controller: productNameController,
                                 //user can add name of the product from here
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'Ürün İsmi',
                                   labelStyle: TextStyle(color: Colors.green),
                                   border: OutlineInputBorder(
@@ -760,7 +760,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     ),
                     child: Column(
                       children: [
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
@@ -783,7 +783,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   selectedOption = newValue!;
                                 });
                               },
-                              dropdownColor: Color(0xFFDBB7D6),
+                              dropdownColor: const Color(0xFFDBB7D6),
                               items: <String>[
                                 'Meyve - Sebze',
                                 'Şarküteri',
@@ -822,7 +822,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 inputFormatters: <TextInputFormatter>[
                                   FilteringTextInputFormatter.digitsOnly,
                                 ],
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'Ürün Miktarı',
                                   labelStyle: TextStyle(
                                     color: Colors.green,
@@ -842,7 +842,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 12),
+                            const SizedBox(width: 12),
                             Row(
                               children: [
                                 DropdownButton<String>(
@@ -853,7 +853,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                       selectedUnit = newValue!;
                                     });
                                   },
-                                  dropdownColor: Color(0xFFDBB7D6),
+                                  dropdownColor: const Color(0xFFDBB7D6),
                                   items: <String>[
                                     'kilogram',
                                     'adet',
@@ -881,7 +881,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     ),
                     child: Column(
                       children: [
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
@@ -936,7 +936,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         });
                                       }
                                     },
-                                    icon: Icon(Icons.calendar_today),
+                                    icon: const Icon(Icons.calendar_today),
                                   ),
                                 ],
                               ),
@@ -960,7 +960,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                             Expanded(
                               child: TextField(
                                 controller: productDescriptionController,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   //user can add the description of the product from here
                                   labelText: 'Ürün Açıklaması',
                                   labelStyle: TextStyle(color: Colors.green),
@@ -1001,7 +1001,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   FilteringTextInputFormatter
                                       .digitsOnly, // Filter input to accept only digits
                                 ],
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'Normal Fiyatı',
                                   labelStyle: TextStyle(
                                     color: Colors.green,
@@ -1021,7 +1021,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 12),
+                            const SizedBox(width: 12),
                             Expanded(
                               child: TextField(
                                 controller: discountPriceController,
@@ -1030,7 +1030,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 inputFormatters: <TextInputFormatter>[
                                   FilteringTextInputFormatter.digitsOnly,
                                 ],
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'İndirimli Fiyatı',
                                   labelStyle: TextStyle(
                                     color: Colors.green,
@@ -1071,12 +1071,12 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 context: context,
                                 builder: (BuildContext context) {
                                   return AlertDialog(
-                                    title: Text('Doğrulama'),
-                                    content: Text(
+                                    title: const Text('Doğrulama'),
+                                    content: const Text(
                                         'Ürün listelemek istediğinize emin misiniz?'),
                                     actions: <Widget>[
                                       TextButton(
-                                        child: Text(
+                                        child: const Text(
                                           'İptal Et',
                                           style: TextStyle(
                                             color: Colors.red,
@@ -1087,7 +1087,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         },
                                       ),
                                       TextButton(
-                                        child: Text('Onayla'),
+                                        child: const Text('Onayla'),
                                         onPressed: () {
                                           submitProduct();
                                           Navigator.of(context).pop();
@@ -1102,7 +1102,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                               foregroundColor: Colors.white,
                               backgroundColor: Colors.green,
                             ),
-                            child: Text(
+                            child: const Text(
                               "Onayla ve Listele",
                               style: TextStyle(
                                 color: Colors.white,
@@ -1128,7 +1128,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                       showModalBottomSheet(
                           context: context,
                           builder: (BuildContext) {
-                            return SizedBox(
+                            return const SizedBox(
                               height: 200,
                               child: Row(
                                 children: [
@@ -1154,8 +1154,8 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    "$_businessName",
-                    style: TextStyle(
+                    _businessName,
+                    style: const TextStyle(
                       fontSize: 20,
                       color: Colors.green,
                       fontWeight: FontWeight.bold,
@@ -1214,7 +1214,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           return Container(
                             height: 200,
                             color: Colors.white24,
-                            child: Row(
+                            child: const Row(
                               children: [
                                 SizedBox(width: 50),
                                 Text(
@@ -1380,7 +1380,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
     if (downloadUrl == null) {
       print("Upload image failed!");
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text(
             'Lütfen resim yükleyiniz',
           ),
@@ -1421,7 +1421,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
     } else {
       // If there was an error, show an error message.
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text(
             'Ürünü oluştururken hata oluştu, lütfen tekrar deneyiniz.',
           ),
@@ -1449,7 +1449,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
     }
 
     FirebaseStorage storage = FirebaseStorage.instance;
-    Reference ref = storage.ref().child('productImages').child(uuid + '.jpg');
+    Reference ref = storage.ref().child('productImages').child('$uuid.jpg');
     UploadTask uploadTask = ref.putFile(File(_image!.path));
 
     // Await for the task to complete, then get the download URL

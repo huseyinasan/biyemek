@@ -12,8 +12,8 @@ class ProductDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: Padding(
+        backgroundColor: AppColors.primaryColor,
+        title: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 70),
           child: Text(
             "Ürün Detayları",
@@ -44,7 +44,7 @@ class ProductDetailsPage extends StatelessWidget {
                         color: Colors.grey.withOpacity(0.5),
                         spreadRadius: 5,
                         blurRadius: 7,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ],
                   ),
@@ -58,7 +58,7 @@ class ProductDetailsPage extends StatelessWidget {
                 )),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Material(
@@ -76,7 +76,7 @@ class ProductDetailsPage extends StatelessWidget {
                       child: Text(
                         overflow: TextOverflow.ellipsis,
                         product.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 24.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
@@ -87,7 +87,7 @@ class ProductDetailsPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Material(
@@ -104,7 +104,7 @@ class ProductDetailsPage extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Satıcı: ",
                             style: TextStyle(
                                 fontSize: 20.0,
@@ -114,19 +114,19 @@ class ProductDetailsPage extends StatelessWidget {
                           Text(
                             overflow: TextOverflow.ellipsis,
                             product.businessName,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20.0,
                               color: Colors.black,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Miktar: ",
                             style: TextStyle(
                                 fontSize: 20.0,
@@ -135,29 +135,29 @@ class ProductDetailsPage extends StatelessWidget {
                           ),
                           Text(
                             product.amount.toStringAsFixed(1),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20.0,
                               color: Colors.black,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 7,
                           ),
                           Text(
                             product.unit,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20.0,
                               color: Colors.black,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "SKT: ",
                             style: TextStyle(
                                 fontSize: 20.0,
@@ -167,19 +167,19 @@ class ProductDetailsPage extends StatelessWidget {
                           Text(
                             overflow: TextOverflow.ellipsis,
                             product.lastDate,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20.0,
                               color: Colors.black,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Açıklama: ",
                             style: TextStyle(
                                 fontSize: 20.0,
@@ -189,19 +189,19 @@ class ProductDetailsPage extends StatelessWidget {
                           Text(
                             overflow: TextOverflow.ellipsis,
                             product.description,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20.0,
                               color: Colors.black,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Fiyat: ",
                             style: TextStyle(
                                 fontSize: 20.0,
@@ -211,7 +211,7 @@ class ProductDetailsPage extends StatelessWidget {
                           Text(
                             overflow: TextOverflow.ellipsis,
                             "${product.normalPrice} ₺",
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 20.0,
                                 color: Colors.black,
                                 decoration: TextDecoration.lineThrough),
@@ -219,7 +219,7 @@ class ProductDetailsPage extends StatelessWidget {
                           Text(
                             overflow: TextOverflow.ellipsis,
                             "  >  ${product.discountPrice} ₺",
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20.0,
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -232,7 +232,7 @@ class ProductDetailsPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Row(
@@ -249,7 +249,7 @@ class ProductDetailsPage extends StatelessWidget {
                     foregroundColor: Colors.white,
                     backgroundColor: Colors.green,
                   ),
-                  child: Text(
+                  child: const Text(
                     "Sepete Ekle",
                     style: TextStyle(
                       color: Colors.white,

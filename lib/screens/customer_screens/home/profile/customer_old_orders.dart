@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 class OldOrdersPage extends StatelessWidget {
+  const OldOrdersPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Geçmiş Siparişler'),
+        title: const Text('Geçmiş Siparişler'),
         backgroundColor: Colors.pink,
       ),
 
       body: ListView(
-        padding: EdgeInsets.all(16.0),
-        children: <Widget>[
+        padding: const EdgeInsets.all(16.0),
+        children: const <Widget>[
           OrderCard(
             orderDate: '01/08/2023',
             restaurantName: 'Pizza Zone',
@@ -44,7 +46,7 @@ class OrderCard extends StatelessWidget {
   final String orderDetails;
   final String totalPrice;
 
-  const OrderCard({
+  const OrderCard({super.key, 
     required this.orderDate,
     required this.restaurantName,
     required this.orderDetails,
@@ -56,22 +58,22 @@ class OrderCard extends StatelessWidget {
     return Card(
       elevation: 2.0,
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
               'Sipariş Tarihi: $orderDate',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Text('Restoran: $restaurantName'),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Text('Sipariş Detayı: $orderDetails'),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Text(
               'Toplam Tutar: $totalPrice',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
           ],
         ),
@@ -81,10 +83,12 @@ class OrderCard extends StatelessWidget {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -92,7 +96,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: OldOrdersPage(),
+      home: const OldOrdersPage(),
     );
   }
 }
