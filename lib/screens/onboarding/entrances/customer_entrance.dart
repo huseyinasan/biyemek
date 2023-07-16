@@ -56,7 +56,7 @@ class _CustomerEntranceState extends State<CustomerEntrance> {
                     fit: BoxFit.cover, // Resmi sığdırma şekli
                   ),
                   const SizedBox(height: 20),
-                   const Padding(
+                    Padding(
                     padding: EdgeInsets.only(
                       left: 10,
                       right: 10,
@@ -207,7 +207,7 @@ class _CustomerEntranceState extends State<CustomerEntrance> {
                     ],
                   ),
                   const SizedBox(height: 30),
-                   const Row(
+                    Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(

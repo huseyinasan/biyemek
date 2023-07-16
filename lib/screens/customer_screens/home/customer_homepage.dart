@@ -94,7 +94,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    const Row(
+                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -273,7 +273,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               ),
             ),
 //my cart page ends here-------------------------------------------------
-            const Column(
+             Column(
               children: [Text("sayfa3")],
             ),
           ],

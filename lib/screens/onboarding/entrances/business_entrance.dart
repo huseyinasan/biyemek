@@ -56,7 +56,7 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                     fit: BoxFit.cover, // Resmi sığdırma şekli
                   ),
                   const SizedBox(height: 20),
-                   const Padding(
+                    Padding(
                     padding: EdgeInsets.only(
                       left: 10,
                       right: 10,
