@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:biyemek/models/product_model.dart';
-import '../services/my_products_service.dart';
+import '../screens/customer_screens/home/customer_homepage.dart';
+import '../services/customer_product_service.dart';
 
-class MyProductItem extends StatelessWidget {
+class CartProductItem extends StatelessWidget {
   final Product product;
 
-  MyProductItem({super.key, required this.product});
-  final _productService = MyProductsService();
+  const CartProductItem({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -124,45 +124,15 @@ class MyProductItem extends StatelessWidget {
                             color: Colors.red,
                           ),
                           onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: const Text('Doğrulama'),
-                                  content: const Text(
-                                      'Ürün silmek istediğinize emin misiniz??'),
-                                  actions: <Widget>[
-                                    TextButton(
-                                      child: const Text(
-                                        'İptal Et',
-                                        style: TextStyle(
-                                          color: Colors.red,
-                                        ),
-                                      ),
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                    TextButton(
-                                      child: const Text('Onayla'),
-                                      onPressed: () {
-                                        _productService
-                                            .deleteProduct(product.id);
-                                        Navigator.of(context).pop();
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          const SnackBar(
-                                            content: Center(
-                                                child: Text(
-                                                    'Ürün başarıyla silindi')),
-                                            duration: Duration(seconds: 3),
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ],
-                                );
-                              },
+                            CustomerProductsService()
+                                .removeFromCart(product.id);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return CustomerHomePage();
+                                },
+                              ),
                             );
                           },
                         ),

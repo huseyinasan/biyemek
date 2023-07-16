@@ -53,6 +53,8 @@ class ProductDetailsPage extends StatelessWidget {
                     child: Image.network(
                       product.imageUrl,
                       fit: BoxFit.cover,
+                      cacheWidth: 250,
+                      cacheHeight: 250,
                     ),
                   ),
                 )),

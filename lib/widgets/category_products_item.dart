@@ -26,6 +26,8 @@ class CategoryProductItem extends StatelessWidget {
                     child: Image.network(
                       product.imageUrl,
                       fit: BoxFit.cover,
+                      cacheWidth: 250,
+                      cacheHeight: 250,
                     ),
                   ),
                 ],
@@ -35,7 +37,8 @@ class CategoryProductItem extends StatelessWidget {
               padding: const EdgeInsets.only(top: 8.0),
               child: Text(
                 product.name,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ),
             Padding(

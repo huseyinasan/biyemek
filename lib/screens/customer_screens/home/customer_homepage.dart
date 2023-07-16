@@ -5,6 +5,9 @@ import 'package:biyemek/widgets/custom_appbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import '../../../models/product_model.dart';
+import '../../../services/customer_product_service.dart';
+import '../../../widgets/cart_products_item.dart';
 import '../../../widgets/product_grid_view.dart';
 
 class CustomerHomePage extends StatefulWidget {
@@ -125,18 +128,48 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                 ),
               ),
             ),
-            const Column(
-              children: [
-                Text(
-                  "sayfa2",
-                  style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 30,
-                    fontWeight: FontWeight.normal,
+//my cart page starts here-------------------------------------------------
+            Expanded(
+              child: Column(
+                children: [
+                  //products will come here
+                  Expanded(
+                    child: StreamBuilder<List<Product>>(
+                      stream: CustomerProductsService().getCartProducts(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return const Center(
+                              child: CircularProgressIndicator());
+                        } else if (snapshot.hasError) {
+                          return const Center(
+                              child: Text('Bir şeyler yanlış gitti'));
+                        } else if (snapshot.data == null ||
+                            snapshot.data!.isEmpty) {
+                          return const Center(
+                              child: Text('Sepetinizde ürün yok'));
+                        } else {
+                          return ListView.builder(
+                            padding: const EdgeInsets.all(10.0),
+                            itemCount: snapshot.data!.length,
+                            itemBuilder: (ctx, i) => Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 10.0),
+                              child: CartProductItem(
+                                product: snapshot.data![i],
+                              ),
+                            ),
+                          );
+                        }
+                      },
+                    ),
                   ),
-                )
-              ],
+                  const Center(
+                      child: Text('Sepete eklenmiş bir ürün bulunamadı')),
+                ],
+              ),
             ),
+//my cart page ends here-------------------------------------------------
             const Column(
               children: [Text("sayfa3")],
             ),
