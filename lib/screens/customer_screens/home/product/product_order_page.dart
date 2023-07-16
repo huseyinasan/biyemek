@@ -36,7 +36,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
       ),
       body: Column(
         children: [
-           Padding(
+          Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 20,
               vertical: 10,
@@ -102,7 +102,8 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                       } else if (snapshot.hasError) {
                         return const Text('Bir şeyler yanlış gitti');
                       } else if (snapshot.data == null) {
-                        return const Text('Seçili kart yok, lütfen kart giriniz.');
+                        return const Text(
+                            'Seçili kart yok, lütfen kart giriniz.');
                       } else {
                         return Text(
                           'Seçili Kart : ${snapshot.data}',
@@ -155,7 +156,8 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                       } else if (snapshot.hasError) {
                         return const Text('Bir şeyler yanlış gitti');
                       } else if (snapshot.data == null) {
-                        return const Text('Seçili adres yok, lütfen adres giriniz.');
+                        return const Text(
+                            'Seçili adres yok, lütfen adres giriniz.');
                       } else {
                         return Text(
                           'Seçili Adres : ${snapshot.data}',
@@ -219,7 +221,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                                 style: const TextStyle(
                                   fontSize: 14,
                                   decoration: TextDecoration.lineThrough,
-                                  color: AppColors.secondaryColor,
+                                  color: Colors.black,
                                 ),
                               );
                             }
@@ -255,7 +257,11 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                         foregroundColor: Colors.white,
                         backgroundColor: Colors.green,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        //sipariş başarıyla oluşturuldu
+                        //orders collection altına ürün konulacak
+                        //ürünler cart altından silinecek
+                      },
                       child: const Text(
                         "Siparişi Tamamla",
                         style: TextStyle(

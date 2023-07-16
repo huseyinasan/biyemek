@@ -12,6 +12,7 @@ class AddressDetailsPage extends StatefulWidget {
 class _AddressDetailsPageState extends State<AddressDetailsPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _hoodController = TextEditingController();
   final TextEditingController _streetController = TextEditingController();
   final TextEditingController _cityController = TextEditingController();
   final TextEditingController _stateController = TextEditingController();
@@ -43,6 +44,12 @@ class _AddressDetailsPageState extends State<AddressDetailsPage> {
                 ),
               ),
               TextFormField(
+                controller: _hoodController,
+                decoration: const InputDecoration(
+                  labelText: 'Mahalle',
+                ),
+              ),
+              TextFormField(
                 controller: _cityController,
                 decoration: const InputDecoration(
                   labelText: 'Şehir',
@@ -57,7 +64,7 @@ class _AddressDetailsPageState extends State<AddressDetailsPage> {
               TextFormField(
                 controller: _zipController,
                 decoration: const InputDecoration(
-                  labelText: 'Posta Kodu',
+                  labelText: 'Kapı No',
                 ),
                 keyboardType: TextInputType.number,
               ),
@@ -71,9 +78,10 @@ class _AddressDetailsPageState extends State<AddressDetailsPage> {
                   final addressDetails = {
                     'name': _nameController.text,
                     'street': _streetController.text,
+                    'hood': _hoodController.text,
                     'city': _cityController.text,
                     'state': _stateController.text,
-                    'zip': _zipController.text,
+                    'doorNo': _zipController.text,
                   };
                   final user = FirebaseAuth.instance.currentUser;
                   if (user != null) {
