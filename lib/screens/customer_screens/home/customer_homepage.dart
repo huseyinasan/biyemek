@@ -1,5 +1,5 @@
 import 'package:biyemek/components/category_name.dart';
-import 'package:biyemek/screens/customer_screens/home/customer_profile_page.dart';
+import 'package:biyemek/screens/customer_screens/home/profile/customer_profile_page.dart';
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
 import 'package:biyemek/widgets/custom_appbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -69,7 +69,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                 },
               ),
             );
-          }, //profile page navigation
+          },
         ),
         body: PageView(
           controller: _pageController,
@@ -111,7 +111,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                       return Column(
                         children: [
                           CategoryName(
-                            text: categories[index],
+                            text: categories[index], //category name
                           ),
                           ProductGridView(
                               category: categories[index]), //product

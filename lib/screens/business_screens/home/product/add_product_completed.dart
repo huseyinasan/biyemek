@@ -1,7 +1,7 @@
 import 'package:biyemek/screens/business_screens/home/business_home_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../../../models/product_model.dart';
+import '../../../../models/product_model.dart';
 
 class AddProductCompletedPage extends StatefulWidget {
   final String productUuid;
@@ -62,7 +62,7 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                 ),
               ],
             ),
-             Padding(
+            Padding(
               padding: EdgeInsets.symmetric(vertical: 80),
               child: Column(
                 children: [

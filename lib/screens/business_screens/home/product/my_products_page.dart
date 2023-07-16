@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../models/product_model.dart';
-import '../../../services/my_products_service.dart';
-import '../../../widgets/my_products_item.dart';
+import '../../../../models/product_model.dart';
+import '../../../../services/my_products_service.dart';
+import '../../../../widgets/my_products_item.dart';
 
 class MyProductsPage extends StatefulWidget {
   final String businessUid;

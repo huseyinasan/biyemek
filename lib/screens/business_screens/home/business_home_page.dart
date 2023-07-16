@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:biyemek/screens/business_screens/home/comments.dart';
-import 'package:biyemek/screens/business_screens/home/my_products_page.dart';
+import 'package:biyemek/screens/business_screens/home/product/my_products_page.dart';
 import 'package:biyemek/screens/business_screens/home/my_profile_page.dart';
 import 'package:biyemek/screens/onboarding/entrances/business_entrance.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -11,7 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:uuid/uuid.dart';
 import '../../../services/my_products_service.dart';
-import 'add_product_completed.dart';
+import 'product/add_product_completed.dart';
 import 'notifications.dart';
 import 'package:biyemek/models/product_model.dart';
 import 'package:image_picker/image_picker.dart';

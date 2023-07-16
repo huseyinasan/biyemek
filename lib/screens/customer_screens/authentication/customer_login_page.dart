@@ -38,7 +38,7 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return  const CustomerHomePage();
+              return const CustomerHomePage();
             },
           ),
         );
@@ -220,7 +220,7 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
                   ),
                 ),
                 // google + apple sign in buttons
-                 Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

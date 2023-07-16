@@ -1,5 +1,5 @@
-import 'package:biyemek/screens/customer_screens/home/customer_old_orders.dart';
-import 'package:biyemek/screens/customer_screens/home/my_profile_customer.dart';
+import 'package:biyemek/screens/customer_screens/home/profile/customer_old_orders.dart';
+import 'package:biyemek/screens/customer_screens/home/profile/my_profile_customer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
