@@ -11,6 +11,7 @@ class AddressDetailsPage extends StatefulWidget {
 
 class _AddressDetailsPageState extends State<AddressDetailsPage> {
   final _formKey = GlobalKey<FormState>();
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _streetController = TextEditingController();
   final TextEditingController _cityController = TextEditingController();
   final TextEditingController _stateController = TextEditingController();
@@ -29,6 +30,12 @@ class _AddressDetailsPageState extends State<AddressDetailsPage> {
           padding: EdgeInsets.all(16),
           child: Column(
             children: <Widget>[
+              TextFormField(
+                controller: _nameController,
+                decoration: InputDecoration(
+                  labelText: 'Adres İsmi',
+                ),
+              ),
               TextFormField(
                 controller: _streetController,
                 decoration: InputDecoration(
@@ -62,6 +69,7 @@ class _AddressDetailsPageState extends State<AddressDetailsPage> {
                 onPressed: () {
                   // Save address details to firestore
                   final addressDetails = {
+                    'name': _nameController.text,
                     'street': _streetController.text,
                     'city': _cityController.text,
                     'state': _stateController.text,

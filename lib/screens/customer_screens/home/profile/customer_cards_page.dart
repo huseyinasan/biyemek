@@ -11,6 +11,7 @@ class CardDetailsPage extends StatefulWidget {
 
 class _CardDetailsPageState extends State<CardDetailsPage> {
   final _formKey = GlobalKey<FormState>();
+  final TextEditingController _cardNameController = TextEditingController();
   final TextEditingController _cardNumberController = TextEditingController();
   final TextEditingController _expiryMonthController = TextEditingController();
   final TextEditingController _cvvController = TextEditingController();
@@ -29,6 +30,12 @@ class _CardDetailsPageState extends State<CardDetailsPage> {
           padding: EdgeInsets.all(16),
           child: Column(
             children: <Widget>[
+              TextFormField(
+                controller: _cardNameController,
+                decoration: InputDecoration(
+                  labelText: 'Kart İsmi',
+                ),
+              ),
               TextFormField(
                 controller: _cardNumberController,
                 decoration: InputDecoration(
@@ -76,6 +83,7 @@ class _CardDetailsPageState extends State<CardDetailsPage> {
                 onPressed: () {
                   // Save card details to firestore
                   final cardDetails = {
+                    'cardname': _cardNameController.text,
                     'cardNumber': _cardNumberController.text,
                     'expiryYear': _expiryYearController.text,
                     'expiryMonth': _expiryMonthController.text,

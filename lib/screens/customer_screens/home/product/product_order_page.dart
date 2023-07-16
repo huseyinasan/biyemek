@@ -1,9 +1,8 @@
 import 'package:biyemek/widgets/payment_product_item.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import '../../../../constants/colors.dart';
 import '../../../../models/product_model.dart';
+import '../../../../services/customer_info_service.dart';
 import '../../../../services/customer_product_service.dart';
 import '../profile/customer_adress_page.dart';
 import '../profile/customer_cards_page.dart';
@@ -16,34 +15,9 @@ class ProductOrderPage extends StatefulWidget {
 }
 
 class _ProductOrderPageState extends State<ProductOrderPage> {
-  final User? user = FirebaseAuth.instance.currentUser;
-  Map<String, dynamic>? cardInfo;
-  Map<String, dynamic>? addressInfo;
-
   @override
   void initState() {
     super.initState();
-    fetchUserDetails();
-  }
-
-  fetchUserDetails() async {
-    if (user != null) {
-      DocumentSnapshot<Map<String, dynamic>> cardDoc = await FirebaseFirestore
-          .instance
-          .collection('card')
-          .doc(user!.uid)
-          .get();
-      DocumentSnapshot<Map<String, dynamic>> addressDoc =
-          await FirebaseFirestore.instance
-              .collection('address')
-              .doc(user!.uid)
-              .get();
-
-      setState(() {
-        cardInfo = cardDoc.data();
-        addressInfo = addressDoc.data();
-      });
-    }
   }
 
   @override
@@ -107,6 +81,115 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
               },
             ),
           ),
+          SizedBox(
+            height: 15,
+          ),
+          Container(
+            color: AppColors.tertiaryColor,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 5,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  FutureBuilder<String?>(
+                    future: CustomerInfoService().getCardName(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return CircularProgressIndicator();
+                      } else if (snapshot.hasError) {
+                        return Text('Bir şeyler yanlış gitti');
+                      } else if (snapshot.data == null) {
+                        return Text('Seçili kart yok, lütfen kart giriniz.');
+                      } else {
+                        return Text(
+                          'Seçili Kart : ${snapshot.data}',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        );
+                      }
+                    },
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.green,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CardDetailsPage(),
+                        ),
+                      );
+                    },
+                    child: Text('Kartı Güncelle'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            color: AppColors.tertiaryColor,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 5,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  FutureBuilder<String?>(
+                    future: CustomerInfoService().getAdressName(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return CircularProgressIndicator();
+                      } else if (snapshot.hasError) {
+                        return Text('Bir şeyler yanlış gitti');
+                      } else if (snapshot.data == null) {
+                        return Text('Seçili adres yok, lütfen adres giriniz.');
+                      } else {
+                        return Text(
+                          'Seçili Adres : ${snapshot.data}',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        );
+                      }
+                    },
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.green,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AddressDetailsPage(),
+                        ),
+                      );
+                    },
+                    child: Text('Adresi Güncelle'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           Material(
             elevation: 5,
             borderRadius: BorderRadius.circular(5),
@@ -165,42 +248,25 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                       ],
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.green,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        "Siparişi Tamamla",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: Colors.green,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CardDetailsPage(),
-                ),
-              );
-            },
-            child: Text('Kart Bilgilerini Güncelle'),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: Colors.green,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => AddressDetailsPage(),
-                ),
-              );
-            },
-            child: Text('Adres Bilgilerini Güncelle'),
           ),
         ],
       ),
