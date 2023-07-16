@@ -99,4 +99,60 @@ class CustomerProductsService {
       return 'Giriş yapmış bir kullanıcı değilsiniz.';
     }
   }
+
+  Future<double> getTotalNormalPrice() async {
+    final user = FirebaseAuth.instance.currentUser;
+    double totalNormalPrice = 0.0;
+
+    if (user != null) {
+      final cartRef =
+          FirebaseFirestore.instance.collection('cart').doc(user.uid);
+      final doc = await cartRef.get();
+
+      if (doc.exists) {
+        List<dynamic> productIds = doc.data()?['products'] ?? [];
+        for (String productId in productIds) {
+          final productDoc = await _cartProductsRef.doc(productId).get();
+          if (productDoc.exists) {
+            var data = productDoc.data();
+            if (data != null) {
+              Product product = Product.fromMap(data);
+              totalNormalPrice += product
+                  .normalPrice; // assuming your price field is called normalPrice
+            }
+          }
+        }
+      }
+    }
+
+    return totalNormalPrice;
+  }
+
+  Future<double> getTotalDiscountPrice() async {
+    final user = FirebaseAuth.instance.currentUser;
+    double totalDiscountPrice = 0.0;
+
+    if (user != null) {
+      final cartRef =
+          FirebaseFirestore.instance.collection('cart').doc(user.uid);
+      final doc = await cartRef.get();
+
+      if (doc.exists) {
+        List<dynamic> productIds = doc.data()?['products'] ?? [];
+        for (String productId in productIds) {
+          final productDoc = await _cartProductsRef.doc(productId).get();
+          if (productDoc.exists) {
+            var data = productDoc.data();
+            if (data != null) {
+              Product product = Product.fromMap(data);
+              totalDiscountPrice += product
+                  .discountPrice; // assuming your price field is called discountPrice
+            }
+          }
+        }
+      }
+    }
+
+    return totalDiscountPrice;
+  }
 }

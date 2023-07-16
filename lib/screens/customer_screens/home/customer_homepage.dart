@@ -1,4 +1,6 @@
 import 'package:biyemek/components/category_name.dart';
+import 'package:biyemek/constants/colors.dart';
+import 'package:biyemek/screens/customer_screens/home/product/product_order_page.dart';
 import 'package:biyemek/screens/customer_screens/home/profile/customer_profile_page.dart';
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
 import 'package:biyemek/widgets/custom_appbar.dart';
@@ -101,7 +103,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                           style: TextStyle(
                             fontSize: 24.0,
                             fontWeight: FontWeight.bold,
-                            color: Color(0xFFFF5722),
+                            color: AppColors.tertiaryColor,
                             decoration: TextDecoration.underline,
                           ),
                         ),
@@ -132,15 +134,15 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
             Expanded(
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 10.0),
                     child: Text(
                       "Sepetinizdeki Ürünler",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 24.0,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFFFF5722),
+                        color: AppColors.tertiaryColor,
                         decoration: TextDecoration.underline,
                       ),
                     ),
@@ -178,8 +180,95 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                       },
                     ),
                   ),
-                  const Center(
-                      child: Text('Sepete eklenmiş bir ürün bulunamadı')),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0,
+                      vertical: 10,
+                    ),
+                    child: Material(
+                      elevation: 5,
+                      borderRadius: BorderRadius.circular(5),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'Fiyat:  ',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                FutureBuilder<double>(
+                                  future: CustomerProductsService()
+                                      .getTotalNormalPrice(),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return CircularProgressIndicator();
+                                    } else if (snapshot.hasError) {
+                                      return Text('Bir şeyler yanlış gitti');
+                                    } else {
+                                      return Text(
+                                        '${snapshot.data} ₺',
+                                        style: TextStyle(
+                                          decoration:
+                                              TextDecoration.lineThrough,
+                                        ),
+                                      );
+                                    }
+                                  },
+                                ),
+                                FutureBuilder<double>(
+                                  future: CustomerProductsService()
+                                      .getTotalDiscountPrice(),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return CircularProgressIndicator();
+                                    } else if (snapshot.hasError) {
+                                      return Text('Bir şeyler yanlış gitti');
+                                    } else {
+                                      return Text(
+                                        ' >  ${snapshot.data} ₺',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      );
+                                    }
+                                  },
+                                ),
+                              ],
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const ProductOrderPage();
+                                    },
+                                  ),
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                foregroundColor: Colors.white,
+                                backgroundColor: Colors.green,
+                              ),
+                              child: const Text(
+                                "Devam Et",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

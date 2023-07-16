@@ -1,5 +1,6 @@
 import 'package:biyemek/components/back_button.dart';
 import 'package:biyemek/screens/business_screens/authentication/business_register_page.dart';
+import 'package:biyemek/screens/business_screens/home/business_home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../../components/my_button.dart';
@@ -31,7 +32,14 @@ class _BusinessLoginPageState extends State<BusinessLoginPage> {
 
       if (user != null) {
         // Navigate to the homepage or any desired screen after successful sign-in
-        Navigator.pushReplacementNamed(context, '/homepage');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const BusinessHomePage();
+            },
+          ),
+        );
       }
     } catch (e) {
       print('Error signing in: $e');
@@ -166,7 +174,7 @@ class _BusinessLoginPageState extends State<BusinessLoginPage> {
                     ),
                   ),
                 ),
-                  const Padding(
+                const Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
