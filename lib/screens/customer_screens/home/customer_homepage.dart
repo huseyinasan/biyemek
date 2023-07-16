@@ -132,6 +132,19 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
             Expanded(
               child: Column(
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Text(
+                      "Sepetinizdeki Ürünler",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFFF5722),
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
                   //products will come here
                   Expanded(
                     child: StreamBuilder<List<Product>>(
@@ -152,6 +165,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                           return ListView.builder(
                             padding: const EdgeInsets.all(10.0),
                             itemCount: snapshot.data!.length,
+                            scrollDirection: Axis.vertical,
                             itemBuilder: (ctx, i) => Padding(
                               padding:
                                   const EdgeInsets.symmetric(vertical: 10.0),
