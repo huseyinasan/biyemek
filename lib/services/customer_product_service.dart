@@ -155,4 +155,71 @@ class CustomerProductsService {
 
     return totalDiscountPrice;
   }
+
+  // Method to copy products from the cart to the orders collection
+  Future<void> orderProduct() async {
+    final user = FirebaseAuth.instance.currentUser;
+    final _productsRef = FirebaseFirestore.instance.collection('products');
+    final _oldProductsRef =
+        FirebaseFirestore.instance.collection('oldProducts');
+
+    if (user != null) {
+      final cartRef =
+          FirebaseFirestore.instance.collection('cart').doc(user.uid);
+      final orderRef =
+          FirebaseFirestore.instance.collection('order').doc(user.uid);
+
+      final doc = await cartRef.get();
+
+      if (doc.exists) {
+        List<dynamic> products = doc.data()?['products'] ?? [];
+
+        await orderRef.set({'products': products});
+
+        // Move the product from 'products' to 'oldProducts' and remove it from 'products'
+        for (String productId in products) {
+          final productDoc = await _productsRef.doc(productId).get();
+          if (productDoc.exists) {
+            var data = productDoc.data();
+            if (data != null) {
+              // copy the product to 'oldProducts'
+              await _oldProductsRef.doc(productId).set(data);
+              // remove the product from 'products'
+              await _productsRef.doc(productId).delete();
+            }
+          }
+        }
+
+        // Clear the cart after copying its contents to the order
+        await cartRef.delete();
+      }
+    }
+  }
+
+  Stream<List<Product>> getOrderProducts() async* {
+    final user = FirebaseAuth.instance.currentUser;
+    final oldProductsRef = FirebaseFirestore.instance.collection('oldProducts');
+
+    if (user != null) {
+      final orderRef =
+          FirebaseFirestore.instance.collection('order').doc(user.uid);
+      final doc = await orderRef.get();
+      List<Product> products = [];
+
+      if (doc.exists) {
+        List<dynamic> productIds = doc.data()?['products'] ?? [];
+        for (String productId in productIds) {
+          final productDoc = await oldProductsRef.doc(productId).get();
+          if (productDoc.exists) {
+            var data = productDoc.data();
+            if (data != null) {
+              products.add(Product.fromMap(data));
+            }
+          }
+        }
+      }
+
+      yield products;
+    }
+  }
 }

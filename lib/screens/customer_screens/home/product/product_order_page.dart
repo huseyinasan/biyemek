@@ -1,3 +1,4 @@
+import 'package:biyemek/screens/customer_screens/home/product/order_sucess_page.dart';
 import 'package:biyemek/widgets/payment_product_item.dart';
 import 'package:flutter/material.dart';
 import '../../../../constants/colors.dart';
@@ -257,10 +258,26 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                         foregroundColor: Colors.white,
                         backgroundColor: Colors.green,
                       ),
-                      onPressed: () {
-                        //sipariş başarıyla oluşturuldu
-                        //orders collection altına ürün konulacak
-                        //ürünler cart altından silinecek
+                      onPressed: () async {
+                        try {
+                          await CustomerProductsService().orderProduct();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const OrderSucessPage();
+                              },
+                            ),
+                          );
+                        } catch (e) {
+                          // Show snackbar with the error message
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                  'Bir hata oluştu. Lütfen tekrar deneyin.'),
+                            ),
+                          );
+                        }
                       },
                       child: const Text(
                         "Siparişi Tamamla",

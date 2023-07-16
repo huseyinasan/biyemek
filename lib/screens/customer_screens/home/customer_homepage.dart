@@ -10,6 +10,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import '../../../models/product_model.dart';
 import '../../../services/customer_product_service.dart';
 import '../../../widgets/cart_products_item.dart';
+import '../../../widgets/my_orders_item.dart';
 import '../../../widgets/product_grid_view.dart';
 
 class CustomerHomePage extends StatefulWidget {
@@ -94,7 +95,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                     Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -135,7 +136,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               child: Column(
                 children: [
                   const Padding(
-                    padding: EdgeInsets.only(top: 10.0),
+                    padding: EdgeInsets.only(top: 20.0),
                     child: Text(
                       "Sepetinizdeki Ürünler",
                       textAlign: TextAlign.center,
@@ -209,7 +210,8 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                                         ConnectionState.waiting) {
                                       return const CircularProgressIndicator();
                                     } else if (snapshot.hasError) {
-                                      return const Text('Bir şeyler yanlış gitti');
+                                      return const Text(
+                                          'Bir şeyler yanlış gitti');
                                     } else {
                                       return Text(
                                         '${snapshot.data} ₺',
@@ -229,7 +231,8 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                                         ConnectionState.waiting) {
                                       return const CircularProgressIndicator();
                                     } else if (snapshot.hasError) {
-                                      return const Text('Bir şeyler yanlış gitti');
+                                      return const Text(
+                                          'Bir şeyler yanlış gitti');
                                     } else {
                                       return Text(
                                         ' >  ${snapshot.data} ₺',
@@ -271,11 +274,60 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                   ),
                 ],
               ),
+            ), //my cart page ends here-------------------------------------------------
+//my order page starts here-------------------------------------------------------------
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 20.0),
+                      child: Text(
+                        "Siparişlerim",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.tertiaryColor,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Expanded(
+                  child: StreamBuilder<List<Product>>(
+                    stream: CustomerProductsService().getOrderProducts(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(child: CircularProgressIndicator());
+                      } else if (snapshot.hasError) {
+                        return const Center(
+                            child: Text('Bir şeyler yanlış gitti'));
+                      } else if (snapshot.data == null ||
+                          snapshot.data!.isEmpty) {
+                        return const Center(
+                            child: Text('Aktif siparişiniz yok'));
+                      } else {
+                        return ListView.builder(
+                          padding: const EdgeInsets.all(10.0),
+                          itemCount: snapshot.data!.length,
+                          scrollDirection: Axis.vertical,
+                          itemBuilder: (ctx, i) => Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10.0),
+                            child: OrderItem(
+                              product: snapshot.data![i],
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                  ),
+                ),
+              ],
             ),
-//my cart page ends here-------------------------------------------------
-             Column(
-              children: [Text("sayfa3")],
-            ),
+//my order page ends here-------------------------------------------------------------
           ],
         ),
         bottomNavigationBar: Padding(
