@@ -231,6 +231,35 @@ class ProductDetailsOrderPage extends StatelessWidget {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Material(
+                  elevation: 5.0,
+                  borderRadius: BorderRadius.circular(5.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFDBB7D6),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            overflow: TextOverflow.ellipsis,
+                            "Siparişiniz hazırlanıyor...",
+                            style: const TextStyle(
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
