@@ -19,25 +19,30 @@ Flutter 25 - **Butterfly Effect**
 
 - [Flutter Team 25 Trello Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
 - [Miro  Board](https://miro.com/app/board/uXjVOnzORQw=/)
+- [Figma ](https://www.figma.com/file/uUdWXEy2EACBnX7AGLbUcI/Bootcamp-F-25?type=design&node-id=0-1&mode=design&t=7WmOQH2DyIHhf31k-0)
 
 ## Ürün Açıklaması
 Taze ve lezzetli ürünleri daha fazla israf etmeden değerlendirmek isteyen restoranlar, şarküteriler, pastaneler, manavlar ve diğer gıda satıcıları için bir inovatif uygulamadır. Bu uygulama, günlük raf ömrü olan ürünleri, ömürlerinin sonuna doğru çok uygun fiyatlara satan işletmelerle, bu işletmelerin çevrelerinde bulunan ve bunları satın almak isteyen kullanıcıları bir araya getirerek kazan-kazan bir çözüm sunar. Kişiler uygun fiyatlarla gıdaları satın alırken, işletmelerde bu gıdaları elden çıkarır. Ortak fayda ise bu uygulama sayesinde gıda israfının önlenmesine ve karbon ayak izini azaltarak doğaya katkıda bulunurlar.
 
 Bi'Yemek'in sunduğu avantajlar:
 
-İndirimli Fiyatlar: Restoranlar, şarküteriler, pastaneler, manavlar ve diğer gıda satıcıları gün sonunda ellerinde kalan ürünleri israftan kurtarırken, bu işletmelerin yakınlarında yer alan kullanıcılara cazip fiyatlar sunar. Bu sayede herkes, kaliteli ve taze ürünlere daha ekonomik bir şekilde erişebilir.
+- İndirimli Fiyatlar: Restoranlar, şarküteriler, pastaneler, manavlar ve diğer gıda satıcıları gün sonunda ellerinde kalan ürünleri israftan kurtarırken, bu işletmelerin yakınlarında yer alan kullanıcılara cazip fiyatlar sunar. Bu sayede herkes, kaliteli ve taze ürünlere daha ekonomik bir şekilde erişebilir.
 
-Ürün Çeşitliliği: Uygulama, farklı restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcılarıyla çalışarak geniş bir ürün yelpazesi sunar. Kullanıcılar, günlük olarak değişen ürünleri satın alabilecek.
+ - Ürün Çeşitliliği: Uygulama, farklı restoranlar, şarküteriler, pastaneler, manavlar ve gıda satıcılarıyla çalışarak geniş bir ürün yelpazesi sunar. Kullanıcılar, günlük olarak değişen ürünleri satın alabilecek.
 
-Çevre Dostu: Uygulama çevre dostu çözümü sayesinde gıda israfının önlenmesine katkıda bulunur.
+- Çevre Dostu: Uygulama çevre dostu çözümü sayesinde gıda israfının önlenmesine katkıda bulunur.
+
+- İşletmeler İçin Hızlı Başlangıç: İşletmeler ayrı bir uygulama ve başvuru sürecine girmeden hem direkt uygulamadan başvurabilirken hem de ürünlerini yine bu uygulamadan ekleyebilir.
 
 ## Ürün Özellikleri
-- Uygulama işletme ve müşteri olmak üzere iki arayüze sahip olacaktır,
-- İşletmeler israf olabileceğini düşündüğü yiyeceklerini uygulamaya tanımlayabilecek,
-- Kullanıcılar bunları liste veya harita üzerinden görebilecek,
-- Anlsaşmalı kurye firmaları aracılığıyla kullanıcılar ürünleri satın alıp sipariş verebilecek,
-- Profile x miktar tasarruf ve x miktar CO2 salınımını azaltmaya katkıda bulunduğunu belirtir,
-- Kullanıcılar, işletmeleri değerlendirebilecek.
+- Uygulama işletme ve müşteri olmak üzere iki arayüze sahiptir.
+- Müşteriler hem standart üye olma ve girişin yanında Google ilede giriş yapabilirler.
+- İşletmeler resim, isim, miktar, açıklama, SKT gibi bilgileri girerek ürünlerini listeleyebilir.,
+- Kullanıcılar yakınlarında ki işletmeler tarafından eklenen ürünleri kategori bazlı olarak görebilir,
+- Ürünlere tıklanarak detaylarına bakılabilir ve sepete eklenebilir,
+- Sepetten ödeme ekranına geçilip bir defaya mahsus adres ve kart bilgileri girilerek ödeme yapılabilir,
+- İşletmelerin anasayfasında tasarruf edilen para ve önlenene CO2 miktarları vardır,
+- Sipariş edilen ürünler siparişlerim sayfasından takip edilinebilir.
 
 ## Hedef Kitle
 
@@ -92,15 +97,12 @@ Sprint Review katılımcıları:
 
 ## Sprint Notu:
 
-ilk sprintte tasarıma yoğunlaşma kararlaştırılmıştır uygulama giriş ekranı menü sayfaların tasarımları yapılmıştır bu sprinte puanlamamız tasarım üzerinden verilmiştir.
-herkesin takvimi incelenmiş ve ona bu şartlara göre çalışma planı yapılmıştır.discord üzerinden haberleşilmiş ve buluşmalar düzenlenmiştir .ilk günler fikir belirlenmiş ve ilk sprintin puanlamasının
-tasarım üstüne olacağı karar kılınmıştır.
+İlk sprintte tasarıma yoğunlaşma kararlaştırılmıştır uygulama giriş ekranı, menü sayfalarının tasarımları yapılmıştır. Bu sprinte puanlamamız tasarım üzerinden verilmiştir.
+Herkesin takvimi incelenmiş ve ona bu şartlara göre çalışma planı yapılmıştır.Discord üzerinden haberleşilmiş ve buluşmalar düzenlenmiştir. İlk günler fikir belirlenmiş ve ilk sprintin puanlamasının tasarım üstüne olacağı karar kılınmıştır.
 
 # Sprint Retrospective:
 
-Roller ile ilgili düzenleme yapılmıştır.
-ileriye dönük hedefler belirlenmiştir.
-Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
+Roller ile ilgili düzenleme yapılmıştır, ileriye dönük hedefler belirlenmiştir, takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
 
 # Product Backlog URL
 [Flutter Team 25 Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
@@ -108,7 +110,7 @@ Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı al
 ## SPRİNT 2
 #Sprint içinde tamamlanması tahmin edilen puan: 50 Puan
 
-- #Puan tamamlama mantığı:ilk sprintte tasarıma yoğunlaşma kararı alınmıştı 2.sprint 50 puan verdik bu puanı vermemizin sebebi takım içirisindeki üyelerin sınavları olması ve kurban bayramı yüzünden meşguliyetimiz dolayısıyla çok değişiklik yapılmayacak olması.
+- #Puan tamamlama mantığı: İlk sprintte tasarıma yoğunlaşma kararı alınmıştı 2.sprint için 50 puan verdik. Bu puanı vermemizin sebebi takım içirisindeki üyelerin sınavları olması ve kurban bayramı yüzünden meşguliyetimiz. Dolayısıyla çok değişiklik yapılamayacak olması.
 
 Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: 
 [Sprint 2 Daily Scrum Chats](https://github.com/huseyinasan/biyemek/files/11931297/sprint.2.docx)
@@ -139,15 +141,15 @@ Sprint Review katılımcıları:
 
 ## Sprint Notu:
 
-ilk sprintte tasarıma yoğunlaşma kararı alınmıştı 2.sprint 50 puan verdik bu puanı vermemizin sebebi takım içirisindeki üyelerin sınavları olması ve kurban bayramı yüzünden meşguliyetimiz dolayısıyla çok değişiklik yapmadık. 
-- bu sprinte yapılanlar : tasarımlar geliştirildi , giriş ekranı hazırlandı, kod yazılımına başandı firebase kurulumu tamamlanda firebase de data oluşturulması yapıldı.
-- 
+- İlk sprintte tasarıma yoğunlaşma kararı alınmıştı 2.sprint 50 puan verdik bu puanı vermemizin sebebi takım içirisindeki üyelerin sınavları olması ve kurban bayramı yüzünden meşguliyetimiz dolayısıyla çok değişiklik yapmadık. 
+- Bu sprinte yapılanlar: Tasarımlar geliştirildi , giriş ekranı hazırlandı, kod yazılımına başandı Firebase kurulumu tamamlanda Firebase de data oluşturulması yapıldı.
+  
 
 # Sprint Retrospective:
 
-Roller ile ilgili düzenleme yapılmıştır.
-ileriye dönük hedefler belirlenmiştir.
-Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
+- Roller ile ilgili düzenleme yapılmıştır.
+- İleriye dönük hedefler belirlenmiştir.
+- Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
 
 # Product Backlog URL
 [Flutter Team 25 Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
@@ -185,7 +187,6 @@ Sprint board update: Sprint board screenshotları:
 Alınan kararlar: son değişikliklerin yapılması ve renk tonlarının belirlenip düzenlenmesi.
 
 Sprint Review katılımcıları:
-- Cihat Mehmet ORDUL
 - Hüseyin ASAN
 - Beyza ÖZDEMİR
 - Merve YILMAZ
@@ -194,15 +195,15 @@ Sprint Review katılımcıları:
 ## Sprint Notu:
 
 
-tüm ekip arkadaşlarımızın hızlı çalışması zamansal sorunları hallletik.
-- bu sprinte yapılanlar : tasarımlar geliştirildi , müşteri ekranı tasarlandı, kodların işlenmesi yapıldı , işletme sayfaları yapıldı , kayıt sistemi kuruldu,firebase kurulumu tamamlandı,fonlar ve renk düzenlemeleri yapıldı , uygulamanın çalışır durumu kontrol edildi , firebase de data oluşturulması yapıldı.
+Tüm ekip arkadaşlarımızın hızlı çalışması zamansal sorunları hallletik.
+- Bu sprintte yapılanlar : Tasarımlar geliştirildi , müşteri ekranı tasarlandı, kodların işlenmesi yapıldı , işletme sayfaları yapıldı , kayıt sistemi kuruldu,firebase kurulumu tamamlandı,fonlar ve renk düzenlemeleri yapıldı , uygulamanın çalışır durumu kontrol edildi , Firebase de data oluşturulması yapıldı.
 - 
 
 # Sprint Retrospective:
 
-Roller ile ilgili düzenleme yapılmıştır.
-ileriye dönük hedefler belirlenmiştir.
-Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
+- Roller ile ilgili düzenleme yapılmıştır.
+- İleriye dönük hedefler belirlenmiştir.
+- Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
 
 # Product Backlog URL
 [Flutter Team 25 Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)

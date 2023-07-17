@@ -1,3 +1,4 @@
+import 'package:biyemek/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
@@ -13,7 +14,7 @@ class MyButton extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         margin: const EdgeInsets.symmetric(horizontal: 25),
         decoration: BoxDecoration(
-          color: Colors.orange,
+          color: AppColors.figma3Color,
           borderRadius: BorderRadius.circular(8),
         ),
         child: const Center(

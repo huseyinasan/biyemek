@@ -21,11 +21,15 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
     super.initState();
   }
 
+  Future<void> fetchData() async {
+    CustomerInfoService().getCardName();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: AppColors.figma1Color,
         title: const Text(
           "Ödeme ve Sipariş",
           style: TextStyle(
@@ -49,7 +53,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                   style: TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.tertiaryColor,
+                    color: AppColors.figma3Color,
                     decoration: TextDecoration.underline,
                   ),
                 ),
@@ -120,15 +124,16 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.green,
+                      backgroundColor: AppColors.figma1Color,
                     ),
-                    onPressed: () {
-                      Navigator.push(
+                    onPressed: () async {
+                      await Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => const CardDetailsPage(),
                         ),
                       );
+                      setState(() {});
                     },
                     child: const Text('Kartı Güncelle'),
                   ),
@@ -174,15 +179,16 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.green,
+                      backgroundColor: AppColors.figma1Color,
                     ),
-                    onPressed: () {
-                      Navigator.push(
+                    onPressed: () async {
+                      await Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => const AddressDetailsPage(),
                         ),
                       );
+                      setState(() {});
                     },
                     child: const Text('Adresi Güncelle'),
                   ),
@@ -256,7 +262,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
-                        backgroundColor: Colors.green,
+                        backgroundColor: AppColors.figma1Color,
                       ),
                       onPressed: () async {
                         try {

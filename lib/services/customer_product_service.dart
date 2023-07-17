@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:biyemek/models/product_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -160,8 +162,7 @@ class CustomerProductsService {
   Future<void> orderProduct() async {
     final user = FirebaseAuth.instance.currentUser;
     final productsRef = FirebaseFirestore.instance.collection('products');
-    final oldProductsRef =
-        FirebaseFirestore.instance.collection('oldProducts');
+    final oldProductsRef = FirebaseFirestore.instance.collection('oldProducts');
 
     if (user != null) {
       final cartRef =
@@ -196,30 +197,38 @@ class CustomerProductsService {
     }
   }
 
-  Stream<List<Product>> getOrderProducts() async* {
+  Stream<List<Product>> getOrderProducts() {
     final user = FirebaseAuth.instance.currentUser;
     final oldProductsRef = FirebaseFirestore.instance.collection('oldProducts');
+    final StreamController<List<Product>> controller =
+        StreamController<List<Product>>.broadcast();
 
-    if (user != null) {
-      final orderRef =
-          FirebaseFirestore.instance.collection('order').doc(user.uid);
-      final doc = await orderRef.get();
-      List<Product> products = [];
+    Future<void> fetchProducts() async {
+      if (user != null) {
+        final orderRef =
+            FirebaseFirestore.instance.collection('order').doc(user.uid);
+        final doc = await orderRef.get();
+        List<Product> products = [];
 
-      if (doc.exists) {
-        List<dynamic> productIds = doc.data()?['products'] ?? [];
-        for (String productId in productIds) {
-          final productDoc = await oldProductsRef.doc(productId).get();
-          if (productDoc.exists) {
-            var data = productDoc.data();
-            if (data != null) {
-              products.add(Product.fromMap(data));
+        if (doc.exists) {
+          List<dynamic> productIds = doc.data()?['products'] ?? [];
+          for (String productId in productIds) {
+            final productDoc = await oldProductsRef.doc(productId).get();
+            if (productDoc.exists) {
+              var data = productDoc.data();
+              if (data != null) {
+                products.add(Product.fromMap(data));
+              }
             }
           }
         }
-      }
 
-      yield products;
+        controller.add(products);
+      }
     }
+
+    fetchProducts();
+
+    return controller.stream;
   }
 }

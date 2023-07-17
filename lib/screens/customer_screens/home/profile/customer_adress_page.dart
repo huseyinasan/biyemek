@@ -1,3 +1,4 @@
+import 'package:biyemek/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -22,7 +23,7 @@ class _AddressDetailsPageState extends State<AddressDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: AppColors.figma1Color,
         title: const Text('Adres Bilgileri'),
       ),
       body: Form(
@@ -71,7 +72,7 @@ class _AddressDetailsPageState extends State<AddressDetailsPage> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Colors.green,
+                  backgroundColor: AppColors.figma1Color,
                 ),
                 onPressed: () {
                   // Save address details to firestore

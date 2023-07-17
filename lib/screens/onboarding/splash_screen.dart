@@ -1,4 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:biyemek/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -15,8 +16,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      splash: Expanded(
+      splash: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset("assets/images/onboarding/intro1.png"),
             const Padding(
@@ -29,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ],
         ),
       ),
-      backgroundColor: Colors.greenAccent,
+      backgroundColor: AppColors.figma1Color,
       nextScreen: const AuthPage(),
       splashIconSize: 500,
       duration: 3000,

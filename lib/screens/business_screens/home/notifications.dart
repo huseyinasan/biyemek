@@ -47,33 +47,34 @@ class _NotificationsState extends State<Notifications>
           const SizedBox(height: 10),
           TabBar(
             indicator: const UnderlineTabIndicator(
-              borderSide: BorderSide(color: Colors.green, width: 2.0), // Çizginin rengi ve kalınlığı
-              insets: EdgeInsets.symmetric(horizontal: 16.0), // Çizginin tablerle olan boşluğu
+              borderSide: BorderSide(
+                  color: Colors.green,
+                  width: 2.0), // Çizginin rengi ve kalınlığı
+              insets: EdgeInsets.symmetric(
+                  horizontal: 16.0), // Çizginin tablerle olan boşluğu
             ),
-
             controller: _tabController,
             tabs: const [
               Tab(
-                child: Text("Okunmayanlar",
-                style: TextStyle(
-                  color: Colors.green
-                ),),
+                child: Text(
+                  "Okunmayanlar",
+                  style: TextStyle(color: Colors.green),
+                ),
               ),
               Tab(
-                child: Text("Okunmuşlar",
-                  style: TextStyle(
-                      color: Colors.green
-                  ),),
+                child: Text(
+                  "Okunmuşlar",
+                  style: TextStyle(color: Colors.green),
+                ),
               ),
             ],
           ),
           Expanded(
             child: TabBarView(
-
               controller: _tabController,
               children: const [
-                Center(child: Text('İçerik 1')),
-                Center(child: Text('İçerik 2')),
+                Center(child: Text('Okunmamış Bildiriminiz Yok')),
+                Center(child: Text('Okunmuş Bildiriminiz Yok')),
               ],
             ),
           ),

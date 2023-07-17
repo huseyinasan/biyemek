@@ -1,4 +1,5 @@
 import 'package:biyemek/screens/customer_screens/authentication/customer_login_page.dart';
+import 'package:biyemek/screens/customer_screens/authentication/non_login_user_page.dart';
 import 'package:biyemek/screens/onboarding/entrances/choose_entrance.dart';
 import 'package:biyemek/screens/customer_screens/authentication/customer_register_page.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,7 @@ class _CustomerEntranceState extends State<CustomerEntrance> {
                     fit: BoxFit.cover, // Resmi sığdırma şekli
                   ),
                   const SizedBox(height: 20),
-                   Padding(
+                  const Padding(
                     padding: EdgeInsets.only(
                       left: 10,
                       right: 10,
@@ -207,20 +208,33 @@ class _CustomerEntranceState extends State<CustomerEntrance> {
                     ],
                   ),
                   const SizedBox(height: 30),
-                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Üye Olmadan Devam Et",
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.blue,
-                          decorationThickness: 2.0,
-                          decorationStyle: TextDecorationStyle.solid,
-                          color: Colors.blue,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const NonLoginUserPage();
+                          },
                         ),
-                      ),
-                    ],
+                      );
+                    },
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Üye Olmadan Devam Et",
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            fontSize: 15,
+                            decorationColor: Colors.blue,
+                            decorationThickness: 2.0,
+                            decorationStyle: TextDecorationStyle.solid,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),

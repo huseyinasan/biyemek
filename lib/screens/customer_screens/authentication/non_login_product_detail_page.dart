@@ -1,11 +1,12 @@
 import 'package:biyemek/constants/colors.dart';
+import 'package:biyemek/screens/customer_screens/authentication/customer_register_page.dart';
 import 'package:flutter/material.dart';
 import '../../../../models/product_model.dart';
 
-class ProductDetailsOrderPage extends StatelessWidget {
+class NonLoginProductDetailsPage extends StatelessWidget {
   final Product product;
 
-  const ProductDetailsOrderPage({super.key, required this.product});
+  const NonLoginProductDetailsPage({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -231,34 +232,35 @@ class ProductDetailsOrderPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Material(
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.circular(5.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFDBB7D6),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            overflow: TextOverflow.ellipsis,
-                            "Siparişiniz hazırlanıyor...",
-                            style: const TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
+              const SizedBox(
+                height: 25,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const CustomerRegisterPage();
+                          },
                         ),
-                      ],
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: AppColors.figma1Color,
+                    ),
+                    child: const Text(
+                      "Üye Ol",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ],
           ),

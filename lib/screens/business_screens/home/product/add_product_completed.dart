@@ -1,3 +1,4 @@
+import 'package:biyemek/constants/colors.dart';
 import 'package:biyemek/screens/business_screens/home/business_home_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -216,7 +217,8 @@ class _AddProductCompletedPageState extends State<AddProductCompletedPage> {
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Colors.green, // Set the text color to white
+                  backgroundColor:
+                      AppColors.figma1Color, // Set the text color to white
                 ),
                 child: const Text(
                   "Tamam",

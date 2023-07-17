@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:uuid/uuid.dart';
+import '../../../constants/colors.dart';
 import '../../../services/my_products_service.dart';
 import 'product/add_product_completed.dart';
 import 'notifications.dart';
@@ -149,13 +150,13 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           children: [
                             const Icon(
                               Icons.location_on_rounded,
-                              color: Colors.green,
+                              color: AppColors.figma1Color,
                               size: 42,
                             ),
                             Text(
                               "$businessCity/$businessDistrict",
                               style: const TextStyle(
-                                color: Colors.green,
+                                color: AppColors.figma1Color,
                                 fontSize: 19,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -184,7 +185,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                               padding: const EdgeInsets.all(5),
                               child: const Icon(
                                 Icons.notifications,
-                                color: Colors.green,
+                                color: AppColors.figma1Color,
                                 size: 42,
                               ),
                             ),
@@ -217,10 +218,22 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                     style: const TextStyle(
                                         color: Colors.white, fontSize: 19),
                                   ),
-                                  const Icon(
-                                    Icons.account_circle_outlined,
-                                    size: 40,
-                                    color: Colors.white,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) {
+                                            return const BusinessProfileInfo();
+                                          },
+                                        ),
+                                      );
+                                    },
+                                    child: const Icon(
+                                      Icons.account_circle_outlined,
+                                      size: 40,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -231,90 +244,97 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     ),
                     Row(
                       children: [
-                        const SizedBox(width: 15),
                         Expanded(
-                          child: Container(
-                            width: 110,
-                            height: 110,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: const Color(0xFFBE7CB4),
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(20),
-                              color: const Color(0xFFDBB7D6),
-                            ),
-                            child: Column(
-                              children: [
-                                const SizedBox(height: 10),
-                                const Text(
-                                  "Tasarruf Edilen Para",
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.white),
-                                ),
-                                Image.asset(
-                                  "assets/images/img_1.png",
-                                  width: 48,
-                                  height: 48,
-                                  color: const Color(0xFFBE7CB4),
-                                ),
-                                  Expanded(
-                                  child: Row(
-                                    children: [
-                                      SizedBox(width: 40),
-                                      Icon(
-                                        Icons.currency_lira_outlined,
-                                        color: Color(0xFFBE7CB4),
-                                      ),
-                                      Text(
-                                        "200",
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            color: Color(0xFFBE7CB4)),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 20),
-                        Expanded(
-                          child: Container(
-                            width: 110,
-                            height: 110,
-                            decoration: BoxDecoration(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            child: Container(
+                              decoration: BoxDecoration(
                                 border: Border.all(
                                   color: const Color(0xFFBE7CB4),
                                   width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(20),
-                                color: const Color(0xFFDBB7D6)),
-                            child:   Column(
-                              children: [
-                                SizedBox(height: 10),
-                                Text(
-                                  "Önlenen",
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.white),
+                                color: const Color(0xFFDBB7D6),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      "Tasarruf Edilen",
+                                      style: TextStyle(
+                                          fontSize: 15, color: Colors.white),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    Image.asset(
+                                      "assets/images/img_1.png",
+                                      width: 40,
+                                      height: 40,
+                                      color: const Color(0xFFBE7CB4),
+                                    ),
+                                    const Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.currency_lira_outlined,
+                                          color: Color(0xFFBE7CB4),
+                                        ),
+                                        Text(
+                                          "200",
+                                          style: TextStyle(
+                                              fontSize: 17,
+                                              color: Color(0xFFBE7CB4)),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
-                                Icon(
-                                  Icons.co2_outlined,
-                                  color: Color(0xFFBE7CB4),
-                                  size: 50,
-                                ),
-                                SizedBox(width: 40),
-                                Text(
-                                  "33 Kg",
-                                  style: TextStyle(
-                                      fontSize: 20, color: Color(0xFFBE7CB4)),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
                         ),
-                        const SizedBox(width: 15),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: const Color(0xFFBE7CB4),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: const Color(0xFFDBB7D6)),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Önlenen",
+                                      style: TextStyle(
+                                          fontSize: 17, color: Colors.white),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    Icon(
+                                      Icons.co2_outlined,
+                                      color: Color(0xFFBE7CB4),
+                                      size: 40,
+                                    ),
+                                    Text(
+                                      "33 Kg",
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          color: Color(0xFFBE7CB4)),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                     Padding(
@@ -339,7 +359,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                     ),
                                   );
                                 },
-                                child:   Row(
+                                child: const Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
                                   children: [
@@ -391,7 +411,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                     borderRadius: BorderRadius.circular(20.0),
                                     shape: BoxShape.rectangle,
                                     color: const Color(0xFFDBB7D6)),
-                                child:   Row(
+                                child: const Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
                                   children: [
@@ -420,205 +440,200 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                       ),
                     ),
                     Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.black12.withOpacity(0.1),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment
-                              .spaceEvenly, // Sütunları yatayda hizalamak için kullan
-                          children: <Widget>[
-                            Column(
-                              children: [
-                                const SizedBox(height: 10),
-                                Expanded(
-                                  child: Container(
-                                    width: 150,
-                                    height: 200,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                          width: 1.0,
-                                          color: const Color(0xFFBE7CB4),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Column(
+                            children: [
+                              const SizedBox(height: 10),
+                              Flexible(
+                                flex: 1,
+                                child: Container(
+                                  width: 150,
+                                  height: 200,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                        width: 1.0,
+                                        color: const Color(0xFFBE7CB4),
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: const Color(0xFFDBB7D6)),
+                                  child: const Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(height: 15),
+                                      Text(
+                                        "Bekleyen",
+                                        style: TextStyle(
+                                          color: Color(0xFFBE7CB4),
+                                          fontSize: 15,
                                         ),
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: const Color(0xFFDBB7D6)),
-                                    child:   Column(
-                                      children: [
-                                        SizedBox(height: 15),
-                                        Text(
-                                          "Bekleyen",
-                                          style: TextStyle(
-                                            color: Color(0xFFBE7CB4),
-                                            fontSize: 15,
-                                          ),
+                                      ),
+                                      Text(
+                                        "Siparişler",
+                                        style: TextStyle(
+                                          color: Color(0xFFBE7CB4),
+                                          fontSize: 15,
                                         ),
-                                        Text(
-                                          "Siparişler",
-                                          style: TextStyle(
-                                            color: Color(0xFFBE7CB4),
-                                            fontSize: 15,
-                                          ),
+                                      ),
+                                      SizedBox(height: 5),
+                                      Text(
+                                        "0 Adet",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
                                         ),
-                                        SizedBox(height: 5),
-                                        Text(
-                                          "0 Adet",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 22,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                const SizedBox(height: 5),
-                                Expanded(
-                                  child: Container(
-                                    width: 150,
-                                    height: 200,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                          width: 1.0,
-                                          color: const Color(0xFFBE7CB4),
+                              ),
+                              const SizedBox(height: 5),
+                              Expanded(
+                                child: Container(
+                                  width: 150,
+                                  height: 200,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                        width: 1.0,
+                                        color: const Color(0xFFBE7CB4),
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: const Color(0xFFDBB7D6)),
+                                  child: Column(
+                                    children: [
+                                      const SizedBox(height: 15),
+                                      const Text(
+                                        "Aktif",
+                                        style: TextStyle(
+                                          color: Color(0xFFBE7CB4),
+                                          fontSize: 15,
                                         ),
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: const Color(0xFFDBB7D6)),
-                                    child: Column(
-                                      children: [
-                                        const SizedBox(height: 15),
-                                        const Text(
-                                          "Aktif",
-                                          style: TextStyle(
-                                            color: Color(0xFFBE7CB4),
-                                            fontSize: 15,
-                                          ),
+                                      ),
+                                      const Text(
+                                        "Ürünler",
+                                        style: TextStyle(
+                                          color: Color(0xFFBE7CB4),
+                                          fontSize: 15,
                                         ),
-                                        const Text(
-                                          "Ürünler",
-                                          style: TextStyle(
-                                            color: Color(0xFFBE7CB4),
-                                            fontSize: 15,
-                                          ),
-                                        ),
-                                        const SizedBox(height: 5),
-                                        StreamBuilder<List<Product>>(
-                                          stream: MyProductsService()
-                                              .getMyProducts(_businessUid),
-                                          builder: (context, snapshot) {
-                                            if (snapshot.hasData) {
-                                              int length = snapshot.data!
-                                                  .length; // Here is the length
-                                              return Text(
-                                                '$length Adet',
-                                                style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 22,
-                                                ),
-                                              );
-                                            } else if (snapshot.hasError) {
-                                              return Text(
-                                                  'Error: ${snapshot.error}');
-                                            }
-                                            return const CircularProgressIndicator();
-                                          },
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                      const SizedBox(height: 5),
+                                      StreamBuilder<List<Product>>(
+                                        stream: MyProductsService()
+                                            .getMyProducts(_businessUid),
+                                        builder: (context, snapshot) {
+                                          if (snapshot.hasData) {
+                                            int length = snapshot.data!
+                                                .length; // Here is the length
+                                            return Text(
+                                              '$length Adet',
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18,
+                                              ),
+                                            );
+                                          } else if (snapshot.hasError) {
+                                            return Text(
+                                                'Error: ${snapshot.error}');
+                                          }
+                                          return const CircularProgressIndicator();
+                                        },
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                const SizedBox(height: 10),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                const SizedBox(height: 10),
-                                Expanded(
-                                  child: Container(
-                                    width: 150,
-                                    height: 150,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: const Color(0xFFBE7CB4),
-                                          width: 1.0,
+                              ),
+                              const SizedBox(height: 10),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              const SizedBox(height: 10),
+                              Expanded(
+                                child: Container(
+                                  width: 150,
+                                  height: 150,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: const Color(0xFFBE7CB4),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: const Color(0xFFDBB7D6)),
+                                  child: const Column(
+                                    children: [
+                                      SizedBox(height: 15),
+                                      Text(
+                                        "Gönderilen",
+                                        style: TextStyle(
+                                          color: Color(0xFFBE7CB4),
+                                          fontSize: 15,
                                         ),
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: const Color(0xFFDBB7D6)),
-                                    child:   Column(
-                                      children: [
-                                        SizedBox(height: 15),
-                                        Text(
-                                          "Gönderilen",
-                                          style: TextStyle(
-                                            color: Color(0xFFBE7CB4),
-                                            fontSize: 15,
-                                          ),
+                                      ),
+                                      Text(
+                                        "Siparişler",
+                                        style: TextStyle(
+                                          color: Color(0xFFBE7CB4),
+                                          fontSize: 15,
                                         ),
-                                        Text(
-                                          "Siparişler",
-                                          style: TextStyle(
-                                            color: Color(0xFFBE7CB4),
-                                            fontSize: 15,
-                                          ),
+                                      ),
+                                      SizedBox(height: 5),
+                                      Text(
+                                        "0 Adet",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
                                         ),
-                                        SizedBox(height: 5),
-                                        Text(
-                                          "0 Adet",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 22,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                const SizedBox(height: 5),
-                                Expanded(
-                                  child: Container(
-                                    width: 150,
-                                    height: 150,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: const Color(0xFFBE7CB4),
-                                          width: 1.0,
+                              ),
+                              const SizedBox(height: 5),
+                              Expanded(
+                                child: Container(
+                                  width: 150,
+                                  height: 150,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: const Color(0xFFBE7CB4),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: const Color(0xFFDBB7D6)),
+                                  child: const Column(
+                                    children: [
+                                      SizedBox(height: 15),
+                                      Text(
+                                        "Teslim Edilmiş",
+                                        style: TextStyle(
+                                          color: Color(0xFFBE7CB4),
+                                          fontSize: 15,
                                         ),
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: const Color(0xFFDBB7D6)),
-                                    child:  Column(
-                                      children: [
-                                        SizedBox(height: 15),
-                                        Text(
-                                          "Teslim Edilmiş",
-                                          style: TextStyle(
-                                            color: Color(0xFFBE7CB4),
-                                            fontSize: 15,
-                                          ),
+                                      ),
+                                      Text(
+                                        "Ürünler",
+                                        style: TextStyle(
+                                          color: Color(0xFFBE7CB4),
+                                          fontSize: 15,
                                         ),
-                                        Text(
-                                          "Ürünler",
-                                          style: TextStyle(
-                                            color: Color(0xFFBE7CB4),
-                                            fontSize: 15,
-                                          ),
+                                      ),
+                                      SizedBox(height: 5),
+                                      Text(
+                                        "0 Adet",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
                                         ),
-                                        SizedBox(height: 5),
-                                        Text(
-                                          "0 Adet",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 22,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                const SizedBox(height: 10),
-                              ],
-                            ),
-                          ],
-                        ),
+                              ),
+                              const SizedBox(height: 10),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -640,7 +655,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                             color: Colors.pink.shade100,
                             width: 2.0,
                           ),
-                          color: const Color(0xFFDBB7D6),
+                          color: AppColors.figma2Color,
                         ),
                         child: const Padding(
                           padding: EdgeInsets.all(16),
@@ -658,7 +673,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                       )),
                     ],
                   ),
-                   Padding(
+                  const Padding(
                     padding: EdgeInsets.only(top: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -679,13 +694,13 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
-                         Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
                               "Ürün Resmi",
                               style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.black,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -733,7 +748,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 //user can add name of the product from here
                                 decoration: const InputDecoration(
                                   labelText: 'Ürün İsmi',
-                                  labelStyle: TextStyle(color: Colors.green),
+                                  labelStyle: TextStyle(color: Colors.black),
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(color: Colors.blue),
                                   ),
@@ -760,13 +775,13 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     ),
                     child: Column(
                       children: [
-                         Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
                               "Ürün Tipi",
                               style: TextStyle(
-                                color: Colors.green,
+                                color: AppColors.figma1Color,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -825,7 +840,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 decoration: const InputDecoration(
                                   labelText: 'Ürün Miktarı',
                                   labelStyle: TextStyle(
-                                    color: Colors.green,
+                                    color: Colors.black,
                                   ),
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -881,13 +896,13 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     ),
                     child: Column(
                       children: [
-                          Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
                               "Son Tüketim Tarihi",
                               style: TextStyle(
-                                color: Colors.green,
+                                color: AppColors.figma1Color,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -963,7 +978,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 decoration: const InputDecoration(
                                   //user can add the description of the product from here
                                   labelText: 'Ürün Açıklaması',
-                                  labelStyle: TextStyle(color: Colors.green),
+                                  labelStyle: TextStyle(color: Colors.black),
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(color: Colors.blue),
                                   ),
@@ -1004,7 +1019,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 decoration: const InputDecoration(
                                   labelText: 'Normal Fiyatı',
                                   labelStyle: TextStyle(
-                                    color: Colors.green,
+                                    color: Colors.black,
                                   ),
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -1032,9 +1047,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 ],
                                 decoration: const InputDecoration(
                                   labelText: 'İndirimli Fiyatı',
-                                  labelStyle: TextStyle(
-                                    color: Colors.green,
-                                  ),
+                                  labelStyle: TextStyle(color: Colors.black),
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Colors.blue,
@@ -1100,7 +1113,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                             },
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
-                              backgroundColor: Colors.green,
+                              backgroundColor: AppColors.figma1Color,
                             ),
                             child: const Text(
                               "Onayla ve Listele",
@@ -1128,20 +1141,20 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                       showModalBottomSheet(
                           context: context,
                           builder: (BuildContext) {
-                            return  SizedBox(
+                            return const SizedBox(
                               height: 200,
                               child: Row(
                                 children: [
                                   SizedBox(width: 70),
                                   Icon(
                                     Icons.add_a_photo_outlined,
-                                    color: Colors.green,
+                                    color: AppColors.figma1Color,
                                     size: 75,
                                   ),
                                   SizedBox(width: 100),
                                   Icon(
                                     Icons.add_photo_alternate_outlined,
-                                    color: Colors.green,
+                                    color: AppColors.figma1Color,
                                     size: 75,
                                   ),
                                 ],
@@ -1150,14 +1163,14 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           });
                     },
                     child: const Icon(Icons.account_circle,
-                        size: 150, color: Colors.green),
+                        size: 150, color: AppColors.figma1Color),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     _businessName,
                     style: const TextStyle(
                       fontSize: 20,
-                      color: Colors.green,
+                      color: AppColors.figma1Color,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -1168,7 +1181,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return const Profile();
+                            return const BusinessProfileInfo();
                           },
                         ),
                       );
@@ -1181,7 +1194,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           height: 60,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(18),
-                            color: Colors.green,
+                            color: AppColors.figma1Color,
                           ),
                           child: const Icon(
                             Icons.account_circle_outlined,
@@ -1193,14 +1206,14 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                         const Text(
                           "Profilimi Düzenle",
                           style: TextStyle(
-                              color: Colors.green,
+                              color: AppColors.figma1Color,
                               fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(width: 60),
                         const Icon(
                           Icons.arrow_forward_ios_rounded,
-                          color: Colors.green,
+                          color: AppColors.figma1Color,
                         )
                       ],
                     ),
@@ -1214,19 +1227,21 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           return Container(
                             height: 200,
                             color: Colors.white24,
-                            child:   Row(
+                            child: const Row(
                               children: [
                                 SizedBox(width: 50),
                                 Text(
                                   "Türkçe",
                                   style: TextStyle(
-                                      fontSize: 30, color: Colors.green),
+                                      fontSize: 30,
+                                      color: AppColors.figma1Color),
                                 ),
                                 SizedBox(width: 90),
                                 Text(
                                   "English",
                                   style: TextStyle(
-                                      fontSize: 30, color: Colors.green),
+                                      fontSize: 30,
+                                      color: AppColors.figma1Color),
                                 )
                               ],
                             ),
@@ -1242,7 +1257,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           height: 60,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(18),
-                            color: Colors.green,
+                            color: AppColors.figma1Color,
                           ),
                           child: const Icon(
                             Icons.language,
@@ -1255,52 +1270,48 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           "Dil",
                           style: TextStyle(
                               fontSize: 20,
-                              color: Colors.green,
+                              color: AppColors.figma1Color,
                               fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(width: 190),
-                        const Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Colors.green,
-                        )
+                        const Icon(Icons.arrow_forward_ios_rounded,
+                            color: AppColors.figma1Color)
                       ],
                     ),
                   ),
                   const SizedBox(height: 30),
                   GestureDetector(
                     onTap: signUserOut,
-                    child: Expanded(
-                      child: Row(
-                        children: [
-                          const SizedBox(width: 30),
-                          Container(
-                            width: 60,
-                            height: 60,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(18),
-                              color: Colors.green,
-                            ),
-                            child: const Icon(
-                              Icons.exit_to_app_outlined,
-                              size: 40,
-                              color: Colors.white,
-                            ),
+                    child: Row(
+                      children: [
+                        const SizedBox(width: 30),
+                        Container(
+                          width: 60,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(18),
+                            color: AppColors.figma1Color,
                           ),
-                          const SizedBox(width: 20),
-                          const Text(
-                            "Çıkış Yap",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green),
+                          child: const Icon(
+                            Icons.exit_to_app_outlined,
+                            size: 40,
+                            color: Colors.white,
                           ),
-                          const SizedBox(width: 130),
-                          const Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: Colors.green,
-                          )
-                        ],
-                      ),
+                        ),
+                        const SizedBox(width: 20),
+                        const Text(
+                          "Çıkış Yap",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.figma1Color),
+                        ),
+                        const SizedBox(width: 130),
+                        const Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          color: AppColors.figma1Color,
+                        )
+                      ],
                     ),
                   ),
                 ],
@@ -1317,7 +1328,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
             height: 87,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Colors.green,
+                color: AppColors.figma1Color,
                 width: 2.0,
               ),
               borderRadius: BorderRadius.circular(60.0),
@@ -1326,9 +1337,9 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
               padding:
                   const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
               child: GNav(
-                color: Colors.green,
+                color: AppColors.figma1Color,
                 activeColor: Colors.white,
-                tabBackgroundColor: Colors.green,
+                tabBackgroundColor: AppColors.figma1Color,
                 iconSize: 35,
                 gap: 5,
                 padding: const EdgeInsets.all(16),

@@ -1,3 +1,4 @@
+import 'package:biyemek/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class CategoryName extends StatelessWidget {
@@ -21,7 +22,7 @@ class CategoryName extends StatelessWidget {
           text,
           style: const TextStyle(
             fontSize: 18.0,
-            color: Color(0xFFFF5722),
+            color: AppColors.figma3Color,
             fontWeight: FontWeight.bold,
           ),
         ),

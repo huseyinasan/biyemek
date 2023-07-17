@@ -1,3 +1,4 @@
+import 'package:biyemek/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:biyemek/models/product_model.dart';
 import '../screens/customer_screens/home/customer_homepage.dart';
@@ -15,7 +16,7 @@ class CartProductItem extends StatelessWidget {
       borderRadius: BorderRadius.circular(10.0),
       child: Container(
         decoration: BoxDecoration(
-          color: const Color(0xFFDBB7D6),
+          color: AppColors.figma2Color,
           borderRadius: BorderRadius.circular(10),
         ),
         width: double.infinity,

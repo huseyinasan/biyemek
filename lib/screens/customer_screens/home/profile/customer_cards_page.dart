@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../../../../constants/colors.dart';
+
 class CardDetailsPage extends StatefulWidget {
   const CardDetailsPage({Key? key}) : super(key: key);
 
@@ -21,7 +23,7 @@ class _CardDetailsPageState extends State<CardDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: AppColors.figma1Color,
         title: const Text('Kart Bilgileri'),
       ),
       body: Form(
@@ -78,7 +80,7 @@ class _CardDetailsPageState extends State<CardDetailsPage> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Colors.green,
+                  backgroundColor: AppColors.figma1Color,
                 ),
                 onPressed: () {
                   // Save card details to firestore
