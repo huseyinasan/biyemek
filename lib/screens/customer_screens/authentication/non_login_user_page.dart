@@ -1,7 +1,6 @@
 import 'package:biyemek/components/category_name.dart';
 import 'package:biyemek/constants/colors.dart';
 import 'package:biyemek/screens/customer_screens/authentication/customer_register_page.dart';
-import 'package:biyemek/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import '../../../widgets/non_login_product_grid.dart';
 
