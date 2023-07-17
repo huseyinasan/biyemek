@@ -15,8 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      splash: Expanded(
+      splash: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset("assets/images/onboarding/intro1.png"),
             const Padding(

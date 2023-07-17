@@ -69,66 +69,63 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20.0,
-              vertical: 10,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return const CustomerProfile();
-                        },
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const CustomerProfile();
+                      },
+                    ),
+                  );
+                },
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(18),
+                        color: Colors.green,
                       ),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(18),
-                          color: Colors.green,
-                        ),
-                        child: const Icon(
-                          Icons.account_circle_outlined,
-                          size: 30,
-                          color: Colors.white,
-                        ),
+                      child: const Icon(
+                        Icons.account_circle_outlined,
+                        size: 30,
+                        color: Colors.white,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(
-                          left: 10.0,
-                        ),
-                        child: Text(
-                          "Bilgilerim",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold),
-                        ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(
+                        left: 10.0,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 80.0,
-                        ),
-                        child: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Colors.green,
-                        ),
-                      )
-                    ],
-                  ),
+                      child: Text(
+                        "Bilgilerim",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 80.0,
+                      ),
+                      child: Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.green,
+                      ),
+                    )
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
@@ -194,59 +191,64 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 20.0,
-              vertical: 10,
             ),
             child: Row(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    signUserOut();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return const IntroductionScreen();
-                        },
-                      ),
-                    );
-                  },
-                  child: Expanded(
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      signUserOut();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const IntroductionScreen();
+                          },
+                        ),
+                      );
+                    },
                     child: Row(
                       children: [
-                        Container(
-                          width: 50,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18),
-                            color: Colors.green,
-                          ),
-                          child: const Icon(
-                            Icons.exit_to_app_outlined,
-                            size: 30,
-                            color: Colors.white,
+                        Flexible(
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(18),
+                                  color: Colors.green,
+                                ),
+                                child: const Icon(
+                                  Icons.exit_to_app_outlined,
+                                  size: 30,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.only(
+                                  left: 10.0,
+                                ),
+                                child: Text(
+                                  "Çıkış Yap",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black),
+                                ),
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 80.0,
+                                ),
+                                child: Icon(
+                                  Icons.arrow_forward_ios_rounded,
+                                  color: Colors.green,
+                                ),
+                              )
+                            ],
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(
-                            left: 10.0,
-                          ),
-                          child: Text(
-                            "Çıkış Yap",
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 80.0,
-                          ),
-                          child: Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            color: Colors.green,
-                          ),
-                        )
                       ],
                     ),
                   ),
