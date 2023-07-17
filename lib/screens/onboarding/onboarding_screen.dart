@@ -117,7 +117,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 50),
+                      padding: const EdgeInsets.symmetric(vertical: 20),
                       child: GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -129,25 +129,23 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                             ),
                           );
                         },
-                        child: Expanded(
-                          child: Container(
-                            width: 300,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: AppColors.tertiaryColor,
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: Colors.white,
-                              ),
+                        child: Container(
+                          width: 200,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: AppColors.tertiaryColor,
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                              color: Colors.white,
                             ),
-                            child: const Center(
-                              child: Text(
-                                "Başla",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Başla",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
                               ),
                             ),
                           ),
