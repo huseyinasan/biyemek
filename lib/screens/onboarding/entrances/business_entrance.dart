@@ -137,10 +137,9 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
