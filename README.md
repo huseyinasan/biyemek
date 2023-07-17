@@ -151,3 +151,57 @@ Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı al
 
 # Product Backlog URL
 [Flutter Team 25 Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
+
+## SPRİNT 3
+#Sprint içinde tamamlanması tahmin edilen puan: 150 Puan
+
+- #Puan tamamlama mantığı: 2.sprinte kalan yerlerden dolayı bu sprinte tüm işlemler kaldı bu yüzden bu sprint 150 puan.
+
+Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: 
+[Sprint 2 Daily Scrum Chats]([Yeni Microsoft Word Belgesi (2).docx](https://github.com/huseyinasan/biyemek/files/12067422/Yeni.Microsoft.Word.Belgesi.2.docx)
+)
+
+Sprint board update: Sprint board screenshotları:
+
+
+![sprint 2 görsel 5](https://github.com/huseyinasan/biyemek/assets/124069940/4385cf25-c0b5-41b3-91ea-fcb1a6a61dad)
+
+
+Ürün Durumu: Ekran görüntüleri:
+
+![WhatsApp Image 2023-07-17 at 11 36 53 (2)](https://github.com/huseyinasan/biyemek/assets/124069940/1884a55b-3d0b-4033-b98c-564f19f8ff39)
+![WhatsApp Image 2023-07-17 at 11 36 53 (1)](https://github.com/huseyinasan/biyemek/assets/124069940/62eefd51-849d-409b-9d48-b4aaf5945468)
+![WhatsApp Image 2023-07-17 at 11 36 52 (2)](https://github.com/huseyinasan/biyemek/assets/124069940/c9d506ee-78be-49c6-b5e9-b290b249a185)
+![WhatsApp Image 2023-07-17 at 11 36 52](https://github.com/huseyinasan/biyemek/assets/124069940/85365f85-8903-4bc3-afda-d08dde02a18f)
+![WhatsApp Image 2023-07-17 at 11 36 52 (1)](https://github.com/huseyinasan/biyemek/assets/124069940/35266645-57a8-4460-8043-e419dd7f6fc0)
+![WhatsApp Image 2023-07-17 at 11 36 53](https://github.com/huseyinasan/biyemek/assets/124069940/b31c3662-7562-4c19-99cd-86d3b08cd8e8)
+![WhatsApp Image 2023-07-17 at 11 36 54](https://github.com/huseyinasan/biyemek/assets/124069940/b5893086-27dc-4ca8-80d7-ff9a892bb28c)
+
+
+
+## Sprint Review:
+
+Alınan kararlar: son değişikliklerin yapılması ve renk tonlarının belirlenip düzenlenmesi.
+
+Sprint Review katılımcıları:
+- Cihat Mehmet ORDUL
+- Hüseyin ASAN
+- Beyza ÖZDEMİR
+- Merve YILMAZ
+- Mehmet Akif DADAŞOĞLU
+
+## Sprint Notu:
+
+
+tüm ekip arkadaşlarımızın hızlı çalışması zamansal sorunları hallletik.
+- bu sprinte yapılanlar : tasarımlar geliştirildi , müşteri ekranı tasarlandı, kodların işlenmesi yapıldı , işletme sayfaları yapıldı , kayıt sistemi kuruldu,firebase kurulumu tamamlandı,fonlar ve renk düzenlemeleri yapıldı , uygulamanın çalışır durumu kontrol edildi , firebase de data oluşturulması yapıldı.
+- 
+
+# Sprint Retrospective:
+
+Roller ile ilgili düzenleme yapılmıştır.
+ileriye dönük hedefler belirlenmiştir.
+Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
+
+# Product Backlog URL
+[Flutter Team 25 Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
