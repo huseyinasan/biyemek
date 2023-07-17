@@ -56,7 +56,7 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                     fit: BoxFit.cover, // Resmi sığdırma şekli
                   ),
                   const SizedBox(height: 20),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(
                       left: 10,
                       right: 10,
@@ -86,7 +86,7 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    '''                    Fazlalık ürünlerini listele!
+                    '''               Fazlalık gıda ürünlerin mi var?
   Civarında ki müşterilere hemen satmaya başla!''',
                     style: TextStyle(
                       fontSize: 16,
@@ -137,6 +137,9 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                             ),
                           ),
                         ),
+                        SizedBox(
+                          width: 10,
+                        ),
 
                         Expanded(
                           child: GestureDetector(
@@ -150,31 +153,26 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                                 ),
                               );
                             },
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Expanded(
-                                child: Container(
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFFA1E7D2),
-                                    borderRadius: BorderRadius.circular(30),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        spreadRadius: 2,
-                                        blurRadius: 5,
-                                        offset: const Offset(0, 3),
-                                      ),
-                                    ],
+                            child: Container(
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFA1E7D2),
+                                borderRadius: BorderRadius.circular(30),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 2,
+                                    blurRadius: 5,
+                                    offset: const Offset(0, 3),
                                   ),
-                                  child: const Center(
-                                    child: Text(
-                                      "Giriş Yap",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                      ),
-                                    ),
+                                ],
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  "Giriş Yap",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
                                   ),
                                 ),
                               ),

@@ -56,7 +56,7 @@ class _CustomerEntranceState extends State<CustomerEntrance> {
                     fit: BoxFit.cover, // Resmi sığdırma şekli
                   ),
                   const SizedBox(height: 20),
-                   Padding(
+                  const Padding(
                     padding: EdgeInsets.only(
                       left: 10,
                       right: 10,
@@ -86,10 +86,10 @@ class _CustomerEntranceState extends State<CustomerEntrance> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    '''Günlük listelenen uygun fiyatlı ürünlerle, 
-    gıda israfını önlemeye hemen başla!''',
+                    '''Civarında ki taze ve uygun fiyatlı yemekleri keşfederek, 
+                 gıda israfını önlemeye hemen başla!''',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       color: Colors.black,
                     ),
                   ),
@@ -207,7 +207,7 @@ class _CustomerEntranceState extends State<CustomerEntrance> {
                     ],
                   ),
                   const SizedBox(height: 30),
-                   Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(

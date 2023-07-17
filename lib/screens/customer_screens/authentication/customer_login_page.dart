@@ -3,6 +3,7 @@ import 'package:biyemek/screens/customer_screens/home/customer_homepage.dart';
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
 import 'package:biyemek/screens/customer_screens/authentication/customer_register_page.dart';
 import 'package:biyemek/services/google_auth_service.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../../components/my_button.dart';
@@ -33,15 +34,26 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
       User? user = userCredential.user;
 
       if (user != null) {
-        //Navigating to customer home page
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return  CustomerHomePage();
-            },
-          ),
-        );
+        final usersRef = FirebaseFirestore.instance.collection('users');
+        final userDoc = await usersRef.doc(user.uid).get();
+
+        if (userDoc.exists) {
+          //Navigating to customer home page
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const CustomerHomePage();
+              },
+            ),
+          );
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Hesap bir müşteri hesabı değildir.'),
+            ),
+          );
+        }
       }
     } catch (e) {
       print('Error signing in: $e');
@@ -100,7 +112,7 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
                   height: 150,
                 ),
                 Text(
-                  'Hoş Geldin',
+                  'Hadi Ürünleri Keşfetmeye Başla!',
                   style: TextStyle(
                     color: Colors.green[700],
                     fontSize: 16,
@@ -115,7 +127,6 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
                   hintText: 'E-mail',
                   obscureText: false,
                 ),
-                //asdfasdfsadfasdfasdfa
 
                 const SizedBox(height: 10),
 
@@ -220,7 +231,7 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
                   ),
                 ),
                 // google + apple sign in buttons
-                 Padding(
+                const Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

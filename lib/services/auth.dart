@@ -6,7 +6,7 @@ import '../screens/business_screens/home/business_home_page.dart';
 import '../screens/customer_screens/home/customer_homepage.dart';
 
 class AuthPage extends StatelessWidget {
-  const AuthPage({Key? key});
+  const AuthPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class AuthPage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }
           // User is logged in
           if (snapshot.hasData) {
@@ -33,14 +33,14 @@ class AuthPage extends StatelessWidget {
                 }
 
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator();
+                  return const Center(child: CircularProgressIndicator());
                 }
 
                 // Check if the document exists in the "business" collection
                 if (snapshot.hasData && snapshot.data!.exists) {
-                  return BusinessHomePage();
+                  return const BusinessHomePage();
                 } else {
-                  return CustomerHomePage();
+                  return const CustomerHomePage();
                 }
               },
             );
