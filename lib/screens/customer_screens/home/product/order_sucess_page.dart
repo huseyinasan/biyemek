@@ -40,7 +40,7 @@ class _OrderSucessPage extends State<OrderSucessPage> {
                 ),
               ],
             ),
-            const Padding(
+             Padding(
               padding: EdgeInsets.symmetric(vertical: 80),
               child: Column(
                 children: [

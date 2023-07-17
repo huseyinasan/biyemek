@@ -24,6 +24,7 @@ class ChooseEntrance extends StatelessWidget {
           ),
         ),
       ),
+
       body: Stack(
         children: <Widget>[
           GestureDetector(
@@ -38,7 +39,7 @@ class ChooseEntrance extends StatelessWidget {
               );
             },
             child: Container(
-              height: MediaQuery.of(context).size.height * 3 / 5,
+              height: MediaQuery.of(context).size.height * 2 / 5,
               width: MediaQuery.of(context).size.width,
               color: AppColors.secondaryColor,
               child: Column(
@@ -104,7 +105,7 @@ class ChooseEntrance extends StatelessWidget {
                 );
               },
               child: Container(
-                height: MediaQuery.of(context).size.height * 2 / 5,
+                height: MediaQuery.of(context).size.height * 3/ 6,
                 width: MediaQuery.of(context).size.width,
                 color: AppColors.primaryColor,
                 child: Column(

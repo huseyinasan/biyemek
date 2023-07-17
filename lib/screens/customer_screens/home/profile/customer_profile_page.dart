@@ -27,6 +27,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
       appBar: AppBar(
         title: const Text('Profil'),
         backgroundColor: Colors.green,
+        
       ),
       body: Column(
         children: <Widget>[
@@ -42,7 +43,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                     showModalBottomSheet(
                         context: context,
                         builder: (BuildContext) {
-                          return const SizedBox(
+                          return  SizedBox(
                             height: 200,
                             child: Row(
                               children: [

@@ -51,9 +51,10 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                     ),
                     const SizedBox(height: 20),
                     const Text(
-                      """İsrafı önlemenin en ucuz ve taze hali""",
+                      """     İsrafı önlemenin 
+   en ucuz ve taze hali""",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 25,
                         color: Colors.white,
                       ),
                       overflow: TextOverflow.clip,
@@ -84,9 +85,11 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       child: Padding(
                         padding: EdgeInsets.all(20),
                         child: Text(
-                          "Gıda ürünlerini listeleyelerek hem gıda israfını hem de mali zararı önleyebilir!",
+                          """ Gıda ürünlerini listeleyelerek 
+    hem gıda israfını hem de 
+    mali zararı önleyebilir!""",
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 25,
                             overflow: TextOverflow.clip,
                             color: Colors.white,
                           ),
@@ -98,26 +101,34 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
               ),
               //third page
               Container(
-                color: Colors.yellow,
+                color: Color(0xFFFFE500),
                 child: Column(
                   children: [
                     const SizedBox(height: 50),
                     Image.asset("assets/images/onboarding/intro3.png"),
+                    Text("Müşteriler",
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      overflow: TextOverflow.clip,),
                     const SizedBox(
                       child: Padding(
                         padding: EdgeInsets.all(20.0),
                         child: Text(
-                          "Gıda ürünlerini çok uygun fiyatlara satın al ve israfın önüne geç!",
+                          """   Gıda ürünlerini çok uygun fiyatlara 
+        satın al ve israfın önüne geç!""",
                           style: TextStyle(
                             fontSize: 20,
                             overflow: TextOverflow.clip,
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                         ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      padding: const EdgeInsets.symmetric(vertical: 40),
                       child: GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -133,10 +144,11 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                           width: 200,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: AppColors.tertiaryColor,
+
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(
                               color: Colors.white,
+                              width: 3,
                             ),
                           ),
                           child: const Center(
