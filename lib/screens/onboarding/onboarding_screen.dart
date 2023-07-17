@@ -40,7 +40,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                   children: [
                     const SizedBox(height: 100),
                     Image.asset("assets/images/onboarding/intro1.png"),
-                    Text(
+                    const Text(
                       "Bi'Yemek",
                       style: TextStyle(
                         fontSize: 24,
@@ -49,8 +49,8 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       ),
                       overflow: TextOverflow.clip,
                     ),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       """İsrafı önlemenin en ucuz ve taze hali""",
                       style: TextStyle(
                         fontSize: 20,
@@ -68,7 +68,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                   children: [
                     const SizedBox(height: 50),
                     Image.asset("assets/images/onboarding/intro2.png"),
-                    Text(
+                    const Text(
                       "İşletmeler",
                       style: TextStyle(
                         fontSize: 24,
@@ -77,12 +77,12 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       ),
                       overflow: TextOverflow.clip,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       child: Padding(
-                        padding: const EdgeInsets.all(20),
+                        padding: EdgeInsets.all(20),
                         child: Text(
                           "Gıda ürünlerini listeleyelerek hem gıda israfını hem de mali zararı önleyebilir!",
                           style: TextStyle(
@@ -103,9 +103,9 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                   children: [
                     const SizedBox(height: 50),
                     Image.asset("assets/images/onboarding/intro3.png"),
-                    SizedBox(
+                    const SizedBox(
                       child: Padding(
-                        padding: const EdgeInsets.all(20.0),
+                        padding: EdgeInsets.all(20.0),
                         child: Text(
                           "Gıda ürünlerini çok uygun fiyatlara satın al ve israfın önüne geç!",
                           style: TextStyle(
