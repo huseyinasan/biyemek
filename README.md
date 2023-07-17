@@ -19,7 +19,7 @@ Flutter 25 - **Butterfly Effect**
 
 - [Flutter Team 25 Trello Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
 - [Miro  Board](https://miro.com/app/board/uXjVOnzORQw=/)
-- [Figma ]([https://miro.com/app/board/uXjVOnzORQw=/](https://www.figma.com/file/uUdWXEy2EACBnX7AGLbUcI/Bootcamp-F-25?type=design&node-id=0-1&t=TewZIag3jkL08j4q-0))
+- [Figma ](https://www.figma.com/file/uUdWXEy2EACBnX7AGLbUcI/Bootcamp-F-25?type=design&node-id=0-1&mode=design&t=7WmOQH2DyIHhf31k-0)
 
 ## Ürün Açıklaması
 Taze ve lezzetli ürünleri daha fazla israf etmeden değerlendirmek isteyen restoranlar, şarküteriler, pastaneler, manavlar ve diğer gıda satıcıları için bir inovatif uygulamadır. Bu uygulama, günlük raf ömrü olan ürünleri, ömürlerinin sonuna doğru çok uygun fiyatlara satan işletmelerle, bu işletmelerin çevrelerinde bulunan ve bunları satın almak isteyen kullanıcıları bir araya getirerek kazan-kazan bir çözüm sunar. Kişiler uygun fiyatlarla gıdaları satın alırken, işletmelerde bu gıdaları elden çıkarır. Ortak fayda ise bu uygulama sayesinde gıda israfının önlenmesine ve karbon ayak izini azaltarak doğaya katkıda bulunurlar.
