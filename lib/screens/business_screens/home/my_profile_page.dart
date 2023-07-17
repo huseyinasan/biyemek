@@ -107,8 +107,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      "$name $surname",
-                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                      "Ad Soyad: $name $surname",
+                      style: const TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
                 ),
@@ -122,8 +122,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      "$phoneNumber",
-                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                      "Tel. Nu: $phoneNumber",
+                      style: const TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
                 ),
@@ -137,8 +137,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      "$idNumber",
-                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                      "T.C Nu: $idNumber",
+                      style: const TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
                 ),
@@ -152,8 +152,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      businessName,
-                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                      "İşletme Adı: $businessName",
+                      style: const TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
                 ),
@@ -167,8 +167,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      "$businessCity/$businessDistrict",
-                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                      "Bölge: $businessCity/$businessDistrict",
+                      style: const TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
                 ),
@@ -182,8 +182,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      "$taxNumber",
-                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                      "Vergi Nu.: $taxNumber",
+                      style: const TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
                 ),
@@ -197,8 +197,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      businessType,
-                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                      "İşletme Tipi: $businessType",
+                      style: const TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
                 ),
@@ -212,8 +212,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Center(
                     child: Text(
-                      email,
-                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                      "E-mail: $email",
+                      style: const TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
                 ),

@@ -8,9 +8,8 @@ class OldOrdersPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Geçmiş Siparişler'),
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.green,
       ),
-
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: const <Widget>[
@@ -46,7 +45,8 @@ class OrderCard extends StatelessWidget {
   final String orderDetails;
   final String totalPrice;
 
-  const OrderCard({super.key, 
+  const OrderCard({
+    super.key,
     required this.orderDate,
     required this.restaurantName,
     required this.orderDetails,
@@ -100,7 +100,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-
