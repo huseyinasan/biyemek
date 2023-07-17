@@ -112,9 +112,9 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                           "Yakınımdaki Ürünler",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: 24.0,
+                            fontSize: 20.0,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.tertiaryColor,
+                            color: AppColors.figma3Color,
                             decoration: TextDecoration.underline,
                           ),
                         ),
@@ -151,9 +151,9 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                   "Sepetinizdeki Ürünler",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 24.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.tertiaryColor,
+                    color: AppColors.figma3Color,
                     decoration: TextDecoration.underline,
                   ),
                 ),
@@ -263,7 +263,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                             },
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
-                              backgroundColor: Colors.green,
+                              backgroundColor: AppColors.figma1Color,
                             ),
                             child: const Text(
                               "Devam Et",
@@ -291,9 +291,9 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                         "Siparişlerim",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 24.0,
+                          fontSize: 20.0,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.tertiaryColor,
+                          color: AppColors.figma3Color,
                           decoration: TextDecoration.underline,
                         ),
                       ),
@@ -349,7 +349,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
             height: 87,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Colors.green,
+                color: AppColors.figma1Color,
                 width: 2.0,
               ),
               borderRadius: BorderRadius.circular(60.0),
@@ -358,9 +358,9 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               padding:
                   const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
               child: GNav(
-                color: Colors.green,
+                color: AppColors.figma1Color,
                 activeColor: Colors.white,
-                tabBackgroundColor: Colors.green,
+                tabBackgroundColor: AppColors.figma1Color,
                 iconSize: 35,
                 gap: 5,
                 padding: const EdgeInsets.all(16),

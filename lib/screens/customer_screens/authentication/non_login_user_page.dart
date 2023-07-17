@@ -35,7 +35,7 @@ class _NonLoginUserPageState extends State<NonLoginUserPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green,
+          backgroundColor: AppColors.figma1Color,
           title: Stack(
             children: [
               const Text(
@@ -88,9 +88,9 @@ class _NonLoginUserPageState extends State<NonLoginUserPage> {
                       "Yakınımdaki Ürünler",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 24.0,
+                        fontSize: 20.0,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.tertiaryColor,
+                        color: AppColors.figma3Color,
                         decoration: TextDecoration.underline,
                       ),
                     ),

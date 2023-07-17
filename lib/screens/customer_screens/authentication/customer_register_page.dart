@@ -1,4 +1,5 @@
 import 'package:biyemek/components/back_button.dart';
+import 'package:biyemek/constants/colors.dart';
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -268,7 +269,7 @@ class _CustomerRegisterPageState extends State<CustomerRegisterPage> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(10),
-                      backgroundColor: Colors.orange,
+                      backgroundColor: AppColors.figma3Color,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),

@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:uuid/uuid.dart';
+import '../../../constants/colors.dart';
 import '../../../services/my_products_service.dart';
 import 'product/add_product_completed.dart';
 import 'notifications.dart';
@@ -149,13 +150,13 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           children: [
                             const Icon(
                               Icons.location_on_rounded,
-                              color: Colors.green,
+                              color: AppColors.figma1Color,
                               size: 42,
                             ),
                             Text(
                               "$businessCity/$businessDistrict",
                               style: const TextStyle(
-                                color: Colors.green,
+                                color: AppColors.figma1Color,
                                 fontSize: 19,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -184,7 +185,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                               padding: const EdgeInsets.all(5),
                               child: const Icon(
                                 Icons.notifications,
-                                color: Colors.green,
+                                color: AppColors.figma1Color,
                                 size: 42,
                               ),
                             ),
@@ -654,7 +655,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                             color: Colors.pink.shade100,
                             width: 2.0,
                           ),
-                          color: const Color(0xFFDBB7D6),
+                          color: AppColors.figma2Color,
                         ),
                         child: const Padding(
                           padding: EdgeInsets.all(16),
@@ -699,7 +700,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                             Text(
                               "Ürün Resmi",
                               style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.black,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -747,7 +748,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 //user can add name of the product from here
                                 decoration: const InputDecoration(
                                   labelText: 'Ürün İsmi',
-                                  labelStyle: TextStyle(color: Colors.green),
+                                  labelStyle: TextStyle(color: Colors.black),
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(color: Colors.blue),
                                   ),
@@ -780,7 +781,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                             Text(
                               "Ürün Tipi",
                               style: TextStyle(
-                                color: Colors.green,
+                                color: AppColors.figma1Color,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -839,7 +840,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 decoration: const InputDecoration(
                                   labelText: 'Ürün Miktarı',
                                   labelStyle: TextStyle(
-                                    color: Colors.green,
+                                    color: Colors.black,
                                   ),
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -901,7 +902,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                             Text(
                               "Son Tüketim Tarihi",
                               style: TextStyle(
-                                color: Colors.green,
+                                color: AppColors.figma1Color,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -977,7 +978,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 decoration: const InputDecoration(
                                   //user can add the description of the product from here
                                   labelText: 'Ürün Açıklaması',
-                                  labelStyle: TextStyle(color: Colors.green),
+                                  labelStyle: TextStyle(color: Colors.black),
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(color: Colors.blue),
                                   ),
@@ -1018,7 +1019,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 decoration: const InputDecoration(
                                   labelText: 'Normal Fiyatı',
                                   labelStyle: TextStyle(
-                                    color: Colors.green,
+                                    color: Colors.black,
                                   ),
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -1046,9 +1047,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 ],
                                 decoration: const InputDecoration(
                                   labelText: 'İndirimli Fiyatı',
-                                  labelStyle: TextStyle(
-                                    color: Colors.green,
-                                  ),
+                                  labelStyle: TextStyle(color: Colors.black),
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Colors.blue,
@@ -1114,7 +1113,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                             },
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
-                              backgroundColor: Colors.green,
+                              backgroundColor: AppColors.figma1Color,
                             ),
                             child: const Text(
                               "Onayla ve Listele",
@@ -1149,13 +1148,13 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   SizedBox(width: 70),
                                   Icon(
                                     Icons.add_a_photo_outlined,
-                                    color: Colors.green,
+                                    color: AppColors.figma1Color,
                                     size: 75,
                                   ),
                                   SizedBox(width: 100),
                                   Icon(
                                     Icons.add_photo_alternate_outlined,
-                                    color: Colors.green,
+                                    color: AppColors.figma1Color,
                                     size: 75,
                                   ),
                                 ],
@@ -1164,14 +1163,14 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           });
                     },
                     child: const Icon(Icons.account_circle,
-                        size: 150, color: Colors.green),
+                        size: 150, color: AppColors.figma1Color),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     _businessName,
                     style: const TextStyle(
                       fontSize: 20,
-                      color: Colors.green,
+                      color: AppColors.figma1Color,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -1195,7 +1194,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           height: 60,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(18),
-                            color: Colors.green,
+                            color: AppColors.figma1Color,
                           ),
                           child: const Icon(
                             Icons.account_circle_outlined,
@@ -1207,14 +1206,14 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                         const Text(
                           "Profilimi Düzenle",
                           style: TextStyle(
-                              color: Colors.green,
+                              color: AppColors.figma1Color,
                               fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(width: 60),
                         const Icon(
                           Icons.arrow_forward_ios_rounded,
-                          color: Colors.green,
+                          color: AppColors.figma1Color,
                         )
                       ],
                     ),
@@ -1234,13 +1233,15 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 Text(
                                   "Türkçe",
                                   style: TextStyle(
-                                      fontSize: 30, color: Colors.green),
+                                      fontSize: 30,
+                                      color: AppColors.figma1Color),
                                 ),
                                 SizedBox(width: 90),
                                 Text(
                                   "English",
                                   style: TextStyle(
-                                      fontSize: 30, color: Colors.green),
+                                      fontSize: 30,
+                                      color: AppColors.figma1Color),
                                 )
                               ],
                             ),
@@ -1256,7 +1257,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           height: 60,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(18),
-                            color: Colors.green,
+                            color: AppColors.figma1Color,
                           ),
                           child: const Icon(
                             Icons.language,
@@ -1269,14 +1270,12 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           "Dil",
                           style: TextStyle(
                               fontSize: 20,
-                              color: Colors.green,
+                              color: AppColors.figma1Color,
                               fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(width: 190),
-                        const Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Colors.green,
-                        )
+                        const Icon(Icons.arrow_forward_ios_rounded,
+                            color: AppColors.figma1Color)
                       ],
                     ),
                   ),
@@ -1291,7 +1290,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           height: 60,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(18),
-                            color: Colors.green,
+                            color: AppColors.figma1Color,
                           ),
                           child: const Icon(
                             Icons.exit_to_app_outlined,
@@ -1305,12 +1304,12 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Colors.green),
+                              color: AppColors.figma1Color),
                         ),
                         const SizedBox(width: 130),
                         const Icon(
                           Icons.arrow_forward_ios_rounded,
-                          color: Colors.green,
+                          color: AppColors.figma1Color,
                         )
                       ],
                     ),
@@ -1329,7 +1328,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
             height: 87,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Colors.green,
+                color: AppColors.figma1Color,
                 width: 2.0,
               ),
               borderRadius: BorderRadius.circular(60.0),
@@ -1338,9 +1337,9 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
               padding:
                   const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
               child: GNav(
-                color: Colors.green,
+                color: AppColors.figma1Color,
                 activeColor: Colors.white,
-                tabBackgroundColor: Colors.green,
+                tabBackgroundColor: AppColors.figma1Color,
                 iconSize: 35,
                 gap: 5,
                 padding: const EdgeInsets.all(16),

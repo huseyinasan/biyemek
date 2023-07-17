@@ -35,7 +35,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
             pages: [
               //first page
               Container(
-                color: Colors.greenAccent,
+                color: AppColors.figma1Color,
                 child: Column(
                   children: [
                     const SizedBox(height: 100),
@@ -64,7 +64,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
               ),
               //second page
               Container(
-                color: Colors.pinkAccent,
+                color: AppColors.figma2Color,
                 child: Column(
                   children: [
                     const SizedBox(height: 50),
@@ -85,7 +85,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       child: Padding(
                         padding: EdgeInsets.all(20),
                         child: Text(
-                          "Gıda ürünlerini listeleyelerek hem gıda israfını hem de mali zararı önleyebilir!",
+                          "Gıda ürünlerini listeleyerek hem gıda israfını hem de mali zararı önleyebilir!",
                           style: TextStyle(
                             fontSize: 20,
                             overflow: TextOverflow.clip,
@@ -100,7 +100,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
               ),
               //third page
               Container(
-                color: Colors.yellow,
+                color: AppColors.figma3Color,
                 child: Column(
                   children: [
                     const SizedBox(height: 50),
@@ -109,11 +109,11 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       child: Padding(
                         padding: EdgeInsets.all(20.0),
                         child: Text(
-                          "Çevrende ki işletmelerden, gıda ürünlerini çok uygun fiyatlara satın al ve israfın önüne geç!",
+                          "Çevrendeki işletmelerden, gıda ürünlerini çok uygun fiyatlara satın al ve israfın önüne geç!",
                           style: TextStyle(
                             fontSize: 20,
                             overflow: TextOverflow.clip,
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -136,7 +136,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                           width: 200,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: AppColors.tertiaryColor,
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(
                               color: Colors.white,
@@ -148,7 +148,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                             ),
                           ),

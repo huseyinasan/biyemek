@@ -1,3 +1,4 @@
+import 'package:biyemek/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends AppBar {
@@ -5,7 +6,7 @@ class CustomAppBar extends AppBar {
 
   CustomAppBar({super.key, required this.onTap})
       : super(
-          backgroundColor: Colors.green,
+          backgroundColor: AppColors.figma1Color,
           automaticallyImplyLeading: false,
           title: Stack(
             children: [

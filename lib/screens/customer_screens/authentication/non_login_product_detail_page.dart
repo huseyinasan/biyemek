@@ -12,7 +12,7 @@ class NonLoginProductDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.primaryColor,
+        backgroundColor: AppColors.figma1Color,
         title: const Text(
           "Ürün Detayı",
           style: TextStyle(
@@ -251,7 +251,7 @@ class NonLoginProductDetailsPage extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.green,
+                      backgroundColor: AppColors.figma1Color,
                     ),
                     child: const Text(
                       "Üye Ol",

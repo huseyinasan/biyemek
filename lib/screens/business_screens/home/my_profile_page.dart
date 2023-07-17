@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../../../constants/colors.dart';
+
 class BusinessProfileInfo extends StatefulWidget {
   const BusinessProfileInfo({Key? key}) : super(key: key);
 
@@ -90,7 +92,7 @@ class _BusinessProfileInfoState extends State<BusinessProfileInfo> {
               iconTheme: const IconThemeData(
                 color: Colors.white,
               ),
-              backgroundColor: Colors.green,
+              backgroundColor: AppColors.figma1Color,
             ),
           ),
           const SizedBox(height: 20),

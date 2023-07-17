@@ -25,7 +25,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: AppColors.figma1Color,
         title: const Text(
           "Ödeme ve Sipariş",
           style: TextStyle(
@@ -49,7 +49,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                   style: TextStyle(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.tertiaryColor,
+                    color: AppColors.figma3Color,
                     decoration: TextDecoration.underline,
                   ),
                 ),
@@ -120,7 +120,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.green,
+                      backgroundColor: AppColors.figma1Color,
                     ),
                     onPressed: () {
                       Navigator.push(
@@ -174,7 +174,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.green,
+                      backgroundColor: AppColors.figma1Color,
                     ),
                     onPressed: () {
                       Navigator.push(
@@ -256,7 +256,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
-                        backgroundColor: Colors.green,
+                        backgroundColor: AppColors.figma1Color,
                       ),
                       onPressed: () async {
                         try {

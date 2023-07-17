@@ -1,3 +1,4 @@
+import 'package:biyemek/constants/colors.dart';
 import 'package:biyemek/screens/customer_screens/home/profile/customer_old_orders.dart';
 import 'package:biyemek/screens/customer_screens/home/profile/customer_profile_info..dart';
 import 'package:biyemek/screens/onboarding/onboarding_screen.dart';
@@ -26,7 +27,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profil'),
-        backgroundColor: Colors.green,
+        backgroundColor: AppColors.figma1Color,
       ),
       body: Column(
         children: <Widget>[
@@ -49,13 +50,13 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                                 SizedBox(width: 70),
                                 Icon(
                                   Icons.add_a_photo_outlined,
-                                  color: Colors.green,
+                                  color: AppColors.figma1Color,
                                   size: 75,
                                 ),
                                 SizedBox(width: 100),
                                 Icon(
                                   Icons.add_photo_alternate_outlined,
-                                  color: Colors.green,
+                                  color: AppColors.figma1Color,
                                   size: 75,
                                 ),
                               ],
@@ -64,7 +65,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                         });
                   },
                   child: const Icon(Icons.account_circle,
-                      size: 150, color: Colors.green),
+                      size: 150, color: AppColors.figma1Color),
                 ),
               ],
             ),
@@ -92,9 +93,8 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(18),
-                        color: Colors.green,
-                      ),
+                          borderRadius: BorderRadius.circular(18),
+                          color: AppColors.figma1Color),
                       child: const Icon(
                         Icons.account_circle_outlined,
                         size: 30,
@@ -117,10 +117,8 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                       padding: EdgeInsets.symmetric(
                         horizontal: 80.0,
                       ),
-                      child: Icon(
-                        Icons.arrow_forward_ios_rounded,
-                        color: Colors.green,
-                      ),
+                      child: Icon(Icons.arrow_forward_ios_rounded,
+                          color: AppColors.figma1Color),
                     )
                   ],
                 ),
@@ -153,7 +151,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                         height: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(18),
-                          color: Colors.green,
+                          color: AppColors.figma1Color,
                         ),
                         child: const Icon(
                           Icons.food_bank,
@@ -179,7 +177,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                         ),
                         child: Icon(
                           Icons.arrow_forward_ios_rounded,
-                          color: Colors.green,
+                          color: AppColors.figma1Color,
                         ),
                       )
                     ],
@@ -217,7 +215,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                                 height: 50,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(18),
-                                  color: Colors.green,
+                                  color: AppColors.figma1Color,
                                 ),
                                 child: const Icon(
                                   Icons.exit_to_app_outlined,
@@ -243,7 +241,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                                 ),
                                 child: Icon(
                                   Icons.arrow_forward_ios_rounded,
-                                  color: Colors.green,
+                                  color: AppColors.figma1Color,
                                 ),
                               )
                             ],

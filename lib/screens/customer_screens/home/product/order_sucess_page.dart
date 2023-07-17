@@ -1,6 +1,8 @@
 import 'package:biyemek/screens/customer_screens/home/customer_homepage.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../constants/colors.dart';
+
 class OrderSucessPage extends StatefulWidget {
   const OrderSucessPage({Key? key}) : super(key: key);
 
@@ -21,7 +23,7 @@ class _OrderSucessPage extends State<OrderSucessPage> {
                 Expanded(
                   child: Container(
                     decoration: const BoxDecoration(
-                      color: Colors.green,
+                      color: AppColors.figma1Color,
                     ),
                     child: const Padding(
                       padding: EdgeInsets.all(16),
@@ -49,7 +51,7 @@ class _OrderSucessPage extends State<OrderSucessPage> {
                     children: [
                       Icon(
                         Icons.check_circle,
-                        color: Colors.green,
+                        color: AppColors.figma1Color,
                         size: 200.0,
                       ),
                     ],
@@ -90,9 +92,8 @@ class _OrderSucessPage extends State<OrderSucessPage> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.green,
-              ),
+                  foregroundColor: Colors.white,
+                  backgroundColor: AppColors.figma1Color),
               child: const Text(
                 "Tamam",
                 style: TextStyle(

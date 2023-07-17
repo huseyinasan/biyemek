@@ -11,7 +11,7 @@ class ChooseEntrance extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.secondaryColor,
+        backgroundColor: AppColors.figma1Color,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
@@ -38,9 +38,9 @@ class ChooseEntrance extends StatelessWidget {
               );
             },
             child: Container(
-              height: MediaQuery.of(context).size.height * 3 / 5,
+              height: MediaQuery.of(context).size.height * 1 / 2,
               width: MediaQuery.of(context).size.width,
-              color: AppColors.secondaryColor,
+              color: AppColors.figma1Color,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -104,9 +104,9 @@ class ChooseEntrance extends StatelessWidget {
                 );
               },
               child: Container(
-                height: MediaQuery.of(context).size.height * 2 / 5,
+                height: MediaQuery.of(context).size.height * 2.3 / 5,
                 width: MediaQuery.of(context).size.width,
-                color: AppColors.primaryColor,
+                color: AppColors.figma2Color,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
