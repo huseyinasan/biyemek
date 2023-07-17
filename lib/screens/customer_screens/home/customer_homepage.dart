@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:biyemek/components/category_name.dart';
 import 'package:biyemek/constants/colors.dart';
 import 'package:biyemek/screens/customer_screens/home/product/product_detail_order_page.dart';
@@ -22,6 +24,9 @@ class CustomerHomePage extends StatefulWidget {
 }
 
 class _CustomerHomePageState extends State<CustomerHomePage> {
+  late Stream<List<Product>> _cartProductsStream;
+  late StreamSubscription<List<Product>> _cartProductsStreamSubscription;
+
   int currentStep = 0;
   final statuses = List.generate(
     2,
@@ -35,15 +40,19 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
   int lastIndex = -1;
   int _currentIndex = 0;
   late PageController _pageController;
+
   @override
   void initState() {
     super.initState();
     _pageController = PageController();
+    _cartProductsStream = CustomerProductsService().getCartProducts();
+    _cartProductsStreamSubscription = _cartProductsStream.listen((_) {});
   }
 
   @override
   void dispose() {
     _pageController.dispose();
+    _cartProductsStreamSubscription.cancel();
     super.dispose();
   }
 
@@ -133,148 +142,142 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               ),
             ), //homepage ends here------------------------------------
 //my cart page starts here-------------------------------------------------
-            Expanded(
-              child: Column(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 20.0),
-                    child: Text(
-                      "Sepetinizdeki Ürünler",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.tertiaryColor,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
+            Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Sepetinizdeki Ürünler",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.tertiaryColor,
+                    decoration: TextDecoration.underline,
                   ),
-                  //products will come here
-                  Expanded(
-                    child: StreamBuilder<List<Product>>(
-                      stream: CustomerProductsService().getCartProducts(),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return const Center(
-                              child: CircularProgressIndicator());
-                        } else if (snapshot.hasError) {
-                          return const Center(
-                              child: Text('Bir şeyler yanlış gitti'));
-                        } else if (snapshot.data == null ||
-                            snapshot.data!.isEmpty) {
-                          return const Center(
-                              child: Text('Sepetinizde ürün yok'));
-                        } else {
-                          return ListView.builder(
-                            padding: const EdgeInsets.all(10.0),
-                            itemCount: snapshot.data!.length,
-                            scrollDirection: Axis.vertical,
-                            itemBuilder: (ctx, i) => Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 10.0),
-                              child: CartProductItem(
-                                product: snapshot.data![i],
-                              ),
+                ),
+                //products will come here
+                Expanded(
+                  child: StreamBuilder<List<Product>>(
+                    stream: CustomerProductsService().getCartProducts(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(child: CircularProgressIndicator());
+                      } else if (snapshot.hasError) {
+                        return const Center(
+                            child: Text('Bir şeyler yanlış gitti'));
+                      } else if (snapshot.data == null ||
+                          snapshot.data!.isEmpty) {
+                        return const Center(
+                            child: Text('Sepetinizde ürün yok'));
+                      } else {
+                        return ListView.builder(
+                          padding: const EdgeInsets.all(10.0),
+                          itemCount: snapshot.data!.length,
+                          scrollDirection: Axis.vertical,
+                          itemBuilder: (ctx, i) => Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10.0),
+                            child: CartProductItem(
+                              product: snapshot.data![i],
                             ),
-                          );
-                        }
-                      },
-                    ),
+                          ),
+                        );
+                      }
+                    },
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 20.0,
-                      vertical: 10,
-                    ),
-                    child: Material(
-                      elevation: 5,
-                      borderRadius: BorderRadius.circular(5),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                const Text(
-                                  'Fiyat:  ',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                FutureBuilder<double>(
-                                  future: CustomerProductsService()
-                                      .getTotalNormalPrice(),
-                                  builder: (context, snapshot) {
-                                    if (snapshot.connectionState ==
-                                        ConnectionState.waiting) {
-                                      return const CircularProgressIndicator();
-                                    } else if (snapshot.hasError) {
-                                      return const Text(
-                                          'Bir şeyler yanlış gitti');
-                                    } else {
-                                      return Text(
-                                        '${snapshot.data} ₺',
-                                        style: const TextStyle(
-                                          decoration:
-                                              TextDecoration.lineThrough,
-                                        ),
-                                      );
-                                    }
-                                  },
-                                ),
-                                FutureBuilder<double>(
-                                  future: CustomerProductsService()
-                                      .getTotalDiscountPrice(),
-                                  builder: (context, snapshot) {
-                                    if (snapshot.connectionState ==
-                                        ConnectionState.waiting) {
-                                      return const CircularProgressIndicator();
-                                    } else if (snapshot.hasError) {
-                                      return const Text(
-                                          'Bir şeyler yanlış gitti');
-                                    } else {
-                                      return Text(
-                                        ' >  ${snapshot.data} ₺',
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      );
-                                    }
-                                  },
-                                ),
-                              ],
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return const ProductOrderPage();
-                                    },
-                                  ),
-                                );
-                              },
-                              style: ElevatedButton.styleFrom(
-                                foregroundColor: Colors.white,
-                                backgroundColor: Colors.green,
-                              ),
-                              child: const Text(
-                                "Devam Et",
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0,
+                    vertical: 10,
+                  ),
+                  child: Material(
+                    elevation: 5,
+                    borderRadius: BorderRadius.circular(5),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              const Text(
+                                'Fiyat:  ',
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
+                              FutureBuilder<double>(
+                                future: CustomerProductsService()
+                                    .getTotalNormalPrice(),
+                                builder: (context, snapshot) {
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return const CircularProgressIndicator();
+                                  } else if (snapshot.hasError) {
+                                    return const Text(
+                                        'Bir şeyler yanlış gitti');
+                                  } else {
+                                    return Text(
+                                      '${snapshot.data} ₺',
+                                      style: const TextStyle(
+                                        decoration: TextDecoration.lineThrough,
+                                      ),
+                                    );
+                                  }
+                                },
+                              ),
+                              FutureBuilder<double>(
+                                future: CustomerProductsService()
+                                    .getTotalDiscountPrice(),
+                                builder: (context, snapshot) {
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return const CircularProgressIndicator();
+                                  } else if (snapshot.hasError) {
+                                    return const Text(
+                                        'Bir şeyler yanlış gitti');
+                                  } else {
+                                    return Text(
+                                      ' >  ${snapshot.data} ₺',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    );
+                                  }
+                                },
+                              ),
+                            ],
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const ProductOrderPage();
+                                  },
+                                ),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              foregroundColor: Colors.white,
+                              backgroundColor: Colors.green,
                             ),
-                          ],
-                        ),
+                            child: const Text(
+                              "Devam Et",
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ), //my cart page ends here-------------------------------------------------
 //my order page starts here-------------------------------------------------------------
             Column(
