@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+class BusinessProfileInfo extends StatefulWidget {
+  const BusinessProfileInfo({Key? key}) : super(key: key);
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<BusinessProfileInfo> createState() => _BusinessProfileInfoState();
 }
 
-class _ProfileState extends State<Profile> {
+class _BusinessProfileInfoState extends State<BusinessProfileInfo> {
   String name = "";
   String surname = "";
   int? phoneNumber;
