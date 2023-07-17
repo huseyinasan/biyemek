@@ -181,9 +181,53 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                             ),
                           ),
                         ), // Add spacing between the containers
+
                       ],
                     ),
                   ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: CustomPaint(
+                          painter: LinePainter(),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(
+                          left: 10,
+                          right: 10,
+                        ),
+                        child: Text(
+                          "veya",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 13,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: CustomPaint(
+                          painter: LinePainter(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Üye Olmadan Devam Et",
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          decorationColor: Colors.blue,
+                          decorationThickness: 2.0,
+                          decorationStyle: TextDecorationStyle.solid,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
