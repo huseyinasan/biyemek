@@ -11,7 +11,7 @@ class ProductDetailsOrderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.primaryColor,
+        backgroundColor: AppColors.figma1Color,
         title: const Text(
           "Ürün Detayı",
           style: TextStyle(

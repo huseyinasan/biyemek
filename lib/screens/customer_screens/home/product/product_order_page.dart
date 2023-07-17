@@ -21,6 +21,10 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
     super.initState();
   }
 
+  Future<void> fetchData() async {
+    CustomerInfoService().getCardName();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,13 +126,14 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                       foregroundColor: Colors.white,
                       backgroundColor: AppColors.figma1Color,
                     ),
-                    onPressed: () {
-                      Navigator.push(
+                    onPressed: () async {
+                      await Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => const CardDetailsPage(),
                         ),
                       );
+                      setState(() {});
                     },
                     child: const Text('Kartı Güncelle'),
                   ),
@@ -176,13 +181,14 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                       foregroundColor: Colors.white,
                       backgroundColor: AppColors.figma1Color,
                     ),
-                    onPressed: () {
-                      Navigator.push(
+                    onPressed: () async {
+                      await Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => const AddressDetailsPage(),
                         ),
                       );
+                      setState(() {});
                     },
                     child: const Text('Adresi Güncelle'),
                   ),
