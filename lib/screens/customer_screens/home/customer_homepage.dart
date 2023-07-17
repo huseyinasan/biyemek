@@ -1,5 +1,6 @@
 import 'package:biyemek/components/category_name.dart';
 import 'package:biyemek/constants/colors.dart';
+import 'package:biyemek/screens/customer_screens/home/product/product_detail_order_page.dart';
 import 'package:biyemek/screens/customer_screens/home/product/product_order_page.dart';
 import 'package:biyemek/screens/customer_screens/home/profile/customer_profile_page.dart';
 import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
@@ -130,7 +131,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                   ],
                 ),
               ),
-            ),
+            ), //homepage ends here------------------------------------
 //my cart page starts here-------------------------------------------------
             Expanded(
               child: Column(
@@ -316,8 +317,16 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
                           scrollDirection: Axis.vertical,
                           itemBuilder: (ctx, i) => Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
-                            child: OrderItem(
-                              product: snapshot.data![i],
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => ProductDetailsOrderPage(
+                                      product: snapshot.data![i]),
+                                ));
+                              },
+                              child: OrderItem(
+                                product: snapshot.data![i],
+                              ),
                             ),
                           ),
                         );

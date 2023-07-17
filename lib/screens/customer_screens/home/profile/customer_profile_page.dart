@@ -1,5 +1,5 @@
 import 'package:biyemek/screens/customer_screens/home/profile/customer_old_orders.dart';
-import 'package:biyemek/screens/customer_screens/home/profile/my_profile_customer.dart';
+import 'package:biyemek/screens/customer_screens/home/profile/customer_profile_info..dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +41,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                     showModalBottomSheet(
                         context: context,
                         builder: (BuildContext) {
-                          return  SizedBox(
+                          return SizedBox(
                             height: 200,
                             child: Row(
                               children: [
