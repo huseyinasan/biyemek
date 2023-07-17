@@ -57,6 +57,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                         color: Colors.white,
                       ),
                       overflow: TextOverflow.clip,
+                      textAlign: TextAlign.center,
                     ),
                   ],
                 ),
@@ -90,6 +91,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                             overflow: TextOverflow.clip,
                             color: Colors.white,
                           ),
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
@@ -107,12 +109,13 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       child: Padding(
                         padding: EdgeInsets.all(20.0),
                         child: Text(
-                          "Gıda ürünlerini çok uygun fiyatlara satın al ve israfın önüne geç!",
+                          "Çevrende ki işletmelerden, gıda ürünlerini çok uygun fiyatlara satın al ve israfın önüne geç!",
                           style: TextStyle(
                             fontSize: 20,
                             overflow: TextOverflow.clip,
                             color: Colors.black,
                           ),
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
