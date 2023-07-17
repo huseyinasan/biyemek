@@ -42,7 +42,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                     showModalBottomSheet(
                         context: context,
                         builder: (BuildContext) {
-                          return SizedBox(
+                          return const SizedBox(
                             height: 200,
                             child: Row(
                               children: [

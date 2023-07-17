@@ -159,8 +159,8 @@ class CustomerProductsService {
   // Method to copy products from the cart to the orders collection
   Future<void> orderProduct() async {
     final user = FirebaseAuth.instance.currentUser;
-    final _productsRef = FirebaseFirestore.instance.collection('products');
-    final _oldProductsRef =
+    final productsRef = FirebaseFirestore.instance.collection('products');
+    final oldProductsRef =
         FirebaseFirestore.instance.collection('oldProducts');
 
     if (user != null) {
@@ -178,14 +178,14 @@ class CustomerProductsService {
 
         // Move the product from 'products' to 'oldProducts' and remove it from 'products'
         for (String productId in products) {
-          final productDoc = await _productsRef.doc(productId).get();
+          final productDoc = await productsRef.doc(productId).get();
           if (productDoc.exists) {
             var data = productDoc.data();
             if (data != null) {
               // copy the product to 'oldProducts'
-              await _oldProductsRef.doc(productId).set(data);
+              await oldProductsRef.doc(productId).set(data);
               // remove the product from 'products'
-              await _productsRef.doc(productId).delete();
+              await productsRef.doc(productId).delete();
             }
           }
         }

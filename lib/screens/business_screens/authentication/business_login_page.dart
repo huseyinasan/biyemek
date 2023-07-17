@@ -47,7 +47,7 @@ class _BusinessLoginPageState extends State<BusinessLoginPage> {
           );
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Text('Hesap bir işletme hesabı değildir.'),
             ),
           );
@@ -186,7 +186,7 @@ class _BusinessLoginPageState extends State<BusinessLoginPage> {
                     ),
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

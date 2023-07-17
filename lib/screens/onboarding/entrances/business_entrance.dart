@@ -30,7 +30,7 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return ChooseEntrance();
+                                  return const ChooseEntrance();
                                 },
                               ),
                             );
@@ -56,7 +56,7 @@ class _BusinessEntranceState extends State<BusinessEntrance> {
                     fit: BoxFit.cover, // Resmi sığdırma şekli
                   ),
                   const SizedBox(height: 20),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(
                       left: 10,
                       right: 10,

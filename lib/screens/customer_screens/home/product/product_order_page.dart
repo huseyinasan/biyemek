@@ -37,7 +37,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
       ),
       body: Column(
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 20,
               vertical: 10,
@@ -272,7 +272,7 @@ class _ProductOrderPageState extends State<ProductOrderPage> {
                         } catch (e) {
                           // Show snackbar with the error message
                           ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
+                            const SnackBar(
                               content: Text(
                                   'Bir hata oluştu. Lütfen tekrar deneyin.'),
                             ),

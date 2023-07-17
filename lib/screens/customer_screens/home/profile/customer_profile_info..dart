@@ -13,6 +13,7 @@ class _CustomerProfileState extends State<CustomerProfile> {
   String name = "";
   String surname = "";
   String email = "";
+  int? phone;
 
   @override
   void initState() {
@@ -35,11 +36,12 @@ class _CustomerProfileState extends State<CustomerProfile> {
         // Extract the business name from the document
         String fsName = snapshot.get('name');
         String fsSurname = snapshot.get('surname');
+        int fsPhone = snapshot.get("phone");
         setState(() {
           name = fsName;
           surname = fsSurname;
-
           email = userEmail!;
+          phone = fsPhone;
         });
       }
     } catch (e) {
@@ -85,6 +87,21 @@ class _CustomerProfileState extends State<CustomerProfile> {
                   child: Center(
                     child: Text(
                       "$name $surname",
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 15),
+                Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: const Color.fromRGBO(119, 204, 179, 1.0),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: Center(
+                    child: Text(
+                      phone.toString(),
                       style: const TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),

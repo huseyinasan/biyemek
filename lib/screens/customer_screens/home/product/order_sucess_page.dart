@@ -20,7 +20,7 @@ class _OrderSucessPage extends State<OrderSucessPage> {
               children: [
                 Expanded(
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.green,
                     ),
                     child: const Padding(
@@ -40,7 +40,7 @@ class _OrderSucessPage extends State<OrderSucessPage> {
                 ),
               ],
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(vertical: 80),
               child: Column(
                 children: [

@@ -18,7 +18,7 @@ class ChooseEntrance extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return CustomerEntrance();
+                      return const CustomerEntrance();
                     },
                   ),
                 );
@@ -30,17 +30,17 @@ class ChooseEntrance extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "İsrafa karşı savaşan bir müşteri misiniz?",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       "Buraya Tıklayın! ",
                       style: TextStyle(
                         color: Colors.white,
@@ -48,7 +48,7 @@ class ChooseEntrance extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Center(
@@ -83,7 +83,7 @@ class ChooseEntrance extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return BusinessEntrance();
+                        return const BusinessEntrance();
                       },
                     ),
                   );
@@ -95,17 +95,17 @@ class ChooseEntrance extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "İsrafa karşı savaşan bir işletme misiniz?",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Text(
+                      const Text(
                         "Buraya Tıklayın! ",
                         style: TextStyle(
                           color: Colors.white,
@@ -113,7 +113,7 @@ class ChooseEntrance extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Center(
@@ -129,7 +129,7 @@ class ChooseEntrance extends StatelessWidget {
                             ),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
-                          child: Container(
+                          child: SizedBox(
                             width: 200,
                             height: 150,
                             child: Image.asset(

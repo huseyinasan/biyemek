@@ -96,7 +96,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -279,7 +279,7 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
 //my order page starts here-------------------------------------------------------------
             Column(
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(

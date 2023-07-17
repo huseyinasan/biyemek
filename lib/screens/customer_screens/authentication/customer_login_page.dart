@@ -49,7 +49,7 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
           );
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Text('Hesap bir müşteri hesabı değildir.'),
             ),
           );
@@ -112,7 +112,7 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
                   height: 150,
                 ),
                 Text(
-                  'Hoş Geldin',
+                  'Hadi Ürünleri Keşfetmeye Başla!',
                   style: TextStyle(
                     color: Colors.green[700],
                     fontSize: 16,
@@ -127,7 +127,6 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
                   hintText: 'E-mail',
                   obscureText: false,
                 ),
-                //asdfasdfsadfasdfasdfa
 
                 const SizedBox(height: 10),
 
@@ -232,7 +231,7 @@ class _CustomerLoginPageState extends State<CustomerLoginPage> {
                   ),
                 ),
                 // google + apple sign in buttons
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

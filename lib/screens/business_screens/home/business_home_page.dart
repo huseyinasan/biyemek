@@ -258,7 +258,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   height: 48,
                                   color: const Color(0xFFBE7CB4),
                                 ),
-                                 Expanded(
+                                 const Expanded(
                                   child: Row(
                                     children: [
                                       SizedBox(width: 40),
@@ -291,7 +291,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                 ),
                                 borderRadius: BorderRadius.circular(20),
                                 color: const Color(0xFFDBB7D6)),
-                            child:  Column(
+                            child:  const Column(
                               children: [
                                 SizedBox(height: 10),
                                 Text(
@@ -339,7 +339,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                     ),
                                   );
                                 },
-                                child:  Row(
+                                child:  const Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
                                   children: [
@@ -391,7 +391,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                     borderRadius: BorderRadius.circular(20.0),
                                     shape: BoxShape.rectangle,
                                     color: const Color(0xFFDBB7D6)),
-                                child:  Row(
+                                child:  const Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
                                   children: [
@@ -443,7 +443,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         ),
                                         borderRadius: BorderRadius.circular(20),
                                         color: const Color(0xFFDBB7D6)),
-                                    child:  Column(
+                                    child:  const Column(
                                       children: [
                                         SizedBox(height: 15),
                                         Text(
@@ -544,7 +544,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         ),
                                         borderRadius: BorderRadius.circular(20),
                                         color: const Color(0xFFDBB7D6)),
-                                    child:  Column(
+                                    child:  const Column(
                                       children: [
                                         SizedBox(height: 15),
                                         Text(
@@ -585,7 +585,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                         ),
                                         borderRadius: BorderRadius.circular(20),
                                         color: const Color(0xFFDBB7D6)),
-                                    child:  Column(
+                                    child:  const Column(
                                       children: [
                                         SizedBox(height: 15),
                                         Text(
@@ -658,7 +658,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                       )),
                     ],
                   ),
-                   Padding(
+                   const Padding(
                     padding: EdgeInsets.only(top: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -679,7 +679,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
-                         Row(
+                         const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
@@ -760,7 +760,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     ),
                     child: Column(
                       children: [
-                         Row(
+                         const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
@@ -881,7 +881,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                     ),
                     child: Column(
                       children: [
-                         Row(
+                         const Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
@@ -1128,7 +1128,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                       showModalBottomSheet(
                           context: context,
                           builder: (BuildContext) {
-                            return  SizedBox(
+                            return  const SizedBox(
                               height: 200,
                               child: Row(
                                 children: [
@@ -1214,7 +1214,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                           return Container(
                             height: 200,
                             color: Colors.white24,
-                            child:  Row(
+                            child:  const Row(
                               children: [
                                 SizedBox(width: 50),
                                 Text(
