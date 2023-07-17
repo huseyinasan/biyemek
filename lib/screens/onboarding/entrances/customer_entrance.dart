@@ -30,7 +30,7 @@ class _CustomerEntranceState extends State<CustomerEntrance> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const ChooseEntrance();
+                                  return ChooseEntrance();
                                 },
                               ),
                             );
@@ -56,7 +56,7 @@ class _CustomerEntranceState extends State<CustomerEntrance> {
                     fit: BoxFit.cover, // Resmi sığdırma şekli
                   ),
                   const SizedBox(height: 20),
-                    Padding(
+                  Padding(
                     padding: EdgeInsets.only(
                       left: 10,
                       right: 10,
@@ -207,7 +207,7 @@ class _CustomerEntranceState extends State<CustomerEntrance> {
                     ],
                   ),
                   const SizedBox(height: 30),
-                    Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(

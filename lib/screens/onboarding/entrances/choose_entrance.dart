@@ -1,123 +1,150 @@
+import 'package:biyemek/constants/colors.dart';
 import 'package:biyemek/screens/onboarding/entrances/business_entrance.dart';
+import 'package:biyemek/screens/onboarding/entrances/customer_entrance.dart';
 import 'package:flutter/material.dart';
-import 'customer_entrance.dart';
 
-class ChooseEntrance extends StatefulWidget {
-  const ChooseEntrance({Key? key}) : super(key: key);
+class ChooseEntrance extends StatelessWidget {
+  const ChooseEntrance({super.key});
 
-  @override
-  State<ChooseEntrance> createState() => _ChooseEntranceState();
-}
-
-class _ChooseEntranceState extends State<ChooseEntrance> {
   @override
   Widget build(BuildContext context) {
-    final double screenHeight = MediaQuery.of(context).size.height;
-    final double screenWidth = MediaQuery.of(context).size.width;
-
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Colors.yellow,
-          ),
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Container(
-              width: screenWidth,
-              height: screenHeight / 2,
-              color: Colors.pink,
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            right: 0,
-            child: Container(
-              width: screenWidth,
-              height: screenHeight / 2,
-              color: Colors.orange,
-            ),
-          ),
-          Center(
-            child: Container(
-              width: MediaQuery.of(context).size.width * 0.8,
-              height: MediaQuery.of(context).size.height * 0.8,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.white,
-                    ),
-                    child: InkWell(
-                      onTap: () {
-                        // İşletme girişi işlemleri
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.restaurant_menu,
-                            size: 60.0,
-                            color: Colors.pink,
-                          ),
-                          const SizedBox(height: 10.0),
-                          Text(
-                            'İşletme Girişi',
-                            style: TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.pink,
-                            ),
-                          ),
-                        ],
+    return MaterialApp(
+      home: Scaffold(
+        body: Stack(
+          children: <Widget>[
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return CustomerEntrance();
+                    },
+                  ),
+                );
+              },
+              child: Container(
+                height: MediaQuery.of(context).size.height * 3 / 5,
+                width: MediaQuery.of(context).size.width,
+                color: AppColors.secondaryColor,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "İsrafa karşı savaşan bir müşteri misiniz?",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 20.0),
-                  Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.white,
+                    SizedBox(
+                      height: 10,
                     ),
-                    child: InkWell(
-                      onTap: () {
-                        // Müşteri girişi işlemleri
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.shopping_basket,
-                            size: 60.0,
-                            color: Colors.orange,
-                          ),
-                          const SizedBox(height: 10.0),
-                          Text(
-                            'Müşteri Girişi',
-                            style: TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.orange,
-                            ),
-                          ),
-                        ],
+                    Text(
+                      "Buraya Tıklayın! ",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Center(
+                        child: Material(
+                      elevation: 5.0,
+                      borderRadius: BorderRadius.circular(10.0),
+                      shadowColor: Colors.grey,
+                      child: Container(
+                        width: 200,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black, // border color
+                            width: 3.0, // border width
+                          ),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Image.asset(
+                          "assets/images/onboarding/customer_choose_image.png",
+                        ),
+                      ),
+                    )),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return BusinessEntrance();
+                      },
+                    ),
+                  );
+                },
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 2 / 5,
+                  width: MediaQuery.of(context).size.width,
+                  color: AppColors.primaryColor,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "İsrafa karşı savaşan bir işletme misiniz?",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "Buraya Tıklayın! ",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Center(
+                          child: Material(
+                        elevation: 5.0,
+                        borderRadius: BorderRadius.circular(10.0),
+                        shadowColor: Colors.grey,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black, // border color
+                              width: 3.0, // border width
+                            ),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Container(
+                            width: 200,
+                            height: 150,
+                            child: Image.asset(
+                              "assets/images/onboarding/intro2.png",
+                            ),
+                          ),
+                        ),
+                      )),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

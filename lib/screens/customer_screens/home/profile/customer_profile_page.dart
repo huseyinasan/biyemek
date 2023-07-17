@@ -1,5 +1,6 @@
 import 'package:biyemek/screens/customer_screens/home/profile/customer_old_orders.dart';
 import 'package:biyemek/screens/customer_screens/home/profile/customer_profile_info..dart';
+import 'package:biyemek/screens/onboarding/onboarding_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -198,7 +199,17 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
             child: Row(
               children: [
                 GestureDetector(
-                  onTap: signUserOut,
+                  onTap: () {
+                    signUserOut();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const IntroductionScreen();
+                        },
+                      ),
+                    );
+                  },
                   child: Expanded(
                     child: Row(
                       children: [
