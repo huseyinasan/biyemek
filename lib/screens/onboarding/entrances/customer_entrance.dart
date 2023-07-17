@@ -219,7 +219,7 @@ class _CustomerEntranceState extends State<CustomerEntrance> {
                         ),
                       );
                     },
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(

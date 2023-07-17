@@ -86,7 +86,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                 },
                 child: Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Container(

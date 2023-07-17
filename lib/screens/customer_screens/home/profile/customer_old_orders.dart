@@ -12,8 +12,8 @@ class OldOrdersPage extends StatelessWidget {
         title: const Text('Geçmiş Siparişler'),
         backgroundColor: AppColors.figma1Color,
       ),
-      body: Center(
-        child: const Column(
+      body: const Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

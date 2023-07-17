@@ -144,10 +144,10 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
 //my cart page starts here-------------------------------------------------
             Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   "Sepetinizdeki Ürünler",
                   textAlign: TextAlign.center,
                   style: TextStyle(

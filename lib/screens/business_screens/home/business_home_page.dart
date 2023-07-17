@@ -273,7 +273,7 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                       height: 40,
                                       color: const Color(0xFFBE7CB4),
                                     ),
-                                    Row(
+                                    const Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
@@ -306,12 +306,12 @@ class _BusinessHomePageState extends State<BusinessHomePage> {
                                   ),
                                   borderRadius: BorderRadius.circular(20),
                                   color: const Color(0xFFDBB7D6)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    const Text(
+                                    Text(
                                       "Önlenen",
                                       style: TextStyle(
                                           fontSize: 17, color: Colors.white),

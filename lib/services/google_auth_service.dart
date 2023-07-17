@@ -1,3 +1,4 @@
+import 'package:biyemek/screens/onboarding/entrances/choose_entrance.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -15,7 +16,6 @@ class AuthService {
       final UserCredential userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
 
-      // Check if the sign-in was successful
       // ignore: unnecessary_null_comparison
       if (userCredential != null) {
         // Navigate to the user's homepage
@@ -23,17 +23,20 @@ class AuthService {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return CustomerHomePage();
+              return const CustomerHomePage();
             },
           ),
         );
       } else {
-        // Handle sign-in error
-        // ...
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const ChooseEntrance();
+            },
+          ),
+        );
       }
-    } else {
-      // Handle case when user cancels Google sign-in
-      // ...
     }
   }
 }
