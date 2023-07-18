@@ -34,6 +34,16 @@ Bi'Yemek'in sunduğu avantajlar:
 
 - İşletmeler İçin Hızlı Başlangıç: İşletmeler ayrı bir uygulama ve başvuru sürecine girmeden hem direkt uygulamadan başvurabilirken hem de ürünlerini yine bu uygulamadan ekleyebilir.
 
+## ÜRÜN ÇIKTISI
+
+- [APK Linki](https://drive.google.com/file/d/1kADt9d6rSg6Xrss0LHFpOsXVklakLf4G/view?usp=drive_link)
+
+- DEMO Hesaplar:
+
+- İşletme: Email: "sec@gmail.com" Şifre: "123456"
+
+- Müşteri: Email: "hsyn@gmail.com" Şifre: "123456"
+
 ## Ürün Özellikleri
 - Uygulama işletme ve müşteri olmak üzere iki arayüze sahiptir.
 - Müşteriler hem standart üye olma ve girişin yanında Google ilede giriş yapabilirler.
