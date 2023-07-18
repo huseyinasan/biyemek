@@ -37,6 +37,7 @@ Bi'Yemek'in sunduğu avantajlar:
 ## ÜRÜN ÇIKTISI
 
 - [APK Linki](https://drive.google.com/file/d/1kADt9d6rSg6Xrss0LHFpOsXVklakLf4G/view?usp=drive_link)
+- [Trailer](https://www.youtube.com/watch?v=BbAP-xuJSN4&ab_channel=H%C3%BCseyinASAN)
 
 - DEMO Hesaplar:
 
