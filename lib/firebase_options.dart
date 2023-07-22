@@ -46,31 +46,3 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAG2-DqPPiU5F9H9mxwoeotoFQEwPSTIQk',
-    appId: '1:634559403892:web:5841324703cc9546b27e21',
-    messagingSenderId: '634559403892',
-    projectId: 'biyemek-5e6ed',
-    authDomain: 'biyemek-5e6ed.firebaseapp.com',
-    storageBucket: 'biyemek-5e6ed.appspot.com',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBWxXBoudmXPTqNlmv48dCo9Iv_OmbFI2I',
-    appId: '1:634559403892:android:7c273d524da6f5b9b27e21',
-    messagingSenderId: '634559403892',
-    projectId: 'biyemek-5e6ed',
-    storageBucket: 'biyemek-5e6ed.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD8dDq6-joWdxNno48AdLacFBGMsLck8z0',
-    appId: '1:634559403892:ios:f78791117950d4fcb27e21',
-    messagingSenderId: '634559403892',
-    projectId: 'biyemek-5e6ed',
-    storageBucket: 'biyemek-5e6ed.appspot.com',
-    androidClientId: '634559403892-t2snjhq352pppfc5a313mfqigh8n24ha.apps.googleusercontent.com',
-    iosClientId: '634559403892-6t033jv3ltk0m0hi0hctb69sbuaaq0kn.apps.googleusercontent.com',
-    iosBundleId: 'com.example.biyemek',
-  );
-}
