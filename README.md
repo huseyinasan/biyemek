@@ -37,7 +37,7 @@ Bi'Yemek'in sunduğu avantajlar:
 ## ÜRÜN ÇIKTISI
 
 - [APK Linki](https://drive.google.com/file/d/1kADt9d6rSg6Xrss0LHFpOsXVklakLf4G/view?usp=drive_link)
-- [Trailer](https://www.youtube.com/watch?v=BbAP-xuJSN4&ab_channel=H%C3%BCseyinASAN)
+- [Mobile App Trailer (Youtube) ](https://www.youtube.com/watch?v=BbAP-xuJSN4&ab_channel=H%C3%BCseyinASAN)
 
 - DEMO Hesaplar:
 
@@ -164,24 +164,23 @@ Sprint Review katılımcıları:
 ## SPRİNT 3
 #Sprint içinde tamamlanması tahmin edilen puan: 150 Puan
 
-- #Puan tamamlama mantığı: 2.sprinte kalan yerlerden dolayı bu sprinte tüm işlemler kaldı bu yüzden bu sprint 150 puan.
+- Puan tamamlama mantığı: 2. sprintte oluşan boşluktan dolayı bu sprinte yapıalcaklar birikten bu yüzden bu sprint 150 puan.
 
 Daily Scrum: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: 
 
 Sprint board update: Sprint board screenshotları:
 
-![10](https://github.com/huseyinasan/biyemek/assets/120129891/e45a7f02-1894-4525-b9ea-8de312f2b1e9)
-
-
+![11](https://github.com/huseyinasan/biyemek/assets/120129891/e45a7f02-1894-4525-b9ea-8de312f2b1e9)
 
 
 Ürün Durumu: Ekran görüntüleri:
 
 
-![13](https://github.com/huseyinasan/biyemek/assets/120129891/03bd6715-de6c-4e15-9c49-7bf00fa167d7)
-![14](https://github.com/huseyinasan/biyemek/assets/120129891/83ad75a7-ff4e-43a2-a210-3f6541ecd747)
-![15](https://github.com/huseyinasan/biyemek/assets/120129891/0d9c6db4-b264-4855-aff2-d86499307cb6)
-![12](https://github.com/huseyinasan/biyemek/assets/120129891/09507635-a2e5-4eb2-9222-05667974bab1)
+
+<img src="https://github.com/huseyinasan/biyemek/assets/120129891/03bd6715-de6c-4e15-9c49-7bf00fa167d7" width="200">
+<img src="https://github.com/huseyinasan/biyemek/assets/120129891/83ad75a7-ff4e-43a2-a210-3f6541ecd747" width="200">
+<img src="https://github.com/huseyinasan/biyemek/assets/120129891/0d9c6db4-b264-4855-aff2-d86499307cb6" width="200">
+<img src="https://github.com/huseyinasan/biyemek/assets/120129891/09507635-a2e5-4eb2-9222-05667974bab1" width="200">
 
 
 ## Sprint Review:
@@ -196,10 +195,7 @@ Sprint Review katılımcıları:
 
 ## Sprint Notu:
 
-
-Tüm ekip arkadaşlarımızın hızlı çalışması zamansal sorunları hallletik.
 - Bu sprintte yapılanlar : Tasarımlar geliştirildi , müşteri ekranı tasarlandı, kodların işlenmesi yapıldı , işletme sayfaları yapıldı , kayıt sistemi kuruldu,firebase kurulumu tamamlandı,fonlar ve renk düzenlemeleri yapıldı , uygulamanın çalışır durumu kontrol edildi , Firebase de data oluşturulması yapıldı.
-- 
 
 # Sprint Retrospective:
 
@@ -207,5 +203,3 @@ Tüm ekip arkadaşlarımızın hızlı çalışması zamansal sorunları halllet
 - İleriye dönük hedefler belirlenmiştir.
 - Takım içindeki görev dağılımıyla ilgili düzenleme yapılması kararı alınmıştır.
 
-# Product Backlog URL
-[Flutter Team 25 Backlog Board](https://trello.com/b/fQxinykx/f-25-bootcamp)
